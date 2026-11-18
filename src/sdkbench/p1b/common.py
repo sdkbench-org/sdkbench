@@ -81,7 +81,7 @@ def load_adapter(name):
 class P1bBase:
     def execute(self,kind,fixture,seed):
         validate_fixture(kind,fixture)
-        self.audit={'native_program_builds':0,'native_executions':0,'native_bindings':0}
+        self.audit={'native_program_builds':0,'native_executions':0}
         if kind=='gradient':return self.gradient(fixture)
         if kind=='dynamics':return self.dynamics(fixture)
         with compile_deadline(120):

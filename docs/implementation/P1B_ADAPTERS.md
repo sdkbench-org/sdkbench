@@ -24,7 +24,7 @@ The gradient configuration targets exact local CPU derivatives. Qiskit's native 
 
 Cirq-core 1.7.0 exposes no general expectation-Jacobian API. TensorFlow Quantum 0.7.6 is a separately installable ecosystem stack whose published metadata pins Cirq-core 1.5.0. It is not silently installed into this 1.7.0 registration. All three Cirq gradient instances remain `unsupported`, with no successful timings or fabricated gradients. This says nothing about all possible Cirq ecosystem configurations; a compatible extension stack requires its own future registration and qualification. The same extension and non-substitution policy applies to every participant.
 
-Derivative audit counts have explicitly different units: FlagQuantum counts native forward-program invocations (primal plus Jacobian callback); Qiskit counts three primal expectation requests plus three native reverse-gradient requests. Internal state evolutions/backward sweeps are not exposed as comparable counts. These audit values must not be compared as physical circuit executions or a speed score. The primary wall timer includes all primal and derivative work and output materialization.
+Structured `native_primal_calls` and `native_derivative_calls` record public API calls separately (one each per successful gradient outcome). Unobserved internal parameter bindings are omitted, never reported as zero. Derivative audit counts have explicitly different units: FlagQuantum counts native forward-program invocations (primal plus Jacobian callback); Qiskit counts three primal expectation requests plus three native reverse-gradient requests. Internal state evolutions/backward sweeps are not exposed as comparable counts. These audit values must not be compared as physical circuit executions or a speed score. The primary wall timer includes all primal and derivative work and output materialization.
 
 Dynamics executes the exact frozen S2 sequence, including the initial logical basis state and the RX/RZZ angle conventions. Adapters do not read reference values, diagonalize the Hamiltonian or substitute exact spectral evolution. P0 checks both digital implementation error and physical approximation error separately.
 
@@ -60,13 +60,13 @@ sdkbench-p1b --bundle docs/implementation --directory evidence/p1b \
   --cgroup-parent /sys/fs/cgroup/sdkbench-study --cpu 2
 python tools/p1b_integration.py --directory evidence/p1b-ci \
   --cgroup-parent /sys/fs/cgroup/sdkbench-study --scope all-protocol
-python tools/p1a_evidence.py --directory evidence/p1b-ci --bundle docs/implementation \
+python tools/p1b_evidence.py --directory evidence/p1b-ci --bundle docs/implementation \
   --archive evidence/p1b-raw.json.gz --summary evidence/p1b-replay.json
 ```
 
 The CLI returns nonzero for **any** nonaccepted case, including `unsupported`. Integration CI separately checks whether observed statuses match the declared capability profile; a correctly retained known gap can pass an accounting test but remains non-success in every result/report. Unexpected failure in any SDK fails CI. No SDK name is special-cased by the evaluator.
 
-Routine [P1b CI](../../.github/workflows/p1b.yml) runs all adapter sizes and the complete small-instance protocol. Manual dispatch with `extended=true` runs the complete protocol for every size, 240 process blocks, 720 measured records and 480 warmups. Evidence is retained even when CI fails. The [archive/replay tool](../../tools/p1a_evidence.py) verifies the manifest and independently re-evaluates records without importing SDKs. [Qualification evidence](P1B_QUALIFICATION.md) records actual runs and their scope.
+Routine [P1b CI](../../.github/workflows/p1b.yml) runs all adapter sizes and the complete small-instance protocol. Manual dispatch with `extended=true` runs the complete protocol for every size, 240 process blocks, 720 measured records and 480 warmups. Evidence is retained even when CI fails. The [archive/replay tool](../../tools/p1b_evidence.py) verifies the manifest and independently re-evaluates records without importing SDKs. [Qualification evidence](P1B_QUALIFICATION.md) records actual runs and their scope.
 
 The observed CI host/image is unsealed. Reports remain `publication_eligible: false`; dedicated host review, independent adapter review, broader model/task coverage and reviewed environment registration are still required before comparative publication.
 

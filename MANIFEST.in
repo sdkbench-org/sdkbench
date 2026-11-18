@@ -12,3 +12,4 @@ recursive-include docs/implementation/evidence *.gz
 
 include tools/p1b_integration.py
 include .github/workflows/p1b.yml
+include tools/p1b_evidence.py

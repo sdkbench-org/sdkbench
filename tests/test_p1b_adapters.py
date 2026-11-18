@@ -51,6 +51,8 @@ def test_all_native_instances_and_adversarial_outputs(bundle, adapter, instance)
         bad['jacobian'][0][0] += .1
         assert payload['derivative']['quantum_evaluations'] >= 1
         assert payload['derivative']['components']
+        assert native.audit['native_primal_calls'] == native.audit['native_derivative_calls'] == 1
+        assert 'native_bindings' not in native.audit
     elif kind == 'dynamics':bad['moments'][0] += .1
     else:
         assert payload['compile_wall_seconds'] <= 120

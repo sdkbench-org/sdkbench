@@ -20,9 +20,13 @@ class QiskitP1b(P1bBase,QiskitAdapter):
         if not hasattr(self, 'gradient_class'):self.prepare('gradient')
         circuit, parameters = self.build(fixture, 'observable');self.audit['native_program_builds'] = 1
         observables = [self.Pauli(word[::-1]) for word in fixture['pauli_words']]
+        self.audit['native_primal_calls'] = 1
         values = self.estimator_class(default_precision=0.).run([(circuit, observables, fixture['parameters'])]).result()[0].data.evs
+        self.audit['native_derivative_calls'] = 1
         result = self.gradient_class().run([circuit] * len(observables), observables,
                     [fixture['parameters']] * len(observables), parameters=[list(parameters)] * len(observables)).result()
+        self.audit['primal_expectation_requests'] = len(observables)
+        self.audit['derivative_expectation_requests'] = len(observables)
         self.audit['native_executions'] = 2 * len(observables)
         return {'outputs': real_values(values, len(observables)), 'jacobian': np.asarray(result.gradients, dtype=np.float64).tolist(),
                 'derivative': {'method': 'qiskit-algorithms ReverseEstimatorGradient; primal plus derivative expectation requests; internal state evolutions not exposed',

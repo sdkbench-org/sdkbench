@@ -21,7 +21,10 @@ class FlagQuantumP1b(P1bBase,FlagQuantumAdapter):
             return torch.stack([v.reshape(()) for v in result.expectations])
         theta=torch.tensor(fixture['parameters'],dtype=torch.float64,requires_grad=True)
         with torch.enable_grad():
-            outputs=program(theta);jacobian=fq.jacobian(program,theta)
+            self.audit['native_primal_calls']=1
+            outputs=program(theta)
+            self.audit['native_derivative_calls']=1
+            jacobian=fq.jacobian(program,theta)
         return {'outputs':outputs.detach().cpu().tolist(),'jacobian':jacobian.detach().cpu().tolist(),
                 'derivative':{'method':'flagquantum.fq.jacobian/autograd; forward-program invocation count',
                               'quantum_evaluations':self.audit['native_executions'],
