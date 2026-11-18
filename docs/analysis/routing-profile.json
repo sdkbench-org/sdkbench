@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "id": "routing-attribution-v1",
+  "protocol_revision": "0.1-candidate-1",
+  "bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+  "purpose": "Mechanistic configuration sensitivity, not a best-SDK ranking or a complete-case timing study.",
+  "variants": [
+    {
+      "id": "fq-default",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-restore_after_each_gate-restored-post",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": false,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-restore_after_each_gate-free-plain",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": true,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-restore_after_each_gate-free-post",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": true,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-persistent_layout-restored-plain",
+      "sdk": "flagquantum",
+      "strategy": "persistent_layout",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-persistent_layout-restored-post",
+      "sdk": "flagquantum",
+      "strategy": "persistent_layout",
+      "drop_restore": false,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-persistent_layout-free-plain",
+      "sdk": "flagquantum",
+      "strategy": "persistent_layout",
+      "drop_restore": true,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-persistent_layout-free-post",
+      "sdk": "flagquantum",
+      "strategy": "persistent_layout",
+      "drop_restore": true,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-auto-restored-plain",
+      "sdk": "flagquantum",
+      "strategy": "auto",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-auto-restored-post",
+      "sdk": "flagquantum",
+      "strategy": "auto",
+      "drop_restore": false,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-auto-free-plain",
+      "sdk": "flagquantum",
+      "strategy": "auto",
+      "drop_restore": true,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-auto-free-post",
+      "sdk": "flagquantum",
+      "strategy": "auto",
+      "drop_restore": true,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-sabre-restored-plain",
+      "sdk": "flagquantum",
+      "strategy": "sabre",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-sabre-restored-post",
+      "sdk": "flagquantum",
+      "strategy": "sabre",
+      "drop_restore": false,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-sabre-free-plain",
+      "sdk": "flagquantum",
+      "strategy": "sabre",
+      "drop_restore": true,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-sabre-free-post",
+      "sdk": "flagquantum",
+      "strategy": "sabre",
+      "drop_restore": true,
+      "post_basis": true,
+      "level": 2,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-default-level0",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 0,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-default-level1",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 1,
+      "basis": [
+        "h",
+        "x",
+        "y",
+        "z",
+        "s",
+        "sdg",
+        "rx",
+        "ry",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "fq-default-rotation-basis",
+      "sdk": "flagquantum",
+      "strategy": "restore_after_each_gate",
+      "drop_restore": false,
+      "post_basis": false,
+      "level": 2,
+      "basis": [
+        "rx",
+        "rz",
+        "cz"
+      ],
+      "seeded": false
+    },
+    {
+      "id": "qiskit-default",
+      "sdk": "qiskit",
+      "method": null,
+      "level": 2,
+      "seeded": true
+    },
+    {
+      "id": "qiskit-sabre",
+      "sdk": "qiskit",
+      "method": "sabre",
+      "level": 2,
+      "seeded": true
+    },
+    {
+      "id": "qiskit-basic",
+      "sdk": "qiskit",
+      "method": "basic",
+      "level": 2,
+      "seeded": true
+    },
+    {
+      "id": "qiskit-lookahead",
+      "sdk": "qiskit",
+      "method": "lookahead",
+      "level": 2,
+      "seeded": true
+    },
+    {
+      "id": "qiskit-default-level0",
+      "sdk": "qiskit",
+      "method": null,
+      "level": 0,
+      "seeded": true
+    },
+    {
+      "id": "cirq-default",
+      "sdk": "cirq",
+      "seeded": false
+    }
+  ],
+  "frozen_instances": [
+    "ROUTE-LINE-06",
+    "ROUTE-GRID-08",
+    "ROUTE-LINE-12"
+  ],
+  "micro_variants": [
+    "fq-default",
+    "fq-default-level0",
+    "fq-restore_after_each_gate-restored-post",
+    "fq-persistent_layout-restored-plain",
+    "fq-persistent_layout-free-plain",
+    "fq-sabre-free-plain",
+    "fq-auto-free-plain",
+    "qiskit-default",
+    "cirq-default"
+  ],
+  "micro_ids": [
+    "MICRO-LOCAL-CX",
+    "MICRO-LOCAL-CANCEL",
+    "MICRO-LOCAL-SWAP",
+    "MICRO-REMOTE-REUSE",
+    "MICRO-SWAP-CX-SAME",
+    "MICRO-SWAP-CX-REVERSED"
+  ],
+  "sampling": "Ten frozen compiler seeds for seeded Qiskit configurations, one fresh outcome per deterministic configuration. Microprobes use the first seed.",
+  "lifecycle": "One diagnostic outcome per fresh process, no warmups; not full-case protocol acceptance. No best-of selection.",
+  "resource_policy": "Frozen CPU1-FP64, 16 GiB, original cumulative wall cap per configuration/input, 120 seconds per instrumented compilation, strict P0 supervisor.",
+  "scope_exclusions": [
+    {
+      "strategy": "sabre_layout",
+      "reason": "Searches a nonidentity initial layout; excluded by the frozen identity initial-layout contract."
+    }
+  ],
+  "hypotheses": [
+    "Per-gate restoration increases routing SWAPs.",
+    "Final restoration is unnecessary when a final permutation is allowed.",
+    "Public nondefault routing can improve counts but is not guaranteed to do so.",
+    "Post-basis optimization and one-qubit basis choices may affect the measured pipeline.",
+    "Native SWAP lowering and local two-qubit block optimization may leave residual overhead."
+  ],
+  "publication_eligible": false
+}
