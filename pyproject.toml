@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sdkbench"
-version = "0.2.0"
+version = "0.3.0"
 description = "Reproducible SDK performance and correctness benchmarks, starting with quantum development kits"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -25,6 +25,8 @@ dependencies = ["numpy>=1.24"]
 qiskit = ["qiskit>=1.2,<3"]
 cirq = ["cirq-core>=1.4,<2"]
 all = ["qiskit>=1.2,<3", "cirq-core>=1.4,<2"]
+flagquantum = ["flagquantum==0.3.1; python_version < '3.13'"]
+p1a = ["flagquantum==0.3.1; python_version < '3.13'", "torch==2.14.0; python_version < '3.13'", "qiskit==2.6.2", "cirq-core==1.7.0"]
 dev = ["pytest>=7", "build", "twine"]
 
 [project.urls]
@@ -35,6 +37,7 @@ Issues = "https://github.com/sdkbench-org/sdkbench/issues"
 [project.scripts]
 sdkbench = "sdkbench.cli:main"
 sdkbench-p0 = "sdkbench.p0.cli:main"
+sdkbench-p1a = "sdkbench.p1a.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

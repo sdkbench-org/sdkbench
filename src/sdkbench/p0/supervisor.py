@@ -160,7 +160,7 @@ def run_command(argv, *, cwd, cgroup_parent, limits, environment=None):
             elif status is None:status = 'completed' if process.returncode == 0 else 'error'
             events = _read_counters(group / 'memory.events')
             if events.get('oom_kill', 0):status = 'out-of-memory'
-            return {'schema_version': 1, 'execution_status': status, 'returncode': process.returncode,
+            return {'schema_version': 1, 'execution_status': status, 'returncode': process.returncode, 'pid': process.pid,
                     'wall_seconds': elapsed, 'started_unix_ns': clock_start_ns,
                     'peak_sampled_rss_bytes': peak_rss, 'peak_sampled_threads': peak_threads,
                     'kernel_memory_peak_bytes': int((group / 'memory.peak').read_text()),

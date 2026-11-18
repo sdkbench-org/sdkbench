@@ -4,6 +4,7 @@ This candidate plan translates the [requirements baseline](../requirements/READM
 
 | Document | Decision it supports |
 | --- | --- |
+| [P1a adapters](P1A_ADAPTERS.md) | Native SDK APIs, lifecycle, strict execution, evidence and test scope |
 | [P0 foundation](P0_FOUNDATION.md) | Implemented contracts, evaluators, resource controls, tests and remaining review gates |
 | [Roadmap](ROADMAP.md) | Phase goals, dependencies, deliverables and exit gates |
 | [Priorities](PRIORITIES.md) | Why these needs come first and which needs remain deferred |

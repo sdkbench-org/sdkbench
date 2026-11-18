@@ -5,3 +5,4 @@ recursive-include docs/requirements *.md *.json *.csv
 include tools/requirements_docs.py
 recursive-include docs/implementation *.md *.json *.csv
 include tools/roadmap_docs.py tools/roadmap_reference.py
+include tools/p1a_integration.py

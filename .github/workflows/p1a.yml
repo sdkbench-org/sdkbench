@@ -1,0 +1,51 @@
+name: P1a native SDK integration
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  native-linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      SDKBENCH_REQUIRE_P1A: '1'
+      MPLCONFIGDIR: /tmp/sdkbench-p1a-matplotlib
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12.14'
+      - name: Install pinned CPU numerical backend
+        run: python -m pip install 'torch==2.14.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+      - name: Install all three pinned SDKs and SDKBench
+        run: python -m pip install '.[p1a,dev]'
+      - name: Test real adapters and failure accounting
+        run: python -m pytest tests/test_p1a_adapters.py tests/test_p1a_runner.py -q
+      - name: Delegate a disposable cgroup subtree
+        run: |
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p1a-ci
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p1a-ci/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p1a-ci/operator
+          sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p1a-ci
+      - name: Execute all frozen P1a instances and complete small protocol blocks
+        run: |
+          sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-p1a-ci/operator/cgroup.procs"
+          python tools/p1a_integration.py --directory p1a-evidence --cgroup-parent /sys/fs/cgroup/sdkbench-p1a-ci
+      - name: Retain all successes, unsupported outcomes and failures
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: p1a-engineering-evidence
+          path: p1a-evidence
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Check descendant cleanup
+        if: always()
+        run: |
+          if test -d /sys/fs/cgroup/sdkbench-p1a-ci/operator; then sudo rmdir /sys/fs/cgroup/sdkbench-p1a-ci/operator; fi
+          if test -d /sys/fs/cgroup/sdkbench-p1a-ci; then
+            test -z "$(find /sys/fs/cgroup/sdkbench-p1a-ci -mindepth 1 -type d -print)"
+            sudo rmdir /sys/fs/cgroup/sdkbench-p1a-ci
+          fi

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "protocol_revision": "0.1-candidate-1",
+  "resource_profile": "CPU1-FP64",
+  "precision": "float64/complex128",
+  "threads": 1,
+  "workflows": ["W01", "W04", "W08"],
+  "sdk_versions": {"flagquantum": "0.3.1", "qiskit": "2.6.2", "cirq": "1.7.0"},
+  "linux_numerical_backend": {"package": "torch", "version": "2.14.0+cpu", "source": "https://download.pytorch.org/whl/cpu"},
+  "ci_python": "3.12.14",
+  "threshold_source": "roadmap.json",
+  "resource_cap_source": "roadmap.json",
+  "default_mode": "protocol",
+  "qualification_mode": "One measured outcome per case, all eight cases per SDK; not complete-case acceptance.",
+  "publication_eligible": false,
+  "configuration_policy": "Public native CPU exact APIs only. No simulator, sampler or analytic expectation fallback in benchmark glue. No SDK source modifications or candidate-specific thresholds."
+}

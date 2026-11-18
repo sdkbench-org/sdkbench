@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+- Added public native FlagQuantum, Qiskit and Cirq adapters for parameter reuse, joint sampling and multi-term observable tasks.
+- Added the strict `sdkbench-p1a` process-block runner with warmups, measured repetitions, seeds, cumulative case budgets and complete failure evidence.
+- Added pinned CPU integration CI, real-adapter tests and synthetic lifecycle/adverse-case tests; engineering qualification remains separate from a reviewed performance study.
+- Added observed environment and installed-component content provenance, with explicit unsealed-image status.
+
 ## 0.2.0
 
 - Added SDK-neutral P0 result, registration and content-addressed protocol-bundle contracts.
