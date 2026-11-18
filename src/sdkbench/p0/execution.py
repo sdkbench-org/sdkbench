@@ -22,7 +22,7 @@ class CaseBudget:
 
 
 def execute_once(bundle, identity, argv, *, cgroup_parent, cpu, directory, block=0, repetition=0,
-                 budget=None, stage='case'):
+                 budget=None, stage='case', environment=None):
     """Run one adapter invocation; not a complete ten-block performance study.
 
     The adapter command receives one final argument, the absolute request JSON path.
@@ -43,7 +43,7 @@ def execute_once(bundle, identity, argv, *, cgroup_parent, cpu, directory, block
     else:
         limits = replace(limits, wall_seconds=min(limits.wall_seconds, budget.remaining))
         try:
-            execution = run_command(argv + [str(request_path)], cwd=directory, cgroup_parent=cgroup_parent, limits=limits)
+            execution = run_command(argv + [str(request_path)], cwd=directory, cgroup_parent=cgroup_parent, limits=limits, environment=environment)
             outcome = execution['execution_status']
             if outcome != 'completed':
                 status = outcome if outcome in ('timeout', 'out-of-memory') else 'access-blocked' if outcome == 'isolation-failed' else 'error'

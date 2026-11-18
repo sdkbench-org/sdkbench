@@ -48,9 +48,12 @@ jobs:
           sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
           sudo mkdir /sys/fs/cgroup/sdkbench-p0-ci
           sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p0-ci/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p0-ci/operator
           sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p0-ci
       - name: Exercise real kernel controls and worker fault handling
-        run: python -m pytest tests/test_p0_supervisor.py -v --junitxml=p0-linux.xml
+        run: |
+          sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-p0-ci/operator/cgroup.procs"
+          python -m pytest tests/test_p0_supervisor.py -v --junitxml=p0-linux.xml
         env:
           SDKBENCH_TEST_CGROUP: /sys/fs/cgroup/sdkbench-p0-ci
           OPENBLAS_NUM_THREADS: '1'
@@ -58,5 +61,6 @@ jobs:
       - name: Check cleanup
         if: always()
         run: |
+          sudo rmdir /sys/fs/cgroup/sdkbench-p0-ci/operator
           test -z "$(find /sys/fs/cgroup/sdkbench-p0-ci -mindepth 1 -type d -print)"
           sudo rmdir /sys/fs/cgroup/sdkbench-p0-ci

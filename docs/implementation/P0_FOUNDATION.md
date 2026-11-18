@@ -68,9 +68,9 @@ QASM support is deliberately limited to the specified four-qubit QASM2 static/re
 
 ## Strict Linux execution
 
-`run_command()` requires an explicitly delegated, non-root cgroup-v2 subtree with memory, CPU, cpuset and pids controllers, `memory.peak`, `cgroup.kill`, and `libseccomp.so.2`. The operator prepares this subtree; SDKBench never silently changes host-wide controls or requests elevated privileges itself. macOS and hosts without these controls can inspect/validate artifacts but strict execution refuses to launch a participant command.
+`run_command()` requires an explicitly delegated, non-root cgroup-v2 subtree with memory, CPU, cpuset and pids controllers, `memory.peak`, `cgroup.kill`, and `libseccomp.so.2`. The operator prepares this subtree and runs the supervisor in a separate operator leaf under it, so worker migration stays within the delegated common ancestor; SDKBench never silently changes host-wide controls or requests elevated privileges itself. macOS and hosts without these controls can inspect/validate artifacts but strict execution refuses to launch a participant command.
 
-For each invocation, the supervisor creates a fresh leaf cgroup. Before executing the participant command, the private standard-library launcher joins it, pins its CPU, disables core files, sets a per-file size limit and installs inherited syscall filters. The worker environment contains explicit values only, with numerical-library thread controls forced to one and no operator-shell credential inheritance.
+For each invocation, the supervisor creates a fresh leaf cgroup. Before executing the participant command, the private standard-library launcher, started with site initialization disabled, joins it, pins its CPU, disables core files, sets a per-file size limit and installs inherited syscall filters. The worker environment contains explicit values only (including any required pinned `LD_LIBRARY_PATH`, supplied through the API or CLI `--environment` JSON), with numerical-library thread controls forced to one and no operator-shell credential inheritance.
 
 Kernel controls include:
 
@@ -122,7 +122,7 @@ python tools/roadmap_docs.py --check --verify-small
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m pytest -q
 ```
 
-The dedicated Linux CI job delegates a disposable cgroup subtree on its ephemeral VM and sets `SDKBENCH_TEST_CGROUP`. With this variable set, real-kernel tests are mandatory: no control-unavailable skip is allowed. They exercise aggregate child OOM, timeout, detached-child cleanup, CPU affinity/thread environment, elapsed clocks/telemetry, IPv4/IPv6/Unix-socket denial in parent and exec descendants, output overflow, crash and worker JSON faults. Other platforms run semantic/schema tests and explicitly skip those Linux-only integration tests.
+The dedicated Linux CI job delegates a disposable cgroup subtree on its ephemeral VM, places the test runner in its operator leaf and sets `SDKBENCH_TEST_CGROUP`. With this variable set, real-kernel tests are mandatory: no control-unavailable skip is allowed. They exercise aggregate child OOM, timeout, detached-child cleanup, CPU affinity/thread environment, elapsed clocks/telemetry, IPv4/IPv6/Unix-socket denial in parent and exec descendants, output overflow, crash and worker JSON faults. Other platforms run semantic/schema tests and explicitly skip those Linux-only integration tests.
 
 Every instance has a positive expected-output test and missing-output negative test. Family-specific mutations cover stale/wrong bindings, phase-sensitive Y signs, wrong numeric terms, transposed/shared gradients, independent digital/physical gates, malformed counts and mappings, omitted feed-forward/reset/branches, loop cutoff, checkpoint/gradient/seed/progress errors, illegal target edges/bases/ancillas, wrong layouts/global phases, lossy/unsupported QASM and duplicate/lost/cancelled operational work. Name-substitution tests apply the same accepted/incorrect decisions to several participant identities. These synthetic outcomes are qualification fixtures, not SDK results.
 

@@ -12,6 +12,7 @@ from sdkbench.p0.supervisor import IsolationUnavailable, Limits, THREAD_ENV, run
 
 ROOT = Path(__file__).resolve().parents[1]
 PARENT = os.environ.get('SDKBENCH_TEST_CGROUP')
+RUNTIME_ENV = {'LD_LIBRARY_PATH': os.environ['LD_LIBRARY_PATH']} if 'LD_LIBRARY_PATH' in os.environ else {}
 linux = pytest.mark.skipif(not PARENT, reason='Strict cgroup integration runs in the dedicated Linux CI job')
 
 
@@ -34,14 +35,16 @@ def test_no_fallback_when_controls_unavailable(tmp_path):
 
 def invoke(code, tmp_path, *, wall=3, memory=128 * 1024**2, output=100000):
     return run_command([sys.executable, '-c', code], cwd=tmp_path, cgroup_parent=PARENT,
-                       limits=Limits(wall, memory, min(os.sched_getaffinity(0)), output_bytes=output))
+                       limits=Limits(wall, memory, min(os.sched_getaffinity(0)), output_bytes=output),
+                       environment={**RUNTIME_ENV, 'OMP_NUM_THREADS': '32'})
 
 
 @linux
-def test_real_limits_affinity_threads_and_clock(tmp_path):
+def test_real_limits_affinity_threads_and_clock(tmp_path, monkeypatch):
+    monkeypatch.setenv('SDKBENCH_FAKE_SECRET', 'not-in-worker')
     start = time.perf_counter()
     r = invoke('import os,time,json; time.sleep(.1); print(json.dumps({"cpus":list(os.sched_getaffinity(0)),"threads":os.environ["OMP_NUM_THREADS"],"home":os.environ["HOME"],"secret":os.environ.get("SDKBENCH_FAKE_SECRET")}))', tmp_path)
-    assert r['execution_status'] == 'completed', r
+    assert r['execution_status'] == 'completed', r['stderr'] or r
     data = json.loads(r['stdout']); assert len(data['cpus']) == 1 and data['threads'] == '1' and data['secret'] is None
     assert r['wall_seconds'] >= .1 and r['wall_seconds'] <= time.perf_counter() - start
     assert r['kernel_memory_peak_bytes'] > 0 and r['peak_sampled_rss_bytes'] > 0
@@ -97,7 +100,7 @@ def test_worker_integration_rejects_false_success_and_invalid_output(tmp_path):
         worker = tmp_path / f'worker-{index}.py'; worker.write_text(code)
         budget = CaseBudget(.5)
         evidence = execute_once(bundle, identity, [sys.executable, str(worker)], cgroup_parent=PARENT,
-                                cpu=min(os.sched_getaffinity(0)), directory=tmp_path / f'run-{index}', budget=budget)
+                                cpu=min(os.sched_getaffinity(0)), directory=tmp_path / f'run-{index}', budget=budget, environment=RUNTIME_ENV)
         assert evidence['verdict']['status'] in ('incorrect', 'timeout'), evidence
         assert (tmp_path / f'run-{index}/evidence.json').is_file()
 
@@ -121,10 +124,10 @@ def test_worker_positive_and_kernel_failure_cannot_claim_success(tmp_path):
     worker = tmp_path / 'positive.py'; serialized = json.dumps(result.to_dict(), allow_nan=False)
     worker.write_text('import sys,json\nrequest=json.load(open(sys.argv[1]))\nassert "reference" not in request\nprint(' + repr(serialized) + ')\n')
     evidence = execute_once(bundle, result.identity, [sys.executable, str(worker)], cgroup_parent=PARENT,
-                            cpu=min(os.sched_getaffinity(0)), directory=tmp_path / 'positive')
-    assert evidence['verdict']['status'] == 'accepted', evidence
+                            cpu=min(os.sched_getaffinity(0)), directory=tmp_path / 'positive', environment=RUNTIME_ENV)
+    assert evidence['verdict']['status'] == 'accepted', evidence['execution']['stderr'] or evidence
     assert evidence['execution']['execution_status'] == 'completed'
     worker.write_text('import time\nprint(' + repr(serialized) + ',flush=True)\ntime.sleep(20)\n')
     evidence = execute_once(bundle, result.identity, [sys.executable, str(worker)], cgroup_parent=PARENT,
-                            cpu=min(os.sched_getaffinity(0)), directory=tmp_path / 'false-success', budget=CaseBudget(.4))
+                            cpu=min(os.sched_getaffinity(0)), directory=tmp_path / 'false-success', budget=CaseBudget(.4), environment=RUNTIME_ENV)
     assert evidence['verdict']['status'] == 'timeout' and evidence['record'] is None

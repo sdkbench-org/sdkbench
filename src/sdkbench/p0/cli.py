@@ -25,6 +25,7 @@ def main(argv=None):
     execute.add_argument('--cgroup-parent', type=Path, required=True)
     execute.add_argument('--cpu', type=int, required=True)
     execute.add_argument('--directory', type=Path, required=True)
+    execute.add_argument('--environment', type=Path, help='Explicit runtime environment JSON, e.g. pinned loader paths')
     execute.add_argument('--block', type=int, default=0)
     execute.add_argument('--repetition', type=int, default=0)
     execute.add_argument('--stage', choices=('case', 'compile'), default='case')
@@ -48,7 +49,8 @@ def main(argv=None):
             identity = Identity(**read_json(args.identity)); command = args.argv
             if command[:1] == ['--']:command = command[1:]
             result = execute_once(bundle, identity, command, cgroup_parent=args.cgroup_parent, cpu=args.cpu,
-                                  directory=args.directory, block=args.block, repetition=args.repetition, stage=args.stage)
+                                  directory=args.directory, block=args.block, repetition=args.repetition, stage=args.stage,
+                                  environment=read_json(args.environment) if args.environment else None)
         print(canonical_bytes(result).decode(), end='')
         if args.command == 'inspect':return 0
         return 0 if result.get('verdict', result).get('status') == 'accepted' else 1

@@ -123,7 +123,7 @@ def run_command(argv, *, cwd, cgroup_parent, limits, environment=None):
                       'cwd': str(cwd), 'argv': argv, 'environment': env}
             config_path = Path(temporary) / 'launch.json'; config_path.write_bytes(canonical_bytes(config))
             launcher = Path(__file__).with_name('_isolate.py')
-            process = subprocess.Popen([sys.executable, '-I', str(launcher), str(config_path), str(write_ready)],
+            process = subprocess.Popen([sys.executable, '-I', '-S', str(launcher), str(config_path), str(write_ready)],
                                        stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                        pass_fds=(write_ready,), start_new_session=True)
             os.close(write_ready); write_ready = None
