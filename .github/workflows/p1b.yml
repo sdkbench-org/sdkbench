@@ -1,0 +1,62 @@
+name: P1b native SDK integration
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      extended:
+        description: Run complete protocol for all eight frozen instances and every SDK
+        required: true
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  native-linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      SDKBENCH_REQUIRE_P1B: '1'
+      MPLCONFIGDIR: /tmp/sdkbench-p1b-matplotlib
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12.14'
+      - name: Install pinned CPU numerical backend
+        run: python -m pip install 'torch==2.14.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+      - name: Install all three pinned SDKs and SDKBench
+        run: python -m pip install '.[p1b,dev]'
+      - name: Test all native instance sizes and failure accounting
+        run: python -m pytest tests/test_p1b_adapters.py tests/test_p1b_runner.py -q
+      - name: Delegate a disposable cgroup subtree
+        run: |
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p1b-ci
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p1b-ci/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p1b-ci/operator
+          sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p1b-ci
+      - name: Execute complete protocol with truthful unsupported outcomes
+        run: |
+          sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-p1b-ci/operator/cgroup.procs"
+          scope=small-protocol
+          if test "${{ github.event_name }}" = workflow_dispatch && test "${{ inputs.extended }}" = true; then scope=all-protocol; fi
+          python tools/p1b_integration.py --directory p1b-evidence --cgroup-parent /sys/fs/cgroup/sdkbench-p1b-ci --scope "$scope"
+      - name: Retain all successes, unsupported outcomes and failures
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: p1b-engineering-evidence
+          path: p1b-evidence
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Check descendant cleanup
+        if: always()
+        run: |
+          if test -d /sys/fs/cgroup/sdkbench-p1b-ci/operator; then sudo rmdir /sys/fs/cgroup/sdkbench-p1b-ci/operator; fi
+          if test -d /sys/fs/cgroup/sdkbench-p1b-ci; then
+            test -z "$(find /sys/fs/cgroup/sdkbench-p1b-ci -mindepth 1 -type d -print)"
+            sudo rmdir /sys/fs/cgroup/sdkbench-p1b-ci
+          fi

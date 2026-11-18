@@ -28,3 +28,7 @@ python tools/roadmap_docs.py --check --verify-small
 ```
 
 Reference generation needs NumPy; integrity and documentation checks use the standard library. `python tools/roadmap_docs.py --freeze` intentionally replaces reference artifacts and their hashes: use it only after reviewing a specification or generator change. `python tools/roadmap_docs.py` updates generated tables. CI checks stored artifacts without requiring cross-platform floating-point files to be byte-identical to regenerated results.
+
+## P1b implementation
+
+[Native P1b adapters](P1B_ADAPTERS.md) cover shared-parameter gradients, fixed digital dynamics and constrained-topology routing using the frozen P0 acceptance/resource contracts. The [profile](p1b-profile.json) declares components and capability gaps. Actual execution evidence is recorded in [P1B_QUALIFICATION.md](P1B_QUALIFICATION.md).

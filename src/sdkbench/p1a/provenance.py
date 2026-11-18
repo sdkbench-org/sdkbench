@@ -29,7 +29,10 @@ def source_fingerprint():
     for subdir in ('p0', 'p1a'):
         for path in sorted((root / subdir).glob('*.py')):
             hasher.update(path.relative_to(root).as_posix().encode()); hasher.update(b'\0'); hasher.update(path.read_bytes())
-    return {'sdkbench_version': __version__, 'p0_p1a_source_sha256': hasher.hexdigest()}
+    legacy = hasher.hexdigest()
+    for path in sorted((root / 'p1b').glob('*.py')):
+        hasher.update(path.relative_to(root).as_posix().encode()); hasher.update(b'\0'); hasher.update(path.read_bytes())
+    return {'sdkbench_version': __version__, 'p0_p1a_source_sha256': legacy, 'runtime_source_sha256': hasher.hexdigest()}
 
 
 def capture_environment():

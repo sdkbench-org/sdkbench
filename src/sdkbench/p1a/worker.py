@@ -26,6 +26,7 @@ def execute_block(sdk, request):
     require(sdk in DISTRIBUTIONS, 'Unknown SDK')
     identity = Identity(**request['identity']); block = request['block']; mode = request['execution_mode']
     require(identity.stack_id == sdk and mode in ('protocol', 'qualification'), 'Worker registration/mode mismatch')
+    suite = request.get('suite', 'p1a'); require(suite in ('p1a', 'p1b'), 'Unknown adapter suite')
     kind = request['kind']; stochastic = kind == 'sampling'
     warmup_count = 2 if mode == 'protocol' and not stochastic else 0
     repetition_count = 3 if mode == 'protocol' and not stochastic else 1
@@ -35,7 +36,11 @@ def execute_block(sdk, request):
         try:
             actual = metadata.version(DISTRIBUTIONS[sdk])
             require(actual == VERSIONS[sdk], f'Pinned SDK version mismatch: expected {VERSIONS[sdk]}, found {actual}')
-            adapter = load_adapter(sdk)
+            if suite == 'p1b':
+                from ..p1b.common import load_adapter as loader
+            else:loader = load_adapter
+            adapter = loader(sdk)
+            if hasattr(adapter, 'prepare'):adapter.prepare(kind)
         except Exception as exc:
             import_error = exc; traceback.print_exc(file=sys.stderr)
         import_seconds = time.perf_counter() - import_started
@@ -45,7 +50,7 @@ def execute_block(sdk, request):
                     records.append(failure(identity, block, repetition, exception_status(import_error), import_error)); continue
                 started = time.perf_counter()
                 try:
-                    payload = adapter.execute(kind, request['fixture'], request['sampling_seeds'][0])
+                    payload = adapter.execute(kind, request['fixture'], request['compiler_seed'] if kind == 'route' else request['sampling_seeds'][0])
                     elapsed = time.perf_counter() - started
                     result = ResultRecord(identity, block, repetition, 'completed', payload,
                                           measurements={'outcome_wall_seconds': elapsed, **adapter.audit})

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0
+
+- Added native shared-parameter Jacobian, fixed digital dynamics and constrained full-CZ routing adapters for the three registered stacks; Cirq-core gradient gaps remain unsupported.
+- Added an explicitly attributed Qiskit Algorithms reverse-gradient extension and registered per-task configuration/source provenance.
+- Reused strict process-block execution and frozen acceptance/resource caps; added a kernel-enforced per-compilation deadline.
+- Added all-instance native/adversarial tests, complete-protocol Linux integration and lossless independently replayable evidence.
+
 ## 0.3.0
 
 - Added public native FlagQuantum, Qiskit and Cirq adapters for parameter reuse, joint sampling and multi-term observable tasks.

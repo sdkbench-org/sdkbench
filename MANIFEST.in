@@ -9,3 +9,6 @@ include tools/p1a_integration.py
 include .github/workflows/p1a.yml
 include tools/p1a_evidence.py
 recursive-include docs/implementation/evidence *.gz
+
+include tools/p1b_integration.py
+include .github/workflows/p1b.yml

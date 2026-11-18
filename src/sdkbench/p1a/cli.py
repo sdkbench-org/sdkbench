@@ -9,8 +9,8 @@ from .campaign import run_campaign
 from .common import SDKS
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, suite='p1a'):
+    parser = argparse.ArgumentParser(description=f'Run {suite.upper()} native adapters with strict Linux execution controls.')
     parser.add_argument('--bundle', required=True, type=Path)
     parser.add_argument('--directory', required=True, type=Path)
     parser.add_argument('--cgroup-parent', required=True, type=Path)
@@ -23,13 +23,13 @@ def main(argv=None):
     try:
         report = run_campaign(Bundle(args.bundle), directory=args.directory, cgroup_parent=args.cgroup_parent, cpu=args.cpu,
                               sdks=tuple(args.sdk or SDKS), instances=args.instance, mode=args.mode,
-                              runtime_environment=read_json(args.environment) if args.environment else None)
+                              runtime_environment=read_json(args.environment) if args.environment else None, suite=suite)
         print(json.dumps({'mode': report['mode'], 'publication_eligible': False, 'outcomes': report['outcomes']}, indent=2, allow_nan=False))
         failed = any((row['qualification_status'] if args.mode == 'qualification' else row['case_verdict']['status']) != 'accepted'
                      for row in report['outcomes'])
         return int(failed)
     except (OSError, ValueError, TypeError, KeyError) as exc:
-        print('sdkbench-p1a: ' + str(exc), file=sys.stderr); return 2
+        print('sdkbench-' + suite + ': ' + str(exc), file=sys.stderr); return 2
 
 
 if __name__ == '__main__':raise SystemExit(main())

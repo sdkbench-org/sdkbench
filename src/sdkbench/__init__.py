@@ -1,5 +1,5 @@
 """Reproducible quantum SDK benchmarks."""
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 from .circuits import Circuit, Gate, make_workload
 from .runner import run_benchmarks

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "protocol_revision": "0.1-candidate-1",
+  "resource_profile": "CPU1-FP64",
+  "precision": "float64/complex128",
+  "threads": 1,
+  "workflows": ["W03", "W05", "W07"],
+  "sdk_versions": {"flagquantum": "0.3.1", "qiskit": "2.6.2", "cirq": "1.7.0"},
+  "extensions": {"qiskit-algorithms": "0.4.0"},
+  "gradient_methods": {"flagquantum": "fq.jacobian/autograd", "qiskit": "ReverseEstimatorGradient", "cirq": "unsupported in registered cirq-core stack"},
+  "routing_methods": {"flagquantum": "compiler.compile default level 2 plus native_gate_legalization", "qiskit": "transpile level 2, exact synthesis, identity initial layout, arbitrary input", "cirq": "RouteCQC identity initial mapper plus full-CZ target synthesis"},
+  "compiler_stage_wall_seconds": 120,
+  "linux_numerical_backend": {"package": "torch", "version": "2.14.0+cpu", "source": "https://download.pytorch.org/whl/cpu"},
+  "ci_python": "3.12.14",
+  "threshold_source": "roadmap.json",
+  "resource_cap_source": "roadmap.json",
+  "default_mode": "protocol",
+  "publication_eligible": false,
+  "configuration_policy": "Native public CPU exact APIs and attributed SDK extensions. No benchmark-side differentiation, simulation or routing fallback; no SDK patches or participant-specific acceptance thresholds.",
+  "expected_capability_gaps": [{"sdk": "cirq", "kind": "gradient", "status": "unsupported", "scope": "cirq-core 1.7.0 only; not a claim about all Cirq ecosystem stacks"}]
+}

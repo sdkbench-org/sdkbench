@@ -1,10 +1,11 @@
-"""Serial P1a process blocks under common P0 acceptance and kernel resource limits."""
+"""Serial native task process blocks under common P0 acceptance and kernel resource limits."""
 from contextlib import contextmanager
 from dataclasses import replace
 from importlib import metadata
 import json
 from pathlib import Path
 import platform
+import signal
 import sys
 import time
 from ..p0 import Registration, ResultRecord, Verdict, evaluate, evaluate_case, evaluate_workflow
@@ -35,9 +36,13 @@ class ActiveCaseBudget:
 def write(path, value):path.write_bytes(canonical_bytes(value))
 
 
-def registration(sdk, environment, components):
+def registration(sdk, environment, components, suite='p1a'):
+    task_options = {}
+    if suite == 'p1b':
+        from ..p1b.common import CONFIGURATIONS
+        task_options = CONFIGURATIONS[sdk]
     return Registration(sdk, components, {'profile': 'CPU1-FP64', 'precision': 'float64/complex128', 'threads': 1,
-                        'options': {'sdk': sdk, 'expected_version': VERSIONS[sdk], 'implementation': source_fingerprint(),
+                        'options': {'task_configuration': task_options, 'suite': suite, 'sdk': sdk, 'expected_version': VERSIONS[sdk], 'implementation': source_fingerprint(),
                                     'backend': {'flagquantum': 'pytorch-statevector-cpu', 'qiskit': 'Statevector/StatevectorSampler',
                                                 'cirq': 'Simulator-complex128'}[sdk]}},
                         {'python': platform.python_version(), 'os': platform.platform(),
@@ -49,11 +54,11 @@ def _failure_records(identity, block, count, status, reason):
     return [ResultRecord(identity, block, r, status, reason=reason) for r in range(count)]
 
 
-def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None):
+def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None, suite='p1a'):
     directory = Path(directory); directory.mkdir(parents=True, exist_ok=False)
     case = bundle.cases[identity.instance_id]; kind = case['kind']; protocol = mode == 'protocol'
     count = 3 if protocol and kind != 'sampling' else 1; warmup_count = 2 if protocol and kind != 'sampling' else 0
-    request = {**bundle.request(identity, block), 'kind': kind, 'execution_mode': mode}
+    request = {**bundle.request(identity, block), 'kind': kind, 'execution_mode': mode, 'suite': suite}
     write(directory / 'request.json', request)
     execution = None; response = None; warmup_verdicts = []; verdicts = []
     if budget.remaining <= 0:
@@ -65,6 +70,7 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
                                     cwd=directory, cgroup_parent=cgroup_parent, limits=limits, environment=runtime_environment)
             if execution['execution_status'] != 'completed':
                 status = execution['execution_status']
+                if kind == 'route' and execution.get('returncode') == -signal.SIGALRM:status = 'timeout'
                 mapped = status if status in ('timeout', 'out-of-memory') else 'access-blocked' if status == 'isolation-failed' else 'error'
                 records = _failure_records(identity, block, count, mapped, 'Supervisor outcome: ' + status)
             else:
@@ -98,28 +104,35 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
     return evidence
 
 
-def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None):
+def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None, suite='p1a'):
     require(mode in ('protocol', 'qualification'), 'Unknown execution mode')
     require(sdks and len(set(sdks)) == len(sdks) and set(sdks) <= set(SDKS), 'Invalid SDK selection')
-    available = [c['id'] for c in bundle.plan['instances'] if c['workflow'] in WORKFLOWS]
+    require(suite in ('p1a', 'p1b'), 'Unknown adapter suite')
+    if suite == 'p1b':
+        from ..p1b.common import WORKFLOWS as selected_workflows
+    else:selected_workflows = WORKFLOWS
+    available = [c['id'] for c in bundle.plan['instances'] if c['workflow'] in selected_workflows]
     selected = list(instances) if instances is not None else available
-    require(selected and len(set(selected)) == len(selected) and set(selected) <= set(available), 'Invalid P1a case selection')
+    require(selected and len(set(selected)) == len(selected) and set(selected) <= set(available), 'Invalid suite case selection')
     directory = Path(directory).resolve(); directory.mkdir(parents=True, exist_ok=True)
     require(not any(directory.iterdir()), 'Never overwrite campaign evidence')
     environment = capture_environment(); write(directory / 'environment.json', environment)
     components = {}; registrations = {}; admissions = {}
     framework = {'name': 'sdkbench', 'version': environment['implementation']['sdkbench_version'], 'role': 'harness',
-                 'artifact_sha256': environment['implementation']['p0_p1a_source_sha256']}
+                 'artifact_sha256': environment['implementation'].get('runtime_source_sha256', environment['implementation']['p0_p1a_source_sha256'])}
     cache = {}
     for sdk in sdks:
         entries = [framework]; reason = None
-        for name in [DISTRIBUTIONS[sdk], 'numpy'] + (['torch'] if sdk == 'flagquantum' else ['sympy'] if sdk == 'cirq' else []):
+        dependencies = [DISTRIBUTIONS[sdk], 'numpy'] + (['torch'] if sdk == 'flagquantum' else ['sympy', 'networkx'] if sdk == 'cirq' else [])
+        if suite == 'p1b' and sdk == 'qiskit':dependencies.append('qiskit-algorithms')
+        for name in dependencies:
             try:
                 if name not in cache:cache[name] = distribution_fingerprint(name)
-                component = cache[name]; entries.append({k: component[k] for k in ('name', 'version', 'artifact_sha256')} | {'role': 'frontend' if name == DISTRIBUTIONS[sdk] else 'numerical-dependency'})
+                component = cache[name]; entries.append({k: component[k] for k in ('name', 'version', 'artifact_sha256')} | {'role': 'frontend' if name == DISTRIBUTIONS[sdk] else 'gradient-extension' if name == 'qiskit-algorithms' else 'numerical-dependency'})
                 if name == DISTRIBUTIONS[sdk] and component['version'] != VERSIONS[sdk]:reason = 'Pinned package mismatch: ' + name + '==' + component['version']
+                if name == 'qiskit-algorithms' and component['version'] != '0.4.0':reason = 'Pinned package mismatch: qiskit-algorithms==' + component['version']
             except metadata.PackageNotFoundError:reason = 'Required distribution missing: ' + name
-        components[sdk] = entries; registrations[sdk] = registration(sdk, environment, entries)
+        components[sdk] = entries; registrations[sdk] = registration(sdk, environment, entries, suite)
         admissions[sdk] = {'status': 'install-failed' if reason and 'missing' in reason else 'access-blocked' if reason else 'admitted', 'reason': reason}
     write(directory / 'registrations.json', {s: registrations[s].to_dict() for s in sdks})
     write(directory / 'admission.json', admissions)
@@ -145,7 +158,7 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
                     with budgets[key].active():
                         evidence = run_block(bundle, identities[key], sdk, block, mode=mode,
                                              directory=directory / sdk / instance / f'block-{block:02}', cgroup_parent=cgroup_parent,
-                                             cpu=cpu, budget=budgets[key], runtime_environment=runtime_environment)
+                                             cpu=cpu, budget=budgets[key], runtime_environment=runtime_environment, suite=suite)
                     if budgets[key].remaining <= 0 and evidence['block_verdict']['status'] == 'accepted':
                         evidence['block_verdict'] = Verdict('timeout', ('Complete case budget exhausted during evidence export',)).to_dict()
                         write(directory / sdk / instance / f'block-{block:02}' / 'evidence.json', evidence)
@@ -162,19 +175,19 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
     workflows = {}
     for sdk in sdks:
         workflows[sdk] = {}
-        for workflow in WORKFLOWS:
+        for workflow in selected_workflows:
             records = [r for (name, instance), blocks in cases.items() if name == sdk and bundle.cases[instance]['workflow'] == workflow for b in blocks for r in b['records']]
             verdict = evaluate_workflow(bundle, workflow, records).to_dict()
             failed = [o for o in outcomes if o['sdk'] == sdk and bundle.cases[o['instance']]['workflow'] == workflow and o['qualification_status'] != 'accepted']
             if failed:verdict = failed[0]['case_verdict']
             workflows[sdk][workflow] = verdict
-    report = {'schema_version': 1, 'protocol_revision': bundle.plan['protocol_revision'], 'bundle_sha256': bundle.sha256,
+    report = {'schema_version': 1, 'suite': suite, 'protocol_revision': bundle.plan['protocol_revision'], 'bundle_sha256': bundle.sha256,
               'mode': mode, 'scope': 'engineering qualification' if mode == 'qualification' else 'unqualified protocol execution',
               'publication_eligible': False, 'sdks': list(sdks), 'instances': selected, 'unselected_instances': sorted(set(available) - set(selected)),
               'outcomes': outcomes, 'workflows': workflows, 'admissions': admissions, 'implementation': source_fingerprint(),
               'remaining_gates': ['independent review', 'sealed dedicated host/image', 'reviewed participant environments']}
     write(directory / 'report.json', report)
-    lines = ['# P1a execution evidence', '', 'Scope: ' + report['scope'] + '. Publication eligible: false.', '',
+    lines = ['# ' + suite.upper() + ' execution evidence', '', 'Scope: ' + report['scope'] + '. Publication eligible: false.', '',
              'No ranking is inferred. A qualification pass is one process block, not complete-case acceptance.', '',
              '| SDK | Instance | Qualification outcome | Full-case outcome | Records |', '| --- | --- | --- | --- | --- |']
     for row in outcomes:
