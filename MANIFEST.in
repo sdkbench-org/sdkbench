@@ -1,0 +1,3 @@
+include CHANGELOG.md CONTRIBUTING.md RELEASING.md
+recursive-include examples *.py
+recursive-include tests *.py
