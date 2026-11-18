@@ -13,6 +13,8 @@ SDKBench generates deterministic circuit workloads, runs them through native SDK
 
 Version 0.4.0 includes the legacy timing harness, the [P0 foundation](docs/implementation/P0_FOUNDATION.md), and [P1a native adapters](docs/implementation/P1A_ADAPTERS.md) and [P1b gradient, dynamics and constrained-routing adapters](docs/implementation/P1B_ADAPTERS.md) for FlagQuantum, Qiskit and Cirq. It does not establish a comprehensive SDK ranking. The generators, evaluator and SDK adapters are independently implemented in this repository. No cloud account, API key, quantum device or network access is required to run benchmarks.
 
+The [P1b qualification report](docs/implementation/P1B_QUALIFICATION.md) records complete-case outcomes, retained capability gaps and independently replayable raw evidence.
+
 ## Requirements and task design
 
 SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).

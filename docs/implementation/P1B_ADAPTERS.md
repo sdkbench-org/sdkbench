@@ -10,6 +10,8 @@ SDKBench 0.4.0 implements W05, W07 and W03 for the registered FlagQuantum 0.3.1,
 | W07, fixed second-order digital TFIM evolution from a Neel state | DYN-04-S32, DYN-08-S64 | Every local X/Z and neighboring ZZ moment agrees with digital ideal at atol 1e-9, rtol 1e-8 and exact physical evolution within absolute 0.002 | 600 / 1800 seconds; 16 GiB |
 | W03, identity initial layout, line/grid full-CZ target, no ancillas | ROUTE-LINE-06, ROUTE-GRID-08, ROUTE-LINE-12 | Edges, full-CZ basis, final logical-to-physical permutation and original semantics; atol 1e-8, rtol 0, norm error 1e-10 | 600 / 900 / 1800 seconds; 16 GiB; additionally 120 seconds per native compilation |
 
+Frozen references remain SDK-independent: analytic gate-derivative tangent propagation cross-checked by a small dense five-point stencil for gradients; dense spectral evolution of an independently assembled TFIM Hamiltonian plus separate digital circuit propagation for dynamics; independent bit-block propagation and dense gate/permutation construction for routing. Participant adapters receive inputs without expected outputs. See [the frozen first-wave contracts](FIRST_WAVE.md) for reference validation details.
+
 The six-qubit route is checked as a complete operator, allowing one global phase for the whole operator. The eight- and twelve-qubit routes use the three frozen full-output probes and provide limited evidence rather than an equivalence proof. The common evaluator computes actual full-CZ count and two-body dependency depth. No optimality claim follows from those values.
 
 ## Public native methods and component attribution

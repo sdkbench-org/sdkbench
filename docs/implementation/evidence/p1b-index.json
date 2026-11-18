@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-18",
+  "protocol_revision": "0.1-candidate-1",
+  "sdk_versions": {
+    "cirq": "1.7.0",
+    "flagquantum": "0.3.1",
+    "qiskit": "2.6.2"
+  },
+  "extensions": {
+    "qiskit-algorithms": "0.4.0"
+  },
+  "archives": [
+    {
+      "file": "p1b-full-7037884.json.gz",
+      "sha256": "13760682f5d8d8b96c40e9f3060ff437ed31508e6079b6a5c31a79e4564f18b9",
+      "github_run_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44268649442",
+      "source_commit": "7037884603c75f3cd9e65ee35e247b60ccf04bec",
+      "blocks": 240,
+      "measured_records": 720,
+      "warmups": 480,
+      "files_verified": 728,
+      "scope": "Complete ten-block protocol for all eight frozen instances and every registered SDK.",
+      "case_status_counts": {
+        "accepted": 21,
+        "unsupported": 3
+      },
+      "measured_status_counts": {
+        "accepted": 630,
+        "unsupported": 90
+      },
+      "warmup_status_counts": {
+        "accepted": 420,
+        "unsupported": 60
+      },
+      "workflow_status_counts": {
+        "accepted": 8,
+        "unsupported": 1
+      }
+    }
+  ],
+  "publication_eligible": false,
+  "limitations": [
+    "Observed engineering CI host/image is unsealed.",
+    "Cirq-core 1.7.0 gradients remain unsupported; no claim about every ecosystem stack.",
+    "Gradient request/forward-call audit units differ; internal state evolutions are not comparable counts.",
+    "Eight- and twelve-qubit route validation uses frozen probes, not a complete operator proof.",
+    "This is not a global SDK ranking or a hardware experiment."
+  ]
+}
