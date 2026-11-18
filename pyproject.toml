@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sdkbench"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible SDK performance and correctness benchmarks, starting with quantum development kits"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -34,6 +34,7 @@ Issues = "https://github.com/sdkbench-org/sdkbench/issues"
 
 [project.scripts]
 sdkbench = "sdkbench.cli:main"
+sdkbench-p0 = "sdkbench.p0.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -34,3 +34,29 @@ jobs:
       - run: python -m build
       - run: python -m twine check --strict dist/*
       - run: sdkbench run --sdk qiskit --sdk cirq --qubits 4 --repeats 2 --output smoke.json --csv smoke.csv
+
+  p0-linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev]'
+      - name: Delegate a disposable cgroup subtree on the CI VM
+        run: |
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-p0-ci
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p0-ci/cgroup.subtree_control'
+          sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p0-ci
+      - name: Exercise real kernel controls and worker fault handling
+        run: python -m pytest tests/test_p0_supervisor.py -v --junitxml=p0-linux.xml
+        env:
+          SDKBENCH_TEST_CGROUP: /sys/fs/cgroup/sdkbench-p0-ci
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+      - name: Check cleanup
+        if: always()
+        run: |
+          test -z "$(find /sys/fs/cgroup/sdkbench-p0-ci -mindepth 1 -type d -print)"
+          sudo rmdir /sys/fs/cgroup/sdkbench-p0-ci

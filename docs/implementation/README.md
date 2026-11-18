@@ -1,9 +1,10 @@
 # SDKBench implementation plan
 
-This candidate plan translates the [requirements baseline](../requirements/README.md) into a delivery sequence. It preserves all 92 task families and selects ten user workflows with 24 concrete first-wave instances. The documents and reference fixtures are implemented; participant adapters, independent reviewer approval, resolved participant environments and study results are not. The existing SDKBench 0.1 timing harness does not execute this protocol.
+This candidate plan translates the [requirements baseline](../requirements/README.md) into a delivery sequence. It preserves all 92 task families and selects ten user workflows with 24 concrete first-wave instances. The documents, reference fixtures and [P0 technical foundation](P0_FOUNDATION.md) are implemented: result contracts, independent evaluators, a strict Linux resource runner and qualification tests. Participant adapters, independent reviewer approval, resolved participant environments and study results are not. The existing SDKBench 0.1 timing harness does not execute this protocol.
 
 | Document | Decision it supports |
 | --- | --- |
+| [P0 foundation](P0_FOUNDATION.md) | Implemented contracts, evaluators, resource controls, tests and remaining review gates |
 | [Roadmap](ROADMAP.md) | Phase goals, dependencies, deliverables and exit gates |
 | [Priorities](PRIORITIES.md) | Why these needs come first and which needs remain deferred |
 | [Phase assignments](PHASE_ASSIGNMENTS.md) / [priority register](priorities.csv) | Every task's phase, need judgment and links to user/capability requirements |

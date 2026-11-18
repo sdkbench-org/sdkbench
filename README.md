@@ -11,7 +11,7 @@
 
 SDKBench generates deterministic circuit workloads, runs them through native SDK APIs, records raw timings and summary statistics, and checks results against an independent NumPy statevector oracle. The first release supports **Qiskit** and **Cirq**, with a built-in reference adapter for validation and harness development.
 
-Version 0.1.0 provides working benchmarks, not a comprehensive SDK ranking. The generators, evaluator and SDK adapters are independently implemented in this repository. No cloud account, API key, quantum device or network access is required to run benchmarks.
+Version 0.2.0 includes the legacy timing harness and the [P0 foundation](docs/implementation/P0_FOUNDATION.md) for the candidate task protocol. It does not establish a comprehensive SDK ranking. The generators, evaluator and SDK adapters are independently implemented in this repository. No cloud account, API key, quantum device or network access is required to run benchmarks.
 
 ## Requirements and task design
 
