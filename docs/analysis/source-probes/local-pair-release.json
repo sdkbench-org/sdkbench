@@ -1,0 +1,154 @@
+{
+  "scope": "Local correctness/cost reproducer; no cgroup or speed qualification.",
+  "sdk_version": "0.3.1",
+  "sdk_import_file": "/Users/baai/Documents/liuwei/sdkbench/.venv/lib/python3.12/site-packages/flagquantum/__init__.py",
+  "native_module": "flagquantum.compiler.native_gate_legalization",
+  "post_basis_optimization": true,
+  "outcomes": [
+    {
+      "input": "native_swap_then_reversed_cx",
+      "full_cz_count": 4,
+      "pre_native_opcodes": {
+        "swap": 1,
+        "cx": 1
+      },
+      "output_operations": [
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        }
+      ],
+      "full_operator_max_error": 6.661338147750939e-16,
+      "final_layout": [
+        0,
+        1
+      ],
+      "compile_wall_seconds": 0.003839000011794269
+    },
+    {
+      "input": "equivalent_two_cx",
+      "full_cz_count": 2,
+      "pre_native_opcodes": {
+        "cx": 2
+      },
+      "output_operations": [
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            0
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        },
+        {
+          "name": "cz",
+          "qubits": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "h",
+          "qubits": [
+            1
+          ]
+        }
+      ],
+      "full_operator_max_error": 3.3306690738754696e-16,
+      "final_layout": [
+        0,
+        1
+      ],
+      "compile_wall_seconds": 0.0008117500110529363
+    }
+  ]
+}

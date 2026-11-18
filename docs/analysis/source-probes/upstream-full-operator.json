@@ -1,0 +1,541 @@
+{
+  "scope": "Local source-checkout public-API probe only; not the registered released-wheel cohort; no cgroup qualification or timing ranking.",
+  "git_sha": "305b58f5f1d862cdad0770ffdd35dfaf1713ee67",
+  "import_file": "/private/tmp/sdkbench-fq-upstream-routing-review/flagquantum/__init__.py",
+  "sdk_version": "0.4.0",
+  "source_api": "flagquantum.compiler.lowering.native_gate_legalization.legalize_native_gates",
+  "outcomes": [
+    {
+      "post_basis_optimization": false,
+      "input_id": "MICRO-SWAP-CX-SAME",
+      "payload": {
+        "operations": [
+          {
+            "name": "ry",
+            "qubits": [
+              0
+            ],
+            "angle": 0.071
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              1
+            ],
+            "angle": 0.142
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              2
+            ],
+            "angle": 0.21299999999999997
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              3
+            ],
+            "angle": 0.284
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              4
+            ],
+            "angle": 0.355
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              5
+            ],
+            "angle": 0.42599999999999993
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          }
+        ],
+        "final_layout": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "compile_wall_seconds": 0.03893974999664351
+      },
+      "validation": {
+        "max_semantic_error": 2.220446049250313e-16,
+        "full_cz_count": 2,
+        "two_body_dependency_depth": 2,
+        "verification": "full-operator"
+      }
+    },
+    {
+      "post_basis_optimization": false,
+      "input_id": "MICRO-SWAP-CX-REVERSED",
+      "payload": {
+        "operations": [
+          {
+            "name": "ry",
+            "qubits": [
+              0
+            ],
+            "angle": 0.071
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              1
+            ],
+            "angle": 0.142
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              2
+            ],
+            "angle": 0.21299999999999997
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              3
+            ],
+            "angle": 0.284
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              4
+            ],
+            "angle": 0.355
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              5
+            ],
+            "angle": 0.42599999999999993
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          }
+        ],
+        "final_layout": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "compile_wall_seconds": 0.0012804580037482083
+      },
+      "validation": {
+        "max_semantic_error": 5.551115123125783e-16,
+        "full_cz_count": 4,
+        "two_body_dependency_depth": 4,
+        "verification": "full-operator"
+      }
+    },
+    {
+      "post_basis_optimization": true,
+      "input_id": "MICRO-SWAP-CX-SAME",
+      "payload": {
+        "operations": [
+          {
+            "name": "ry",
+            "qubits": [
+              0
+            ],
+            "angle": 0.071
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": 3.141592653589793
+          },
+          {
+            "name": "rx",
+            "qubits": [
+              1
+            ],
+            "angle": 1.5707963267948966
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": -1.7127963267948967
+          },
+          {
+            "name": "rx",
+            "qubits": [
+              1
+            ],
+            "angle": 1.5707963267948966
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": -3.141592653589793
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              2
+            ],
+            "angle": 0.21299999999999997
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              3
+            ],
+            "angle": 0.284
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              4
+            ],
+            "angle": 0.355
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              5
+            ],
+            "angle": 0.42599999999999993
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          }
+        ],
+        "final_layout": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "compile_wall_seconds": 0.004302624991396442
+      },
+      "validation": {
+        "max_semantic_error": 2.7188729646011183e-16,
+        "full_cz_count": 2,
+        "two_body_dependency_depth": 2,
+        "verification": "full-operator"
+      }
+    },
+    {
+      "post_basis_optimization": true,
+      "input_id": "MICRO-SWAP-CX-REVERSED",
+      "payload": {
+        "operations": [
+          {
+            "name": "ry",
+            "qubits": [
+              0
+            ],
+            "angle": 0.071
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": 3.141592653589793
+          },
+          {
+            "name": "rx",
+            "qubits": [
+              1
+            ],
+            "angle": 1.5707963267948966
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": -1.7127963267948967
+          },
+          {
+            "name": "rx",
+            "qubits": [
+              1
+            ],
+            "angle": 1.5707963267948966
+          },
+          {
+            "name": "rz",
+            "qubits": [
+              1
+            ],
+            "angle": -3.141592653589793
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              2
+            ],
+            "angle": 0.21299999999999997
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              3
+            ],
+            "angle": 0.284
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              4
+            ],
+            "angle": 0.355
+          },
+          {
+            "name": "ry",
+            "qubits": [
+              5
+            ],
+            "angle": 0.42599999999999993
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              1
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          },
+          {
+            "name": "cz",
+            "qubits": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "h",
+            "qubits": [
+              0
+            ]
+          }
+        ],
+        "final_layout": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "compile_wall_seconds": 0.004652749979868531
+      },
+      "validation": {
+        "max_semantic_error": 5.768601966698979e-16,
+        "full_cz_count": 4,
+        "two_body_dependency_depth": 4,
+        "verification": "full-operator"
+      }
+    }
+  ]
+}

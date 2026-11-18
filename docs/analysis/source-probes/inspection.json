@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-18T09:21:45.412575+00:00",
+  "released_sdk_version": "0.3.1",
+  "released_file_sha256": {
+    "compiler/pipeline.py": "feffeb137fb4fdcd6afc4b29a3ae59ef77c7dc5bcac7fdc71b5d0dc53263d7c0",
+    "compiler/routing.py": "08d26cb1085ca9914c68770b7b7e41abcca1872b6831969f129d37c9115c6958",
+    "compiler/layout.py": "c682756f16ba079e66fc4bd2f4c3dd3c1f50f81195d7e4f80cc66b37ad9d69a6",
+    "compiler/native_gate_legalization.py": "69cf462d047f5673800b0b049d8325472f2f225e280ea1a6f2604d0e1fffe0e1",
+    "compiler/two_qubit_optimization.py": "9519599214e681db7e0038b8b84cfcc4c170e8aed375bc3c6901ea8ab554862d"
+  },
+  "upstream_commit": "305b58f5f1d862cdad0770ffdd35dfaf1713ee67",
+  "upstream_version": "0.4.0",
+  "upstream_file_sha256": {
+    "flagquantum/compiler/pipeline.py": "e78753518891826281388f43d3140f5f76726f0d5ecb1677bec348a40ab413ab",
+    "flagquantum/compiler/topology/routing.py": "7425aaa807499ebab6cbb9ff66f0e2e5da4243f19437723ce52b3f2e2e87e0e0",
+    "flagquantum/compiler/topology/layout.py": "59849d0c42b687bcbca5a840fdcad4856624f6aea13eb38b24ab1e596d8450a6",
+    "flagquantum/compiler/lowering/native_gate_legalization.py": "359981e0d57bb5286984dcb23217146fdd3b198228e3efc7e2ca37e04b9036e2",
+    "flagquantum/compiler/optimization/two_qubit_optimization.py": "fa9a44bc53d7ec137fad9f9ed28a5a2ff5e010b9b37432a2543c30260f7bb1b8"
+  },
+  "live_pypi_observation": {
+    "url": "https://pypi.org/pypi/flagquantum/json",
+    "latest_version": "0.3.1",
+    "has_0_4_0_release": false,
+    "method": "Live urllib HTTPS request; web-search cache was obsolete and was not used as release evidence."
+  },
+  "scope": "Local source inspection and full-operator reproducer; not a cgroup-qualified cohort result or timing comparison.",
+  "upstream_compatibility_note": "The released native_gate_legalization module path is absent in this source snapshot. The source probe explicitly selects compiler.lowering.native_gate_legalization; no source is patched.",
+  "observations": [
+    "The released expert compiler defaults to restore_after_each_gate.",
+    "The released auto selector considers restore_after_each_gate and persistent_layout, not SABRE.",
+    "The inspected upstream 0.4.0 selector already includes SABRE.",
+    "The reversed SWAP/CX local block remains at four CZs in both inspected versions, while an independently equivalent two-CX input compiles to two CZs."
+  ]
+}
