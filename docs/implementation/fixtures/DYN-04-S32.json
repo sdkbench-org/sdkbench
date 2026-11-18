@@ -1,0 +1,2454 @@
+{
+  "hamiltonian": "-sum_{q=0}^{n-2} Zq Z(q+1) - 0.7 sum_q Xq; open boundary; hbar=1; J=1",
+  "initial_basis_index": 10,
+  "n_qubits": 4,
+  "operations": [
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -0.030624999999999996,
+      "name": "rx",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -0.021875,
+      "name": "rzz",
+      "qubits": [
+        2,
+        3
+      ]
+    }
+  ],
+  "pauli_words": [
+    "ZIII",
+    "XIII",
+    "IZII",
+    "IXII",
+    "IIZI",
+    "IIXI",
+    "IIIZ",
+    "IIIX",
+    "ZZII",
+    "IZZI",
+    "IIZZ"
+  ],
+  "steps": 32,
+  "time": 0.7
+}

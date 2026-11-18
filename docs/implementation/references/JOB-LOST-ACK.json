@@ -1,0 +1,9 @@
+{
+  "duplicate_jobs_allowed": 0,
+  "method": "independent finite-state transition table",
+  "required_job_ids": [
+    "job-001"
+  ],
+  "required_submission_count": 1,
+  "required_terminal_state": "completed"
+}

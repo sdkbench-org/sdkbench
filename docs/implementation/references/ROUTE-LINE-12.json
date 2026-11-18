@@ -1,0 +1,9 @@
+{
+  "digest_role": "artifact audit only, never a floating-point acceptance test",
+  "method": "independent full-state propagation; dense small-operator audit",
+  "probe_state_audit_sha256": [
+    "287cb81419c039b00d7a35d57e8ab74b4af7b57cd9ffa2203c571a44da4bfdfb",
+    "386cc356be9e83eb6ea5aab48e3618ae82a32e80086264bbdd6ac90446981baf",
+    "c03ea1318d90eab8b9da640c25c028377536856fe73fb72cbca02c77dc0c635a"
+  ]
+}

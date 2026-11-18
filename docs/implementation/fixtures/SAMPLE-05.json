@@ -1,0 +1,62 @@
+{
+  "category_encoding": "all n logical bits; integer index=sum(bit(q)*2**q); register normalization is mandatory",
+  "independent_blocks": 10,
+  "n_qubits": 5,
+  "operations": [
+    {
+      "angle": 0.31,
+      "name": "ry",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": 0.83,
+      "name": "ry",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": 1.19,
+      "name": "ry",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": 0.57,
+      "name": "ry",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": 0.97,
+      "name": "ry",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        4
+      ]
+    }
+  ],
+  "record_mapping": {
+    "register_a": [
+      4,
+      0
+    ],
+    "register_b": [
+      1,
+      2,
+      3
+    ]
+  },
+  "seed_rule": "roadmap.json execution_profile.stochastic_seed_rule",
+  "shots_per_replicate": 65536
+}

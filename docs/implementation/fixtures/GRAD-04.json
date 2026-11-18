@@ -1,0 +1,240 @@
+{
+  "n_qubits": 4,
+  "operations": [
+    {
+      "name": "h",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "x",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 0,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 1,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 1,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 2,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 2,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 3,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 3,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 0,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 4,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 5,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 5,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 6,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 6,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 7,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 7,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 4,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 8,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 9,
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 9,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 10,
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 10,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 11,
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "ry",
+      "parameter": 11,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "rz",
+      "parameter": 8,
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        3
+      ]
+    }
+  ],
+  "parameters": [
+    0.0,
+    1e-07,
+    -0.3348748442843886,
+    0.60667269639584,
+    -0.6093224782595376,
+    -0.12462626445915828,
+    0.6688008911854556,
+    -0.6676657193934208,
+    0.760918294662644,
+    -0.8719567941151791,
+    0.25588655505206565,
+    0.28278783818732284
+  ],
+  "pauli_words": [
+    "ZIII",
+    "XXXX",
+    "ZIIZ"
+  ],
+  "shared_occurrences_per_parameter": 2
+}

@@ -1,0 +1,900 @@
+{
+  "ancillas_allowed": 0,
+  "final_layout": "permitted only with explicit logical reconstruction",
+  "initial_layout": "identity",
+  "n_qubits": 8,
+  "operations": [
+    {
+      "angle": 2.9703550288626963,
+      "name": "ry",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "angle": -2.9728125876680687,
+      "name": "ry",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "angle": -0.20602164493244937,
+      "name": "ry",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "angle": -1.7885592802949497,
+      "name": "ry",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "angle": 1.391410978894467,
+      "name": "ry",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "angle": -3.031881639311344,
+      "name": "ry",
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "angle": 1.8939494242390413,
+      "name": "ry",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "angle": -2.467868031189304,
+      "name": "ry",
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "angle": -2.1147083059487297,
+      "name": "rz",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        6,
+        0
+      ]
+    },
+    {
+      "angle": 2.0676303778508,
+      "name": "rz",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        3,
+        6
+      ]
+    },
+    {
+      "angle": 0.7269466283607317,
+      "name": "rz",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        4
+      ]
+    },
+    {
+      "angle": 1.5738308718437353,
+      "name": "rz",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        5,
+        2
+      ]
+    },
+    {
+      "angle": 0.2915643381592274,
+      "name": "rz",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        0
+      ]
+    },
+    {
+      "angle": -3.0736527277471697,
+      "name": "rz",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        7,
+        6
+      ]
+    },
+    {
+      "angle": 1.917049199892382,
+      "name": "rz",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        4,
+        5
+      ]
+    },
+    {
+      "angle": 1.4943011250621983,
+      "name": "rz",
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        1,
+        3
+      ]
+    },
+    {
+      "angle": 0.719211576275919,
+      "name": "rz",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        6,
+        1
+      ]
+    },
+    {
+      "angle": 2.8631059389555134,
+      "name": "rz",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        3,
+        7
+      ]
+    },
+    {
+      "angle": -1.3310553247112082,
+      "name": "rz",
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        5
+      ]
+    },
+    {
+      "angle": -0.5349301840587499,
+      "name": "rz",
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        5,
+        3
+      ]
+    },
+    {
+      "angle": 1.4129605171441917,
+      "name": "rz",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        1
+      ]
+    },
+    {
+      "angle": 0.38861023917322607,
+      "name": "rz",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        7,
+        0
+      ]
+    },
+    {
+      "angle": 1.2872111984550685,
+      "name": "rz",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        4,
+        6
+      ]
+    },
+    {
+      "angle": -0.37922609352340453,
+      "name": "rz",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        1,
+        4
+      ]
+    },
+    {
+      "angle": 2.1375717331455117,
+      "name": "rz",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        6,
+        2
+      ]
+    },
+    {
+      "angle": 2.502499058558122,
+      "name": "rz",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        3,
+        0
+      ]
+    },
+    {
+      "angle": 2.552669633474126,
+      "name": "rz",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        6
+      ]
+    },
+    {
+      "angle": -0.9314397940818647,
+      "name": "rz",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        5,
+        4
+      ]
+    },
+    {
+      "angle": -1.940578236054312,
+      "name": "rz",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "angle": -2.910657523228247,
+      "name": "rz",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        7,
+        1
+      ]
+    },
+    {
+      "angle": 1.4093556908233928,
+      "name": "rz",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        4,
+        7
+      ]
+    },
+    {
+      "angle": 2.10841667951406,
+      "name": "rz",
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        1,
+        5
+      ]
+    },
+    {
+      "angle": 2.9408601364529674,
+      "name": "rz",
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        6,
+        3
+      ]
+    },
+    {
+      "angle": -1.1434283643753789,
+      "name": "rz",
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        3,
+        1
+      ]
+    },
+    {
+      "angle": 1.7066477453348845,
+      "name": "rz",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        0,
+        7
+      ]
+    },
+    {
+      "angle": -0.08465006501305576,
+      "name": "rz",
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        5,
+        6
+      ]
+    },
+    {
+      "angle": 0.008760125536546329,
+      "name": "rz",
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        2,
+        4
+      ]
+    },
+    {
+      "angle": -2.1015461291472604,
+      "name": "rz",
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        7,
+        2
+      ]
+    },
+    {
+      "angle": 2.4445983876423476,
+      "name": "rz",
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "name": "cx",
+      "qubits": [
+        4,
+        0
+      ]
+    },
+    {
+      "angle": 2.980648400665695,
+      "name": "rz",
+      "qubits": [
+        0
+      ]
+    }
+  ],
+  "probe_preparations": [
+    [
+      {
+        "angle": -1.0185377525954145,
+        "name": "ry",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": -0.925618655911465,
+        "name": "rz",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": -0.20915400246175922,
+        "name": "ry",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": 1.5880324428697041,
+        "name": "rz",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": 0.01195687530003989,
+        "name": "ry",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": -3.037479221976021,
+        "name": "rz",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": 1.9468231515357508,
+        "name": "ry",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": 3.025465730461666,
+        "name": "rz",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": 2.2919287914669506,
+        "name": "ry",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": -2.5860603036021885,
+        "name": "rz",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": 0.2907624519294436,
+        "name": "ry",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": -2.1405183248898445,
+        "name": "rz",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": 0.4286043258663149,
+        "name": "ry",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": -2.6745670201719944,
+        "name": "rz",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": 2.905047303232486,
+        "name": "ry",
+        "qubits": [
+          7
+        ]
+      },
+      {
+        "angle": 2.5918552833352972,
+        "name": "rz",
+        "qubits": [
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "angle": 1.7285344108546257,
+        "name": "ry",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": -2.6054169271710585,
+        "name": "rz",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": 1.7445270598101337,
+        "name": "ry",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": 2.209566512319391,
+        "name": "rz",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": 0.5981276851567637,
+        "name": "ry",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": -0.765971924555863,
+        "name": "rz",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": -1.6180720591267888,
+        "name": "ry",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": 2.4146650781877836,
+        "name": "rz",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": -0.9522261036073458,
+        "name": "ry",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": 0.30229506516537036,
+        "name": "rz",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": 2.142250863834368,
+        "name": "ry",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": 3.057742490278721,
+        "name": "rz",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": -1.8168914029944627,
+        "name": "ry",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": -0.7933982109692099,
+        "name": "rz",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": -0.9611702170212743,
+        "name": "ry",
+        "qubits": [
+          7
+        ]
+      },
+      {
+        "angle": -2.2422036290105702,
+        "name": "rz",
+        "qubits": [
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "angle": 1.946237736890217,
+        "name": "ry",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": -2.956886450071969,
+        "name": "rz",
+        "qubits": [
+          0
+        ]
+      },
+      {
+        "angle": -0.36978909884064337,
+        "name": "ry",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": -2.1361301798212295,
+        "name": "rz",
+        "qubits": [
+          1
+        ]
+      },
+      {
+        "angle": 0.22078379312834734,
+        "name": "ry",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": 3.029904333402325,
+        "name": "rz",
+        "qubits": [
+          2
+        ]
+      },
+      {
+        "angle": -1.4236408848312767,
+        "name": "ry",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": 0.5880177014616841,
+        "name": "rz",
+        "qubits": [
+          3
+        ]
+      },
+      {
+        "angle": -2.2756988849718454,
+        "name": "ry",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": -1.4867141712769154,
+        "name": "rz",
+        "qubits": [
+          4
+        ]
+      },
+      {
+        "angle": 0.8554391162882005,
+        "name": "ry",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": -2.0112548383302795,
+        "name": "rz",
+        "qubits": [
+          5
+        ]
+      },
+      {
+        "angle": 3.126412887361857,
+        "name": "ry",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": 1.8320135750713444,
+        "name": "rz",
+        "qubits": [
+          6
+        ]
+      },
+      {
+        "angle": -0.07848010726387467,
+        "name": "ry",
+        "qubits": [
+          7
+        ]
+      },
+      {
+        "angle": -2.5214392925331905,
+        "name": "rz",
+        "qubits": [
+          7
+        ]
+      }
+    ]
+  ],
+  "target_basis": "arbitrary one-qubit unitaries and full CZ only",
+  "target_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      7
+    ]
+  ],
+  "verification": "full small operator at n=6; three full-output probe states at n=8,12"
+}

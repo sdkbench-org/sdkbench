@@ -19,6 +19,8 @@ SDKBench is developing a task-first, participant-neutral requirements baseline. 
 
 The catalog describes user needs across computing models and software roles. It is a requirements baseline, not a claim that the current package implements those tasks or that any SDK supports them. [Governance rules](docs/requirements/GOVERNANCE.md) separate applicability, evidence, attribution and comparison from participant preferences.
 
+The [implementation roadmap](docs/implementation/README.md) assigns all 92 task families to phases and specifies ten first-wave workflows with 24 input/reference fixtures, acceptance thresholds, resource caps and comparison cohorts. This is a candidate protocol, not benchmark results or an implemented replacement for the 0.1 harness.
+
 ## Install
 
 Python 3.11 or newer is required.

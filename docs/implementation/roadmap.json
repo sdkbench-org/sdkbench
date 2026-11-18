@@ -1,0 +1,1847 @@
+{
+  "schema_version": 1,
+  "protocol_id": "sdkbench-first-wave",
+  "protocol_revision": "0.1-candidate-1",
+  "date": "2026-11-18",
+  "requirements_version": "0.1",
+  "requirements_catalog_sha256": "f691879229302d17ef1c37c1e56989542d072d95018c867411c837d285fe2030",
+  "status": "Parameterized candidate specification; release review, resolved participant environments and future adapters are not claimed complete.",
+  "priority_formula": "4*outcome_impact + 3*wrong_answer_consequence + 2*cross_journey_reuse; ordinal planning judgments, not a measured demand index; delivery readiness is separate.",
+  "phases": [
+    {
+      "id": "P0",
+      "title": "Qualify the measurement system",
+      "purpose": "No participant performance results are released before trustworthy fixtures, independent references, evaluators, provenance and failure accounting exist."
+    },
+    {
+      "id": "P1",
+      "title": "Publish the first bounded CPU workflow study",
+      "purpose": "Implement and evaluate the 24 specified local/offline instances. Report task/cohort outcomes, not a universal SDK rank."
+    },
+    {
+      "id": "P2",
+      "title": "Expand scientific and computing-model coverage",
+      "purpose": "Advance approximation/noise/applications and independently eligible QEC, pulse, analog, photonic, annealing, mixed-dimensional and measurement-based lanes."
+    },
+    {
+      "id": "P3",
+      "title": "Measure useful capacity and operational scaling",
+      "purpose": "Add matched-device accelerators, independent-work parallelism, state/tensor partitioning and restart studies with real resource telemetry."
+    },
+    {
+      "id": "P4",
+      "title": "Validate controlled live workflows and external replication",
+      "purpose": "Add separately authorized acquisition, prospective model validation, drift-aware repetition and independently reproduced public evidence."
+    }
+  ],
+  "task_assignments": [
+    {
+      "task_id": "T001",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 3,
+      "need_score": 24,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T002",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 3,
+      "need_score": 24,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T003",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T004",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 3,
+      "need_score": 24,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T005",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 3,
+      "need_score": 24,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T006",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T007",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T008",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T009",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T010",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T011",
+      "phase": "P0",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T012",
+      "phase": "P1",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T013",
+      "phase": "P0",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T014",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T015",
+      "phase": "P0",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T016",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T017",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T018",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T019",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T020",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 27,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T021",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T022",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T023",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T024",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T025",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T026",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 19,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T027",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 19,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T028",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 19,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T029",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 19,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T030",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 19,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T031",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T032",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T033",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T034",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T035",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T036",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T037",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T038",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T039",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T040",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T041",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T042",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T043",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T044",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T045",
+      "phase": "P4",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Its acquisition or prospective-validation claim needs actual target access, authorized budget, timing/calibration context and a frozen protocol; offline contract work may begin earlier."
+    },
+    {
+      "task_id": "T046",
+      "phase": "P4",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Its acquisition or prospective-validation claim needs actual target access, authorized budget, timing/calibration context and a frozen protocol; offline contract work may begin earlier."
+    },
+    {
+      "task_id": "T047",
+      "phase": "P4",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Its acquisition or prospective-validation claim needs actual target access, authorized budget, timing/calibration context and a frozen protocol; offline contract work may begin earlier."
+    },
+    {
+      "task_id": "T048",
+      "phase": "P1",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T049",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 27,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T050",
+      "phase": "P4",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Its acquisition or prospective-validation claim needs actual target access, authorized budget, timing/calibration context and a frozen protocol; offline contract work may begin earlier."
+    },
+    {
+      "task_id": "T051",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T052",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T053",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T054",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T055",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T056",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T057",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T058",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T059",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T060",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T061",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T062",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T063",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T064",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T065",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T066",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T067",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T068",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T069",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T070",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T071",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T072",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T073",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T074",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T075",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T076",
+      "phase": "P3",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "The need is important, but useful capacity/scaling claims require a fixed resource site, validated single-resource outputs and communication/recovery telemetry."
+    },
+    {
+      "task_id": "T077",
+      "phase": "P3",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "The need is important, but useful capacity/scaling claims require a fixed resource site, validated single-resource outputs and communication/recovery telemetry."
+    },
+    {
+      "task_id": "T078",
+      "phase": "P3",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "The need is important, but useful capacity/scaling claims require a fixed resource site, validated single-resource outputs and communication/recovery telemetry."
+    },
+    {
+      "task_id": "T079",
+      "phase": "P3",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "The need is important, but useful capacity/scaling claims require a fixed resource site, validated single-resource outputs and communication/recovery telemetry."
+    },
+    {
+      "task_id": "T080",
+      "phase": "P3",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 2,
+      "cross_journey_reuse": 1,
+      "need_score": 20,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "The need is important, but useful capacity/scaling claims require a fixed resource site, validated single-resource outputs and communication/recovery telemetry."
+    },
+    {
+      "task_id": "T081",
+      "phase": "P1",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T082",
+      "phase": "P1",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "First-wave portfolio member: a bounded local/offline user outcome with a concrete independent reference and fixed budget."
+    },
+    {
+      "task_id": "T083",
+      "phase": "P0",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T084",
+      "phase": "P0",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T085",
+      "phase": "P2",
+      "outcome_impact": 2,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T086",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 27,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T087",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T088",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T089",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T090",
+      "phase": "P0",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 3,
+      "need_score": 27,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Trust or operational prerequisite reused by task evaluators, adapters, evidence bundles or acceptance decisions; does not by itself certify the full family."
+    },
+    {
+      "task_id": "T091",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 1,
+      "need_score": 23,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    },
+    {
+      "task_id": "T092",
+      "phase": "P2",
+      "outcome_impact": 3,
+      "wrong_answer_consequence": 3,
+      "cross_journey_reuse": 2,
+      "need_score": 25,
+      "score_evidence": "Maintainer planning judgment from the task contract; not measured demand frequency or validated stakeholder research.",
+      "rationale": "Retained as a user requirement. Additional fixture/reference or model-specific expert review is needed; no absence in a participant is used as an exclusion."
+    }
+  ],
+  "workflows": [
+    {
+      "id": "W01",
+      "title": "Reuse a parameterized experiment",
+      "primary_task": "T006",
+      "kind": "parameter",
+      "cohort": "exact",
+      "instances": [
+        "PARAM-04",
+        "PARAM-12",
+        "PARAM-24"
+      ],
+      "user_outcome": "A researcher evaluates a reusable experiment at seven parameter bindings and obtains all requested local moments, without leaking a previous binding or state.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W02",
+      "title": "Run an adaptive measurement protocol",
+      "primary_task": "T009",
+      "kind": "adaptive",
+      "cohort": "adaptive",
+      "instances": [
+        "ADAPT-TELEPORT",
+        "ADAPT-RESET-LOOP"
+      ],
+      "user_outcome": "An experimenter needs classical feed-forward, bounded stopping and reset semantics to survive execution and result mapping.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W03",
+      "title": "Route an algorithm to legal connectivity",
+      "primary_task": "T017",
+      "kind": "route",
+      "cohort": "compiler",
+      "instances": [
+        "ROUTE-LINE-06",
+        "ROUTE-GRID-08",
+        "ROUTE-LINE-12"
+      ],
+      "user_outcome": "A device user needs a legal compiled program and correctly reconstructed logical outputs, with compile latency and interaction cost exposed.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W04",
+      "title": "Evaluate a many-term observable",
+      "primary_task": "T022",
+      "kind": "observable",
+      "cohort": "exact",
+      "instances": [
+        "OBS-04",
+        "OBS-12",
+        "OBS-20"
+      ],
+      "user_outcome": "A scientist needs every requested expectation and their weighted total at controlled numerical error, including nonlocal and complex-phase-sensitive terms.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W05",
+      "title": "Differentiate a shared-parameter model",
+      "primary_task": "T031",
+      "kind": "gradient",
+      "cohort": "derivative",
+      "instances": [
+        "GRAD-04",
+        "GRAD-08",
+        "GRAD-12"
+      ],
+      "user_outcome": "An optimizer needs a trustworthy multi-output Jacobian with repeated parameter occurrences before it can rely on learning results.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W06",
+      "title": "Train a hybrid regression model",
+      "primary_task": "T032",
+      "kind": "training",
+      "cohort": "learning",
+      "instances": [
+        "TRAIN-04-B16",
+        "TRAIN-08-B32"
+      ],
+      "user_outcome": "A practitioner needs correct minibatch gradients across the quantum/classical boundary and a reproducible training trajectory under a complete evaluation budget.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W07",
+      "title": "Predict physical dynamics observables",
+      "primary_task": "T037",
+      "kind": "dynamics",
+      "cohort": "exact",
+      "instances": [
+        "DYN-04-S32",
+        "DYN-08-S64"
+      ],
+      "user_outcome": "A many-body researcher needs observable predictions for a fixed Hamiltonian and physical time, with software and discretization errors distinguished.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W08",
+      "title": "Sample an asymmetric measurement distribution",
+      "primary_task": "T012",
+      "kind": "sampling",
+      "cohort": "exact",
+      "instances": [
+        "SAMPLE-03",
+        "SAMPLE-05"
+      ],
+      "user_outcome": "A user needs correctly mapped counts whose distribution is equivalent to the requested measurement law, not merely a total shot count.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W09",
+      "title": "Recover work without duplicate submission",
+      "primary_task": "T048",
+      "kind": "job",
+      "cohort": "orchestration",
+      "instances": [
+        "JOB-LOST-ACK",
+        "JOB-PARTIAL-CANCEL"
+      ],
+      "user_outcome": "An experimenter needs to reconcile interrupted work without silently losing records or duplicating paid execution.",
+      "supporting_tasks": []
+    },
+    {
+      "id": "W10",
+      "title": "Round-trip an executable program",
+      "primary_task": "T082",
+      "kind": "roundtrip",
+      "cohort": "interchange",
+      "instances": [
+        "ROUND-QASM2",
+        "ROUND-QASM3"
+      ],
+      "user_outcome": "An integration engineer needs another tool or environment to preserve program, register and adaptive semantics through interchange.",
+      "supporting_tasks": [
+        "T081"
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "PARAM-04",
+      "workflow": "W01",
+      "kind": "parameter",
+      "arguments": {
+        "n": 4
+      },
+      "case_wall_limit_seconds": 120,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Closed-form graph-state local moments; dense Kronecker validation at n=4.",
+      "required_negative": "Swap one binding, drop a repeated binding update, or change a Y sign.",
+      "measurements": "complete seven-binding latency;binding/setup split;peak host memory;all-output maximum error",
+      "fixture": "fixtures/PARAM-04.json",
+      "reference_artifact": "references/PARAM-04.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "PARAM-12",
+      "workflow": "W01",
+      "kind": "parameter",
+      "arguments": {
+        "n": 12
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Closed-form graph-state local moments; dense Kronecker validation at n=4.",
+      "required_negative": "Swap one binding, drop a repeated binding update, or change a Y sign.",
+      "measurements": "complete seven-binding latency;binding/setup split;peak host memory;all-output maximum error",
+      "fixture": "fixtures/PARAM-12.json",
+      "reference_artifact": "references/PARAM-12.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "PARAM-24",
+      "workflow": "W01",
+      "kind": "parameter",
+      "arguments": {
+        "n": 24
+      },
+      "case_wall_limit_seconds": 3600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Closed-form graph-state local moments; dense Kronecker validation at n=4.",
+      "required_negative": "Swap one binding, drop a repeated binding update, or change a Y sign.",
+      "measurements": "complete seven-binding latency;binding/setup split;peak host memory;all-output maximum error",
+      "fixture": "fixtures/PARAM-24.json",
+      "reference_artifact": "references/PARAM-24.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ADAPT-TELEPORT",
+      "workflow": "W02",
+      "kind": "adaptive",
+      "arguments": {
+        "kind": "teleport"
+      },
+      "case_wall_limit_seconds": 1800,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "shots_per_context_per_block": 65536,
+        "independent_process_blocks": 10,
+        "total_variation_margin": 0.04,
+        "workflow_family_error_probability": 0.01,
+        "workflow_total_decisions": 190,
+        "confidence_rule": "upper_TV = empirical_TV + sqrt((K*ln(2)+ln(190/0.01))/(2*N)) + 1e-10; accept each decision only if upper_TV <= 0.04; N=65536; K=8 teleport or 12 reset-loop. All 190 decisions across 18+1 contexts and ten blocks must pass; unused allocation is not recycled."
+      },
+      "reference": "Teleportation identity for every joint branch; independent dense branch-projection density audit for six input states.",
+      "required_negative": "Remove conditional Z, remove conditional X, swap m0/m1, or omit a measured branch.",
+      "measurements": "protocol completion;all-context distribution discrepancy;complete context acquisition time;logical shot/branch accounting",
+      "fixture": "fixtures/ADAPT-TELEPORT.json",
+      "reference_artifact": "references/ADAPT-TELEPORT.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ADAPT-RESET-LOOP",
+      "workflow": "W02",
+      "kind": "adaptive",
+      "arguments": {
+        "kind": "reset-loop"
+      },
+      "case_wall_limit_seconds": 900,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "shots_per_context_per_block": 65536,
+        "independent_process_blocks": 10,
+        "total_variation_margin": 0.04,
+        "workflow_family_error_probability": 0.01,
+        "workflow_total_decisions": 190,
+        "confidence_rule": "upper_TV = empirical_TV + sqrt((K*ln(2)+ln(190/0.01))/(2*N)) + 1e-10; accept each decision only if upper_TV <= 0.04; N=65536; K=8 teleport or 12 reset-loop. All 190 decisions across 18+1 contexts and ten blocks must pass; unused allocation is not recycled."
+      },
+      "reference": "Bounded geometric stopping law with exact reset postcondition and all twelve record categories.",
+      "required_negative": "Fail to reset after success, ignore the third-try cutoff, or drop unsuccessful records.",
+      "measurements": "protocol completion;all-context distribution discrepancy;complete context acquisition time;logical shot/branch accounting",
+      "fixture": "fixtures/ADAPT-RESET-LOOP.json",
+      "reference_artifact": "references/ADAPT-RESET-LOOP.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ROUTE-LINE-06",
+      "workflow": "W03",
+      "kind": "route",
+      "arguments": {
+        "n": 6,
+        "topology": "line"
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "per_compile_wall_limit_seconds": 120,
+        "target": "full CZ and arbitrary one-qubit unitaries on listed undirected edges; no ancillas",
+        "initial_layout": "identity",
+        "final_layout": "allowed only with explicit logical reconstruction",
+        "semantic_atol": 1e-08,
+        "semantic_rtol": 0.0,
+        "normalization_error_limit": 1e-10,
+        "verification": "n=6: full operator up to one global phase; n=8,12: three complete output probe states up to one global phase per probe; probe checks are not a universal equivalence proof",
+        "target_violations_allowed": 0,
+        "primary_quality": "number of physical full CZ interactions; report compile-time/interaction-count Pareto points; no scalar winner"
+      },
+      "reference": "Independent bit-block propagation and separate dense-Kronecker/gate-permutation construction; no optimal-routing oracle is claimed.",
+      "required_negative": "Ignore final layout, emit a nonedge CZ, emit a partial CZ, or erase a noncommuting rotation.",
+      "measurements": "compile wall time;full-CZ count;two-body dependency depth from common scheduling rule;target/semantic failures",
+      "fixture": "fixtures/ROUTE-LINE-06.json",
+      "reference_artifact": "references/ROUTE-LINE-06.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ROUTE-GRID-08",
+      "workflow": "W03",
+      "kind": "route",
+      "arguments": {
+        "n": 8,
+        "topology": "grid-2x4"
+      },
+      "case_wall_limit_seconds": 900,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "per_compile_wall_limit_seconds": 120,
+        "target": "full CZ and arbitrary one-qubit unitaries on listed undirected edges; no ancillas",
+        "initial_layout": "identity",
+        "final_layout": "allowed only with explicit logical reconstruction",
+        "semantic_atol": 1e-08,
+        "semantic_rtol": 0.0,
+        "normalization_error_limit": 1e-10,
+        "verification": "n=6: full operator up to one global phase; n=8,12: three complete output probe states up to one global phase per probe; probe checks are not a universal equivalence proof",
+        "target_violations_allowed": 0,
+        "primary_quality": "number of physical full CZ interactions; report compile-time/interaction-count Pareto points; no scalar winner"
+      },
+      "reference": "Independent bit-block propagation and separate dense-Kronecker/gate-permutation construction; no optimal-routing oracle is claimed.",
+      "required_negative": "Ignore final layout, emit a nonedge CZ, emit a partial CZ, or erase a noncommuting rotation.",
+      "measurements": "compile wall time;full-CZ count;two-body dependency depth from common scheduling rule;target/semantic failures",
+      "fixture": "fixtures/ROUTE-GRID-08.json",
+      "reference_artifact": "references/ROUTE-GRID-08.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ROUTE-LINE-12",
+      "workflow": "W03",
+      "kind": "route",
+      "arguments": {
+        "n": 12,
+        "topology": "line"
+      },
+      "case_wall_limit_seconds": 1800,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "per_compile_wall_limit_seconds": 120,
+        "target": "full CZ and arbitrary one-qubit unitaries on listed undirected edges; no ancillas",
+        "initial_layout": "identity",
+        "final_layout": "allowed only with explicit logical reconstruction",
+        "semantic_atol": 1e-08,
+        "semantic_rtol": 0.0,
+        "normalization_error_limit": 1e-10,
+        "verification": "n=6: full operator up to one global phase; n=8,12: three complete output probe states up to one global phase per probe; probe checks are not a universal equivalence proof",
+        "target_violations_allowed": 0,
+        "primary_quality": "number of physical full CZ interactions; report compile-time/interaction-count Pareto points; no scalar winner"
+      },
+      "reference": "Independent bit-block propagation and separate dense-Kronecker/gate-permutation construction; no optimal-routing oracle is claimed.",
+      "required_negative": "Ignore final layout, emit a nonedge CZ, emit a partial CZ, or erase a noncommuting rotation.",
+      "measurements": "compile wall time;full-CZ count;two-body dependency depth from common scheduling rule;target/semantic failures",
+      "fixture": "fixtures/ROUTE-LINE-12.json",
+      "reference_artifact": "references/ROUTE-LINE-12.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "OBS-04",
+      "workflow": "W04",
+      "kind": "observable",
+      "arguments": {
+        "n": 4
+      },
+      "case_wall_limit_seconds": 120,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Independent complex state propagation and Pauli permutation sums, cross-checked against small dense Pauli matrices.",
+      "required_negative": "Drop a coefficient/observable, conjugate a Y term incorrectly, or silently switch to sampled expectations.",
+      "measurements": "complete 64-term and weighted-sum latency;peak memory;maximum per-output error;state-preparation calls",
+      "fixture": "fixtures/OBS-04.json",
+      "reference_artifact": "references/OBS-04.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "OBS-12",
+      "workflow": "W04",
+      "kind": "observable",
+      "arguments": {
+        "n": 12
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Independent complex state propagation and Pauli permutation sums, cross-checked against small dense Pauli matrices.",
+      "required_negative": "Drop a coefficient/observable, conjugate a Y term incorrectly, or silently switch to sampled expectations.",
+      "measurements": "complete 64-term and weighted-sum latency;peak memory;maximum per-output error;state-preparation calls",
+      "fixture": "fixtures/OBS-12.json",
+      "reference_artifact": "references/OBS-12.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "OBS-20",
+      "workflow": "W04",
+      "kind": "observable",
+      "arguments": {
+        "n": 20
+      },
+      "case_wall_limit_seconds": 3600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "precision": "float64 real / complex128 state arithmetic",
+        "atol": 1e-09,
+        "rtol": 1e-08,
+        "rule": "Every requested finite scalar must satisfy abs(actual-reference) <= atol + rtol*abs(reference); no dropped outputs."
+      },
+      "reference": "Independent complex state propagation and Pauli permutation sums, cross-checked against small dense Pauli matrices.",
+      "required_negative": "Drop a coefficient/observable, conjugate a Y term incorrectly, or silently switch to sampled expectations.",
+      "measurements": "complete 64-term and weighted-sum latency;peak memory;maximum per-output error;state-preparation calls",
+      "fixture": "fixtures/OBS-20.json",
+      "reference_artifact": "references/OBS-20.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "GRAD-04",
+      "workflow": "W05",
+      "kind": "gradient",
+      "arguments": {
+        "n": 4
+      },
+      "case_wall_limit_seconds": 180,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "output_atol": 1e-09,
+        "output_rtol": 1e-08,
+        "jacobian_atol": 2e-07,
+        "jacobian_rtol": 2e-05,
+        "shape": "3 outputs by 3*n shared real parameters",
+        "primary_mode": "Exact expectations. Derivative method must be declared; every shifted/objective evaluation and any external derivative component is charged.",
+        "nonfinite_values_allowed": 0
+      },
+      "reference": "Analytic gate-derivative tangent propagation; small dense five-point stencil with h=1e-4 checked at atol=2e-9, rtol=2e-8.",
+      "required_negative": "Treat shared occurrences as separate independent parameters, return a transposed Jacobian, or detach a parameter.",
+      "measurements": "full-Jacobian latency;primal/derivative call counts;peak memory;componentwise derivative error",
+      "fixture": "fixtures/GRAD-04.json",
+      "reference_artifact": "references/GRAD-04.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "GRAD-08",
+      "workflow": "W05",
+      "kind": "gradient",
+      "arguments": {
+        "n": 8
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "output_atol": 1e-09,
+        "output_rtol": 1e-08,
+        "jacobian_atol": 2e-07,
+        "jacobian_rtol": 2e-05,
+        "shape": "3 outputs by 3*n shared real parameters",
+        "primary_mode": "Exact expectations. Derivative method must be declared; every shifted/objective evaluation and any external derivative component is charged.",
+        "nonfinite_values_allowed": 0
+      },
+      "reference": "Analytic gate-derivative tangent propagation; small dense five-point stencil with h=1e-4 checked at atol=2e-9, rtol=2e-8.",
+      "required_negative": "Treat shared occurrences as separate independent parameters, return a transposed Jacobian, or detach a parameter.",
+      "measurements": "full-Jacobian latency;primal/derivative call counts;peak memory;componentwise derivative error",
+      "fixture": "fixtures/GRAD-08.json",
+      "reference_artifact": "references/GRAD-08.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "GRAD-12",
+      "workflow": "W05",
+      "kind": "gradient",
+      "arguments": {
+        "n": 12
+      },
+      "case_wall_limit_seconds": 1800,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "output_atol": 1e-09,
+        "output_rtol": 1e-08,
+        "jacobian_atol": 2e-07,
+        "jacobian_rtol": 2e-05,
+        "shape": "3 outputs by 3*n shared real parameters",
+        "primary_mode": "Exact expectations. Derivative method must be declared; every shifted/objective evaluation and any external derivative component is charged.",
+        "nonfinite_values_allowed": 0
+      },
+      "reference": "Analytic gate-derivative tangent propagation; small dense five-point stencil with h=1e-4 checked at atol=2e-9, rtol=2e-8.",
+      "required_negative": "Treat shared occurrences as separate independent parameters, return a transposed Jacobian, or detach a parameter.",
+      "measurements": "full-Jacobian latency;primal/derivative call counts;peak memory;componentwise derivative error",
+      "fixture": "fixtures/GRAD-12.json",
+      "reference_artifact": "references/GRAD-12.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "TRAIN-04-B16",
+      "workflow": "W06",
+      "kind": "training",
+      "arguments": {
+        "n": 4,
+        "batch": 16
+      },
+      "case_wall_limit_seconds": 900,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "steps": 48,
+        "learning_rate": 0.03,
+        "optimizer": "plain SGD, no momentum, clipping, regularization or hidden averaging",
+        "loss_atol": 1e-07,
+        "loss_rtol": 1e-05,
+        "parameter_atol": 1e-06,
+        "parameter_rtol": 1e-05,
+        "gradient_atol": 2e-07,
+        "gradient_rtol": 2e-05,
+        "progress_target": "train MSE <= 0.95 * own frozen initial train MSE, separately for all five fixed initializations",
+        "trajectory": "Validate every step against the corresponding stored reference trajectory; report held-out MSE at steps 0 and 48; no tuning on held-out rows.",
+        "complete_budget": "Ten independent process blocks; initializations cycle [11,23,37,51,73] twice; one complete 48-step run per block."
+      },
+      "reference": "Closed-form quantum moments cos(x+theta), independently differentiated classical head and explicit SGD recurrence; full trace stored.",
+      "required_negative": "Collapse the batch before its quantum layer, break the classical/quantum derivative chain, change MSE normalization, or skip/reset optimizer steps.",
+      "measurements": "time to 5% progress;complete 48-step wall time;held-out MSE;calls and peak memory",
+      "fixture": "fixtures/TRAIN-04-B16.json",
+      "reference_artifact": "references/TRAIN-04-B16.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "TRAIN-08-B32",
+      "workflow": "W06",
+      "kind": "training",
+      "arguments": {
+        "n": 8,
+        "batch": 32
+      },
+      "case_wall_limit_seconds": 1800,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "steps": 48,
+        "learning_rate": 0.03,
+        "optimizer": "plain SGD, no momentum, clipping, regularization or hidden averaging",
+        "loss_atol": 1e-07,
+        "loss_rtol": 1e-05,
+        "parameter_atol": 1e-06,
+        "parameter_rtol": 1e-05,
+        "gradient_atol": 2e-07,
+        "gradient_rtol": 2e-05,
+        "progress_target": "train MSE <= 0.95 * own frozen initial train MSE, separately for all five fixed initializations",
+        "trajectory": "Validate every step against the corresponding stored reference trajectory; report held-out MSE at steps 0 and 48; no tuning on held-out rows.",
+        "complete_budget": "Ten independent process blocks; initializations cycle [11,23,37,51,73] twice; one complete 48-step run per block."
+      },
+      "reference": "Closed-form quantum moments cos(x+theta), independently differentiated classical head and explicit SGD recurrence; full trace stored.",
+      "required_negative": "Collapse the batch before its quantum layer, break the classical/quantum derivative chain, change MSE normalization, or skip/reset optimizer steps.",
+      "measurements": "time to 5% progress;complete 48-step wall time;held-out MSE;calls and peak memory",
+      "fixture": "fixtures/TRAIN-08-B32.json",
+      "reference_artifact": "references/TRAIN-08-B32.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "DYN-04-S32",
+      "workflow": "W07",
+      "kind": "dynamics",
+      "arguments": {
+        "n": 4,
+        "steps": 32
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "physics_max_abs_observable_error": 0.002,
+        "digital_ideal_atol": 1e-09,
+        "digital_ideal_rtol": 1e-08,
+        "mode": "Matched second-order product formula, given step count and operation sequence; exact spectral reference is the physical target. Best-available solver selection is a later separate cohort.",
+        "requested_outputs": "all local Z/X moments and all nearest-neighbor ZZ moments at t=0.7; open chain; hbar=1"
+      },
+      "reference": "Dense spectral evolution of an independently assembled TFIM matrix; separate circuit-propagation reference records product-formula bias.",
+      "required_negative": "Change sign/time/boundary, omit outputs, or compare to the digital ideal alone without checking the physical error.",
+      "measurements": "complete evolution-plus-observable time;physical error;software error against digital ideal;memory",
+      "fixture": "fixtures/DYN-04-S32.json",
+      "reference_artifact": "references/DYN-04-S32.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "DYN-08-S64",
+      "workflow": "W07",
+      "kind": "dynamics",
+      "arguments": {
+        "n": 8,
+        "steps": 64
+      },
+      "case_wall_limit_seconds": 1800,
+      "process_memory_limit_gib": 16,
+      "acceptance": {
+        "physics_max_abs_observable_error": 0.002,
+        "digital_ideal_atol": 1e-09,
+        "digital_ideal_rtol": 1e-08,
+        "mode": "Matched second-order product formula, given step count and operation sequence; exact spectral reference is the physical target. Best-available solver selection is a later separate cohort.",
+        "requested_outputs": "all local Z/X moments and all nearest-neighbor ZZ moments at t=0.7; open chain; hbar=1"
+      },
+      "reference": "Dense spectral evolution of an independently assembled TFIM matrix; separate circuit-propagation reference records product-formula bias.",
+      "required_negative": "Change sign/time/boundary, omit outputs, or compare to the digital ideal alone without checking the physical error.",
+      "measurements": "complete evolution-plus-observable time;physical error;software error against digital ideal;memory",
+      "fixture": "fixtures/DYN-08-S64.json",
+      "reference_artifact": "references/DYN-08-S64.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "SAMPLE-03",
+      "workflow": "W08",
+      "kind": "sampling",
+      "arguments": {
+        "n": 3
+      },
+      "case_wall_limit_seconds": 300,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "shots_per_block": 65536,
+        "independent_process_blocks": 10,
+        "total_variation_margin": 0.04,
+        "workflow_family_error_probability": 0.01,
+        "workflow_total_decisions": 20,
+        "confidence_rule": "upper_TV = empirical_TV + sqrt((K*ln(2)+ln(20/0.01))/(2*N)) + 1e-10; accept each decision only if upper_TV <= 0.04; K=2**n including impossible outcomes; all twenty decisions must pass.",
+        "type_rule": "Nonnegative integer counts with exact total shots and exact register/logical mapping; malformed records fail before statistics."
+      },
+      "reference": "Analytic product-rotation probabilities and invertible CNOT permutation; exact small dense check.",
+      "required_negative": "Swap measured registers, alter shot totals, supply probabilities as counts, or inject out-of-alphabet outcomes.",
+      "measurements": "sampling-and-normalization time;distribution upper bound;shots per second;invalid/inconclusive outcomes",
+      "fixture": "fixtures/SAMPLE-03.json",
+      "reference_artifact": "references/SAMPLE-03.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "SAMPLE-05",
+      "workflow": "W08",
+      "kind": "sampling",
+      "arguments": {
+        "n": 5
+      },
+      "case_wall_limit_seconds": 600,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "shots_per_block": 65536,
+        "independent_process_blocks": 10,
+        "total_variation_margin": 0.04,
+        "workflow_family_error_probability": 0.01,
+        "workflow_total_decisions": 20,
+        "confidence_rule": "upper_TV = empirical_TV + sqrt((K*ln(2)+ln(20/0.01))/(2*N)) + 1e-10; accept each decision only if upper_TV <= 0.04; K=2**n including impossible outcomes; all twenty decisions must pass.",
+        "type_rule": "Nonnegative integer counts with exact total shots and exact register/logical mapping; malformed records fail before statistics."
+      },
+      "reference": "Analytic product-rotation probabilities and invertible CNOT permutation; exact small dense check.",
+      "required_negative": "Swap measured registers, alter shot totals, supply probabilities as counts, or inject out-of-alphabet outcomes.",
+      "measurements": "sampling-and-normalization time;distribution upper bound;shots per second;invalid/inconclusive outcomes",
+      "fixture": "fixtures/SAMPLE-05.json",
+      "reference_artifact": "references/SAMPLE-05.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "JOB-LOST-ACK",
+      "workflow": "W09",
+      "kind": "job",
+      "arguments": {
+        "kind": "lost-ack"
+      },
+      "case_wall_limit_seconds": 120,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "unapproved_or_duplicate_submissions_allowed": 0,
+        "identity_or_shot_accounting_errors_allowed": 0,
+        "hidden_retries_allowed": 0,
+        "transport": "Offline deterministic event stub only; no external network, credentials or paid device requests.",
+        "decision": "Required ledger/postconditions must match exactly; partial/cancelled work must remain partial rather than successful completion.",
+        "adapter_rule": "The stub supplies provider events, not missing client reconciliation logic. A participant-specific transport binding must be reviewed before this case is executable."
+      },
+      "reference": "Explicit finite-state/event-ledger tables; positive and fault transitions are fixture data, independent of any client.",
+      "required_negative": "Resubmit after an accepted but unacknowledged request, double-count a repeated result page, or erase cancelled work.",
+      "measurements": "correct reconciliation and classification;duplicate count;handling latency as diagnostic only, not a performance ranking",
+      "fixture": "fixtures/JOB-LOST-ACK.json",
+      "reference_artifact": "references/JOB-LOST-ACK.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "JOB-PARTIAL-CANCEL",
+      "workflow": "W09",
+      "kind": "job",
+      "arguments": {
+        "kind": "partial-cancel"
+      },
+      "case_wall_limit_seconds": 120,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "unapproved_or_duplicate_submissions_allowed": 0,
+        "identity_or_shot_accounting_errors_allowed": 0,
+        "hidden_retries_allowed": 0,
+        "transport": "Offline deterministic event stub only; no external network, credentials or paid device requests.",
+        "decision": "Required ledger/postconditions must match exactly; partial/cancelled work must remain partial rather than successful completion.",
+        "adapter_rule": "The stub supplies provider events, not missing client reconciliation logic. A participant-specific transport binding must be reviewed before this case is executable."
+      },
+      "reference": "Explicit finite-state/event-ledger tables; positive and fault transitions are fixture data, independent of any client.",
+      "required_negative": "Resubmit after an accepted but unacknowledged request, double-count a repeated result page, or erase cancelled work.",
+      "measurements": "correct reconciliation and classification;duplicate count;handling latency as diagnostic only, not a performance ranking",
+      "fixture": "fixtures/JOB-PARTIAL-CANCEL.json",
+      "reference_artifact": "references/JOB-PARTIAL-CANCEL.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ROUND-QASM2",
+      "workflow": "W10",
+      "kind": "roundtrip",
+      "arguments": {
+        "kind": "qasm2"
+      },
+      "case_wall_limit_seconds": 300,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "required_format": "OpenQASM 2.0 static subset",
+        "numeric_atol": 1e-08,
+        "numeric_rtol": 0.0,
+        "register_or_feature_loss_allowed": 0,
+        "verification": "Compare small full premeasurement semantics and exact register permutation for QASM2; enumerate every reachable branch and reset postcondition for QASM3.",
+        "fallback_rule": "Unsupported syntax/profile is unsupported, never a successful parse with omitted features. Conversion work must be performed by registered participant components."
+      },
+      "reference": "Published small text fixture, independent matrix interpretation for QASM2 and exact branch enumeration for QASM3.",
+      "required_negative": "Drop a conditional/reset, reorder classical outputs, erase an angle or report parser success despite unsupported constructs.",
+      "measurements": "semantic/metadata retention;complete parse-export-reimport latency;loss/rejection diagnostics;artifact bytes",
+      "fixture": "fixtures/ROUND-QASM2.json",
+      "reference_artifact": "references/ROUND-QASM2.json",
+      "state": "parameterized-reference-fixture-only"
+    },
+    {
+      "id": "ROUND-QASM3",
+      "workflow": "W10",
+      "kind": "roundtrip",
+      "arguments": {
+        "kind": "qasm3"
+      },
+      "case_wall_limit_seconds": 300,
+      "process_memory_limit_gib": 8,
+      "acceptance": {
+        "required_format": "OpenQASM 3.0 declared measurement/reset/if subset",
+        "numeric_atol": 1e-08,
+        "numeric_rtol": 0.0,
+        "register_or_feature_loss_allowed": 0,
+        "verification": "Compare small full premeasurement semantics and exact register permutation for QASM2; enumerate every reachable branch and reset postcondition for QASM3.",
+        "fallback_rule": "Unsupported syntax/profile is unsupported, never a successful parse with omitted features. Conversion work must be performed by registered participant components."
+      },
+      "reference": "Published small text fixture, independent matrix interpretation for QASM2 and exact branch enumeration for QASM3.",
+      "required_negative": "Drop a conditional/reset, reorder classical outputs, erase an angle or report parser success despite unsupported constructs.",
+      "measurements": "semantic/metadata retention;complete parse-export-reimport latency;loss/rejection diagnostics;artifact bytes",
+      "fixture": "fixtures/ROUND-QASM3.json",
+      "reference_artifact": "references/ROUND-QASM3.json",
+      "state": "parameterized-reference-fixture-only"
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "exact",
+      "purpose": "Exact requested outputs and sampling on local CPU; numeric precision is a task constraint.",
+      "packages": [
+        "flagquantum",
+        "qiskit",
+        "qiskit-aer",
+        "cirq-core",
+        "pennylane",
+        "pennylane-lightning",
+        "cudaq",
+        "qibo",
+        "qibojit",
+        "qulacs",
+        "mindquantum",
+        "tensorcircuit-ng"
+      ]
+    },
+    {
+      "id": "adaptive",
+      "purpose": "Native or registered execution of the specified adaptive programs; no benchmark-side implementation of missing feed-forward.",
+      "packages": [
+        "flagquantum",
+        "qiskit",
+        "qiskit-aer",
+        "cirq-core",
+        "pennylane",
+        "cudaq",
+        "qibo",
+        "mindquantum",
+        "tensorcircuit-ng"
+      ]
+    },
+    {
+      "id": "compiler",
+      "purpose": "Target-legal all-to-all-to-constrained compilation with semantic checks.",
+      "packages": [
+        "flagquantum",
+        "qiskit",
+        "cirq-core",
+        "pytket",
+        "pennylane",
+        "cudaq",
+        "qibo",
+        "mindquantum",
+        "tensorcircuit-ng"
+      ]
+    },
+    {
+      "id": "derivative",
+      "purpose": "Declared exact-expectation derivative workflows; external components and evaluations disclosed.",
+      "packages": [
+        "flagquantum",
+        "pennylane",
+        "pennylane-lightning",
+        "tensorcircuit-ng",
+        "mindquantum",
+        "torchquantum",
+        "cudaq",
+        "qiskit",
+        "qibo",
+        "cirq-core"
+      ]
+    },
+    {
+      "id": "learning",
+      "purpose": "The fixed hybrid regression contract with a common explicit SGD recurrence.",
+      "packages": [
+        "flagquantum",
+        "pennylane",
+        "tensorcircuit-ng",
+        "mindquantum",
+        "torchquantum",
+        "cudaq",
+        "qiskit",
+        "qibo",
+        "cirq-core"
+      ]
+    },
+    {
+      "id": "orchestration",
+      "purpose": "Recoverable provider-client or registered integrated-client workflow using offline transport stubs.",
+      "packages": [
+        "amazon-braket-sdk",
+        "qiskit-ibm-runtime",
+        "cirq-google",
+        "flagquantum",
+        "qibo"
+      ]
+    },
+    {
+      "id": "interchange",
+      "purpose": "Declared QASM subset round trips; profile-specific missing support remains visible.",
+      "packages": [
+        "flagquantum",
+        "qiskit",
+        "cirq-core",
+        "pytket",
+        "pennylane",
+        "cudaq",
+        "qibo",
+        "qulacs",
+        "mindquantum",
+        "tensorcircuit-ng"
+      ]
+    }
+  ],
+  "execution_profile": {
+    "id": "CPU1-FP64",
+    "os": "Ubuntu 24.04 x86_64",
+    "python": "3.12.14",
+    "host_minimum_physical_cores": 8,
+    "host_minimum_ram_gib": 64,
+    "pinned_physical_cores_per_process": 1,
+    "threads": 1,
+    "smt": "Do not share the measured physical core with an active sibling; record the actual SMT policy.",
+    "host_identity": "The same physical host and immutable image for every stack in a cohort; exact CPU model/OS/kernel/BIOS, clocks and dependencies must be sealed in the run manifest before any participant timing.",
+    "simultaneous_participant_processes": 1,
+    "process_memory_limit": "Per-case cap, maximum 16 GiB including SDK-owned child processes.",
+    "independent_process_blocks": 10,
+    "deterministic_warmups_per_block": 2,
+    "deterministic_measured_repetitions_per_block": 3,
+    "stochastic_or_training_or_job_warmups": 0,
+    "stochastic_or_training_or_job_measured_repetitions_per_block": 1,
+    "compiler_seeds": [
+      11,
+      23,
+      37,
+      51,
+      73,
+      11,
+      23,
+      37,
+      51,
+      73
+    ],
+    "stochastic_seed_rule": "Take first 8 bytes of SHA256(\"sdkbench-first-wave:0.1-candidate-1:<instance>:<block>:<context>\") modulo 2**32; block is 0..9; context is 0-based fixture order. Same integers requested of participants, not the same RNG stream.",
+    "external_network_during_cases": false,
+    "live_qpu_jobs": 0,
+    "paid_device_spend": 0,
+    "per_environment_install_wall_limit_seconds": 1800,
+    "per_environment_install_disk_limit_gib": 20
+  },
+  "references": {
+    "environment": "Reference generation uses NumPy only; record exact environment in artifacts.json. No participant module is imported.",
+    "generator": "tools/roadmap_reference.py",
+    "validation": "Analytic anchors, separate small dense construction, five-point derivatives, density/branch identities, exact event tables and product-formula-vs-physics checks.",
+    "artifact_manifest": "artifacts.json"
+  }
+}

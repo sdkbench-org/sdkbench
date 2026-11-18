@@ -1,0 +1,8 @@
+{
+  "cancelled_records": 1,
+  "completed_shots": 512,
+  "method": "independent event-ledger reconciliation",
+  "new_submissions_allowed": 0,
+  "study_status": "partial, not accepted complete",
+  "unique_completed_records": 2
+}

@@ -1,0 +1,8 @@
+{
+  "category_encoding": "index=4*(trial-1)+2*success+terminal_Z; 12 categories, including impossible records",
+  "independent_blocks": 10,
+  "n_qubits": 1,
+  "protocol": "start |0>; for trial in 1..3: H, measure; stop on 1, else continue; retain trial count and success flag; after stopping reset qubit and terminal Z-measure; no postselection",
+  "seed_rule": "roadmap.json execution_profile.stochastic_seed_rule",
+  "shots_per_context_per_replicate": 65536
+}

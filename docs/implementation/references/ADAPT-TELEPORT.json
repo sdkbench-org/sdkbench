@@ -1,0 +1,257 @@
+{
+  "contexts": [
+    {
+      "bob_basis": "X",
+      "input": "zero",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "zero",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "zero",
+      "probabilities": [
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0
+      ]
+    },
+    {
+      "bob_basis": "X",
+      "input": "one",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "one",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "one",
+      "probabilities": [
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "bob_basis": "X",
+      "input": "plus",
+      "probabilities": [
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "plus",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "plus",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "X",
+      "input": "minus",
+      "probabilities": [
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "minus",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "minus",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "X",
+      "input": "plus-i",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "plus-i",
+      "probabilities": [
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "plus-i",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "X",
+      "input": "minus-i",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    },
+    {
+      "bob_basis": "Y",
+      "input": "minus-i",
+      "probabilities": [
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "bob_basis": "Z",
+      "input": "minus-i",
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ]
+    }
+  ],
+  "method": "teleportation identity and branch-wise analytic probabilities"
+}

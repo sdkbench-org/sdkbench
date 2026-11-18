@@ -1,0 +1,6 @@
+{
+  "format": "OpenQASM 3.0 static plus measurement/reset/if subset",
+  "n_qubits": 2,
+  "required_roundtrip": "preserve measured c[1], conditional X, reset and terminal c[0]; no postselection",
+  "source": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nqubit[2] q;\nbit[2] c;\nh q[0];\ncx q[0],q[1];\nc[1] = measure q[0];\nif (c[1]) { x q[1]; }\nreset q[0];\nc[0] = measure q[1];\n"
+}

@@ -1,0 +1,42 @@
+{
+  "events": [
+    {
+      "job_id": "job-b",
+      "record": "circuit-a/binding-1",
+      "shots": 256,
+      "status": "partial"
+    },
+    {
+      "job_id": "job-a",
+      "record": "circuit-a/binding-0",
+      "shots": 256,
+      "status": "completed"
+    },
+    {
+      "duplicate_page": true,
+      "job_id": "job-b",
+      "record": "circuit-a/binding-1",
+      "shots": 256,
+      "status": "completed"
+    },
+    {
+      "job_id": "job-c",
+      "record": "circuit-b/binding-0",
+      "shots": 0,
+      "status": "cancelled"
+    }
+  ],
+  "plan_id": "job-plan-b",
+  "planned_records": [
+    "circuit-a/binding-0",
+    "circuit-a/binding-1",
+    "circuit-b/binding-0"
+  ],
+  "policy": "deduplicate provider pages by stable identity; retain cancelled record; no automatic resubmission",
+  "submitted_job_ids": [
+    "job-a",
+    "job-b",
+    "job-c"
+  ],
+  "transport": "offline deterministic provider stub; no network or credentials"
+}

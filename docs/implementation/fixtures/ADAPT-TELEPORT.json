@@ -1,0 +1,114 @@
+{
+  "category_encoding": "index=4*m0+2*m1+bob_outcome; 8 categories, including zero-probability outcomes",
+  "contexts": [
+    {
+      "bob_basis": "X",
+      "input": "zero"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "zero"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "zero"
+    },
+    {
+      "bob_basis": "X",
+      "input": "one"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "one"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "one"
+    },
+    {
+      "bob_basis": "X",
+      "input": "plus"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "plus"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "plus"
+    },
+    {
+      "bob_basis": "X",
+      "input": "minus"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "minus"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "minus"
+    },
+    {
+      "bob_basis": "X",
+      "input": "plus-i"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "plus-i"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "plus-i"
+    },
+    {
+      "bob_basis": "X",
+      "input": "minus-i"
+    },
+    {
+      "bob_basis": "Y",
+      "input": "minus-i"
+    },
+    {
+      "bob_basis": "Z",
+      "input": "minus-i"
+    }
+  ],
+  "independent_blocks": 10,
+  "inputs_bloch": {
+    "minus": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "minus-i": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "one": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "plus": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "plus-i": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "zero": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "n_qubits": 3,
+  "protocol": "input on q0; H(q1), CX(q1,q2), CX(q0,q1), H(q0); measure q0->m0,q1->m1; X(q2) iff m1; Z(q2) iff m0; measure q2 in requested X/Y/Z basis",
+  "seed_rule": "roadmap.json execution_profile.stochastic_seed_rule",
+  "shots_per_context_per_replicate": 65536
+}

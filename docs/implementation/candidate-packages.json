@@ -1,0 +1,104 @@
+[
+  {
+    "package": "flagquantum",
+    "version": "0.3.1",
+    "requires_python": "<3.13,>=3.10",
+    "source": "https://pypi.org/pypi/flagquantum/json"
+  },
+  {
+    "package": "qiskit",
+    "version": "2.6.2",
+    "requires_python": ">=3.10",
+    "source": "https://pypi.org/pypi/qiskit/json"
+  },
+  {
+    "package": "qiskit-aer",
+    "version": "0.18.4",
+    "requires_python": ">=3.11",
+    "source": "https://pypi.org/pypi/qiskit-aer/json"
+  },
+  {
+    "package": "cirq-core",
+    "version": "1.7.0",
+    "requires_python": ">=3.11.0",
+    "source": "https://pypi.org/pypi/cirq-core/json"
+  },
+  {
+    "package": "pennylane",
+    "version": "0.45.1",
+    "requires_python": ">=3.11",
+    "source": "https://pypi.org/pypi/pennylane/json"
+  },
+  {
+    "package": "pennylane-lightning",
+    "version": "0.45.0",
+    "requires_python": ">=3.11",
+    "source": "https://pypi.org/pypi/pennylane-lightning/json"
+  },
+  {
+    "package": "cudaq",
+    "version": "0.17.0",
+    "requires_python": ">=3.11",
+    "source": "https://pypi.org/pypi/cudaq/json"
+  },
+  {
+    "package": "pytket",
+    "version": "2.18.5",
+    "requires_python": ">=3.10",
+    "source": "https://pypi.org/pypi/pytket/json"
+  },
+  {
+    "package": "qibo",
+    "version": "0.3.7",
+    "requires_python": "<3.15,>=3.12",
+    "source": "https://pypi.org/pypi/qibo/json"
+  },
+  {
+    "package": "qibojit",
+    "version": "0.1.18",
+    "requires_python": "<3.15,>=3.12",
+    "source": "https://pypi.org/pypi/qibojit/json"
+  },
+  {
+    "package": "qulacs",
+    "version": "0.6.14",
+    "requires_python": null,
+    "source": "https://pypi.org/pypi/qulacs/json"
+  },
+  {
+    "package": "mindquantum",
+    "version": "0.12.0",
+    "requires_python": ">=3.7",
+    "source": "https://pypi.org/pypi/mindquantum/json"
+  },
+  {
+    "package": "tensorcircuit-ng",
+    "version": "1.10.0",
+    "requires_python": ">=3.9",
+    "source": "https://pypi.org/pypi/tensorcircuit-ng/json"
+  },
+  {
+    "package": "torchquantum",
+    "version": "0.1.8",
+    "requires_python": ">=3.5",
+    "source": "https://pypi.org/pypi/torchquantum/json"
+  },
+  {
+    "package": "amazon-braket-sdk",
+    "version": "1.127.8",
+    "requires_python": ">=3.11",
+    "source": "https://pypi.org/pypi/amazon-braket-sdk/json"
+  },
+  {
+    "package": "qiskit-ibm-runtime",
+    "version": "0.52.1",
+    "requires_python": ">=3.10",
+    "source": "https://pypi.org/pypi/qiskit-ibm-runtime/json"
+  },
+  {
+    "package": "cirq-google",
+    "version": "1.7.0",
+    "requires_python": ">=3.11.0",
+    "source": "https://pypi.org/pypi/cirq-google/json"
+  }
+]

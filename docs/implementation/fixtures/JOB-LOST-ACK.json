@@ -1,0 +1,22 @@
+{
+  "operations": [
+    {
+      "operation": "submit",
+      "request_key": "request-001",
+      "server": "accept job-001 and persist payload hash; lose client acknowledgment"
+    },
+    {
+      "operation": "reconcile",
+      "request_key": "request-001",
+      "server": "return original job-001"
+    },
+    {
+      "job_id": "job-001",
+      "operation": "poll",
+      "server": "completed; all planned records"
+    }
+  ],
+  "plan_id": "job-plan-a",
+  "policy": "one authorized submission; zero additional submissions; unresolved is permitted until reconciliation, not a successful duplicate",
+  "transport": "offline deterministic provider stub; no network or credentials"
+}

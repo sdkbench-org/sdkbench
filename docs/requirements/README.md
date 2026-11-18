@@ -44,3 +44,7 @@ python tools/requirements_docs.py --check
 The tool renders the catalog, journey task cards, capability dictionary, traceability table, matrix CSV, source list and coverage audit. It checks identifiers, references, orphan functions, unused user/model/profile/stage entries, generated-file consistency, local links/anchors and English-only content. Generated files carry a header; edit the source instead. The explanatory requirements map, acceptance rules, governance and instance template are maintained by hand.
 
 Structural validation cannot establish stakeholder demand, scientific correctness of future evaluators or completeness of every function variant. Those remain explicit review gates. Additions and corrections need a user-need rationale and the review process in [GOVERNANCE.md](GOVERNANCE.md).
+
+## Implementation planning
+
+The [phased implementation plan](../implementation/README.md) carries this baseline into user-need priorities, all-task phase assignments and a parameter-complete first wave. Requirements and candidate instances remain separate from executed evidence.

@@ -3,3 +3,5 @@ recursive-include examples *.py
 recursive-include tests *.py
 recursive-include docs/requirements *.md *.json *.csv
 include tools/requirements_docs.py
+recursive-include docs/implementation *.md *.json *.csv
+include tools/roadmap_docs.py tools/roadmap_reference.py
