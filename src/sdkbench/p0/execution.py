@@ -58,6 +58,8 @@ def execute_once(bundle, identity, argv, *, cgroup_parent, cpu, directory, block
                     verdict = Verdict('incorrect', ('Invalid worker result: ' + str(exc),))
         except IsolationUnavailable as exc:
             verdict = Verdict('access-blocked', ('Isolation unavailable: ' + str(exc),))
+    if budget.remaining <= 0 and verdict.status == 'accepted':
+        verdict = Verdict('timeout', ('Shared case budget exhausted during result materialization or validation',))
     evidence = {'schema_version': 1, 'request': request, 'execution': execution,
                 'record': record.to_dict() if record is not None else None, 'verdict': verdict.to_dict(),
                 'case_budget_remaining_seconds': budget.remaining,

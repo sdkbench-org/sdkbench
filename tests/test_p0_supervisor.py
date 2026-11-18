@@ -131,3 +131,18 @@ def test_worker_positive_and_kernel_failure_cannot_claim_success(tmp_path):
     evidence = execute_once(bundle, result.identity, [sys.executable, str(worker)], cgroup_parent=PARENT,
                             cpu=min(os.sched_getaffinity(0)), directory=tmp_path / 'false-success', budget=CaseBudget(.4), environment=RUNTIME_ENV)
     assert evidence['verdict']['status'] == 'timeout' and evidence['record'] is None
+
+
+def test_materialization_cannot_overrun_shared_case_budget(tmp_path, monkeypatch):
+    from p0_cases import record
+    import sdkbench.p0.execution as execution
+    bundle = Bundle(ROOT / 'docs/implementation'); result = record(bundle, 'PARAM-04')
+    clock = [0.]; budget = CaseBudget(1, clock=lambda: clock[0])
+    def fake_run(*args, **kwargs):
+        clock[0] = 2.
+        return {'execution_status': 'completed', 'stdout': json.dumps(result.to_dict())}
+    monkeypatch.setattr(execution, 'run_command', fake_run)
+    evidence = execute_once(bundle, result.identity, ['reviewed-worker'], cgroup_parent=tmp_path, cpu=0,
+                            directory=tmp_path / 'run', budget=budget)
+    assert evidence['verdict']['status'] == 'timeout'
+    assert evidence['record'] is not None
