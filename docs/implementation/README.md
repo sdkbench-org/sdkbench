@@ -32,3 +32,5 @@ Reference generation needs NumPy; integrity and documentation checks use the sta
 ## P1b implementation
 
 [Native P1b adapters](P1B_ADAPTERS.md) cover shared-parameter gradients, fixed digital dynamics and constrained-topology routing using the frozen P0 acceptance/resource contracts. The [profile](p1b-profile.json) declares components and capability gaps. Actual execution evidence is recorded in [P1B_QUALIFICATION.md](P1B_QUALIFICATION.md).
+
+The follow-up [routing attribution analysis](../analysis/FLAGQUANTUM_ROUTING_ANALYSIS.md) retains all 264 diagnostic outcomes, explains configuration effects and describes the limits of the comparison. The [native integration proposal](../analysis/COMPILER_INTEGRATION_PLAN.md) outlines upstream compiler work separately from neutral benchmark evaluation.

@@ -1,0 +1,2904 @@
+{
+  "schema_version": 1,
+  "profile_sha256": "4566f9b2d02292f7272ed9ea1d319da9fe7929ea0495d981977b4b6d3660ccd4",
+  "executed_source": "6d3462cf99398f52a653f94a747e3dba05fc478c",
+  "implementation": {
+    "diagnostic_source_sha256": "173e2249792250812d966b364131f5f3b81d9baa493bba9a76c0e7226551b6d5",
+    "p0_p1a_source_sha256": "28e6381a868ecdeaed35cd0a3719dca1bcef598e59af67ecd89b4271d4080875",
+    "runtime_source_sha256": "1288ad33d1e71e9680ca720dc8e1ef1a206abfca24a58e5d09db3643bcd13bc4",
+    "sdkbench_version": "0.4.0"
+  },
+  "archives": [
+    {
+      "file": "routing-6d3462c.json.gz",
+      "sha256": "1c388fc12fd9b9ffc4230c356fd691edd98af72ad55672a11906334365528d67",
+      "source_commit": "6d3462cf99398f52a653f94a747e3dba05fc478c",
+      "github_run_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44273899460",
+      "files_verified": 798,
+      "outcomes": 264,
+      "frozen_outcomes": 210,
+      "micro_outcomes": 54,
+      "status_counts": {
+        "accepted": 264
+      },
+      "profile_sha256": "4566f9b2d02292f7272ed9ea1d319da9fe7929ea0495d981977b4b6d3660ccd4"
+    }
+  ],
+  "arms": [
+    {
+      "id": "fq-default",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-default",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 50,
+            "max": 50
+          },
+          "two_body_dependency_depth": {
+            "min": 50,
+            "max": 50
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-restore_after_each_gate-restored-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-restore_after_each_gate-restored-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 50,
+            "max": 50
+          },
+          "two_body_dependency_depth": {
+            "min": 50,
+            "max": 50
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 2,
+            "max": 2
+          },
+          "two_body_dependency_depth": {
+            "min": 2,
+            "max": 2
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-restore_after_each_gate-free-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-restore_after_each_gate-free-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-restore_after_each_gate-free-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-restore_after_each_gate-free-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-persistent_layout-restored-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-persistent_layout-restored-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "persistent_layout"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 26,
+            "max": 26
+          },
+          "two_body_dependency_depth": {
+            "min": 26,
+            "max": 26
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 212,
+            "max": 212
+          },
+          "two_body_dependency_depth": {
+            "min": 132,
+            "max": 132
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 294,
+            "max": 294
+          },
+          "two_body_dependency_depth": {
+            "min": 169,
+            "max": 169
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1194,
+            "max": 1194
+          },
+          "two_body_dependency_depth": {
+            "min": 755,
+            "max": 755
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-persistent_layout-restored-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-persistent_layout-restored-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "persistent_layout"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 212,
+            "max": 212
+          },
+          "two_body_dependency_depth": {
+            "min": 132,
+            "max": 132
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 294,
+            "max": 294
+          },
+          "two_body_dependency_depth": {
+            "min": 169,
+            "max": 169
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1194,
+            "max": 1194
+          },
+          "two_body_dependency_depth": {
+            "min": 755,
+            "max": 755
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-persistent_layout-free-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-persistent_layout-free-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "persistent_layout"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 14,
+            "max": 14
+          },
+          "two_body_dependency_depth": {
+            "min": 14,
+            "max": 14
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 125,
+            "max": 125
+          },
+          "two_body_dependency_depth": {
+            "min": 78,
+            "max": 78
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 165,
+            "max": 165
+          },
+          "two_body_dependency_depth": {
+            "min": 94,
+            "max": 94
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 621,
+            "max": 621
+          },
+          "two_body_dependency_depth": {
+            "min": 410,
+            "max": 410
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-persistent_layout-free-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-persistent_layout-free-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "persistent_layout"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 125,
+            "max": 125
+          },
+          "two_body_dependency_depth": {
+            "min": 78,
+            "max": 78
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 165,
+            "max": 165
+          },
+          "two_body_dependency_depth": {
+            "min": 94,
+            "max": 94
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 621,
+            "max": 621
+          },
+          "two_body_dependency_depth": {
+            "min": 410,
+            "max": 410
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-auto-restored-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-auto-restored-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "auto"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-auto-restored-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-auto-restored-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "auto"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-auto-free-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-auto-free-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "auto"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 14,
+            "max": 14
+          },
+          "two_body_dependency_depth": {
+            "min": 14,
+            "max": 14
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-auto-free-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-auto-free-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "auto"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-sabre-restored-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-sabre-restored-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "sabre"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 146,
+            "max": 146
+          },
+          "two_body_dependency_depth": {
+            "min": 82,
+            "max": 82
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 138,
+            "max": 138
+          },
+          "two_body_dependency_depth": {
+            "min": 115,
+            "max": 115
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 438,
+            "max": 438
+          },
+          "two_body_dependency_depth": {
+            "min": 206,
+            "max": 206
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-sabre-restored-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-sabre-restored-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "sabre"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 144,
+            "max": 144
+          },
+          "two_body_dependency_depth": {
+            "min": 81,
+            "max": 81
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 138,
+            "max": 138
+          },
+          "two_body_dependency_depth": {
+            "min": 115,
+            "max": 115
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 432,
+            "max": 432
+          },
+          "two_body_dependency_depth": {
+            "min": 206,
+            "max": 206
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-sabre-free-plain",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-sabre-free-plain",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "sabre"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 14,
+            "max": 14
+          },
+          "two_body_dependency_depth": {
+            "min": 14,
+            "max": 14
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 98,
+            "max": 98
+          },
+          "two_body_dependency_depth": {
+            "min": 56,
+            "max": 56
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 108,
+            "max": 108
+          },
+          "two_body_dependency_depth": {
+            "min": 94,
+            "max": 94
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 381,
+            "max": 381
+          },
+          "two_body_dependency_depth": {
+            "min": 173,
+            "max": 173
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-sabre-free-post",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": true,
+        "id": "fq-sabre-free-post",
+        "level": 2,
+        "post_basis": true,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "sabre"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 96,
+            "max": 96
+          },
+          "two_body_dependency_depth": {
+            "min": 55,
+            "max": 55
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 108,
+            "max": 108
+          },
+          "two_body_dependency_depth": {
+            "min": 94,
+            "max": 94
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 375,
+            "max": 375
+          },
+          "two_body_dependency_depth": {
+            "min": 173,
+            "max": 173
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-default-level0",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-default-level0",
+        "level": 0,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 2,
+            "max": 2
+          },
+          "two_body_dependency_depth": {
+            "min": 2,
+            "max": 2
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 50,
+            "max": 50
+          },
+          "two_body_dependency_depth": {
+            "min": 50,
+            "max": 50
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 4,
+            "max": 4
+          },
+          "two_body_dependency_depth": {
+            "min": 4,
+            "max": 4
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-default-level1",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-default-level1",
+        "level": 1,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "fq-default-rotation-basis",
+      "sdk": "flagquantum",
+      "configuration": {
+        "basis": [
+          "rx",
+          "rz",
+          "cz"
+        ],
+        "drop_restore": false,
+        "id": "fq-default-rotation-basis",
+        "level": 2,
+        "post_basis": false,
+        "sdk": "flagquantum",
+        "seeded": false,
+        "strategy": "restore_after_each_gate"
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 218,
+            "max": 218
+          },
+          "two_body_dependency_depth": {
+            "min": 165,
+            "max": 165
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 228,
+            "max": 228
+          },
+          "two_body_dependency_depth": {
+            "min": 194,
+            "max": 194
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1092,
+            "max": 1092
+          },
+          "two_body_dependency_depth": {
+            "min": 656,
+            "max": 656
+          }
+        }
+      }
+    },
+    {
+      "id": "qiskit-default",
+      "sdk": "qiskit",
+      "configuration": {
+        "id": "qiskit-default",
+        "level": 2,
+        "method": null,
+        "sdk": "qiskit",
+        "seeded": true
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 14,
+            "max": 14
+          },
+          "two_body_dependency_depth": {
+            "min": 11,
+            "max": 11
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 85,
+            "max": 85
+          },
+          "two_body_dependency_depth": {
+            "min": 45,
+            "max": 47
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 68,
+            "max": 68
+          },
+          "two_body_dependency_depth": {
+            "min": 65,
+            "max": 65
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 339,
+            "max": 348
+          },
+          "two_body_dependency_depth": {
+            "min": 192,
+            "max": 219
+          }
+        }
+      }
+    },
+    {
+      "id": "qiskit-sabre",
+      "sdk": "qiskit",
+      "configuration": {
+        "id": "qiskit-sabre",
+        "level": 2,
+        "method": "sabre",
+        "sdk": "qiskit",
+        "seeded": true
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 85,
+            "max": 85
+          },
+          "two_body_dependency_depth": {
+            "min": 45,
+            "max": 47
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 68,
+            "max": 68
+          },
+          "two_body_dependency_depth": {
+            "min": 65,
+            "max": 65
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 339,
+            "max": 348
+          },
+          "two_body_dependency_depth": {
+            "min": 192,
+            "max": 219
+          }
+        }
+      }
+    },
+    {
+      "id": "qiskit-basic",
+      "sdk": "qiskit",
+      "configuration": {
+        "id": "qiskit-basic",
+        "level": 2,
+        "method": "basic",
+        "sdk": "qiskit",
+        "seeded": true
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 159,
+            "max": 159
+          },
+          "two_body_dependency_depth": {
+            "min": 104,
+            "max": 104
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 165,
+            "max": 165
+          },
+          "two_body_dependency_depth": {
+            "min": 94,
+            "max": 94
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 587,
+            "max": 587
+          },
+          "two_body_dependency_depth": {
+            "min": 337,
+            "max": 337
+          }
+        }
+      }
+    },
+    {
+      "id": "qiskit-lookahead",
+      "sdk": "qiskit",
+      "configuration": {
+        "id": "qiskit-lookahead",
+        "level": 2,
+        "method": "lookahead",
+        "sdk": "qiskit",
+        "seeded": true
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 85,
+            "max": 85
+          },
+          "two_body_dependency_depth": {
+            "min": 50,
+            "max": 50
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 79,
+            "max": 79
+          },
+          "two_body_dependency_depth": {
+            "min": 68,
+            "max": 68
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 418,
+            "max": 418
+          },
+          "two_body_dependency_depth": {
+            "min": 235,
+            "max": 235
+          }
+        }
+      }
+    },
+    {
+      "id": "qiskit-default-level0",
+      "sdk": "qiskit",
+      "configuration": {
+        "id": "qiskit-default-level0",
+        "level": 0,
+        "method": null,
+        "sdk": "qiskit",
+        "seeded": true
+      },
+      "results": {
+        "ROUTE-GRID-08": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 92,
+            "max": 101
+          },
+          "two_body_dependency_depth": {
+            "min": 46,
+            "max": 67
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 87,
+            "max": 102
+          },
+          "two_body_dependency_depth": {
+            "min": 71,
+            "max": 85
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 10,
+          "status_counts": {
+            "accepted": 10
+          },
+          "full_cz_count": {
+            "min": 426,
+            "max": 441
+          },
+          "two_body_dependency_depth": {
+            "min": 195,
+            "max": 232
+          }
+        }
+      }
+    },
+    {
+      "id": "cirq-default",
+      "sdk": "cirq",
+      "configuration": {
+        "id": "cirq-default",
+        "sdk": "cirq",
+        "seeded": false
+      },
+      "results": {
+        "MICRO-LOCAL-CANCEL": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 0,
+            "max": 0
+          },
+          "two_body_dependency_depth": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        "MICRO-LOCAL-CX": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 1,
+            "max": 1
+          },
+          "two_body_dependency_depth": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        "MICRO-LOCAL-SWAP": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 3,
+            "max": 3
+          },
+          "two_body_dependency_depth": {
+            "min": 3,
+            "max": 3
+          }
+        },
+        "MICRO-REMOTE-REUSE": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 14,
+            "max": 14
+          },
+          "two_body_dependency_depth": {
+            "min": 14,
+            "max": 14
+          }
+        },
+        "MICRO-SWAP-CX-REVERSED": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 2,
+            "max": 2
+          },
+          "two_body_dependency_depth": {
+            "min": 2,
+            "max": 2
+          }
+        },
+        "MICRO-SWAP-CX-SAME": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 2,
+            "max": 2
+          },
+          "two_body_dependency_depth": {
+            "min": 2,
+            "max": 2
+          }
+        },
+        "ROUTE-GRID-08": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 84,
+            "max": 84
+          },
+          "two_body_dependency_depth": {
+            "min": 52,
+            "max": 52
+          }
+        },
+        "ROUTE-LINE-06": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 68,
+            "max": 68
+          },
+          "two_body_dependency_depth": {
+            "min": 65,
+            "max": 65
+          }
+        },
+        "ROUTE-LINE-12": {
+          "outcomes": 1,
+          "status_counts": {
+            "accepted": 1
+          },
+          "full_cz_count": {
+            "min": 360,
+            "max": 360
+          },
+          "two_body_dependency_depth": {
+            "min": 198,
+            "max": 198
+          }
+        }
+      }
+    }
+  ],
+  "baseline_reproduction": [
+    {
+      "sdk": "flagquantum",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 0,
+      "old_full_cz_count": 228,
+      "new_full_cz_count": 228,
+      "old_depth": 194,
+      "new_depth": 194,
+      "matches": true
+    },
+    {
+      "sdk": "flagquantum",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 0,
+      "old_full_cz_count": 218,
+      "new_full_cz_count": 218,
+      "old_depth": 165,
+      "new_depth": 165,
+      "matches": true
+    },
+    {
+      "sdk": "flagquantum",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 0,
+      "old_full_cz_count": 1092,
+      "new_full_cz_count": 1092,
+      "old_depth": 656,
+      "new_depth": 656,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 0,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 1,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 2,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 3,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 4,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 5,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 6,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 7,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 8,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 9,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 0,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 1,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 2,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 47,
+      "new_depth": 47,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 3,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 4,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 5,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 6,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 7,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 47,
+      "new_depth": 47,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 8,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 9,
+      "old_full_cz_count": 85,
+      "new_full_cz_count": 85,
+      "old_depth": 45,
+      "new_depth": 45,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 0,
+      "old_full_cz_count": 346,
+      "new_full_cz_count": 346,
+      "old_depth": 202,
+      "new_depth": 202,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 1,
+      "old_full_cz_count": 348,
+      "new_full_cz_count": 348,
+      "old_depth": 199,
+      "new_depth": 199,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 2,
+      "old_full_cz_count": 342,
+      "new_full_cz_count": 342,
+      "old_depth": 219,
+      "new_depth": 219,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 3,
+      "old_full_cz_count": 339,
+      "new_full_cz_count": 339,
+      "old_depth": 213,
+      "new_depth": 213,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 4,
+      "old_full_cz_count": 343,
+      "new_full_cz_count": 343,
+      "old_depth": 192,
+      "new_depth": 192,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 5,
+      "old_full_cz_count": 346,
+      "new_full_cz_count": 346,
+      "old_depth": 202,
+      "new_depth": 202,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 6,
+      "old_full_cz_count": 348,
+      "new_full_cz_count": 348,
+      "old_depth": 199,
+      "new_depth": 199,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 7,
+      "old_full_cz_count": 342,
+      "new_full_cz_count": 342,
+      "old_depth": 219,
+      "new_depth": 219,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 8,
+      "old_full_cz_count": 339,
+      "new_full_cz_count": 339,
+      "old_depth": 213,
+      "new_depth": 213,
+      "matches": true
+    },
+    {
+      "sdk": "qiskit",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 9,
+      "old_full_cz_count": 343,
+      "new_full_cz_count": 343,
+      "old_depth": 192,
+      "new_depth": 192,
+      "matches": true
+    },
+    {
+      "sdk": "cirq",
+      "input_id": "ROUTE-LINE-06",
+      "seed_index": 0,
+      "old_full_cz_count": 68,
+      "new_full_cz_count": 68,
+      "old_depth": 65,
+      "new_depth": 65,
+      "matches": true
+    },
+    {
+      "sdk": "cirq",
+      "input_id": "ROUTE-GRID-08",
+      "seed_index": 0,
+      "old_full_cz_count": 84,
+      "new_full_cz_count": 84,
+      "old_depth": 52,
+      "new_depth": 52,
+      "matches": true
+    },
+    {
+      "sdk": "cirq",
+      "input_id": "ROUTE-LINE-12",
+      "seed_index": 0,
+      "old_full_cz_count": 360,
+      "new_full_cz_count": 360,
+      "old_depth": 198,
+      "new_depth": 198,
+      "matches": true
+    }
+  ],
+  "default_route_derivation": [
+    {
+      "input_id": "ROUTE-LINE-06",
+      "input_cx": 24,
+      "distance_histogram": {
+        "1": 7,
+        "2": 7,
+        "3": 5,
+        "4": 3,
+        "5": 2
+      },
+      "sum_distance_minus_one": 34,
+      "forward_swaps": 34,
+      "gate_restore_swaps": 34,
+      "retained_swaps": 68,
+      "predicted_cz": 228,
+      "observed_cz": 228
+    },
+    {
+      "input_id": "ROUTE-GRID-08",
+      "input_cx": 32,
+      "distance_histogram": {
+        "1": 12,
+        "3": 7,
+        "2": 11,
+        "4": 2
+      },
+      "sum_distance_minus_one": 31,
+      "forward_swaps": 31,
+      "gate_restore_swaps": 31,
+      "retained_swaps": 62,
+      "predicted_cz": 218,
+      "observed_cz": 218
+    },
+    {
+      "input_id": "ROUTE-LINE-12",
+      "input_cx": 48,
+      "distance_histogram": {
+        "1": 8,
+        "2": 7,
+        "9": 3,
+        "4": 5,
+        "7": 4,
+        "6": 4,
+        "5": 4,
+        "8": 4,
+        "3": 6,
+        "10": 2,
+        "11": 1
+      },
+      "sum_distance_minus_one": 174,
+      "forward_swaps": 174,
+      "gate_restore_swaps": 174,
+      "retained_swaps": 348,
+      "predicted_cz": 1092,
+      "observed_cz": 1092
+    }
+  ],
+  "declared_path_effects": [
+    {
+      "input_id": "ROUTE-LINE-06",
+      "configuration_path": [
+        "fq-default",
+        "fq-sabre-restored-plain",
+        "fq-sabre-free-plain",
+        "fq-sabre-free-post"
+      ],
+      "cz_counts": [
+        228,
+        138,
+        108,
+        108
+      ],
+      "successive_cz_savings": [
+        90,
+        30,
+        0
+      ],
+      "total_reduction_percent": 52.63157894736842
+    },
+    {
+      "input_id": "ROUTE-GRID-08",
+      "configuration_path": [
+        "fq-default",
+        "fq-sabre-restored-plain",
+        "fq-sabre-free-plain",
+        "fq-sabre-free-post"
+      ],
+      "cz_counts": [
+        218,
+        146,
+        98,
+        96
+      ],
+      "successive_cz_savings": [
+        72,
+        48,
+        2
+      ],
+      "total_reduction_percent": 55.96330275229358
+    },
+    {
+      "input_id": "ROUTE-LINE-12",
+      "configuration_path": [
+        "fq-default",
+        "fq-sabre-restored-plain",
+        "fq-sabre-free-plain",
+        "fq-sabre-free-post"
+      ],
+      "cz_counts": [
+        1092,
+        438,
+        381,
+        375
+      ],
+      "successive_cz_savings": [
+        654,
+        57,
+        6
+      ],
+      "total_reduction_percent": 65.65934065934066
+    }
+  ],
+  "upstream_issue": "https://github.com/flagos-ai/FlagQuantum/issues/1215",
+  "publication_eligible": false
+}

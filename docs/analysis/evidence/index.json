@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "protocol": "routing-attribution-v1",
+  "publication_eligible": false,
+  "archives": [
+    {
+      "file": "routing-6d3462c.json.gz",
+      "sha256": "1c388fc12fd9b9ffc4230c356fd691edd98af72ad55672a11906334365528d67",
+      "source_commit": "6d3462cf99398f52a653f94a747e3dba05fc478c",
+      "github_run_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44273899460",
+      "files_verified": 798,
+      "outcomes": 264,
+      "frozen_outcomes": 210,
+      "micro_outcomes": 54,
+      "status_counts": {
+        "accepted": 264
+      },
+      "profile_sha256": "4566f9b2d02292f7272ed9ea1d319da9fe7929ea0495d981977b4b6d3660ccd4"
+    }
+  ],
+  "limitations": [
+    "Instrumented one-outcome diagnostics are not full-case timing acceptance.",
+    "Different native search spaces/configuration counts do not establish a best-tuned SDK ranking.",
+    "Unsealed engineering host; no physical hardware or speed claim.",
+    "Eight- and twelve-qubit acceptance uses the frozen three-probe check.",
+    "Local upstream source probes are separate, not resource-qualified cohort outcomes."
+  ]
+}

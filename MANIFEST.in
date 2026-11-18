@@ -17,3 +17,4 @@ include tools/p1b_evidence.py
 include tools/routing_attribution.py
 include .github/workflows/routing-analysis.yml
 recursive-include docs/analysis *.md *.json *.gz
+include tools/routing_evidence.py
