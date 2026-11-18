@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sdkbench-org/sdkbench/main/assets/avatar.png" alt="SDKBench logo" width="160" height="160">
+</p>
+
 # SDKBench
 
 [![PyPI](https://img.shields.io/pypi/v/sdkbench)](https://pypi.org/project/sdkbench/)
