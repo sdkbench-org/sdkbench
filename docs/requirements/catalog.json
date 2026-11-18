@@ -1,0 +1,5076 @@
+{
+  "schema_version": 1,
+  "requirements_version": "0.1",
+  "status": "Draft requirements baseline; domain review and executable instance specifications required",
+  "date": "2026-11-18",
+  "personas": [
+    {
+      "id": "P01",
+      "title": "Learner and educator",
+      "need": "Understand and demonstrate quantum computation without hidden conventions."
+    },
+    {
+      "id": "P02",
+      "title": "Algorithm researcher",
+      "need": "Express, transform and verify quantum algorithms and their resource use."
+    },
+    {
+      "id": "P03",
+      "title": "Chemistry and materials researcher",
+      "need": "Obtain reproducible molecular or materials quantities for an explicitly specified physical model."
+    },
+    {
+      "id": "P04",
+      "title": "Many-body and dynamics researcher",
+      "need": "Study quantum states, correlations and time evolution with controlled errors."
+    },
+    {
+      "id": "P05",
+      "title": "Machine-learning researcher",
+      "need": "Train and evaluate quantum or hybrid models under realistic compute and data budgets."
+    },
+    {
+      "id": "P06",
+      "title": "Compiler researcher",
+      "need": "Produce valid and efficient executable programs under target constraints."
+    },
+    {
+      "id": "P07",
+      "title": "Simulation developer and user",
+      "need": "Compute quantum outputs within memory, accuracy and execution budgets."
+    },
+    {
+      "id": "P08",
+      "title": "Noise and estimation researcher",
+      "need": "Model errors and estimate physical quantities with defensible uncertainty."
+    },
+    {
+      "id": "P09",
+      "title": "Device experimenter",
+      "need": "Prepare, submit, recover and interpret experiments on accessible quantum devices."
+    },
+    {
+      "id": "P10",
+      "title": "Error-correction and fault-tolerance researcher",
+      "need": "Evaluate codes, decoders, logical operations and resource assumptions."
+    },
+    {
+      "id": "P11",
+      "title": "Control and calibration researcher",
+      "need": "Express physical controls, timing and calibration-dependent experiments."
+    },
+    {
+      "id": "P12",
+      "title": "Analog-computing researcher",
+      "need": "Specify and analyze native continuous-time quantum experiments."
+    },
+    {
+      "id": "P13",
+      "title": "Photonic and continuous-variable researcher",
+      "need": "Compute and measure bosonic-mode processes with explicit conventions and truncation."
+    },
+    {
+      "id": "P14",
+      "title": "Optimization practitioner",
+      "need": "Obtain feasible solutions and quantified solution quality for real problem instances."
+    },
+    {
+      "id": "P15",
+      "title": "HPC and platform operator",
+      "need": "Allocate resources, scale workloads and recover long-running computations."
+    },
+    {
+      "id": "P16",
+      "title": "Application and integration engineer",
+      "need": "Install, integrate, deploy, debug and reproduce quantum software workflows."
+    }
+  ],
+  "models": [
+    {
+      "id": "common",
+      "scope": "Model-independent project, evidence or operational work",
+      "kind": "cross-cutting"
+    },
+    {
+      "id": "gate",
+      "scope": "Static gate-based qubit programs",
+      "kind": "computing-model"
+    },
+    {
+      "id": "adaptive",
+      "scope": "Measurement, reset and classically conditioned gate programs",
+      "kind": "computing-model"
+    },
+    {
+      "id": "qudit",
+      "scope": "Finite-dimensional systems beyond qubits",
+      "kind": "computing-model"
+    },
+    {
+      "id": "analog",
+      "scope": "Native continuous-time Hamiltonian programs",
+      "kind": "computing-model"
+    },
+    {
+      "id": "pulse",
+      "scope": "Physical waveform and control programs",
+      "kind": "control-level"
+    },
+    {
+      "id": "cv",
+      "scope": "Bosonic, photonic and continuous-variable mode programs",
+      "kind": "computing-model"
+    },
+    {
+      "id": "annealing",
+      "scope": "Annealing, quadratic-model and constrained optimization programs",
+      "kind": "computing-model"
+    },
+    {
+      "id": "qec",
+      "scope": "Stabilizer, syndrome, logical and fault-tolerant programs",
+      "kind": "workflow-domain"
+    },
+    {
+      "id": "mbqc",
+      "scope": "Graph-state and measurement-pattern computation with causal dependencies and byproduct handling",
+      "kind": "computing-model"
+    }
+  ],
+  "stages": [
+    "setup",
+    "formulate",
+    "express",
+    "verify",
+    "compile",
+    "execute",
+    "estimate",
+    "optimize",
+    "operate",
+    "exchange"
+  ],
+  "acceptance_profiles": [
+    {
+      "id": "A01",
+      "title": "Reproducible environment and operational behavior"
+    },
+    {
+      "id": "A02",
+      "title": "Exact semantics and algebraic correctness"
+    },
+    {
+      "id": "A03",
+      "title": "Numerical equivalence and physical invariants"
+    },
+    {
+      "id": "A04",
+      "title": "Statistical equivalence and uncertainty"
+    },
+    {
+      "id": "A05",
+      "title": "Target legality, compilation quality and budgets"
+    },
+    {
+      "id": "A06",
+      "title": "Approximation convergence and bounded claims"
+    },
+    {
+      "id": "A07",
+      "title": "Derivatives and training outcomes"
+    },
+    {
+      "id": "A08",
+      "title": "Job lifecycle, provenance and failure recovery"
+    },
+    {
+      "id": "A09",
+      "title": "Application validity and time to target"
+    },
+    {
+      "id": "A10",
+      "title": "Modality-specific units and physical constraints"
+    },
+    {
+      "id": "A11",
+      "title": "Distributed correctness and resource accounting"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "OpenQASM language specification",
+      "url": "https://openqasm.com/intro.html",
+      "role": "Program semantics, classical control, timing and calibration boundaries; a language standard is not a mandate that every target support every feature."
+    },
+    {
+      "id": "S02",
+      "title": "QIR specification and execution profiles",
+      "url": "https://github.com/qir-alliance/qir-spec/blob/main/specification/README.md",
+      "role": "Interchange and explicit execution-profile boundaries; no universal target gate set is assumed."
+    },
+    {
+      "id": "S03",
+      "title": "MolSSI QCSchema components",
+      "url": "https://github.com/MolSSI/QCSchema/blob/master/docs/source/spec_components.rst",
+      "role": "Scientific input/output metadata, model and basis conventions needed for reproducible chemistry tasks."
+    },
+    {
+      "id": "S04",
+      "title": "Analog Hamiltonian simulation terminology",
+      "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-terms.html",
+      "role": "Evidence that native analog users specify time-dependent Hamiltonians; vendor-specific limits are not universal requirements."
+    },
+    {
+      "id": "S05",
+      "title": "Strawberry Fields research paper",
+      "url": "https://arxiv.org/abs/1804.03159",
+      "role": "Primary research describing photonic/CV workflows; motivates mode, Gaussian/Fock and measurement requirements without prescribing an implementation."
+    },
+    {
+      "id": "S06",
+      "title": "Formulation and sampling workflow",
+      "url": "https://docs.dwavequantum.com/en/latest/ocean/workflow.html",
+      "role": "Evidence of optimization-model, sampler and hybrid-solver user journeys; particular APIs are not required."
+    },
+    {
+      "id": "S07",
+      "title": "Stabilizer and QEC circuit workflows",
+      "url": "https://github.com/quantumlib/Stim",
+      "role": "Concrete QEC workload context for detector events and logical observables; no preferred simulator or decoder is designated."
+    },
+    {
+      "id": "S08",
+      "title": "Differentiable hybrid interfaces",
+      "url": "https://docs.pennylane.ai/en/stable/introduction/interfaces.html",
+      "role": "Evidence of quantum/classical derivative boundaries; no classical framework or derivative method is privileged."
+    },
+    {
+      "id": "S09",
+      "title": "Open-system dynamics workflow",
+      "url": "https://qutip.readthedocs.io/en/latest/guide/dynamics/dynamics-master.html",
+      "role": "Hamiltonian, dissipator and solver conventions for dynamics studies; no solver implementation is prescribed."
+    },
+    {
+      "id": "S10",
+      "title": "MPI Forum standards",
+      "url": "https://www.mpi-forum.org/docs/",
+      "role": "Communication semantics and explicit runtime versions; this source does not establish that any SDK recovers from failures."
+    },
+    {
+      "id": "S11",
+      "title": "Sampler execution and result interface",
+      "url": "https://quantum.cloud.ibm.com/docs/api/qiskit-ibm-runtime/sampler-v2",
+      "role": "Concrete hardware job/result workflow context; neither this provider nor its API is a universal interface requirement."
+    },
+    {
+      "id": "S12",
+      "title": "Measurement-based computation patterns",
+      "url": "https://graphix.readthedocs.io/en/latest/",
+      "role": "Primary project documentation for graph-state patterns, dependent measurements and corrections; motivates a distinct user task, not a required implementation or frontend."
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "C01",
+      "title": "Environment and usability",
+      "definition": "Environment and usability abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C02",
+      "title": "Static program representation",
+      "definition": "Static program representation abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C03",
+      "title": "Classical control and adaptive execution",
+      "definition": "Classical control and adaptive execution abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C04",
+      "title": "Problem and operator models",
+      "definition": "Problem and operator models abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C05",
+      "title": "Exact and sampled execution",
+      "definition": "Exact and sampled execution abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C06",
+      "title": "Compilation and target constraints",
+      "definition": "Compilation and target constraints abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C07",
+      "title": "Approximate and structured simulation",
+      "definition": "Approximate and structured simulation abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C08",
+      "title": "Differentiation",
+      "definition": "Differentiation abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C09",
+      "title": "Hybrid training",
+      "definition": "Hybrid training abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C10",
+      "title": "Noise and open-system modeling",
+      "definition": "Noise and open-system modeling abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C11",
+      "title": "Job and experiment orchestration",
+      "definition": "Job and experiment orchestration abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C12",
+      "title": "Estimation and result analysis",
+      "definition": "Estimation and result analysis abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C13",
+      "title": "Scientific and application workflows",
+      "definition": "Scientific and application workflows abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C14",
+      "title": "Error correction and fault tolerance",
+      "definition": "Error correction and fault tolerance abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C15",
+      "title": "Pulse and control",
+      "definition": "Pulse and control abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C16",
+      "title": "Analog quantum programs",
+      "definition": "Analog quantum programs abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C17",
+      "title": "Photonic and continuous-variable programs",
+      "definition": "Photonic and continuous-variable programs abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C18",
+      "title": "Annealing and optimization models",
+      "definition": "Annealing and optimization models abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C19",
+      "title": "Resource scaling and operations",
+      "definition": "Resource scaling and operations abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    },
+    {
+      "id": "C20",
+      "title": "Interoperability and reproducibility",
+      "definition": "Interoperability and reproducibility abilities needed by the linked user tasks; detailed behavioral obligations are defined by its functions."
+    }
+  ],
+  "functions": [
+    {
+      "id": "F01.01",
+      "capability": "C01",
+      "title": "Install a reproducible environment",
+      "contract": "Resolve documented dependencies and verify executable imports in a clean supported environment."
+    },
+    {
+      "id": "F01.02",
+      "capability": "C01",
+      "title": "Discover capabilities and limits",
+      "contract": "Query supported models, devices, operations, precision and explicit rejection conditions."
+    },
+    {
+      "id": "F01.03",
+      "capability": "C01",
+      "title": "Learn and diagnose a workflow",
+      "contract": "Execute documented examples and surface actionable input, installation and runtime errors."
+    },
+    {
+      "id": "F01.04",
+      "capability": "C01",
+      "title": "Configure execution without exposing secrets",
+      "contract": "Select accounts and execution settings while keeping credentials out of artifacts and diagnostics."
+    },
+    {
+      "id": "F01.05",
+      "capability": "C01",
+      "title": "Extend an execution path",
+      "contract": "Register a provider or computation component through a documented boundary with validated errors."
+    },
+    {
+      "id": "F02.01",
+      "capability": "C02",
+      "title": "Construct and inspect programs",
+      "contract": "Represent ordered operations or structured graphs, wires/modes, registers, parameters and declared semantics."
+    },
+    {
+      "id": "F02.02",
+      "capability": "C02",
+      "title": "Compose, invert and control subprograms",
+      "contract": "Preserve operation order, global-phase conventions and workspace contracts during program construction."
+    },
+    {
+      "id": "F02.03",
+      "capability": "C02",
+      "title": "Bind and reuse parameters",
+      "contract": "Support symbolic or deferred parameters, shared occurrences, binding and repeated execution."
+    },
+    {
+      "id": "F02.04",
+      "capability": "C02",
+      "title": "Prepare states and encode inputs",
+      "contract": "Represent input states, isometries, encodings and associated normalization or approximation contracts."
+    },
+    {
+      "id": "F02.05",
+      "capability": "C02",
+      "title": "Represent mixed-dimensional systems",
+      "contract": "Declare wire dimensions and reject invalid operations rather than silently treating every subsystem as a qubit."
+    },
+    {
+      "id": "F03.01",
+      "capability": "C03",
+      "title": "Measure and reset during execution",
+      "contract": "Represent destructive or nondestructive measurement and reset with explicit state semantics."
+    },
+    {
+      "id": "F03.02",
+      "capability": "C03",
+      "title": "Condition on recorded outcomes",
+      "contract": "Preserve classical registers, predicates, branches and output mappings."
+    },
+    {
+      "id": "F03.03",
+      "capability": "C03",
+      "title": "Execute bounded loops and adaptive routines",
+      "contract": "Apply declared iteration, termination and feed-forward semantics."
+    },
+    {
+      "id": "F03.04",
+      "capability": "C03",
+      "title": "Track workspace and classical state",
+      "contract": "Allocate, reuse and release resources without leaking quantum or classical state."
+    },
+    {
+      "id": "F03.05",
+      "capability": "C03",
+      "title": "Assess execution-profile compatibility",
+      "contract": "Reject unsupported dynamic features before execution and identify any transformation or emulation."
+    },
+    {
+      "id": "F04.01",
+      "capability": "C04",
+      "title": "Represent states and linear operators",
+      "contract": "Specify basis, dimensions, units, Hermiticity and dense or sparse data without implicit changes."
+    },
+    {
+      "id": "F04.02",
+      "capability": "C04",
+      "title": "Manipulate structured observables",
+      "contract": "Compose, simplify and act with Pauli sums, sparse operators and symmetry sectors."
+    },
+    {
+      "id": "F04.03",
+      "capability": "C04",
+      "title": "Map fermionic and bosonic models",
+      "contract": "Preserve algebra, particle or mode ordering, encoding and truncation metadata."
+    },
+    {
+      "id": "F04.04",
+      "capability": "C04",
+      "title": "Specify scientific problem inputs",
+      "contract": "Record geometry, basis, charge, spin, boundary conditions and constants needed to reproduce a model."
+    },
+    {
+      "id": "F04.05",
+      "capability": "C04",
+      "title": "Formulate objectives and constraints",
+      "contract": "Translate application variables, constraints and objectives with reversible interpretation of outputs."
+    },
+    {
+      "id": "F05.01",
+      "capability": "C05",
+      "title": "Evolve a state from an explicit input",
+      "contract": "Compute ideal evolution without changing initial-state, wire-order or precision semantics."
+    },
+    {
+      "id": "F05.02",
+      "capability": "C05",
+      "title": "Sample declared measurements",
+      "contract": "Return shots, outcomes and register mappings from the declared measurement process."
+    },
+    {
+      "id": "F05.03",
+      "capability": "C05",
+      "title": "Compute exact observables and reduced states",
+      "contract": "Return specified amplitudes, probabilities, expectations, correlations or partial traces."
+    },
+    {
+      "id": "F05.04",
+      "capability": "C05",
+      "title": "Execute adaptive and nonunitary semantics",
+      "contract": "Handle permitted measurements, reset and branches consistently with the execution profile."
+    },
+    {
+      "id": "F05.05",
+      "capability": "C05",
+      "title": "Select and disclose execution implementation",
+      "contract": "Expose actual method, device, numeric precision, batching, synchronization and fallback provenance."
+    },
+    {
+      "id": "F06.01",
+      "capability": "C06",
+      "title": "Describe an executable target",
+      "contract": "Represent supported operations, connectivity, timing, calibration snapshot and target limits."
+    },
+    {
+      "id": "F06.02",
+      "capability": "C06",
+      "title": "Synthesize and decompose operations",
+      "contract": "Lower unitary, state-preparation and structured operations within declared error and workspace bounds."
+    },
+    {
+      "id": "F06.03",
+      "capability": "C06",
+      "title": "Optimize while preserving semantics",
+      "contract": "Rewrite a program with verified ordering, phase, parameters and classical behavior."
+    },
+    {
+      "id": "F06.04",
+      "capability": "C06",
+      "title": "Place, route and recover logical outputs",
+      "contract": "Respect connectivity and track initial/final logical-to-physical permutations."
+    },
+    {
+      "id": "F06.05",
+      "capability": "C06",
+      "title": "Schedule and account for resources",
+      "contract": "Respect declared durations, alignments, dependencies and resource conflicts."
+    },
+    {
+      "id": "F06.06",
+      "capability": "C06",
+      "title": "Expose compile tradeoffs and diagnostics",
+      "contract": "Record budgets, seeds, failed constraints and quality/time tradeoffs without substituting an unrelated task."
+    },
+    {
+      "id": "F07.01",
+      "capability": "C07",
+      "title": "Control representation and truncation",
+      "contract": "Select MPS, tensor networks or other structured methods with explicit approximation settings."
+    },
+    {
+      "id": "F07.02",
+      "capability": "C07",
+      "title": "Plan contractions and memory use",
+      "contract": "Search, cache and execute contraction or slicing plans under a declared resource budget."
+    },
+    {
+      "id": "F07.03",
+      "capability": "C07",
+      "title": "Track numerical and approximation error",
+      "contract": "Preserve normalization, discarded weights, truncation and observable-error evidence."
+    },
+    {
+      "id": "F07.04",
+      "capability": "C07",
+      "title": "Simulate structured evolution",
+      "contract": "Evolve low-entanglement, symmetry-restricted or time-dependent systems with declared discretization."
+    },
+    {
+      "id": "F07.05",
+      "capability": "C07",
+      "title": "Return outputs without accidental densification",
+      "contract": "Compute specified local or sampled outputs without materializing an unnecessary exponential state."
+    },
+    {
+      "id": "F08.01",
+      "capability": "C08",
+      "title": "Compute first derivatives",
+      "contract": "Differentiate declared outputs with respect to real parameters with explicit complex-value conventions."
+    },
+    {
+      "id": "F08.02",
+      "capability": "C08",
+      "title": "Compute Jacobians and derivative products",
+      "contract": "Support vector outputs, JVPs or VJPs with documented shapes and parameter sharing."
+    },
+    {
+      "id": "F08.03",
+      "capability": "C08",
+      "title": "Compute higher-order derivatives",
+      "contract": "Expose supported Hessians or Hessian-vector products and reject unsupported paths."
+    },
+    {
+      "id": "F08.04",
+      "capability": "C08",
+      "title": "Estimate derivatives with finite shots",
+      "contract": "Account for sampling variance, bias, shifted evaluations and shot allocation."
+    },
+    {
+      "id": "F08.05",
+      "capability": "C08",
+      "title": "Disclose derivative method and cost",
+      "contract": "Record analytic, automatic, adjoint, shift or finite-difference method, calls, memory and fallback."
+    },
+    {
+      "id": "F09.01",
+      "capability": "C09",
+      "title": "Integrate quantum and classical models",
+      "contract": "Preserve gradients, dtype, device and parameter ownership through a hybrid computation."
+    },
+    {
+      "id": "F09.02",
+      "capability": "C09",
+      "title": "Batch independent data and parameters",
+      "contract": "Define broadcasting, minibatches, multiple observables and distinct parameter sets."
+    },
+    {
+      "id": "F09.03",
+      "capability": "C09",
+      "title": "Optimize and evaluate reproducibly",
+      "contract": "Track objectives, constraints, seeds, datasets, convergence and held-out evaluation."
+    },
+    {
+      "id": "F09.04",
+      "capability": "C09",
+      "title": "Checkpoint and resume training",
+      "contract": "Save model, optimizer, random state and relevant execution state for a controlled continuation."
+    },
+    {
+      "id": "F09.05",
+      "capability": "C09",
+      "title": "Budget training and adaptive search",
+      "contract": "Account for all objective/gradient calls, shots, preprocessing and parameter-search cost."
+    },
+    {
+      "id": "F10.01",
+      "capability": "C10",
+      "title": "Specify channels and readout models",
+      "contract": "Represent noise ordering, locality, units, physical constraints and classical confusion."
+    },
+    {
+      "id": "F10.02",
+      "capability": "C10",
+      "title": "Execute noisy density or trajectory evolution",
+      "contract": "Compute mixed-state evolution with explicit integration or trajectory settings."
+    },
+    {
+      "id": "F10.03",
+      "capability": "C10",
+      "title": "Model time-dependent open systems",
+      "contract": "Represent Hamiltonians, dissipators, frames, units and solver tolerances."
+    },
+    {
+      "id": "F10.04",
+      "capability": "C10",
+      "title": "Apply and assess error mitigation",
+      "contract": "Track calibration, assumptions, raw/mitigated outputs, variance and extra executions."
+    },
+    {
+      "id": "F10.05",
+      "capability": "C10",
+      "title": "Validate noise predictions out of sample",
+      "contract": "Evaluate a frozen noise or device model against held-out measurements with drift and validity limits."
+    },
+    {
+      "id": "F11.01",
+      "capability": "C11",
+      "title": "Discover and select execution targets",
+      "contract": "Inspect availability and supported execution profiles without claiming device access from an adapter alone."
+    },
+    {
+      "id": "F11.02",
+      "capability": "C11",
+      "title": "Prepare a budgeted experiment",
+      "contract": "Construct circuit or program batches with shot, cost, time and resource estimates or explicit unknowns."
+    },
+    {
+      "id": "F11.03",
+      "capability": "C11",
+      "title": "Submit and manage asynchronous jobs",
+      "contract": "Submit only with explicit authorization and retain identities, status, cancellation and provider errors."
+    },
+    {
+      "id": "F11.04",
+      "capability": "C11",
+      "title": "Recover and reconcile partial work",
+      "contract": "Retrieve prior jobs and handle retries, partial failures and duplicate-submission hazards."
+    },
+    {
+      "id": "F11.05",
+      "capability": "C11",
+      "title": "Preserve acquisition and result provenance",
+      "contract": "Bind results to programs, parameter bindings, mappings, shots, acquisition times and target metadata."
+    },
+    {
+      "id": "F12.01",
+      "capability": "C12",
+      "title": "Validate and normalize result records",
+      "contract": "Distinguish counts, samples, probabilities, quasi-probabilities and missing outcomes with explicit bit/mode mappings."
+    },
+    {
+      "id": "F12.02",
+      "capability": "C12",
+      "title": "Estimate quantities with uncertainty",
+      "contract": "Use declared estimators, confidence or credible intervals and finite-sample assumptions."
+    },
+    {
+      "id": "F12.03",
+      "capability": "C12",
+      "title": "Plan and combine measurements",
+      "contract": "Group compatible observables and allocate shots while preserving correlations and total cost."
+    },
+    {
+      "id": "F12.04",
+      "capability": "C12",
+      "title": "Reconstruct and diagnose states or processes",
+      "contract": "Evaluate tomography, shadows or fitted models under declared identifiability and validation assumptions."
+    },
+    {
+      "id": "F12.05",
+      "capability": "C12",
+      "title": "Export interpretable analysis",
+      "contract": "Preserve units, uncertainty, failed fits, raw data, transformations and machine-readable diagnostics."
+    },
+    {
+      "id": "F13.01",
+      "capability": "C13",
+      "title": "Solve energy or spectral problems",
+      "contract": "Compute a declared ground/excited-state or spectral target with a specified reference and total energy convention."
+    },
+    {
+      "id": "F13.02",
+      "capability": "C13",
+      "title": "Study dynamics and correlations",
+      "contract": "Compute time-dependent observables of a fixed physical model with controlled errors."
+    },
+    {
+      "id": "F13.03",
+      "capability": "C13",
+      "title": "Solve optimization instances",
+      "contract": "Return feasible decoded solutions, objective values and a declared optimality or quality reference."
+    },
+    {
+      "id": "F13.04",
+      "capability": "C13",
+      "title": "Estimate algorithmic quantities",
+      "contract": "Implement phase, amplitude or linear-algebra workflows with complete oracle and state-preparation costs."
+    },
+    {
+      "id": "F13.05",
+      "capability": "C13",
+      "title": "Evaluate predictive or kernel methods",
+      "contract": "Use fixed datasets, splits, preprocessing, regularization and classical comparison protocols."
+    },
+    {
+      "id": "F14.01",
+      "capability": "C14",
+      "title": "Specify codes and logical observables",
+      "contract": "Record checks, logical operators, geometry, boundary and commutation conventions."
+    },
+    {
+      "id": "F14.02",
+      "capability": "C14",
+      "title": "Build repeated error-correction experiments",
+      "contract": "Preserve syndrome rounds, reset, noise locations, detector events and observable labels."
+    },
+    {
+      "id": "F14.03",
+      "capability": "C14",
+      "title": "Construct and sample detector error models",
+      "contract": "Declare approximation, correlation handling and event-to-observable relationships."
+    },
+    {
+      "id": "F14.04",
+      "capability": "C14",
+      "title": "Decode and estimate logical outcomes",
+      "contract": "Track decoder assumptions, latency, failure probabilities, confidence and unmatched syndromes."
+    },
+    {
+      "id": "F14.05",
+      "capability": "C14",
+      "title": "Compile logical operations and estimate resources",
+      "contract": "State logical protocol, error budget, code assumptions, physical resources and extrapolation boundaries."
+    },
+    {
+      "id": "F15.01",
+      "capability": "C15",
+      "title": "Represent waveforms and channels",
+      "contract": "Define samples, units, frames, ports, amplitude limits and device calibration associations."
+    },
+    {
+      "id": "F15.02",
+      "capability": "C15",
+      "title": "Schedule physical controls",
+      "contract": "Respect clock, alignment, channel conflicts and simultaneous-control constraints."
+    },
+    {
+      "id": "F15.03",
+      "capability": "C15",
+      "title": "Simulate driven dynamics",
+      "contract": "Represent rotating frames, Hamiltonians and dissipators with controlled time integration."
+    },
+    {
+      "id": "F15.04",
+      "capability": "C15",
+      "title": "Calibrate or optimize controls",
+      "contract": "Use a fixed objective, evaluation budget, held-out validation and explicit model/device execution provenance."
+    },
+    {
+      "id": "F15.05",
+      "capability": "C15",
+      "title": "Preserve gate-to-control correspondence",
+      "contract": "Track calibrated gate realizations and reject stale or incompatible pulse definitions."
+    },
+    {
+      "id": "F16.01",
+      "capability": "C16",
+      "title": "Describe geometry and interactions",
+      "contract": "Define sites, species, boundaries, interactions, units and initialization."
+    },
+    {
+      "id": "F16.02",
+      "capability": "C16",
+      "title": "Define time-dependent controls",
+      "contract": "Represent schedules, fields, interpolation, local/global control and hardware limits."
+    },
+    {
+      "id": "F16.03",
+      "capability": "C16",
+      "title": "Simulate and measure analog evolution",
+      "contract": "Return specified observables or samples with disclosed approximation and solver settings."
+    },
+    {
+      "id": "F16.04",
+      "capability": "C16",
+      "title": "Translate to a compatible analog device",
+      "contract": "Validate geometry and control constraints and report rounding or unsupported features."
+    },
+    {
+      "id": "F16.05",
+      "capability": "C16",
+      "title": "Track losses and analog experiment context",
+      "contract": "Retain loading, atom loss, postselection, denominators and acquisition provenance."
+    },
+    {
+      "id": "F17.01",
+      "capability": "C17",
+      "title": "Represent modes and conventions",
+      "contract": "Declare mode order, commutation and quadrature conventions, units and input states."
+    },
+    {
+      "id": "F17.02",
+      "capability": "C17",
+      "title": "Evolve Gaussian and non-Gaussian processes",
+      "contract": "Represent Gaussian transformations and required non-Gaussian operations without silent substitution."
+    },
+    {
+      "id": "F17.03",
+      "capability": "C17",
+      "title": "Control Fock-space approximation",
+      "contract": "Declare cutoff, discarded probability, normalization and convergence evidence."
+    },
+    {
+      "id": "F17.04",
+      "capability": "C17",
+      "title": "Sample photonic measurements",
+      "contract": "Define homodyne, heterodyne or photon-counting outcomes, losses and postselection."
+    },
+    {
+      "id": "F17.05",
+      "capability": "C17",
+      "title": "Compile or adapt mode programs",
+      "contract": "Preserve interferometer, feed-forward, target constraints and observable semantics."
+    },
+    {
+      "id": "F18.01",
+      "capability": "C18",
+      "title": "Represent quadratic and constrained models",
+      "contract": "Declare binary/spin domains, coefficients, offsets, constraints and penalty construction."
+    },
+    {
+      "id": "F18.02",
+      "capability": "C18",
+      "title": "Embed and scale for a target",
+      "contract": "Track chains, coefficient scaling, topology and decoding back to logical variables."
+    },
+    {
+      "id": "F18.03",
+      "capability": "C18",
+      "title": "Execute declared sampling schedules",
+      "contract": "Record anneal schedules, gauges, reads, initialization and solver type."
+    },
+    {
+      "id": "F18.04",
+      "capability": "C18",
+      "title": "Decode and validate candidate solutions",
+      "contract": "Report feasibility, chain breaks, objective reconstruction and any repair or postprocessing."
+    },
+    {
+      "id": "F18.05",
+      "capability": "C18",
+      "title": "Account for hybrid optimization cost",
+      "contract": "Distinguish classical, quantum and hybrid work and state access to reference optima."
+    },
+    {
+      "id": "F19.01",
+      "capability": "C19",
+      "title": "Select and measure compute resources",
+      "contract": "Record CPU/GPU/accelerator allocation, threads, precision, memory and device synchronization."
+    },
+    {
+      "id": "F19.02",
+      "capability": "C19",
+      "title": "Partition states or tensor computations",
+      "contract": "Specify sharding, replication, contraction slicing, communication and output gathering."
+    },
+    {
+      "id": "F19.03",
+      "capability": "C19",
+      "title": "Parallelize independent work",
+      "contract": "Batch data, shots, observables or parameter points without confusing throughput with state capacity."
+    },
+    {
+      "id": "F19.04",
+      "capability": "C19",
+      "title": "Measure and enforce execution budgets",
+      "contract": "Track wall time, memory, device time, communication and censored resource-limit outcomes."
+    },
+    {
+      "id": "F19.05",
+      "capability": "C19",
+      "title": "Recover long-running execution",
+      "contract": "Record checkpoints, failure injection, recovery state and correctness after restart."
+    },
+    {
+      "id": "F20.01",
+      "capability": "C20",
+      "title": "Import and export declared formats",
+      "contract": "Declare format versions and preserve or explicitly reject program features and metadata."
+    },
+    {
+      "id": "F20.02",
+      "capability": "C20",
+      "title": "Normalize conventions across boundaries",
+      "contract": "Convert wire order, dimensions, measurement mapping, units and phase/parameter conventions explicitly."
+    },
+    {
+      "id": "F20.03",
+      "capability": "C20",
+      "title": "Round-trip artifacts without hidden loss",
+      "contract": "Compare semantics, retain conversion diagnostics and identify irrecoverable information loss."
+    },
+    {
+      "id": "F20.04",
+      "capability": "C20",
+      "title": "Package reproducible evidence",
+      "contract": "Hash inputs and retain environment, versions, seeds, raw results, settings and execution dependency chains."
+    },
+    {
+      "id": "F20.05",
+      "capability": "C20",
+      "title": "Expose inspectable errors and traces",
+      "contract": "Retain stage-specific diagnostics and prevent silent fallback, hidden postselection or successful-looking partial results."
+    }
+  ],
+  "journeys": [
+    {
+      "id": "J01",
+      "title": "Start and maintain a usable project",
+      "personas": [
+        "P01",
+        "P16"
+      ],
+      "sources": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "id": "J02",
+      "title": "Express an algorithm faithfully",
+      "personas": [
+        "P02",
+        "P01"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S12"
+      ]
+    },
+    {
+      "id": "J03",
+      "title": "Establish program correctness",
+      "personas": [
+        "P02",
+        "P07",
+        "P16"
+      ],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "J04",
+      "title": "Make a program executable on a target",
+      "personas": [
+        "P06",
+        "P09"
+      ],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "J05",
+      "title": "Compute the quantities a study needs",
+      "personas": [
+        "P04",
+        "P07",
+        "P08"
+      ],
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "id": "J06",
+      "title": "Compute beyond dense-state limits",
+      "personas": [
+        "P04",
+        "P07",
+        "P15"
+      ],
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "J07",
+      "title": "Train and differentiate a hybrid model",
+      "personas": [
+        "P05",
+        "P02"
+      ],
+      "sources": [
+        "S08"
+      ]
+    },
+    {
+      "id": "J08",
+      "title": "Answer a scientific or application question",
+      "personas": [
+        "P03",
+        "P04",
+        "P14",
+        "P02",
+        "P05"
+      ],
+      "sources": [
+        "S03",
+        "S06",
+        "S09"
+      ]
+    },
+    {
+      "id": "J09",
+      "title": "Understand and reduce execution error",
+      "personas": [
+        "P08",
+        "P09"
+      ],
+      "sources": [
+        "S09",
+        "S11"
+      ]
+    },
+    {
+      "id": "J10",
+      "title": "Run a recoverable device experiment",
+      "personas": [
+        "P09",
+        "P16"
+      ],
+      "sources": [
+        "S11",
+        "S02"
+      ]
+    },
+    {
+      "id": "J11",
+      "title": "Study error-corrected computation",
+      "personas": [
+        "P10"
+      ],
+      "sources": [
+        "S07"
+      ]
+    },
+    {
+      "id": "J12",
+      "title": "Design and validate physical controls",
+      "personas": [
+        "P11",
+        "P09"
+      ],
+      "sources": [
+        "S01",
+        "S09"
+      ]
+    },
+    {
+      "id": "J13",
+      "title": "Run a native analog study",
+      "personas": [
+        "P12",
+        "P04"
+      ],
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "id": "J14",
+      "title": "Run a photonic or continuous-variable study",
+      "personas": [
+        "P13"
+      ],
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "id": "J15",
+      "title": "Solve through annealing or hybrid optimization",
+      "personas": [
+        "P14"
+      ],
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "id": "J16",
+      "title": "Scale and operate a computational study",
+      "personas": [
+        "P15",
+        "P07",
+        "P05"
+      ],
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "J17",
+      "title": "Exchange, audit and reproduce work",
+      "personas": [
+        "P16",
+        "P02"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "id": "J18",
+      "title": "Turn observations into defensible conclusions",
+      "personas": [
+        "P08",
+        "P09",
+        "P04"
+      ],
+      "sources": [
+        "S09",
+        "S11"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T001",
+      "journey": "J01",
+      "slug": "clean-install",
+      "title": "Start a working project in a clean environment",
+      "personas": [
+        "P01",
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "verify"
+      ],
+      "functions": [
+        "F01.01",
+        "F01.03",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A01"
+      ],
+      "user_need": "A new user must reach a first valid result without undocumented setup.",
+      "inputs": "A frozen supported OS, interpreter, package source and documented installation procedure.",
+      "required_output": "An environment manifest, complete install log and a checked example result.",
+      "acceptance": "Installation and the example complete without undeclared manual steps; resolved versions match the manifest and the example meets its independent oracle.",
+      "metrics": [
+        "install wall time",
+        "download bytes",
+        "disk footprint",
+        "success rate"
+      ],
+      "negative_case": "An unsupported interpreter or missing binary dependency produces an actionable diagnosis rather than a successful import claim.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T002",
+      "journey": "J01",
+      "slug": "capability-discovery",
+      "title": "Determine whether a planned study is supported",
+      "personas": [
+        "P02",
+        "P09",
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "formulate"
+      ],
+      "functions": [
+        "F01.02",
+        "F03.05",
+        "F05.05",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A01"
+      ],
+      "user_need": "A user must know execution limits before investing in an experiment.",
+      "inputs": "Queries for supported models, operations, precision, derivatives, devices and known limits.",
+      "required_output": "Machine-readable capability answers with version, scope and fallback policy.",
+      "acceptance": "Answers agree with executable positive and negative probes; unknown support is explicit and no unavailable device is reported as tested.",
+      "metrics": [
+        "discovery latency",
+        "answer/probe agreement",
+        "missing declarations"
+      ],
+      "negative_case": "A requested feature absent from a selected backend is rejected or explicitly transformed before execution.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T003",
+      "journey": "J01",
+      "slug": "guided-learning",
+      "title": "Learn a complete workflow from documentation",
+      "personas": [
+        "P01",
+        "P16"
+      ],
+      "models": [
+        "gate",
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F01.03",
+        "F02.01",
+        "F05.02",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A03"
+      ],
+      "user_need": "A learner needs a correct mental model and an executable example.",
+      "inputs": "A frozen tutorial with specified prerequisites, wire order, parameters and expected outputs.",
+      "required_output": "A reproduced artifact and a structured record of setup or interpretation obstacles.",
+      "acceptance": "A reviewer following only the declared instructions reproduces the expected result; documentation states conventions and all required dependencies.",
+      "metrics": [
+        "documented-step completion",
+        "unassisted success rate",
+        "recorded interventions"
+      ],
+      "negative_case": "A convention-sensitive example distinguishes control/target and wire significance rather than relying only on a symmetric Bell state.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T004",
+      "journey": "J01",
+      "slug": "safe-account-configuration",
+      "title": "Configure local and remote execution deliberately",
+      "personas": [
+        "P09",
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F01.04",
+        "F11.01",
+        "F11.02",
+        "F11.03",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A08"
+      ],
+      "user_need": "An engineer needs to choose an account and target without accidental submissions or credential exposure.",
+      "inputs": "Dummy credentials, mocked accounts, target settings, denied permissions and an explicit submission authorization policy.",
+      "required_output": "A configuration or dry-run artifact, redacted diagnostics and an auditable submission decision.",
+      "acceptance": "Dry-run and import paths make no execution submission; unauthorized paths fail; dummy secrets never appear in declared logs or persisted artifacts.",
+      "metrics": [
+        "configuration success rate",
+        "unauthorized submission count",
+        "secret exposure count"
+      ],
+      "negative_case": "Invalid credentials and a missing authorization flag cannot trigger an automatic paid retry.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T005",
+      "journey": "J01",
+      "slug": "extension-boundary",
+      "title": "Integrate a new provider or computation component",
+      "personas": [
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "express",
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F01.05",
+        "F11.05",
+        "F20.02",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A08"
+      ],
+      "user_need": "An integration engineer needs a supported extension path without modifying core internals.",
+      "inputs": "A minimal contract-conforming stub plus malformed operations, outputs and provider errors.",
+      "required_output": "An extension, boundary diagnostics and a result carrying component provenance.",
+      "acceptance": "The documented extension interface accepts the valid component, rejects malformed records and preserves program/result conventions and structured failures.",
+      "metrics": [
+        "integration steps",
+        "boundary overhead",
+        "contract pass rate"
+      ],
+      "negative_case": "A plugin returning a different wire order or truncated output is detected, not accepted as a successful result.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T006",
+      "journey": "J02",
+      "slug": "parameterized-program",
+      "title": "Build and reuse a parameterized algorithm",
+      "personas": [
+        "P02",
+        "P05"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "express",
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F02.01",
+        "F02.03",
+        "F05.01",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "An algorithm researcher needs one program evaluated at many parameter points without semantic changes.",
+      "inputs": "A generated program with shared parameters, noncommuting gates, unused wires and several complete bindings.",
+      "required_output": "An inspectable reusable program and correctly ordered outputs for each binding.",
+      "acceptance": "All parameter occurrences use the specified binding; outputs match independent small-instance references and reusing a program does not leak state between runs.",
+      "metrics": [
+        "construction time",
+        "binding time",
+        "repeat execution time",
+        "peak memory"
+      ],
+      "negative_case": "Missing, extra or shape-incompatible bindings are diagnosed explicitly.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T007",
+      "journey": "J02",
+      "slug": "coherent-subroutines",
+      "title": "Compose controlled and inverted subroutines with clean workspace",
+      "personas": [
+        "P02"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "express",
+        "verify"
+      ],
+      "functions": [
+        "F02.02",
+        "F03.04",
+        "F06.02",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "A researcher needs arithmetic or an oracle usable coherently inside a larger algorithm.",
+      "inputs": "A bounded arithmetic/predicate specification, allowed ancillas, control conditions and promised workspace postcondition.",
+      "required_output": "A controlled composable subroutine and workspace/resource report.",
+      "acceptance": "For exhaustive bounded basis inputs and superposition checks, the action, phase and control behavior match the specification and clean ancillas are restored within the declared tolerance.",
+      "metrics": [
+        "construction/synthesis time",
+        "gate count",
+        "workspace qubits"
+      ],
+      "negative_case": "Dirty ancillas, control-dependent phase errors and out-of-domain inputs are not hidden by checking only output probabilities.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T008",
+      "journey": "J02",
+      "slug": "input-encoding",
+      "title": "Prepare a declared input state or data encoding",
+      "personas": [
+        "P02",
+        "P05"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "express",
+        "verify"
+      ],
+      "functions": [
+        "F02.04",
+        "F04.01",
+        "F06.02",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "A user needs state preparation whose normalization, approximation and cost are explicit.",
+      "inputs": "Basis, sparse and dense amplitude inputs plus an encoding convention, resource limit and approximation budget.",
+      "required_output": "A prepared state or executable preparation routine with its cost and error disclosure.",
+      "acceptance": "Small cases agree with independent amplitudes up to a single permitted global phase; normalization and approximation bounds are met and preparation cost is included.",
+      "metrics": [
+        "state error",
+        "preparation time",
+        "compiled resources",
+        "memory"
+      ],
+      "negative_case": "Zero-norm, nonfinite or dimensionally inconsistent input is rejected without silent normalization that changes the task.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T009",
+      "journey": "J02",
+      "slug": "adaptive-algorithm",
+      "title": "Express a measurement-dependent algorithm",
+      "personas": [
+        "P02",
+        "P09"
+      ],
+      "models": [
+        "adaptive"
+      ],
+      "stages": [
+        "express",
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F03.01",
+        "F03.02",
+        "F03.03",
+        "F03.05",
+        "F05.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A04"
+      ],
+      "user_need": "A researcher needs feed-forward, reset and bounded iterative behavior rather than static terminal measurement only.",
+      "inputs": "Teleportation, repeat-until-success or phase-estimation fixtures with branch tables, register mapping and termination budget.",
+      "required_output": "Execution traces and joint classical/quantum outcome statistics.",
+      "acceptance": "Reachable branches match an independently enumerated small model; reset and termination semantics hold; unsupported target profiles are identified before submission.",
+      "metrics": [
+        "branch correctness",
+        "distribution error",
+        "termination rate",
+        "execution cost"
+      ],
+      "negative_case": "Reordered classical bits, an unbounded loop and an unsupported conditional operation cannot silently become a static circuit.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T010",
+      "journey": "J02",
+      "slug": "qudit-program",
+      "title": "Express a mixed-dimensional quantum experiment",
+      "personas": [
+        "P02",
+        "P07"
+      ],
+      "models": [
+        "qudit"
+      ],
+      "stages": [
+        "express",
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F02.05",
+        "F04.01",
+        "F05.01",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "A researcher studying higher-dimensional systems needs dimensions preserved throughout execution.",
+      "inputs": "A mixed qubit/qutrit register, level-selective gates and an explicit basis-index mapping.",
+      "required_output": "An inspectable program and amplitudes or probabilities in the declared product basis.",
+      "acceptance": "Dimensions, operation arity and indexing match a direct small-matrix oracle and normalization is preserved.",
+      "metrics": [
+        "dimension coverage",
+        "execution time",
+        "state error"
+      ],
+      "negative_case": "An operation addressing a nonexistent level or a qubit-only backend is rejected rather than padded or relabeled silently.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T011",
+      "journey": "J03",
+      "slug": "unitary-verification",
+      "title": "Verify an ideal algorithm against an independent oracle",
+      "personas": [
+        "P02",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "qudit"
+      ],
+      "stages": [
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F05.01",
+        "F05.03",
+        "F20.02",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "A developer needs to distinguish numerical implementation faults from algorithm design faults.",
+      "inputs": "Small circuits with complex amplitudes, nonlocal controls, permutations and declared global-phase rules.",
+      "required_output": "Output states and a verification certificate identifying the tested input space.",
+      "acceptance": "Exhaustive basis plus interference tests or full small-unitary comparison meet the frozen error budget; any larger probe-only evidence is labeled as such.",
+      "metrics": [
+        "verification pass rate",
+        "maximum state error",
+        "runtime"
+      ],
+      "negative_case": "A relative phase or control/target reversal must fail even when one initial-state probability distribution happens to agree.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T012",
+      "journey": "J03",
+      "slug": "sampling-semantics",
+      "title": "Verify sampling and register interpretation",
+      "personas": [
+        "P01",
+        "P02",
+        "P08"
+      ],
+      "models": [
+        "gate",
+        "adaptive"
+      ],
+      "stages": [
+        "verify",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F05.02",
+        "F03.02",
+        "F12.01",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A04"
+      ],
+      "user_need": "A user needs samples that represent the declared measurement rather than a convenient output encoding.",
+      "inputs": "Known discrete distributions with sparse support, multiple registers and nontrivial measurement maps.",
+      "required_output": "Samples or counts with exact shot totals and explicit register conventions.",
+      "acceptance": "Frozen equivalence tests meet the distribution tolerance with declared power and multiplicity control; shot conservation and mapping are exact.",
+      "metrics": [
+        "distribution discrepancy",
+        "sampling throughput",
+        "shots",
+        "inconclusive rate"
+      ],
+      "negative_case": "Counts, quasi-probabilities and postselected samples cannot be interchanged without type and denominator disclosure.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T013",
+      "journey": "J03",
+      "slug": "transformation-equivalence",
+      "title": "Check that a program rewrite preserves intended behavior",
+      "personas": [
+        "P02",
+        "P06"
+      ],
+      "models": [
+        "gate",
+        "adaptive"
+      ],
+      "stages": [
+        "verify",
+        "compile"
+      ],
+      "functions": [
+        "F06.03",
+        "F03.02",
+        "F20.03",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "user_need": "A compiler or algorithm developer needs evidence that an optimization preserves more than a single test output.",
+      "inputs": "Original and transformed programs, permitted approximation, logical permutation and dynamic execution profile.",
+      "required_output": "A comparison artifact stating exact, bounded numerical or sampled verification scope.",
+      "acceptance": "For the prescribed small oracle domain, states or branch instruments match after only declared mapping/phase corrections; approximate changes remain within budget.",
+      "metrics": [
+        "semantic pass rate",
+        "verification cost",
+        "unverified domains"
+      ],
+      "negative_case": "An optimizer cannot erase terminal measurements, change branch probabilities or rely on an undisclosed initial-state assumption.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T014",
+      "journey": "J03",
+      "slug": "physical-map-verification",
+      "title": "Validate a declared quantum channel or state transformation",
+      "personas": [
+        "P08",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "cv"
+      ],
+      "stages": [
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F04.01",
+        "F10.01",
+        "F10.02",
+        "F05.03"
+      ],
+      "acceptance_profiles": [
+        "A03"
+      ],
+      "user_need": "A user needs valid mixed-state operations, including when errors are subtle.",
+      "inputs": "Small channels with a declared representation and physicality contract, including entangled reference inputs.",
+      "required_output": "Evolved states plus trace, positivity and representation checks.",
+      "acceptance": "Declared physical channels preserve trace and positivity within budget and agree with a direct small channel oracle; nonphysical algebraic maps are labeled separately.",
+      "metrics": [
+        "channel error",
+        "trace error",
+        "positivity violation",
+        "execution time"
+      ],
+      "negative_case": "A trace-changing map cannot be made valid by silent renormalization, and an invalid physical-channel declaration must fail.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T015",
+      "journey": "J03",
+      "slug": "diagnostic-failure",
+      "title": "Locate the stage and cause of an invalid experiment",
+      "personas": [
+        "P16",
+        "P02"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "verify",
+        "operate"
+      ],
+      "functions": [
+        "F01.03",
+        "F20.05",
+        "F03.05",
+        "F11.04"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A08"
+      ],
+      "user_need": "A user needs actionable failure evidence to repair a workflow.",
+      "inputs": "Invalid dimensions, bindings, unsupported operations, resource limits and injected execution/result faults.",
+      "required_output": "A stage-specific failure record with reproducible input and redacted context.",
+      "acceptance": "Each injected fault is classified at the correct boundary; no failure is represented as an empty successful result or silent fallback.",
+      "metrics": [
+        "diagnostic completeness",
+        "fault detection rate",
+        "time to failure"
+      ],
+      "negative_case": "A provider outage or missing dependency must remain distinguishable from an incorrect computed result.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T016",
+      "journey": "J04",
+      "slug": "basis-lowering",
+      "title": "Lower an algorithm into an executable instruction set",
+      "personas": [
+        "P06",
+        "P09"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F06.01",
+        "F06.02",
+        "F06.03",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A05"
+      ],
+      "user_need": "A device user needs every operation expressed in a target-supported form.",
+      "inputs": "A fixed target basis, symbolic and numeric programs, synthesis tolerance and ancilla budget.",
+      "required_output": "A legal lowered program with preserved semantics and resource counts.",
+      "acceptance": "Every emitted operation satisfies the target contract; small-instance semantics and synthesis error pass; symbolic parameters and global-phase conventions are preserved.",
+      "metrics": [
+        "lowering time",
+        "two-body operations",
+        "workspace",
+        "approximation error"
+      ],
+      "negative_case": "An unsupported gate cannot pass merely because an external simulator can execute it.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T017",
+      "journey": "J04",
+      "slug": "connectivity-routing",
+      "title": "Map a logical algorithm to constrained connectivity",
+      "personas": [
+        "P06",
+        "P09"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F06.01",
+        "F06.04",
+        "F06.03",
+        "F12.01"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A05"
+      ],
+      "user_need": "A user needs executable interactions with correct final logical results.",
+      "inputs": "Frozen line, grid, irregular and all-to-all graphs; nonlocal circuits; placement policy and compile budget.",
+      "required_output": "A routed program, initial/final mappings and logical result reconstruction.",
+      "acceptance": "Every interaction is legal and reconstructed small-instance outputs match the original; routing quality is evaluated only after these gates pass.",
+      "metrics": [
+        "compile time",
+        "added interactions",
+        "two-body depth",
+        "budget completion"
+      ],
+      "negative_case": "A final permutation, direction constraint or disconnected target cannot be ignored.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T018",
+      "journey": "J04",
+      "slug": "schedule-resources",
+      "title": "Schedule a program under timing and shared-resource constraints",
+      "personas": [
+        "P06",
+        "P11"
+      ],
+      "models": [
+        "gate",
+        "pulse"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F06.01",
+        "F06.05",
+        "F15.02",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A05",
+        "A10"
+      ],
+      "user_need": "An experimenter needs a schedule that can actually run on the declared device.",
+      "inputs": "Instruction durations, alignment, conflicts, classical latency, dependencies and a frozen calibration snapshot.",
+      "required_output": "A schedule with unit-tagged durations and conflict/critical-path evidence.",
+      "acceptance": "All dependency, alignment and shared-resource constraints hold; duration accounting matches an independent schedule validator.",
+      "metrics": [
+        "makespan",
+        "idle exposure",
+        "compile time",
+        "constraint violations"
+      ],
+      "negative_case": "Illegal overlaps and incompatible time units cannot be repaired silently or excluded from reported duration.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F15.02": "Required when the frozen instance includes the pulse applicability tag."
+      }
+    },
+    {
+      "id": "T019",
+      "journey": "J04",
+      "slug": "compile-tradeoff",
+      "title": "Choose a compiler configuration under a practical budget",
+      "personas": [
+        "P06",
+        "P14"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "compile",
+        "optimize"
+      ],
+      "functions": [
+        "F06.03",
+        "F06.04",
+        "F06.06",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A05"
+      ],
+      "user_need": "A user needs a useful quality-versus-latency choice rather than the smallest circuit at unlimited cost.",
+      "inputs": "A frozen circuit distribution, target, seed set, wall-time/memory budgets and common quality metrics.",
+      "required_output": "Feasible compile results and a quality/time Pareto surface including failed and censored runs.",
+      "acceptance": "Semantic and target checks pass first; all tuning and search cost is recorded; only results within the predeclared budget enter that budget cohort.",
+      "metrics": [
+        "time to target quality",
+        "interaction count at fixed budget",
+        "memory",
+        "failure rate"
+      ],
+      "negative_case": "A timeout, best-of-many hidden seed search or target-specific gate-count convention cannot be presented as a fair win.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T020",
+      "journey": "J04",
+      "slug": "target-capacity",
+      "title": "Determine feasibility before executing a target-incompatible program",
+      "personas": [
+        "P06",
+        "P09"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "pulse"
+      ],
+      "stages": [
+        "formulate",
+        "compile"
+      ],
+      "functions": [
+        "F01.02",
+        "F03.05",
+        "F06.01",
+        "F06.06"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A05"
+      ],
+      "user_need": "A user needs an explicit explanation when a chosen device cannot carry the experiment.",
+      "inputs": "Targets with insufficient wires, unsupported control flow, forbidden operations or incompatible timing.",
+      "required_output": "A feasibility decision, constraint diagnostics and any explicitly authorized transformation proposal.",
+      "acceptance": "Feasible fixtures compile legally; infeasible fixtures identify the violated constraints before execution; emulation or changed semantics require disclosure and cohort separation.",
+      "metrics": [
+        "decision accuracy",
+        "assessment time",
+        "false-feasible rate"
+      ],
+      "negative_case": "A compiler must not silently switch provider, discard control flow or increase the requested error budget.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T021",
+      "journey": "J05",
+      "slug": "selected-amplitudes",
+      "title": "Compute only the amplitudes or probabilities needed by a study",
+      "personas": [
+        "P02",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "qudit"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F05.01",
+        "F05.03",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03"
+      ],
+      "user_need": "A researcher needs selected outputs without paying for unnecessary output materialization.",
+      "inputs": "A program, nonzero initial state and selected basis indices with a fixed representation/precision contract.",
+      "required_output": "Indexed amplitudes or probabilities with execution and output costs separated.",
+      "acceptance": "Values match the small reference and indexing contract; output volume and any full-state materialization are disclosed.",
+      "metrics": [
+        "time to requested output",
+        "peak memory",
+        "output bytes",
+        "error"
+      ],
+      "negative_case": "Selected-index order and an unused-wire permutation cannot change the interpreted answer.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T022",
+      "journey": "J05",
+      "slug": "many-observables",
+      "title": "Evaluate a large observable collection correctly",
+      "personas": [
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F04.02",
+        "F05.03",
+        "F12.03",
+        "F19.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04"
+      ],
+      "user_need": "A scientist needs energies and correlations containing many terms, often sharing a state.",
+      "inputs": "Pauli or sparse observable sums with coefficients, support patterns and exact or shot-based execution mode.",
+      "required_output": "All requested expectations with correct coefficient, basis and covariance handling.",
+      "acceptance": "Exact outputs meet the numerical oracle; sampled outputs meet the specified statistical equivalence contract; all state preparations and shots are charged.",
+      "metrics": [
+        "total evaluation time",
+        "observable throughput",
+        "state preparations",
+        "estimation error"
+      ],
+      "negative_case": "Dropping small terms or independently normalizing coefficients requires an explicit approximation contract.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T023",
+      "journey": "J05",
+      "slug": "reduced-state",
+      "title": "Compute subsystem information without changing subsystem identity",
+      "personas": [
+        "P04",
+        "P08"
+      ],
+      "models": [
+        "gate",
+        "qudit"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F04.01",
+        "F05.03",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A03"
+      ],
+      "user_need": "A researcher needs entanglement or local-state information on explicitly selected subsystems.",
+      "inputs": "Entangled pure/mixed fixtures, noncontiguous subsystem lists and a basis-order convention.",
+      "required_output": "Reduced states, correlations or entropy under specified conventions.",
+      "acceptance": "Partial traces and derived quantities match independent small references; trace, dimensions and eigenvalue handling satisfy the contract.",
+      "metrics": [
+        "subsystem error",
+        "runtime",
+        "memory"
+      ],
+      "negative_case": "A subsystem permutation or entropy unit mismatch must be detected rather than hidden by a symmetric test state.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T024",
+      "journey": "J05",
+      "slug": "structured-hamiltonian",
+      "title": "Work with a Hamiltonian without unnecessary dense expansion",
+      "personas": [
+        "P03",
+        "P04",
+        "P07"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "execute"
+      ],
+      "functions": [
+        "F04.01",
+        "F04.02",
+        "F05.03",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03"
+      ],
+      "user_need": "A user needs algebra and action on large structured operators within memory limits.",
+      "inputs": "Sparse or Pauli-sum Hamiltonians, symmetry sectors, coefficient scales and memory budgets.",
+      "required_output": "Operator action, expectations or simplified representations with equivalent semantics.",
+      "acceptance": "Small cases match dense algebra; declared sparsity and memory limits are respected, and transformations retain coefficients and constants.",
+      "metrics": [
+        "operator action time",
+        "peak memory",
+        "term count",
+        "error"
+      ],
+      "negative_case": "A constant energy offset, canceled term or symmetry-sector restriction cannot be lost.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T025",
+      "journey": "J05",
+      "slug": "repeat-parameter-study",
+      "title": "Evaluate a parameter sweep without cross-run contamination",
+      "personas": [
+        "P02",
+        "P05",
+        "P07"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F02.03",
+        "F05.05",
+        "F09.02",
+        "F19.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A11"
+      ],
+      "user_need": "A study needs many parameter points or initial states with predictable ordering and reuse.",
+      "inputs": "Distinct parameter/initial-state batches, repeated execution and serial reference cases.",
+      "required_output": "Ordered outputs with explicit cache/compilation reuse and batch semantics.",
+      "acceptance": "Every output matches its corresponding serial reference; cache invalidation works after changed parameters, program or device.",
+      "metrics": [
+        "end-to-end sweep time",
+        "throughput",
+        "memory",
+        "reuse overhead"
+      ],
+      "negative_case": "Broadcasting one parameter vector into all samples or reusing a stale compiled binding must fail.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T026",
+      "journey": "J06",
+      "slug": "low-entanglement-state",
+      "title": "Simulate an extended low-entanglement system",
+      "personas": [
+        "P04",
+        "P07"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "verify"
+      ],
+      "functions": [
+        "F07.01",
+        "F07.03",
+        "F07.05",
+        "F05.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06"
+      ],
+      "user_need": "A researcher needs large-system local observables that do not require a full dense state.",
+      "inputs": "A low-entanglement circuit family, requested observables and a prescribed error/resource budget.",
+      "required_output": "Local results and representation/truncation diagnostics.",
+      "acceptance": "Small overlaps agree with exact references; larger results meet the declared observable or certified-bound contract, and no unrequested dense state is materialized.",
+      "metrics": [
+        "time at matched error",
+        "memory",
+        "maximum completed size"
+      ],
+      "negative_case": "A large wire count with an uncontrolled observable error is not a successful capacity result.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T027",
+      "journey": "J06",
+      "slug": "entanglement-stress",
+      "title": "Determine where an approximate representation stops being reliable",
+      "personas": [
+        "P04",
+        "P07"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "verify",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F07.01",
+        "F07.03",
+        "F19.04",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A06"
+      ],
+      "user_need": "A user needs to recognize approximation failure rather than receive plausible-looking numbers.",
+      "inputs": "Matched low/high-entanglement families, escalating depth and truncation budgets.",
+      "required_output": "Accuracy/resource curves with explicit failure or uncertainty boundaries.",
+      "acceptance": "Measured reference errors stay within the accepted region; outside it, violations remain visible; discarded weight is not treated as a universal observable-error certificate.",
+      "metrics": [
+        "error versus resources",
+        "budget completion",
+        "invalid-success rate"
+      ],
+      "negative_case": "Renormalization alone cannot turn a strongly truncated state into evidence of a correct computation.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T028",
+      "journey": "J06",
+      "slug": "contraction-plan",
+      "title": "Compute a tensor-network output within a memory ceiling",
+      "personas": [
+        "P07",
+        "P15"
+      ],
+      "models": [
+        "gate",
+        "analog"
+      ],
+      "stages": [
+        "compile",
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F07.02",
+        "F07.05",
+        "F19.02",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06",
+        "A11"
+      ],
+      "user_need": "A simulator user needs a feasible contraction strategy whose planning cost is known.",
+      "inputs": "Network families, requested outputs, contraction-search budget and memory ceiling.",
+      "required_output": "A contraction/slicing plan, planning log and validated output.",
+      "acceptance": "Planning plus execution stays within its cohort budget; output passes the independent feasible-size oracle and all slices are combined with the correct weights.",
+      "metrics": [
+        "planning time",
+        "execution time",
+        "peak memory",
+        "slice count"
+      ],
+      "negative_case": "A cached plan from another topology or omitted slices must not produce a successful result.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T029",
+      "journey": "J06",
+      "slug": "structured-time-evolution",
+      "title": "Evolve a many-body state with controlled discretization and truncation",
+      "personas": [
+        "P04"
+      ],
+      "models": [
+        "gate",
+        "analog"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F07.03",
+        "F07.04",
+        "F04.02",
+        "F13.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06"
+      ],
+      "user_need": "A scientist needs physically meaningful time-series outputs with both integration and representation errors controlled.",
+      "inputs": "A Hamiltonian, initial state, time grid, boundary conditions and error budget.",
+      "required_output": "Observable trajectories with step-size and truncation diagnostics.",
+      "acceptance": "Small cases agree with exact evolution; refinement studies separate time-discretization and representation effects and satisfy the requested observable tolerance.",
+      "metrics": [
+        "time to accuracy",
+        "memory",
+        "conservation error"
+      ],
+      "negative_case": "Changing boundaries or the time unit cannot be used to obtain an easier but different evolution.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T030",
+      "journey": "J06",
+      "slug": "approximate-method-choice",
+      "title": "Select a representation for a requested scientific output",
+      "personas": [
+        "P04",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "analog"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F05.05",
+        "F07.01",
+        "F07.03",
+        "F07.05",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A06",
+        "A09"
+      ],
+      "user_need": "A user needs a practical answer at target accuracy, not the same internal algorithm in every implementation.",
+      "inputs": "A fixed problem/output contract, candidate representation policies and total selection budget.",
+      "required_output": "A validated output with method choice, selection cost and approximation provenance.",
+      "acceptance": "The output meets the common error target; all method-selection runs are counted and comparisons distinguish matched-method from best-available workflows.",
+      "metrics": [
+        "total time to target",
+        "memory",
+        "selection overhead"
+      ],
+      "negative_case": "An automatic fallback to a different precision or approximation cannot remain undisclosed.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T031",
+      "journey": "J07",
+      "slug": "derivative-validation",
+      "title": "Obtain trustworthy derivatives of a quantum model",
+      "personas": [
+        "P05",
+        "P02"
+      ],
+      "models": [
+        "gate",
+        "cv",
+        "analog",
+        "pulse"
+      ],
+      "stages": [
+        "verify",
+        "optimize"
+      ],
+      "functions": [
+        "F08.01",
+        "F08.02",
+        "F08.05",
+        "F02.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A07",
+        "A10"
+      ],
+      "user_need": "An optimizer user needs derivatives with correct shared-parameter and complex-output conventions.",
+      "inputs": "Small circuit, finite-mode and controlled-Hamiltonian fixtures with independent analytic/directional references, shared parameters, vector outputs and explicit units/complex-output conventions.",
+      "required_output": "Gradients or derivative products with method, shape and cost provenance.",
+      "acceptance": "Analytic cases and independent directional checks meet mixed absolute/relative tolerances, including near-zero components; parameter sharing is accumulated correctly.",
+      "metrics": [
+        "derivative error",
+        "forward/backward time",
+        "memory",
+        "evaluation calls"
+      ],
+      "negative_case": "A detached parameter, transposed Jacobian or conjugation error must fail even when optimization happens to improve the loss.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T032",
+      "journey": "J07",
+      "slug": "hybrid-minibatch",
+      "title": "Train a minibatched hybrid quantum/classical model",
+      "personas": [
+        "P05"
+      ],
+      "models": [
+        "gate",
+        "cv"
+      ],
+      "stages": [
+        "express",
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F09.01",
+        "F09.02",
+        "F09.03",
+        "F08.01",
+        "F19.03"
+      ],
+      "acceptance_profiles": [
+        "A07",
+        "A09"
+      ],
+      "user_need": "A practitioner needs learning across a classical/quantum boundary with correct batching.",
+      "inputs": "A fixed dataset/split, model, initialization, objective and compute budget, with serial small-batch references.",
+      "required_output": "Training traces, held-out evaluation and resource/call accounting.",
+      "acceptance": "Gradients cross every declared trainable boundary; batch outputs match serial references; the frozen convergence or quality target is met under the total budget.",
+      "metrics": [
+        "time to target",
+        "examples per second",
+        "memory",
+        "held-out quality"
+      ],
+      "negative_case": "Averaging all examples before the quantum layer or training on held-out data is rejected.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T033",
+      "journey": "J07",
+      "slug": "variational-optimization",
+      "title": "Converge a variational objective under a fixed budget",
+      "personas": [
+        "P05",
+        "P02"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F09.03",
+        "F09.05",
+        "F08.05",
+        "F13.01"
+      ],
+      "acceptance_profiles": [
+        "A07",
+        "A09"
+      ],
+      "user_need": "A researcher needs successful convergence, not merely fast optimizer iterations.",
+      "inputs": "A declared cost operator, ansatz, parameter domain, initializations and target objective interval.",
+      "required_output": "Independent-seed optimization outcomes and complete objective/gradient call traces.",
+      "acceptance": "Successful runs meet the frozen objective target within budget; seed failures and tuning cost remain in the success-rate and cost report.",
+      "metrics": [
+        "success probability",
+        "time/evaluations to target",
+        "final objective gap"
+      ],
+      "negative_case": "Changing optimizer stopping rules or retaining only the best initialization cannot change the primary cohort after results are seen.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T034",
+      "journey": "J07",
+      "slug": "higher-order-training",
+      "title": "Use curvature or derivative products in a learning routine",
+      "personas": [
+        "P05",
+        "P02"
+      ],
+      "models": [
+        "gate",
+        "cv",
+        "analog",
+        "pulse"
+      ],
+      "stages": [
+        "verify",
+        "optimize"
+      ],
+      "functions": [
+        "F08.02",
+        "F08.03",
+        "F08.05",
+        "F09.01"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A07",
+        "A10"
+      ],
+      "user_need": "A researcher needs curvature-aware optimization or sensitivity analysis with a valid derivative graph.",
+      "inputs": "Small objectives with reference Hessians/JVPs/VJPs and a fixed outer optimization or sensitivity computation.",
+      "required_output": "Derivative products and a correct enclosing workflow result.",
+      "acceptance": "Independent small references and directional identities pass; unsupported derivative orders or backends are explicit instead of returning detached or zero values.",
+      "metrics": [
+        "product error",
+        "runtime",
+        "memory",
+        "outer convergence"
+      ],
+      "negative_case": "A first-derivative-only implementation cannot be presented as higher-order support through an unreported finite-difference wrapper.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T035",
+      "journey": "J07",
+      "slug": "finite-shot-learning",
+      "title": "Optimize a noisy sampled model with a shot budget",
+      "personas": [
+        "P05",
+        "P08"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "cv",
+        "analog"
+      ],
+      "stages": [
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F08.04",
+        "F08.05",
+        "F09.05",
+        "F12.02",
+        "F12.03"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A07",
+        "A09"
+      ],
+      "user_need": "A user needs learning whose statistical cost is accounted for.",
+      "inputs": "A fixed sampled objective, noise/execution model, independent seeds, shot budget and target success criterion.",
+      "required_output": "Training outcomes with derivative variance, total shots and all shifted evaluations.",
+      "acceptance": "Declared estimator bias/variance and task success satisfy the frozen statistical contract; no analytic expectation is substituted for sampled calls.",
+      "metrics": [
+        "success probability",
+        "total shots",
+        "time to target",
+        "estimator variance"
+      ],
+      "negative_case": "Adaptive shot allocation and discarded trajectories must be charged and reproducible.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T036",
+      "journey": "J08",
+      "slug": "molecular-spectrum",
+      "title": "Estimate molecular ground or excited-state energies",
+      "personas": [
+        "P03"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "express",
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F04.03",
+        "F04.04",
+        "F13.01",
+        "F09.05",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A09"
+      ],
+      "user_need": "A chemistry researcher needs energies for the same molecular problem, with all conventions explicit.",
+      "inputs": "Frozen geometry/units, basis, charge/spin, active space, Hamiltonian constants, state/spectral target and reference uncertainty.",
+      "required_output": "Energies, state/optimization evidence and end-to-end preparation/evaluation costs.",
+      "acceptance": "The requested total or electronic-energy convention and state target match the reference; error plus reference uncertainty fits the budget and all preprocessing/calls are recorded.",
+      "metrics": [
+        "energy error",
+        "time to target",
+        "shots",
+        "peak memory"
+      ],
+      "negative_case": "A different active space, omitted nuclear constant or ground-state answer to an excited-state request is a different task, not a speedup.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T037",
+      "journey": "J08",
+      "slug": "many-body-observables",
+      "title": "Predict a many-body dynamics or correlation study",
+      "personas": [
+        "P04"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "qudit",
+        "cv"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F04.02",
+        "F04.04",
+        "F13.02",
+        "F07.04",
+        "F12.05",
+        "F04.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06",
+        "A09"
+      ],
+      "user_need": "A scientist needs a physically specified trajectory rather than a circuit-runtime number.",
+      "inputs": "Lattice/graph, local Hilbert dimensions, spin/fermion/boson encoding, couplings, units, boundaries, initial state, output times and selected correlations.",
+      "required_output": "A time series and an auditable total error/resource account.",
+      "acceptance": "Small reference and larger convergence cases meet the prescribed observable error; constants, boundary conditions and time grids are identical across compared workflows.",
+      "metrics": [
+        "observable error",
+        "time to accuracy",
+        "memory",
+        "completed time horizon"
+      ],
+      "negative_case": "Selecting only easy early-time points or omitting correlation terms must remain a failed/incomplete study.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T038",
+      "journey": "J08",
+      "slug": "optimization-application",
+      "title": "Solve a constrained optimization instance and decode the answer",
+      "personas": [
+        "P14"
+      ],
+      "models": [
+        "gate",
+        "annealing"
+      ],
+      "stages": [
+        "formulate",
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F04.05",
+        "F13.03",
+        "F18.04",
+        "F09.05"
+      ],
+      "acceptance_profiles": [
+        "A09"
+      ],
+      "user_need": "A practitioner needs feasible solutions in the original application variables.",
+      "inputs": "Frozen instance distribution, constraints, objective, classical reference or bound and resource budget.",
+      "required_output": "Decoded solutions, independently recomputed objectives, feasibility and success distributions.",
+      "acceptance": "Every claimed solution is checked in the original problem; success meets the predeclared quality/feasibility target and includes formulation, search and repair costs.",
+      "metrics": [
+        "feasible-solution rate",
+        "objective gap",
+        "time to target",
+        "total evaluations"
+      ],
+      "negative_case": "A low penalized energy is not evidence of original-problem feasibility; classical repair cannot be hidden.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F18.04": "Required when the frozen instance includes the annealing applicability tag."
+      }
+    },
+    {
+      "id": "T039",
+      "journey": "J08",
+      "slug": "phase-amplitude-inference",
+      "title": "Estimate a phase or amplitude with complete oracle accounting",
+      "personas": [
+        "P02"
+      ],
+      "models": [
+        "gate",
+        "adaptive"
+      ],
+      "stages": [
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F13.04",
+        "F02.02",
+        "F03.03",
+        "F12.02",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A09"
+      ],
+      "user_need": "An algorithm researcher needs an inference result at specified accuracy and confidence.",
+      "inputs": "A declared oracle and construction, input preparation, target parameter, precision/confidence and query/time budget.",
+      "required_output": "An estimate, interval and full controlled-oracle/preparation/measurement cost.",
+      "acceptance": "The inference error and interval coverage meet the frozen contract over the prescribed instance ensemble; oracle and classical postprocessing costs are included.",
+      "metrics": [
+        "queries to target",
+        "success probability",
+        "wall time",
+        "workspace"
+      ],
+      "negative_case": "Counting a controlled high-power oracle as one free elementary operation cannot support an end-to-end efficiency claim.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T040",
+      "journey": "J08",
+      "slug": "linear-algebra-output",
+      "title": "Extract a useful observable from a quantum linear-algebra routine",
+      "personas": [
+        "P02",
+        "P04"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F04.01",
+        "F02.04",
+        "F13.04",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A09"
+      ],
+      "user_need": "A user needs an interpretable answer, not only a normalized state encoding an unknown solution.",
+      "inputs": "A bounded matrix problem, conditioning promise, preparation/block-encoding contract and explicitly requested observable or solution output.",
+      "required_output": "The requested classical quantity or declared quantum-state output with all success probabilities.",
+      "acceptance": "The specified output matches the independent reference within budget; conditioning, postselection, preparation and readout costs are disclosed.",
+      "metrics": [
+        "output error",
+        "success probability",
+        "total time",
+        "oracle calls"
+      ],
+      "negative_case": "Comparing quantum-state preparation time to a full classical-vector output is disallowed unless the output contracts are made identical.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T041",
+      "journey": "J09",
+      "slug": "noisy-channel-study",
+      "title": "Predict outputs of a declared noisy experiment",
+      "personas": [
+        "P08",
+        "P07"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F10.01",
+        "F10.02",
+        "F12.02",
+        "F05.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04"
+      ],
+      "user_need": "A noise researcher needs consistent channel placement and sampled or exact outputs.",
+      "inputs": "Frozen channel locations/order, noise parameters, input program, measurement and trajectory/shot policy.",
+      "required_output": "Mixed-state observables or distributions with solver/sampling metadata.",
+      "acceptance": "Small density-matrix references and trajectory equivalence tests pass; finite-sampling uncertainty and exact-versus-sampled cohorts are distinct.",
+      "metrics": [
+        "observable/distribution error",
+        "time at accuracy",
+        "memory",
+        "trajectories"
+      ],
+      "negative_case": "Moving noise before rather than after a noncommuting gate is a changed experiment and must fail.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T042",
+      "journey": "J09",
+      "slug": "open-system-evolution",
+      "title": "Integrate a time-dependent open quantum system",
+      "personas": [
+        "P08",
+        "P04"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "pulse"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F10.03",
+        "F04.01",
+        "F15.03",
+        "F13.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06",
+        "A10"
+      ],
+      "user_need": "A researcher needs driven/dissipative dynamics with interpretable physical units and solver error.",
+      "inputs": "Hamiltonian/dissipators, units, frame, initial density matrix, output times and tolerances.",
+      "required_output": "State or observable trajectories with integration diagnostics.",
+      "acceptance": "Analytically solvable and independent small-solver fixtures satisfy error budgets; trace/physicality checks and refinement tests expose integration failure.",
+      "metrics": [
+        "time to tolerance",
+        "state/observable error",
+        "step count",
+        "memory"
+      ],
+      "negative_case": "A frame, rate-unit or collapse-operator normalization mismatch cannot be hidden by rescaling the final curve.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F15.03": "Required when the frozen instance includes the pulse applicability tag."
+      }
+    },
+    {
+      "id": "T043",
+      "journey": "J09",
+      "slug": "readout-mitigation",
+      "title": "Correct measurement bias with accounted calibration uncertainty",
+      "personas": [
+        "P08",
+        "P09"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F10.04",
+        "F10.01",
+        "F12.01",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A04"
+      ],
+      "user_need": "An experimenter needs to know whether readout correction improves the requested estimate.",
+      "inputs": "Calibration and evaluation datasets kept separate, an estimator, target observable and total shot budget.",
+      "required_output": "Raw and mitigated estimates, uncertainty, conditioning diagnostics and calibration cost.",
+      "acceptance": "Known-channel fixtures satisfy the declared bias/coverage target; calibration uncertainty and any negative quasi-probabilities are handled explicitly.",
+      "metrics": [
+        "error reduction",
+        "variance",
+        "total calibration/evaluation shots",
+        "failure rate"
+      ],
+      "negative_case": "Clipping negative weights and silently renormalizing them cannot be claimed as an unbiased correction.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T044",
+      "journey": "J09",
+      "slug": "noise-mitigation-tradeoff",
+      "title": "Assess extrapolation or cancellation at matched total cost",
+      "personas": [
+        "P08",
+        "P09"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F10.04",
+        "F12.02",
+        "F12.03",
+        "F11.02"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A user needs evidence of practical mitigation benefit after its statistical overhead.",
+      "inputs": "A declared mitigation method, scaling/quasi-probability assumptions, raw baseline, held-out fixtures and total budget.",
+      "required_output": "Raw/mitigated errors, intervals, failure cases and all additional programs/shots.",
+      "acceptance": "At matched total cost the predeclared quality criterion is evaluated with appropriate uncertainty; scaling and cancellation assumptions are independently checked.",
+      "metrics": [
+        "error versus cost",
+        "variance amplification",
+        "extra circuits",
+        "coverage"
+      ],
+      "negative_case": "A zero-noise reference used in fitting cannot also be presented as unseen validation evidence.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T045",
+      "journey": "J09",
+      "slug": "prospective-noise-model",
+      "title": "Validate a frozen device or noise model on unseen experiments",
+      "personas": [
+        "P08",
+        "P09"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "pulse"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F10.05",
+        "F11.05",
+        "F12.02",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A user needs to know where a predictive model generalizes beyond calibration data.",
+      "inputs": "Versioned calibration/training data, a frozen model, disjoint circuits/settings and acquisition windows.",
+      "required_output": "Predictions, held-out residuals, uncertainty and a declared validity region.",
+      "acceptance": "The frozen predictive contract is evaluated only on held-out data; calibration age, drift and unsupported regions are retained, with failures reported.",
+      "metrics": [
+        "held-out prediction error",
+        "coverage",
+        "validity-region completion",
+        "calibration cost"
+      ],
+      "negative_case": "Retrospective fitting on evaluation counts cannot be labeled prospective validation.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T046",
+      "journey": "J10",
+      "slug": "device-feasibility",
+      "title": "Select a device capable of a planned experiment",
+      "personas": [
+        "P09",
+        "P16"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "analog",
+        "pulse",
+        "cv",
+        "annealing"
+      ],
+      "stages": [
+        "formulate",
+        "compile"
+      ],
+      "functions": [
+        "F11.01",
+        "F01.02",
+        "F06.01",
+        "F03.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A05",
+        "A08"
+      ],
+      "user_need": "An experimenter needs to choose an accessible target whose actual profile matches the program.",
+      "inputs": "Mocked target rosters, availability/access responses and programs with model/timing/control requirements.",
+      "required_output": "A target decision and compatibility evidence without a submission.",
+      "acceptance": "Declared capabilities match validation fixtures; unavailable, inaccessible or incompatible targets are distinguished and do not trigger substitute execution.",
+      "metrics": [
+        "selection correctness",
+        "assessment latency",
+        "false-compatible rate"
+      ],
+      "negative_case": "A provider adapter being installed is not evidence that the user has hardware access.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T047",
+      "journey": "J10",
+      "slug": "authorized-batch",
+      "title": "Prepare and submit an explicitly authorized experiment batch",
+      "personas": [
+        "P09"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "analog",
+        "pulse",
+        "cv",
+        "annealing"
+      ],
+      "stages": [
+        "compile",
+        "execute"
+      ],
+      "functions": [
+        "F11.02",
+        "F11.03",
+        "F11.05",
+        "F01.04"
+      ],
+      "acceptance_profiles": [
+        "A08"
+      ],
+      "user_need": "A user needs predictable submission scope and a traceable acquisition request.",
+      "inputs": "A frozen plan, target snapshot, parameter bindings, shot limits and explicit authorization.",
+      "required_output": "A validated preview and, only when authorized, job identities bound to the exact submitted payloads.",
+      "acceptance": "The submitted payload, bindings and budgets match the approved preview; uncertainty in provider cost is explicit and a stub verifies zero unapproved submissions.",
+      "metrics": [
+        "payload agreement",
+        "submission overhead",
+        "budget adherence"
+      ],
+      "negative_case": "Changed shots, extra calibration circuits or retries beyond the approved policy require a new explicit decision.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T048",
+      "journey": "J10",
+      "slug": "recover-remote-job",
+      "title": "Recover asynchronous or partially completed work",
+      "personas": [
+        "P09",
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F11.03",
+        "F11.04",
+        "F11.05",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A08"
+      ],
+      "user_need": "A user needs to resume a study after interruption without losing or duplicating paid work.",
+      "inputs": "Recorded job IDs, partial result pages, timeouts, cancellation states and ambiguous submission acknowledgments.",
+      "required_output": "A reconciled job ledger and complete/partial results with explicit unresolved states.",
+      "acceptance": "Retrieval reconstructs available results and distinguishes unknown submission from failure; no duplicate job is created outside the predeclared retry/authorization policy.",
+      "metrics": [
+        "recovery success",
+        "duplicate submissions",
+        "recovery time",
+        "unresolved jobs"
+      ],
+      "negative_case": "A client timeout after server acceptance cannot automatically become a second paid submission.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T049",
+      "journey": "J10",
+      "slug": "hardware-result-mapping",
+      "title": "Recover logical observations from compiled device results",
+      "personas": [
+        "P09",
+        "P08"
+      ],
+      "models": [
+        "gate",
+        "adaptive"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F11.05",
+        "F06.04",
+        "F12.01",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A08"
+      ],
+      "user_need": "A scientist needs counts attributed to the right program, binding and logical subsystem.",
+      "inputs": "Batches with distinct IDs, unused wires, final layout permutations, multiple registers and provider result order changes.",
+      "required_output": "Canonical logical result records plus the original provider records and mappings.",
+      "acceptance": "Every result is matched to its exact program/binding and logical bits; all shot totals and partial/missing records reconcile without positional guesses.",
+      "metrics": [
+        "mapping accuracy",
+        "collection overhead",
+        "missing-record detection"
+      ],
+      "negative_case": "Reordered publications or provider-endian strings must not silently swap experiment identities.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T050",
+      "journey": "J10",
+      "slug": "repeat-across-calibration",
+      "title": "Repeat an experiment while retaining acquisition context",
+      "personas": [
+        "P09",
+        "P08"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "pulse",
+        "cv",
+        "annealing"
+      ],
+      "stages": [
+        "execute",
+        "estimate",
+        "operate"
+      ],
+      "functions": [
+        "F11.05",
+        "F12.02",
+        "F20.04",
+        "F10.05"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A08"
+      ],
+      "user_need": "A user needs to distinguish software differences from device drift and acquisition conditions.",
+      "inputs": "A repeated protocol with acquisition windows, calibration snapshots, interleaved ordering and frozen software settings.",
+      "required_output": "A run series with time/device context and separately reported software and acquisition effects.",
+      "acceptance": "The same task/budget is preserved; timestamp and calibration provenance are retained and any missing context limits the permitted comparison claim.",
+      "metrics": [
+        "protocol completion",
+        "metadata completeness",
+        "between-run variation"
+      ],
+      "negative_case": "Queue time or a hardware fidelity change cannot be assigned to SDK computation speed without a controlled software measurement.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T051",
+      "journey": "J11",
+      "slug": "code-definition",
+      "title": "Construct and validate a code with named logical observables",
+      "personas": [
+        "P10"
+      ],
+      "models": [
+        "qec"
+      ],
+      "stages": [
+        "formulate",
+        "express",
+        "verify"
+      ],
+      "functions": [
+        "F14.01",
+        "F04.02",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02"
+      ],
+      "user_need": "A researcher needs code definitions whose algebra and logical conventions can be checked.",
+      "inputs": "Check matrices or geometric code specifications, boundaries and named logical operators.",
+      "required_output": "A code object or equivalent artifact with checks, labels and validation evidence.",
+      "acceptance": "Commutation, dimensions, declared logical relations and small enumerated fixtures agree; a claimed distance is proved for the bounded fixture or explicitly left unverified.",
+      "metrics": [
+        "construction time",
+        "algebra pass rate",
+        "resource size"
+      ],
+      "negative_case": "A noncommuting check set or an unsupported subsystem-code assumption must not be silently repaired.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T052",
+      "journey": "J11",
+      "slug": "memory-experiment",
+      "title": "Run repeated syndrome-extraction memory experiments",
+      "personas": [
+        "P10"
+      ],
+      "models": [
+        "qec",
+        "adaptive"
+      ],
+      "stages": [
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F14.02",
+        "F03.01",
+        "F03.02",
+        "F11.05"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A04"
+      ],
+      "user_need": "A researcher needs the full round/measurement history for logical-memory analysis.",
+      "inputs": "A code, extraction schedule, round count, noise locations and detector/logical definitions.",
+      "required_output": "Syndrome histories, detection events and logical-observable records.",
+      "acceptance": "Noiseless and injected single-fault small fixtures match independent expected histories; measurement/reset order and round labels are preserved.",
+      "metrics": [
+        "construction/execution time",
+        "history correctness",
+        "samples per second"
+      ],
+      "negative_case": "Dropping an initial/final boundary event or shifting a measurement by one round must fail.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F14.02": "Required when the frozen instance includes the qec applicability tag."
+      }
+    },
+    {
+      "id": "T053",
+      "journey": "J11",
+      "slug": "detector-model",
+      "title": "Build and sample an explicitly scoped detector error model",
+      "personas": [
+        "P10"
+      ],
+      "models": [
+        "qec"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "verify"
+      ],
+      "functions": [
+        "F14.03",
+        "F14.02",
+        "F12.01",
+        "F20.03"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A04"
+      ],
+      "user_need": "A decoder study needs a model that matches the declared circuit/noise assumptions.",
+      "inputs": "A small extraction experiment, supported noise model, correlation policy and event/observable mapping.",
+      "required_output": "A detector model, interchange artifact and sampled events with provenance.",
+      "acceptance": "Independent enumerated faults and sampled distributions agree within contract; approximation and discarded correlations are explicit and round-trip semantics hold.",
+      "metrics": [
+        "model error",
+        "construction time",
+        "sample throughput",
+        "approximation scope"
+      ],
+      "negative_case": "An unsupported correlated error cannot be split into independent edges without a declared approximation.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T054",
+      "journey": "J11",
+      "slug": "decoder-evaluation",
+      "title": "Evaluate a decoder on held-out detector events",
+      "personas": [
+        "P10"
+      ],
+      "models": [
+        "qec"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F14.04",
+        "F14.03",
+        "F12.02",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A researcher needs a logical error/latency tradeoff with the same underlying decoding problem.",
+      "inputs": "Frozen detector events, logical labels, model, noise rate, training/tuning separation and latency budget.",
+      "required_output": "Predictions, logical failure intervals, latency distribution and unmatched-case records.",
+      "acceptance": "Predictions are scored on held-out events; latency includes specified preprocessing boundaries, and zero observed failures still receive a nonzero uncertainty bound.",
+      "metrics": [
+        "logical failure rate",
+        "tail latency",
+        "throughput",
+        "memory"
+      ],
+      "negative_case": "Decoder training/tuning samples cannot leak into evaluation, and unmatched syndromes cannot be dropped.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T055",
+      "journey": "J11",
+      "slug": "logical-program-resources",
+      "title": "Estimate resources for a specified logical computation",
+      "personas": [
+        "P10",
+        "P02"
+      ],
+      "models": [
+        "qec"
+      ],
+      "stages": [
+        "formulate",
+        "compile",
+        "estimate"
+      ],
+      "functions": [
+        "F14.05",
+        "F06.05",
+        "F13.04",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A09"
+      ],
+      "user_need": "A user needs transparent fault-tolerant resource assumptions rather than an unexplained qubit number.",
+      "inputs": "A logical program, synthesis precision, error budget, code/cycle assumptions and magic-state/resource model.",
+      "required_output": "A resource ledger separating logical counts, synthesis, factories, physical assumptions and extrapolation.",
+      "acceptance": "Small ledgers independently reconcile counts and budgets; all claimed physical resources follow the frozen model and no estimate is presented as demonstrated hardware performance.",
+      "metrics": [
+        "logical operations",
+        "physical-resource estimate",
+        "runtime estimate",
+        "assumption sensitivity"
+      ],
+      "negative_case": "A logical T-count alone cannot be reported as total physical resource cost.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T056",
+      "journey": "J12",
+      "slug": "waveform-program",
+      "title": "Express physical controls with explicit units and channels",
+      "personas": [
+        "P11"
+      ],
+      "models": [
+        "pulse"
+      ],
+      "stages": [
+        "express",
+        "verify"
+      ],
+      "functions": [
+        "F15.01",
+        "F15.05",
+        "F20.01"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A10"
+      ],
+      "user_need": "A control researcher needs an unambiguous representation of a physical experiment.",
+      "inputs": "Waveforms, ports/frames, calibration references, sample rate, amplitude limits and channel assignments.",
+      "required_output": "A validated control program and exported waveform/metadata artifact.",
+      "acceptance": "Units, frame changes, samples and channel associations survive inspection/export; constraints are independently checked.",
+      "metrics": [
+        "representation fidelity",
+        "construction/export time",
+        "payload size"
+      ],
+      "negative_case": "A frequency-unit mismatch, out-of-range sample or missing frame reference is rejected.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T057",
+      "journey": "J12",
+      "slug": "control-schedule",
+      "title": "Schedule simultaneous and feedback-dependent control",
+      "personas": [
+        "P11",
+        "P06"
+      ],
+      "models": [
+        "pulse",
+        "adaptive"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F15.02",
+        "F06.05",
+        "F03.02",
+        "F06.01"
+      ],
+      "acceptance_profiles": [
+        "A05",
+        "A10"
+      ],
+      "user_need": "An experimenter needs valid concurrent pulses and classical feedback timing.",
+      "inputs": "A control program with channel conflicts, alignment, feedback latency and device timing constraints.",
+      "required_output": "An executable schedule with conflict and dependency evidence.",
+      "acceptance": "All constraints pass an independent schedule validator; effective rounded timings and any changed experiment are explicit.",
+      "metrics": [
+        "makespan",
+        "timing deviation",
+        "violations",
+        "compile time"
+      ],
+      "negative_case": "A feedback pulse cannot be scheduled before its measurement result exists.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F15.02": "Required when the frozen instance includes the pulse applicability tag."
+      }
+    },
+    {
+      "id": "T058",
+      "journey": "J12",
+      "slug": "driven-dynamics",
+      "title": "Predict a calibrated driven-system response",
+      "personas": [
+        "P11",
+        "P08"
+      ],
+      "models": [
+        "pulse"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F15.03",
+        "F10.03",
+        "F04.01",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06",
+        "A10"
+      ],
+      "user_need": "A researcher needs response predictions in the intended physical frame.",
+      "inputs": "A driven Hamiltonian, dissipators, control samples, rotating-frame convention and output times.",
+      "required_output": "States or observable traces with solver tolerances and frame metadata.",
+      "acceptance": "Analytic and independent small-system fixtures meet the observable/state budget; time-step refinement and frame conversion are checked.",
+      "metrics": [
+        "response error",
+        "time to tolerance",
+        "memory"
+      ],
+      "negative_case": "Dropping counter-rotating terms or changing frames requires an explicit approximation rather than a silent optimization.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T059",
+      "journey": "J12",
+      "slug": "control-optimization",
+      "title": "Optimize a pulse under physical and evaluation constraints",
+      "personas": [
+        "P11"
+      ],
+      "models": [
+        "pulse"
+      ],
+      "stages": [
+        "optimize",
+        "verify"
+      ],
+      "functions": [
+        "F15.04",
+        "F15.01",
+        "F15.03",
+        "F09.05"
+      ],
+      "acceptance_profiles": [
+        "A07",
+        "A09",
+        "A10"
+      ],
+      "user_need": "A researcher needs a control solution that meets a physical objective without violating device limits.",
+      "inputs": "A target operation/response, model or authorized device path, pulse constraints, initialization and evaluation budget.",
+      "required_output": "A constrained control solution, objective trace and held-out validation.",
+      "acceptance": "The final control satisfies all physical constraints and the frozen quality target; all evaluations are counted and modeled versus measured evidence is distinct.",
+      "metrics": [
+        "time/evaluations to target",
+        "constraint violations",
+        "robustness over held-out parameters"
+      ],
+      "negative_case": "A high modeled fidelity outside allowed amplitudes or bandwidth is not a valid solution.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T060",
+      "journey": "J12",
+      "slug": "calibration-binding",
+      "title": "Use the correct calibration for a gate-level experiment",
+      "personas": [
+        "P11",
+        "P09"
+      ],
+      "models": [
+        "pulse",
+        "gate"
+      ],
+      "stages": [
+        "compile",
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F15.05",
+        "F06.01",
+        "F11.05",
+        "F20.04"
+      ],
+      "acceptance_profiles": [
+        "A05",
+        "A08",
+        "A10"
+      ],
+      "user_need": "An experimenter needs calibrated controls associated with the correct gate, device and acquisition context.",
+      "inputs": "Versioned gate/control definitions, parameter domains, target IDs and stale or incompatible calibration fixtures.",
+      "required_output": "A resolved gate-to-control binding and complete calibration provenance.",
+      "acceptance": "Compatible bindings preserve declared gate behavior on the small model; stale or mismatched definitions are rejected or explicitly flagged under a frozen policy.",
+      "metrics": [
+        "binding correctness",
+        "metadata completeness",
+        "validation overhead"
+      ],
+      "negative_case": "A calibration from a different device or clock cannot be treated as current without disclosure.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F15.05": "Required when the frozen instance includes the pulse applicability tag."
+      }
+    },
+    {
+      "id": "T061",
+      "journey": "J13",
+      "slug": "analog-model",
+      "title": "Describe a native analog experiment",
+      "personas": [
+        "P12",
+        "P04"
+      ],
+      "models": [
+        "analog"
+      ],
+      "stages": [
+        "formulate",
+        "express"
+      ],
+      "functions": [
+        "F16.01",
+        "F16.02",
+        "F04.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A10"
+      ],
+      "user_need": "A researcher needs to specify geometry and time-dependent interactions directly.",
+      "inputs": "Sites, species, initial configuration, coupling law, boundaries, fields and physical units.",
+      "required_output": "An inspectable analog program with explicit interpolation and control semantics.",
+      "acceptance": "Geometry, interactions, units and schedule endpoints match independent small fixtures; no gate-model discretization is imposed without an explicit method declaration.",
+      "metrics": [
+        "model fidelity",
+        "construction time",
+        "validation cost"
+      ],
+      "negative_case": "Changing lattice boundaries or silently converting a piecewise schedule to a different interpolation changes the task.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T062",
+      "journey": "J13",
+      "slug": "analog-evolution",
+      "title": "Compute observables of a native analog evolution",
+      "personas": [
+        "P12",
+        "P04"
+      ],
+      "models": [
+        "analog"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F16.03",
+        "F16.01",
+        "F07.04",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A06",
+        "A10"
+      ],
+      "user_need": "A scientist needs predicted observables or samples for an analog study.",
+      "inputs": "A fixed analog program, initial state, observable/time grid and solver/error budget.",
+      "required_output": "Observable trajectories or samples with method and uncertainty metadata.",
+      "acceptance": "Small direct-Hamiltonian references and larger declared convergence checks pass; approximation, loss and sampling assumptions remain explicit.",
+      "metrics": [
+        "time to observable accuracy",
+        "memory",
+        "distribution error"
+      ],
+      "negative_case": "An easier gate approximation cannot replace the requested evolution outside the agreed discretization budget.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T063",
+      "journey": "J13",
+      "slug": "analog-target",
+      "title": "Prepare an analog program for a constrained device",
+      "personas": [
+        "P12",
+        "P09"
+      ],
+      "models": [
+        "analog"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F16.04",
+        "F16.02",
+        "F11.01",
+        "F06.01"
+      ],
+      "acceptance_profiles": [
+        "A05",
+        "A10"
+      ],
+      "user_need": "A device user needs physical geometry and controls that the target can implement.",
+      "inputs": "A program plus spacing, placement, field, slew-rate, clock and local/global control limits.",
+      "required_output": "A legal target program with a record of rounding, discretization and unsupported requirements.",
+      "acceptance": "Independent target checks pass and the induced program change remains inside the declared tolerance; infeasible programs are diagnosed before submission.",
+      "metrics": [
+        "constraint pass rate",
+        "rounding error",
+        "compile time"
+      ],
+      "negative_case": "Unavailable local addressing cannot silently become a global field.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T064",
+      "journey": "J13",
+      "slug": "analog-loss-analysis",
+      "title": "Interpret analog measurements with loading and loss records",
+      "personas": [
+        "P12",
+        "P08",
+        "P09"
+      ],
+      "models": [
+        "analog"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F16.05",
+        "F12.01",
+        "F12.02",
+        "F11.05"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A08",
+        "A10"
+      ],
+      "user_need": "A user needs an honest denominator when particles are absent or lost.",
+      "inputs": "Raw loading/pre/post-measurement records, a frozen postselection rule and desired correlations.",
+      "required_output": "Raw and conditional estimates, loss fractions, acceptance denominators and uncertainty.",
+      "acceptance": "Counts reconcile across loading, loss and selection; both unconditional and conditional meanings are explicit and the estimator follows the frozen rule.",
+      "metrics": [
+        "retained fraction",
+        "loss rate",
+        "estimation error",
+        "total shots"
+      ],
+      "negative_case": "Discarding loss events without reporting them cannot improve a success metric invisibly.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T065",
+      "journey": "J13",
+      "slug": "analog-control-study",
+      "title": "Compare analog schedules for the same physical objective",
+      "personas": [
+        "P12",
+        "P14"
+      ],
+      "models": [
+        "analog"
+      ],
+      "stages": [
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F16.01",
+        "F16.02",
+        "F16.03",
+        "F09.05",
+        "F13.03"
+      ],
+      "acceptance_profiles": [
+        "A06",
+        "A09",
+        "A10"
+      ],
+      "user_need": "A researcher needs a schedule comparison tied to an unchanged physical problem.",
+      "inputs": "A physical objective, admissible schedule class, model/target constraints and tuning/evaluation budget.",
+      "required_output": "Schedules, objective/feasibility distributions and total cost.",
+      "acceptance": "All compared schedules solve the same objective and satisfy identical constraints; selection cost, solver approximation and held-out evaluation are disclosed.",
+      "metrics": [
+        "time/evaluations to target",
+        "objective gap",
+        "physical duration"
+      ],
+      "negative_case": "Changing interaction strength or allowed controls to make one schedule easier is a different cohort.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T066",
+      "journey": "J14",
+      "slug": "mode-state",
+      "title": "Prepare and transform a mode-based input state",
+      "personas": [
+        "P13"
+      ],
+      "models": [
+        "cv"
+      ],
+      "stages": [
+        "express",
+        "verify",
+        "execute"
+      ],
+      "functions": [
+        "F17.01",
+        "F17.02",
+        "F04.01",
+        "F20.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A10"
+      ],
+      "user_need": "A photonic researcher needs mode order and quadrature conventions preserved.",
+      "inputs": "Vacuum, coherent, squeezed and small non-Gaussian states; transformations; declared hbar/quadrature convention.",
+      "required_output": "State moments or small-basis outputs with convention metadata.",
+      "acceptance": "Analytic moments and independent small fixtures agree after only declared convention conversions; mode identities and physical units are preserved.",
+      "metrics": [
+        "moment/state error",
+        "execution time",
+        "memory"
+      ],
+      "negative_case": "A vacuum variance or displacement convention mismatch cannot be hidden by rescaling only the plotted output.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T067",
+      "journey": "J14",
+      "slug": "gaussian-study",
+      "title": "Compute Gaussian optical transformations and correlations",
+      "personas": [
+        "P13"
+      ],
+      "models": [
+        "cv"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F17.02",
+        "F17.01",
+        "F05.03",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A10"
+      ],
+      "user_need": "A researcher needs scalable Gaussian observables or sampling with correct covariance semantics.",
+      "inputs": "An interferometer, Gaussian inputs/channels and requested first/second moments or measured distributions.",
+      "required_output": "Moments, covariance or samples in the declared ordering.",
+      "acceptance": "Analytic small references, physical covariance constraints and the applicable statistical equivalence contract pass.",
+      "metrics": [
+        "time to requested output",
+        "memory",
+        "moment/distribution error"
+      ],
+      "negative_case": "An incorrect symplectic or mode permutation must fail despite preserved scalar normalization.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T068",
+      "journey": "J14",
+      "slug": "non-gaussian-cutoff",
+      "title": "Compute a non-Gaussian process with controlled Fock truncation",
+      "personas": [
+        "P13"
+      ],
+      "models": [
+        "cv"
+      ],
+      "stages": [
+        "execute",
+        "verify",
+        "estimate"
+      ],
+      "functions": [
+        "F17.02",
+        "F17.03",
+        "F07.03",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A06",
+        "A10"
+      ],
+      "user_need": "A researcher needs a non-Gaussian result with a justified cutoff.",
+      "inputs": "A finite-mode non-Gaussian circuit, cutoff/refinement sequence, output quantity and error budget.",
+      "required_output": "Requested outputs, truncation diagnostics and convergence evidence.",
+      "acceptance": "Small independent Fock references and cutoff refinement meet the output-error target; discarded probability and any renormalization remain visible.",
+      "metrics": [
+        "error versus cutoff",
+        "time to accuracy",
+        "memory",
+        "discarded probability"
+      ],
+      "negative_case": "A truncated result cannot be reported as exact merely because the retained vector has been normalized.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T069",
+      "journey": "J14",
+      "slug": "photonic-measurements",
+      "title": "Analyze photon-counting or quadrature observations",
+      "personas": [
+        "P13",
+        "P08"
+      ],
+      "models": [
+        "cv"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F17.04",
+        "F12.01",
+        "F12.02",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A10"
+      ],
+      "user_need": "A user needs measurement records with detector, loss and postselection meaning intact.",
+      "inputs": "Homodyne/heterodyne or number-resolving fixtures, detector/loss assumptions, sample units and a selection rule.",
+      "required_output": "Typed measurement outcomes and raw/conditional estimates with uncertainty.",
+      "acceptance": "Analytic or independent finite-size distributions satisfy the frozen statistical contract; mode order, units and all selection denominators reconcile.",
+      "metrics": [
+        "sampling throughput",
+        "distribution error",
+        "selection yield"
+      ],
+      "negative_case": "A continuous quadrature record cannot be treated as a discrete photon count or silently binned with an undisclosed rule.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T070",
+      "journey": "J14",
+      "slug": "photonic-program-transfer",
+      "title": "Transfer a mode program to another execution boundary",
+      "personas": [
+        "P13",
+        "P16"
+      ],
+      "models": [
+        "cv",
+        "adaptive"
+      ],
+      "stages": [
+        "compile",
+        "exchange",
+        "verify"
+      ],
+      "functions": [
+        "F17.05",
+        "F20.01",
+        "F20.02",
+        "F20.03",
+        "F03.02"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A05",
+        "A10"
+      ],
+      "user_need": "A user needs an optical program to retain its transformation, measurement and feed-forward intent.",
+      "inputs": "A mode program, target operations/constraints, source/target conventions and supported adaptive profile.",
+      "required_output": "A compiled or converted artifact plus a loss/rejection report.",
+      "acceptance": "Small observables or instruments agree after declared conversions and target checks pass; unsupported non-Gaussian/adaptive features are rejected explicitly.",
+      "metrics": [
+        "semantic retention",
+        "conversion/compile cost",
+        "target legality"
+      ],
+      "negative_case": "A mode cutoff, measurement type or feed-forward rule cannot disappear during interchange.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {
+        "F17.05": "Required when the frozen instance includes the cv applicability tag."
+      }
+    },
+    {
+      "id": "T071",
+      "journey": "J15",
+      "slug": "optimization-formulation",
+      "title": "Translate an application into a quadratic or constrained model",
+      "personas": [
+        "P14"
+      ],
+      "models": [
+        "annealing"
+      ],
+      "stages": [
+        "formulate",
+        "verify"
+      ],
+      "functions": [
+        "F18.01",
+        "F04.05",
+        "F13.03"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A09"
+      ],
+      "user_need": "A practitioner needs the solver model to represent the original objective and constraints.",
+      "inputs": "Small exhaustive binary/spin/constrained instances, penalty construction and coefficient/offset conventions.",
+      "required_output": "A model and a reversible variable/objective map.",
+      "acceptance": "Exhaustive small assignments reconcile energies, offsets and feasibility; domain conversions and penalty assumptions are explicit.",
+      "metrics": [
+        "formulation time",
+        "model size",
+        "mapping correctness"
+      ],
+      "negative_case": "A sign convention, missing offset or insufficient penalty cannot be ignored when claiming the original problem was solved.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T072",
+      "journey": "J15",
+      "slug": "annealing-embedding",
+      "title": "Embed a logical model onto a physical topology",
+      "personas": [
+        "P14",
+        "P09"
+      ],
+      "models": [
+        "annealing"
+      ],
+      "stages": [
+        "compile",
+        "verify"
+      ],
+      "functions": [
+        "F18.02",
+        "F18.01",
+        "F06.01",
+        "F18.04"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A05",
+        "A10"
+      ],
+      "user_need": "A user needs a legal embedding and interpretable decoded samples.",
+      "inputs": "A logical model, physical graph, coefficient bounds, chain policy and embedding budget.",
+      "required_output": "A valid embedded/scaled model, chains and inverse mapping.",
+      "acceptance": "All interactions fit the target and unbroken-chain small assignments preserve logical energy up to disclosed scaling/offset; embedding failure remains explicit.",
+      "metrics": [
+        "embedding time",
+        "physical resources",
+        "chain length",
+        "valid embedding rate"
+      ],
+      "negative_case": "Breaking a logical interaction or omitting coefficient clipping cannot improve embedding success invisibly.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T073",
+      "journey": "J15",
+      "slug": "annealing-sampling",
+      "title": "Run a controlled annealing sampling study",
+      "personas": [
+        "P14",
+        "P09"
+      ],
+      "models": [
+        "annealing"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F18.03",
+        "F18.04",
+        "F11.05",
+        "F12.02"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A08",
+        "A10"
+      ],
+      "user_need": "A practitioner needs results tied to the actual schedule, gauge and sampler type.",
+      "inputs": "A model, solver type, reads, schedules, gauges and execution authorization or local stub.",
+      "required_output": "Samples with timing, occurrences, schedule and decoding provenance.",
+      "acceptance": "Read totals and variable mappings reconcile; known small-model results satisfy the declared statistical/quality contract without assuming thermal sampling unless that is the task.",
+      "metrics": [
+        "feasible-solution probability",
+        "objective distribution",
+        "total reads",
+        "wall/device time"
+      ],
+      "negative_case": "A classical sampler or repaired sample cannot be relabeled as raw quantum output.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T074",
+      "journey": "J15",
+      "slug": "constraint-repair",
+      "title": "Evaluate feasibility and postprocessing honestly",
+      "personas": [
+        "P14"
+      ],
+      "models": [
+        "annealing"
+      ],
+      "stages": [
+        "estimate",
+        "optimize"
+      ],
+      "functions": [
+        "F18.04",
+        "F18.01",
+        "F13.03",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A09"
+      ],
+      "user_need": "A user needs to understand whether chain decoding or repair actually yields valid application solutions.",
+      "inputs": "Raw samples including broken chains/infeasible points, a fixed decoding/repair rule and original problem.",
+      "required_output": "Raw and repaired solutions with independently recomputed objectives, feasibility and costs.",
+      "acceptance": "Every claimed solution is valid in original variables; raw failures, repair changes and repair compute are separately retained.",
+      "metrics": [
+        "raw/repaired feasibility",
+        "quality gap",
+        "repair time",
+        "discarded sample rate"
+      ],
+      "negative_case": "Dropping infeasible samples or reporting repaired objectives as raw solver outcomes is a reporting failure.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T075",
+      "journey": "J15",
+      "slug": "hybrid-solver-study",
+      "title": "Compare hybrid optimization at a matched end-to-end budget",
+      "personas": [
+        "P14"
+      ],
+      "models": [
+        "annealing"
+      ],
+      "stages": [
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F18.05",
+        "F09.05",
+        "F13.03",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A09"
+      ],
+      "user_need": "A practitioner needs a defensible quality/cost comparison for a solver that mixes resources.",
+      "inputs": "Frozen instances, classical baseline/bounds, all preprocessing/repair, solver settings and total budget.",
+      "required_output": "Feasibility/quality success curves and a complete resource-accounting boundary.",
+      "acceptance": "The output contract and budget are shared; inaccessible internal QPU/classical breakdown is labeled unknown, while observable end-to-end cost and failures remain reported.",
+      "metrics": [
+        "time to feasible target",
+        "success probability",
+        "objective gap",
+        "known/unknown resource cost"
+      ],
+      "negative_case": "A hidden classical search or unknown internal QPU time cannot support a claimed quantum speedup or per-QPU efficiency.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T076",
+      "journey": "J16",
+      "slug": "resource-portability",
+      "title": "Run the same output contract on supported compute devices",
+      "personas": [
+        "P15",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "cv"
+      ],
+      "stages": [
+        "setup",
+        "execute",
+        "verify"
+      ],
+      "functions": [
+        "F19.01",
+        "F05.05",
+        "F20.04",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A11"
+      ],
+      "user_need": "An operator needs to know which devices and precisions actually complete a study.",
+      "inputs": "Frozen outputs/accuracy targets, CPU/accelerator configurations and supported precision combinations.",
+      "required_output": "Per-device correctness, actual execution path, memory and timing records.",
+      "acceptance": "The same output/accuracy contract passes; device execution is verified, asynchronous work is synchronized and any host fallback is explicit.",
+      "metrics": [
+        "time to accuracy",
+        "peak memory",
+        "capacity",
+        "fallback count"
+      ],
+      "negative_case": "A GPU label with CPU execution or a lower-precision result outside tolerance cannot count as successful acceleration.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T077",
+      "journey": "J16",
+      "slug": "state-sharding",
+      "title": "Expand a single computation through distributed state or tensor partitioning",
+      "personas": [
+        "P15",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "analog"
+      ],
+      "stages": [
+        "execute",
+        "operate",
+        "verify"
+      ],
+      "functions": [
+        "F19.02",
+        "F19.04",
+        "F07.02",
+        "F05.03"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A11"
+      ],
+      "user_need": "A user needs a larger single problem to fit across multiple resources.",
+      "inputs": "Fixed strong-scaling and separately defined capacity/weak-scaling workloads, partition policy and output contract.",
+      "required_output": "Validated distributed outputs with partition and communication evidence.",
+      "acceptance": "Small overlaps match an independent reference; shards or slices jointly represent one computation and resource/communication measurements include gathering the requested output.",
+      "metrics": [
+        "strong-scaling efficiency",
+        "capacity at accuracy",
+        "communication cost",
+        "peak per-worker memory"
+      ],
+      "negative_case": "Replicated copies of a small state are not evidence of larger distributed-state capacity.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T078",
+      "journey": "J16",
+      "slug": "parallel-study",
+      "title": "Increase throughput of independent experiments or training examples",
+      "personas": [
+        "P15",
+        "P05"
+      ],
+      "models": [
+        "common",
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "operate"
+      ],
+      "functions": [
+        "F19.03",
+        "F09.02",
+        "F05.05",
+        "F19.04"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A11"
+      ],
+      "user_need": "A study needs higher throughput without changing individual outputs.",
+      "inputs": "Independent circuits, seeds, parameter batches or shot partitions with a frozen serial reference.",
+      "required_output": "An ordered reconciled result set and total-work/resource ledger.",
+      "acceptance": "All independent outputs match their serial contracts; random streams, work assignment and result ordering are correct and throughput is not described as single-state capacity.",
+      "metrics": [
+        "completed outputs per second",
+        "scaling efficiency",
+        "memory",
+        "load imbalance"
+      ],
+      "negative_case": "Dropped, duplicated or accidentally correlated work units must fail accounting or statistical checks.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T079",
+      "journey": "J16",
+      "slug": "restart-study",
+      "title": "Resume a computation or training run after interruption",
+      "personas": [
+        "P15",
+        "P05"
+      ],
+      "models": [
+        "common",
+        "gate"
+      ],
+      "stages": [
+        "operate",
+        "verify"
+      ],
+      "functions": [
+        "F19.05",
+        "F09.04",
+        "F20.04",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A07",
+        "A11"
+      ],
+      "user_need": "An operator needs a long-running study to survive interruption without changing its meaning.",
+      "inputs": "A fixed checkpoint point, model/optimizer/RNG state, partition configuration and declared failure injections.",
+      "required_output": "A resumed run and comparison against an uninterrupted control.",
+      "acceptance": "Required state is restored and final outputs/continuation match the frozen deterministic or statistical contract; replayed work and recovery cost are counted.",
+      "metrics": [
+        "recovery time",
+        "lost/replayed work",
+        "checkpoint size",
+        "continuation error"
+      ],
+      "negative_case": "Restoring weights while losing optimizer, random or parameter-binding state is not full training recovery.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T080",
+      "journey": "J16",
+      "slug": "budgeted-capacity",
+      "title": "Determine the largest completed study under real resource limits",
+      "personas": [
+        "P15",
+        "P07"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "cv"
+      ],
+      "stages": [
+        "execute",
+        "operate",
+        "estimate"
+      ],
+      "functions": [
+        "F19.01",
+        "F19.04",
+        "F05.05",
+        "F07.03"
+      ],
+      "acceptance_profiles": [
+        "A06",
+        "A09",
+        "A11"
+      ],
+      "user_need": "A user needs a capacity boundary tied to meaningful outputs and acceptable error.",
+      "inputs": "A predefined scale ladder, error target, memory/wall-time budget and stop policy.",
+      "required_output": "Completed, timed-out, out-of-memory and inaccurate outcomes with telemetry.",
+      "acceptance": "Capacity is the largest instance completing the same output/error contract within budget; resource-limit outcomes remain censored failures rather than missing rows.",
+      "metrics": [
+        "largest valid instance",
+        "time to target",
+        "peak host/device memory",
+        "failure boundary"
+      ],
+      "negative_case": "A large allocation, trivial initial state or omitted requested output cannot establish useful computational capacity.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T081",
+      "journey": "J17",
+      "slug": "format-interchange",
+      "title": "Exchange a program through a declared standard/profile",
+      "personas": [
+        "P16",
+        "P02"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "pulse"
+      ],
+      "stages": [
+        "exchange",
+        "verify"
+      ],
+      "functions": [
+        "F20.01",
+        "F20.02",
+        "F03.05",
+        "F06.01"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A05"
+      ],
+      "user_need": "An engineer needs another tool to understand the intended program.",
+      "inputs": "Versioned interchange fixtures, parameters, classical records, timing features and an explicit supported profile.",
+      "required_output": "Imported/exported programs and feature-level conversion diagnostics.",
+      "acceptance": "Supported fixtures retain required semantics on independent bounded references; unsupported syntax/features are rejected with a precise profile boundary.",
+      "metrics": [
+        "semantic retention",
+        "parse/export time",
+        "diagnostic completeness"
+      ],
+      "negative_case": "Successful parsing of a program with dropped control or calibration blocks is not successful interchange.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T082",
+      "journey": "J17",
+      "slug": "semantic-roundtrip",
+      "title": "Round-trip an artifact across different conventions",
+      "personas": [
+        "P16",
+        "P02"
+      ],
+      "models": [
+        "gate",
+        "adaptive",
+        "qudit",
+        "cv",
+        "annealing"
+      ],
+      "stages": [
+        "exchange",
+        "verify"
+      ],
+      "functions": [
+        "F20.02",
+        "F20.03",
+        "F12.01",
+        "F04.01"
+      ],
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A10"
+      ],
+      "user_need": "A user needs portability without hidden changes to wire, variable, unit or output meaning.",
+      "inputs": "Asymmetric convention-sensitive fixtures, source/target maps and the required preservable metadata.",
+      "required_output": "Round-trip artifacts plus an explicit preservation/loss report.",
+      "acceptance": "Small reference outputs and required metadata agree after declared conversions; irrecoverable information loss is rejected or explicitly outside the round-trip contract.",
+      "metrics": [
+        "round-trip pass rate",
+        "conversion time",
+        "retained metadata"
+      ],
+      "negative_case": "Byte equality alone is insufficient, while semantic equality cannot excuse losing required calibration or result provenance.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T083",
+      "journey": "J17",
+      "slug": "reproduce-study",
+      "title": "Reproduce a published software result from its evidence bundle",
+      "personas": [
+        "P16",
+        "P01"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "setup",
+        "execute",
+        "exchange"
+      ],
+      "functions": [
+        "F20.04",
+        "F01.01",
+        "F05.05",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A03",
+        "A04"
+      ],
+      "user_need": "A reviewer needs to reproduce a claim without the original workstation or undisclosed settings.",
+      "inputs": "An immutable evidence bundle with input/reference hashes, environment lock, commands, seeds, outputs and restrictions.",
+      "required_output": "A replayed run, environment differences and checked result comparison.",
+      "acceptance": "The declared reference and numerical/statistical contract can be checked from the bundle; missing access or artifacts are explicit and prevent a reproducible label.",
+      "metrics": [
+        "reproduction success",
+        "setup/replay time",
+        "missing artifacts",
+        "result discrepancy"
+      ],
+      "negative_case": "A screenshot, best runtime or mutable notebook link alone is not a replayable result.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T084",
+      "journey": "J17",
+      "slug": "execution-chain-audit",
+      "title": "Identify which components actually performed the work",
+      "personas": [
+        "P16",
+        "P07"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "verify",
+        "operate",
+        "exchange"
+      ],
+      "functions": [
+        "F05.05",
+        "F08.05",
+        "F20.04",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A11"
+      ],
+      "user_need": "A reviewer needs to attribute frontend, compiler, engine and external-service contributions accurately.",
+      "inputs": "A workflow containing optional engines, derivative methods, compilation caches and intentional fallback conditions.",
+      "required_output": "A component/version dependency chain and stage-level execution/cost evidence.",
+      "acceptance": "Actual execution and fallback match telemetry/probes; all externally supplied work and cached setup costs are disclosed under the chosen measurement boundary.",
+      "metrics": [
+        "provenance completeness",
+        "unreported fallback count",
+        "stage overhead"
+      ],
+      "negative_case": "Two frontends using the same engine cannot be presented as independent engine implementations or independent numerical oracles.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T085",
+      "journey": "J17",
+      "slug": "regression-and-upgrade",
+      "title": "Detect semantic or operational regressions after an upgrade",
+      "personas": [
+        "P16"
+      ],
+      "models": [
+        "common",
+        "gate"
+      ],
+      "stages": [
+        "setup",
+        "verify",
+        "operate"
+      ],
+      "functions": [
+        "F20.04",
+        "F20.05",
+        "F01.02",
+        "F20.03"
+      ],
+      "acceptance_profiles": [
+        "A01",
+        "A03",
+        "A08"
+      ],
+      "user_need": "A maintainer needs to know whether upgrading preserves an existing study.",
+      "inputs": "Frozen task/fixture versions, old/new dependency locks and declared compatibility promises.",
+      "required_output": "A regression report separating changed semantics, environment failures and performance changes.",
+      "acceptance": "The same frozen acceptance contracts are evaluated for both environments; migration requirements and intentional breaking changes remain visible.",
+      "metrics": [
+        "regression count",
+        "compatible task coverage",
+        "performance change",
+        "diagnostic quality"
+      ],
+      "negative_case": "Changing the test inputs or dropping failed tasks during an upgrade invalidates a direct regression claim.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T086",
+      "journey": "J18",
+      "slug": "shot-estimator",
+      "title": "Estimate an observable with a specified uncertainty target",
+      "personas": [
+        "P08",
+        "P04"
+      ],
+      "models": [
+        "gate",
+        "analog",
+        "cv"
+      ],
+      "stages": [
+        "estimate",
+        "execute"
+      ],
+      "functions": [
+        "F12.01",
+        "F12.02",
+        "F12.05",
+        "F05.02"
+      ],
+      "acceptance_profiles": [
+        "A04"
+      ],
+      "user_need": "A scientist needs an estimate whose stated uncertainty is meaningful at finite sample size.",
+      "inputs": "Typed raw observations, a fixed estimator, target error/confidence, independent seeds and a stopping policy.",
+      "required_output": "An estimate, interval, denominator and a complete shot/call ledger.",
+      "acceptance": "Known-distribution coverage and equivalence/power fixtures pass; zero counts and rare events receive valid uncertainty handling and sequential stopping follows the frozen protocol.",
+      "metrics": [
+        "shots/time to target",
+        "coverage",
+        "bias",
+        "inconclusive rate"
+      ],
+      "negative_case": "A narrow plug-in interval at zero observed failures or an uncorrected repeated significance test must not pass.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T087",
+      "journey": "J18",
+      "slug": "measurement-allocation",
+      "title": "Plan measurements for an energy or correlation target",
+      "personas": [
+        "P03",
+        "P08"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "express",
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F12.03",
+        "F04.02",
+        "F12.02",
+        "F11.02"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A user needs an accurate many-term estimate at limited measurement cost.",
+      "inputs": "An observable collection, allowed compatible-measurement groups, allocation policy and total shot budget.",
+      "required_output": "Measurement programs, grouped outcomes, final estimates and covariance/cost accounting.",
+      "acceptance": "The requested observable is unchanged; grouped-estimator bias/uncertainty satisfies the frozen contract and all pilot, calibration and evaluation shots are charged.",
+      "metrics": [
+        "error at fixed shots",
+        "state preparations",
+        "total time",
+        "variance"
+      ],
+      "negative_case": "Assuming grouped observables are statistically independent without justification can invalidate the uncertainty claim.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T088",
+      "journey": "J18",
+      "slug": "state-process-reconstruction",
+      "title": "Reconstruct a state or process with validation beyond the fitted data",
+      "personas": [
+        "P08",
+        "P09"
+      ],
+      "models": [
+        "gate",
+        "cv"
+      ],
+      "stages": [
+        "estimate",
+        "verify"
+      ],
+      "functions": [
+        "F12.04",
+        "F12.02",
+        "F04.01",
+        "F12.05"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04"
+      ],
+      "user_need": "A researcher needs a reconstruction whose apparent fit is not confused with predictive validity.",
+      "inputs": "Informationally specified measurements, physicality/model assumptions, noise and held-out validation fixtures.",
+      "required_output": "A reconstruction, identifiability diagnostics, uncertainty and held-out predictions.",
+      "acceptance": "Analytic/small references and held-out prediction criteria pass; underdetermined or nonidentifiable cases are explicit and physicality constraints are disclosed.",
+      "metrics": [
+        "reconstruction/prediction error",
+        "coverage",
+        "fit time",
+        "measurement cost"
+      ],
+      "negative_case": "A good in-sample fit cannot certify a unique state, process or global fidelity when the observations do not identify it.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T089",
+      "journey": "J18",
+      "slug": "shadow-estimation",
+      "title": "Estimate a predefined observable family from reusable measurement records",
+      "personas": [
+        "P08",
+        "P04"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "execute",
+        "estimate"
+      ],
+      "functions": [
+        "F12.03",
+        "F12.04",
+        "F12.02",
+        "F12.01"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A researcher needs a controlled way to reuse randomized measurements for multiple quantities.",
+      "inputs": "A frozen randomized measurement scheme, observable family, reconstruction rule, seed and sample budget.",
+      "required_output": "Per-observable estimates, simultaneous uncertainty and measurement provenance.",
+      "acceptance": "Known small cases and repeated-seed coverage tests meet the family-wise error contract; observable selection and all measurement overhead are disclosed.",
+      "metrics": [
+        "family error",
+        "coverage",
+        "shots/time to target",
+        "memory"
+      ],
+      "negative_case": "Choosing only observables with favorable estimates after viewing the data cannot support the preregistered family claim.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T090",
+      "journey": "J18",
+      "slug": "fit-and-report",
+      "title": "Produce a scientific report that retains model failures and uncertainty",
+      "personas": [
+        "P08",
+        "P09",
+        "P16"
+      ],
+      "models": [
+        "common"
+      ],
+      "stages": [
+        "estimate",
+        "exchange"
+      ],
+      "functions": [
+        "F12.04",
+        "F12.05",
+        "F20.04",
+        "F20.05"
+      ],
+      "acceptance_profiles": [
+        "A04",
+        "A09"
+      ],
+      "user_need": "A user needs a report that communicates what the experiment does and does not establish.",
+      "inputs": "Known identifiable and nonidentifiable fit fixtures, raw records, units, model assumptions and report schema.",
+      "required_output": "Machine-readable and human-readable results retaining raw estimates, diagnostics and provenance.",
+      "acceptance": "Units, uncertainty and raw-data links reconcile; unidentifiable fits and model mismatch are explicit; generated examples cannot be labeled as device measurements.",
+      "metrics": [
+        "report completeness",
+        "fit error",
+        "failure classification",
+        "export round-trip fidelity"
+      ],
+      "negative_case": "Clipping a failed fit into a plausible parameter or dropping missing outcomes is a reporting failure.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T091",
+      "journey": "J08",
+      "slug": "kernel-prediction",
+      "title": "Train and evaluate a quantum-kernel predictor",
+      "personas": [
+        "P05"
+      ],
+      "models": [
+        "gate"
+      ],
+      "stages": [
+        "formulate",
+        "execute",
+        "optimize",
+        "estimate"
+      ],
+      "functions": [
+        "F13.05",
+        "F09.03",
+        "F09.05",
+        "F12.02",
+        "F04.02"
+      ],
+      "acceptance_profiles": [
+        "A03",
+        "A04",
+        "A09"
+      ],
+      "user_need": "A researcher needs predictive utility of a quantum kernel measured on unseen data under a complete computation budget.",
+      "inputs": "A frozen dataset/split, encoding, kernel definition, sampled or exact evaluation policy, regularization search space and classical comparison protocol.",
+      "required_output": "Kernel matrices or predictions, train/validation/test results, conditioning diagnostics and all kernel/search costs.",
+      "acceptance": "Small exact kernels match independent references; finite-shot uncertainty and any matrix repair are disclosed; the frozen held-out quality target is evaluated without test-set tuning and with all preprocessing and hyperparameter search charged.",
+      "metrics": [
+        "held-out predictive quality",
+        "total time to target",
+        "kernel/shot evaluations",
+        "matrix conditioning"
+      ],
+      "negative_case": "Repairing a sampled kernel, tuning on test labels or omitting classical training/search cost cannot improve the reported result invisibly.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed",
+      "function_conditions": {}
+    },
+    {
+      "id": "T092",
+      "journey": "J02",
+      "slug": "measurement-pattern",
+      "title": "Execute a measurement-based computation pattern",
+      "personas": [
+        "P02",
+        "P10"
+      ],
+      "models": [
+        "mbqc",
+        "adaptive"
+      ],
+      "stages": [
+        "express",
+        "verify",
+        "compile",
+        "execute"
+      ],
+      "functions": [
+        "F02.01",
+        "F02.04",
+        "F03.01",
+        "F03.02",
+        "F03.03",
+        "F06.03",
+        "F20.02"
+      ],
+      "function_conditions": {},
+      "acceptance_profiles": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "user_need": "A researcher needs graph-state preparation, dependent measurement angles and byproduct corrections to implement a specified computation.",
+      "inputs": "A bounded graph/measurement pattern, input/output vertices, measurement planes and angles, causal dependencies and correction/frame rules.",
+      "required_output": "An executable pattern or semantics-preserving lowering, measurement histories and corrected logical outputs with resource accounting.",
+      "acceptance": "All bounded reachable branches obey causality and produce the specified corrected logical map against an independent oracle; any postselection probability and lowering overhead are reported.",
+      "metrics": [
+        "corrected-output error",
+        "pattern construction/compile time",
+        "resource count",
+        "measurement/feedback cost"
+      ],
+      "negative_case": "Ignoring byproduct corrections, measuring before a dependency is available or silently postselecting successful branches must fail.",
+      "readiness": "requirements-only",
+      "evidence_status": "not-executed"
+    }
+  ]
+}

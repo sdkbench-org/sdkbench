@@ -13,6 +13,12 @@ SDKBench generates deterministic circuit workloads, runs them through native SDK
 
 Version 0.1.0 provides working benchmarks, not a comprehensive SDK ranking. The generators, evaluator and SDK adapters are independently implemented in this repository. No cloud account, API key, quantum device or network access is required to run benchmarks.
 
+## Requirements and task design
+
+SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).
+
+The catalog describes user needs across computing models and software roles. It is a requirements baseline, not a claim that the current package implements those tasks or that any SDK supports them. [Governance rules](docs/requirements/GOVERNANCE.md) separate applicability, evidence, attribution and comparison from participant preferences.
+
 ## Install
 
 Python 3.11 or newer is required.
