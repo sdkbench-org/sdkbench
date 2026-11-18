@@ -132,8 +132,4 @@ Real SDK integration tests are skipped if that SDK is absent. CI includes both a
 
 ## Roadmap
 
-Additional SDK adapters, larger construction-only workloads, hardware-constrained routing, parameter binding, serialization, Hamiltonian/observable workloads, memory measurements and stronger isolated-process measurements. New workload domains can extend the same timing and reporting approach.
-
-## 中文说明
-
-SDKBench 是面向 SDK 的性能与正确性测评工具，首期聚焦量子开发套件。首版已接入 Qiskit、Cirq，提供确定性电路生成、构建/求逆/组合/模拟/编译计时、独立状态向量校验、JSON/CSV 报告和历史结果比较。基础安装即可使用 NumPy 校验基线；测评真实 SDK 时安装对应可选依赖。当前面向小规模、可本地验证的实验，尚不构成完整的 SDK 综合排名。
+The [implementation roadmap](docs/implementation/ROADMAP.md) preserves the full user-needs catalog across five phases. The [P0 foundation](docs/implementation/P0_FOUNDATION.md) now supplies result contracts, independent evaluators and strict Linux execution controls; first-wave participant adapters, independent review and qualified study environments are the next gates.
