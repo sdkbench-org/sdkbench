@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-18",
+  "protocol_revision": "0.1-candidate-1",
+  "sdk_versions": {
+    "flagquantum": "0.3.1",
+    "qiskit": "2.6.2",
+    "cirq": "1.7.0"
+  },
+  "archives": [
+    {
+      "file": "p1a-extended-7797c24.json.gz",
+      "sha256": "fb86f2e071b112dd6d772b49059700d61598e363ebc9fa1c78cd3356b8235a6d",
+      "github_run_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44260127517",
+      "source_commit": "7797c246e2f7e504afe8fd0156ab6284a451b6b4",
+      "blocks": 144,
+      "measured_records": 264,
+      "warmups": 120,
+      "files_verified": 444,
+      "scope": "All eight sizes per SDK in one-outcome qualification, plus the original complete small-case protocol."
+    },
+    {
+      "file": "p1a-small-51ce241.json.gz",
+      "sha256": "96d00f01f64ca8dba0aeb6d5b798cabcc8df5ba9b454a0e9184f8ed3616f1018",
+      "github_run_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44262299896",
+      "source_commit": "51ce241287e8c7fc752889290074586baebf0de3",
+      "blocks": 120,
+      "measured_records": 240,
+      "warmups": 120,
+      "files_verified": 367,
+      "scope": "Final native BitArray adapter implementation: complete ten-block protocol for four small cases per SDK."
+    }
+  ],
+  "observed_native_unsupported_outcomes": 0,
+  "observed_native_failures": 0,
+  "publication_eligible": false,
+  "limitations": [
+    "Engineering CI hosts are not sealed publication environments.",
+    "The large instances have one-outcome qualification, not the full ten-block study.",
+    "The extended source commit precedes a Qiskit bit-array normalization change; final small-case records retest sampling with that change.",
+    "Do not pool timings across these source revisions or hosts."
+  ]
+}

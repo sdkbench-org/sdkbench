@@ -18,7 +18,7 @@ Each repetition constructs one native symbolic template and evaluates the seven 
 
 All circuits execute on CPU at complex128/float64. Cirq's default complex64 is explicitly overridden. FlagQuantum requests statevector/PyTorch CPU execution with gradients, approximation and backend fallback disabled; literals and bindings use float64 tensors. Qiskit uses its own exact Statevector APIs, without Aer. These fixed choices are declared before measurement; no participant-specific tuning or SDK source patch is supplied.
 
-The adapters implement input translation and classical output normalization only. They import no reference generator, expected-output artifact, P0 program simulator or benchmark-side sampler. Weighted observable totals use the same classical dot product for all SDKs. Quantum propagation, expectations and random shot generation are native SDK operations. Missing SDK functionality is never filled by another SDK or an analytic graph-state solution.
+The adapters implement input translation and classical output normalization only. They read no expected-output artifact and call no reference generator, P0 program simulator or benchmark-side sampler. Weighted observable totals use the same classical dot product for all SDKs. Quantum propagation, expectations and random shot generation are native SDK operations. Missing SDK functionality is never filled by another SDK or an analytic graph-state solution.
 
 ## Register and precision conventions
 
@@ -49,6 +49,8 @@ Component fingerprints hash actual installed non-pyc files, rather than assertin
 `report.json` lists all requested SDK/instance outcomes and every unselected P1a case. Missing capabilities and failed outputs receive no zero-latency or successful timing substitute. `evaluate_case` and `evaluate_workflow` remain the completeness checks; a partial selected case list cannot establish its missing workflow variants. Every report has `publication_eligible: false`; signed independent reviews and sealed study infrastructure are not inferred from passing engineering tests.
 
 The result schema separates participant execution status from semantic acceptance. A distribution-equivalence failure means its confidence criterion was not established; it is not automatically proof of a wrong underlying sampling distribution. Detailed P0 reasons remain in the evidence, without retries or seed hunting.
+
+Completed engineering outcomes and lossless raw archives are in [P1A_QUALIFICATION.md](P1A_QUALIFICATION.md).
 
 ## Running
 
