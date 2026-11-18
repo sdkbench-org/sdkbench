@@ -17,6 +17,7 @@ def main():
     parser.add_argument('--bundle',type=Path,default=Path('docs/implementation'))
     parser.add_argument('--directory',type=Path,required=True)
     parser.add_argument('--cgroup-parent',type=Path,required=True)
+    parser.add_argument('--scope',choices=('all','small-protocol'),default='all')
     args=parser.parse_args()
     root=args.directory.resolve();root.mkdir(parents=True,exist_ok=True)
     if any(root.iterdir()):raise ValueError('Evidence directory must be empty')
@@ -24,13 +25,14 @@ def main():
     environment={k:os.environ[k] for k in ['LD_LIBRARY_PATH'] if k in os.environ}
     context={'schema_version':1,'source_commit':os.environ.get('GITHUB_SHA'),'github_run_id':os.environ.get('GITHUB_RUN_ID'),
              'runner_image_version':os.environ.get('ImageVersion'),'cpu':cpu,'runtime_environment':environment,
-             'publication_eligible':False,'scope':'engineering integration; not a global SDK ranking'}
+             'publication_eligible':False,'scope':args.scope,'interpretation':'engineering integration; not a global SDK ranking'}
     (root/'context.json').write_bytes(canonical_bytes(context))
     reports={}
     try:
         # Every frozen P1a size is attempted with its original per-case cap.
-        reports['all-instances']=run_campaign(bundle,directory=root/'all-instances',cgroup_parent=args.cgroup_parent,cpu=cpu,
-                                              mode='qualification',runtime_environment=environment)
+        if args.scope=='all':
+            reports['all-instances']=run_campaign(bundle,directory=root/'all-instances',cgroup_parent=args.cgroup_parent,cpu=cpu,
+                                                  mode='qualification',runtime_environment=environment)
         # Complete fresh-process blocks for the four small integration cases.
         reports['small-protocol']=run_campaign(bundle,directory=root/'small-protocol',cgroup_parent=args.cgroup_parent,cpu=cpu,
                                               instances=['PARAM-04','OBS-04','SAMPLE-03','SAMPLE-05'],mode='protocol',runtime_environment=environment)

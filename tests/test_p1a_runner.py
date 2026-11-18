@@ -122,3 +122,33 @@ def test_install_failure_remains_visible_for_every_case(bundle, monkeypatch, tmp
     assert len(report['outcomes'])==24
     assert all(row['qualification_status']=='install-failed' for row in report['outcomes'])
     assert all(not p['execution'] for p in [read_json(path) for path in (tmp_path/'missing').glob('*/*/*/evidence.json')])
+
+
+def test_profile_matches_frozen_adapter_cohort():
+    profile=read_json(ROOT/'docs/implementation/p1a-profile.json')
+    from sdkbench.p1a.common import WORKFLOWS
+    assert profile['sdk_versions']==VERSIONS
+    assert profile['workflows']==list(WORKFLOWS)
+    assert not profile['publication_eligible']
+
+
+def test_lossless_evidence_archive_and_independent_replay(bundle,monkeypatch,tmp_path):
+    import hashlib,gzip,importlib.util
+    from sdkbench.p0.models import canonical_bytes,ContractError
+    synthetic_setup(monkeypatch,bundle)
+    root=tmp_path/'evidence';root.mkdir()
+    campaign.run_campaign(bundle,directory=root/'all-instances',cgroup_parent=tmp_path,cpu=0,mode='qualification')
+    (root/'context.json').write_bytes(canonical_bytes({'source_commit':'synthetic-test-only'}))
+    manifest={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*') if p.is_file()}
+    (root/'MANIFEST.json').write_bytes(canonical_bytes({'files':manifest}))
+    spec=importlib.util.spec_from_file_location('p1a_evidence',ROOT/'tools/p1a_evidence.py')
+    tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(tool)
+    summary=tool.verify(root,bundle);assert summary['blocks_verified']==24
+    archive=tmp_path/'raw.json.gz';sha=tool.archive(root,archive)
+    assert sha==hashlib.sha256(archive.read_bytes()).hexdigest()
+    decoded=json.loads(gzip.decompress(archive.read_bytes()))
+    for name,entry in decoded['files'].items():
+        assert entry['utf8'].encode()==(root/name).read_bytes()
+        assert hashlib.sha256(entry['utf8'].encode()).hexdigest()==entry['sha256']
+    (root/'all-instances/report.json').write_text('{}')
+    with pytest.raises(ContractError,match='hash mismatch'):tool.verify(root,bundle)

@@ -40,10 +40,8 @@ class QiskitAdapter(AdapterBase):
         result = self.Sampler(default_shots=fixture['shots_per_replicate'], seed=seed).run([circuit]).result()[0]
         bits = np.zeros((fixture['shots_per_replicate'], fixture['n_qubits']), dtype=np.uint8)
         for name, qubits in fixture['record_mapping'].items():
-            strings = getattr(result.data, name).get_bitstrings()
-            require(len(strings) == len(bits), 'Missing native register shots')
-            for row, value in enumerate(strings):
-                integer = int(value, 2)
-                for k, q in enumerate(qubits):bits[row, q] = (integer >> k) & 1
+            register_bits = getattr(result.data, name).to_bool_array(order='little')
+            require(register_bits.shape == (len(bits), len(qubits)), 'Missing native register shots')
+            bits[:, qubits] = register_bits
         self.audit['native_executions'] += 1
         return sampled_payload(bits, fixture)

@@ -6,3 +6,5 @@ include tools/requirements_docs.py
 recursive-include docs/implementation *.md *.json *.csv
 include tools/roadmap_docs.py tools/roadmap_reference.py
 include tools/p1a_integration.py
+include .github/workflows/p1a.yml
+include tools/p1a_evidence.py

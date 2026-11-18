@@ -11,7 +11,7 @@ The [machine-readable binding](p1a-profile.json) records the initial package/pro
 | Stack | Parameter reuse | Requested expectations | Joint sampling |
 | --- | --- | --- | --- |
 | FlagQuantum 0.3.1 + Torch 2.14 CPU | `Circuit`, `Parameter`, `bind_parameters` | `fq.run` with public `fq.expectation` outputs | `fq.run` with one full-register `fq.samples` output |
-| Qiskit 2.6.2 | `QuantumCircuit`, `ParameterVector`, `assign_parameters` | `Statevector.from_instruction` and native Pauli expectations | `StatevectorSampler`, paired classical-register shot records |
+| Qiskit 2.6.2 | `QuantumCircuit`, `ParameterVector`, `assign_parameters` | `Statevector.from_instruction` and native Pauli expectations | `StatevectorSampler`, paired classical-register BitArray outputs |
 | Cirq 1.7.0 | Symbolic circuit and `resolve_parameters` | `Simulator.simulate_expectation_values` | `Simulator.run`, paired measurement-key bit arrays |
 
 Each repetition constructs one native symbolic template and evaluates the seven complete bindings in fixture order. The template is reused within that outcome; binding never rewrites it in place. Each repetition constructs its own program, so previous participant outputs are not cached. The same SDK instance may retain legitimate runtime/import caches within a block.
@@ -24,7 +24,7 @@ The adapters implement input translation and classical output normalization only
 
 Logical q0 is bit 0. Pauli word character j denotes logical qj. Qiskit's displayed Pauli labels are reversed at the API boundary. Cirq receives explicit qubit ordering for expectations. FlagQuantum observables use explicit logical indices. All requested values must pass P0 finite/shape/order checks and the unchanged numerical thresholds.
 
-Sampling uses the SDK's actual joint shots. Qiskit's two register bitstring arrays are paired by shot index; independent marginal histograms are never combined into invented joint data. Cirq's measurement-key columns are mapped to the declared register bits. FlagQuantum produces one full joint sample array, then projects the requested registers from the same rows. The common normalizer only counts observed bit rows; it never evaluates a probability law or draws additional samples.
+Sampling uses the SDK's actual joint shots. Qiskit's two native register `BitArray.to_bool_array(order='little')` outputs are paired by shot index; independent marginal histograms are never combined into invented joint data. Cirq's measurement-key columns are mapped to the declared register bits. FlagQuantum produces one full joint sample array, then projects the requested registers from the same rows. The common normalizer only counts observed bit rows; it never evaluates a probability law or draws additional samples.
 
 Every context uses 65,536 native shots and the prescribed block/context seed. The evaluator reconstructs logical counts from joint register records and applies the unchanged family-wide confidence allocation. A one-block sampling qualification does not establish the complete W08 confidence family or full-case acceptance.
 
@@ -76,7 +76,9 @@ These commands do not qualify a machine automatically. The dedicated CI runner i
 
 [Adapter tests](../../tests/test_p1a_adapters.py) execute real public SDK APIs against frozen P0 references, test first/second/first binding reuse, and reject identical bad outputs for every SDK. [Runner tests](../../tests/test_p1a_runner.py) use clearly synthetic records to test lifecycle counts, order rotation, budget carryover, malformed/mismatched responses and retained failures. They are not participant evidence.
 
-The [P1a CI workflow](../../.github/workflows/p1a.yml) installs the pinned CPU stack, requires all three SDKs, prepares a disposable cgroup subtree and runs [the integration driver](../../tools/p1a_integration.py). That driver attempts all eight frozen sizes for each SDK in qualification mode, then runs the complete ten-block lifecycle for PARAM-04, OBS-04, SAMPLE-03 and SAMPLE-05. Large-instance qualification and complete small-instance checks are explicitly separate. All native outcomes and failures, not only successful timing samples, are retained in a hashed artifact manifest.
+The [P1a CI workflow](../../.github/workflows/p1a.yml) installs the pinned CPU stack, requires all three SDKs, prepares a disposable cgroup subtree and runs [the integration driver](../../tools/p1a_integration.py). Routine push/PR CI runs the complete ten-block lifecycle for PARAM-04, OBS-04, SAMPLE-03 and SAMPLE-05. Manual dispatch with `extended=true` additionally attempts all eight frozen sizes for each SDK in qualification mode; this is the required extended check for a cohort release. Large-instance qualification and complete small-instance checks are explicitly separate, and no omitted case is represented as passed. All native outcomes and failures, not only successful timing samples, are retained in a hashed artifact manifest.
+
+[Evidence replay and archive tooling](../../tools/p1a_evidence.py) verifies every retained file hash and independently replays measured/warmup decisions without importing SDKs. It can write a lossless compressed JSON archive with the exact original UTF-8 evidence bytes, paths and hashes. An archive records its actual source commit; results from different adapter implementations must not be silently mixed into a performance claim.
 
 ```sh
 SDKBENCH_REQUIRE_P1A=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \

@@ -1,5 +1,14 @@
 name: P1a native SDK integration
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      extended:
+        description: Include all eight frozen instance sizes for every SDK
+        required: true
+        type: boolean
+        default: true
 permissions:
   contents: read
 jobs:
@@ -29,10 +38,12 @@ jobs:
           sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p1a-ci/cgroup.subtree_control'
           sudo mkdir /sys/fs/cgroup/sdkbench-p1a-ci/operator
           sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p1a-ci
-      - name: Execute all frozen P1a instances and complete small protocol blocks
+      - name: Execute complete small protocol and optional all-instance qualification
         run: |
           sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-p1a-ci/operator/cgroup.procs"
-          python tools/p1a_integration.py --directory p1a-evidence --cgroup-parent /sys/fs/cgroup/sdkbench-p1a-ci
+          scope=small-protocol
+          if test "${{ github.event_name }}" = workflow_dispatch && test "${{ inputs.extended }}" = true; then scope=all; fi
+          python tools/p1a_integration.py --directory p1a-evidence --cgroup-parent /sys/fs/cgroup/sdkbench-p1a-ci --scope "$scope"
       - name: Retain all successes, unsupported outcomes and failures
         if: always()
         uses: actions/upload-artifact@v7.0.2
