@@ -1,6 +1,6 @@
 # Native compiler integration proposal for FlagQuantum
 
-This is an engineering proposal informed by the [routing attribution study](FLAGQUANTUM_ROUTING_ANALYSIS.md), not an implemented compiler migration. The intended destination is FlagQuantum's own IR, target model and pass pipeline. Mature algorithms and necessary implementation should become native passes with explicit contracts and provenance. SDKBench remains an independent consumer and evaluator.
+This engineering plan is informed by the [routing attribution study](FLAGQUANTUM_ROUTING_ANALYSIS.md). The implementation status below distinguishes delivered native changes from outstanding product and comparative qualification work. The intended destination is FlagQuantum's own IR, target model and pass pipeline. Mature algorithms and necessary implementation should become native passes with explicit contracts and provenance. SDKBench remains an independent consumer and evaluator.
 
 ## Architecture and ownership
 
@@ -47,7 +47,7 @@ Qiskit and Cirq publish Apache-2.0 license texts in the [Qiskit repository](http
 
 Use independent matrix/operator references for small circuits and contract-appropriate probes at larger sizes. Differential comparisons with Qiskit or Cirq supplement independent correctness checks; matching their output or counts is not a correctness oracle. Cover reversed operands, global phase, disconnected/directed graphs, zero gates, repeated remote interactions, arbitrary initial states, output permutations, measurements, symbolic shared parameters, unsupported instructions and budget exhaustion. Unsupported domains must be explicit, with no silent numerical binding or dropped operations.
 
-The reversed two-qubit SWAP/CX reproducer should reach at most two full CZs when identity final layout and that basis are required, while satisfying the original tolerances. This is a local regression target supported by a known equivalent circuit, not a gate-count target for all circuits. The current 108/96/375 native-control counts are evidence of achievable configurations, not universal hard-coded expected answers or proof of optimality.
+The reversed two-qubit SWAP/CX reproducer should reach at most two full CZs when identity final layout and that basis are required, while satisfying the original tolerances. This is a local regression target supported by a known equivalent circuit, not a gate-count target for all circuits. The historical 108/96/375 CZ counts belong to expert configurations allowing a free final layout. They must not be compared with restored-layout artifact outputs as an isolated synthesis improvement. The corresponding restored-layout native baseline was 138/146/438 CZ; local target-stage probes produced 124/140/422 CZ. These local diagnostics are not full protocol measurements, universal targets or proofs of optimality.
 
 Evaluate generated families, application circuits and held-out topologies in addition to the three frozen SDKBench inputs. Separate target-aware product defaults from tuned expert searches. For each, report entangling count, common dependency depth, compile time, memory, seeds, failure rates and the exact layout/basis/error obligations. The default policy should be chosen by user objectives and general workloads, never by passing SDKBench specifically.
 
@@ -60,5 +60,39 @@ FlagQuantum should own the IR analyses, target-dependent passes, orchestration a
 The [compiler candidate qualification protocol](COMPILER_CANDIDATE_QUALIFICATION.md)
 specifies separate source/configuration registration, unchanged frozen routing
 acceptance and resource limits, layout-aware attribution, and prospective
-held-out gates. It is a plan awaiting implementation and evidence, not a
-replacement for the historical routing results.
+held-out gates. Its admission, adapters, runner and replay are implemented; positive Linux
+campaign evidence and prospective held-out qualification remain pending. It
+does not replace the historical routing results.
+
+
+## Delivered implementation and remaining scope (2026-11-19)
+
+FlagQuantum PR #1219 introduced native automatic routing selection and bounded
+CZ resynthesis. PR #1226 integrated the automatic full-CZ block stage into the
+qualifying target-artifact pipeline and was merged as
+`5baf8d97d6575390c24cb8075ba629ecffb71786`. Its measured source parent is
+`5553fb3d2e186995c7fc27c0fa0859c38abd5a2a`. All 239 non-skipped PR checks passed;
+three conditional checks skipped. The separately bounded local full runtime
+suite timed out and is not counted as passing.
+
+The automatic artifact stage preserves a native baseline, checks complete
+local operators, accepts only strict CZ reduction and writes the approved v4
+many-to-many evidence. It currently requires RX/RZ/full-CZ, absent or undirected
+unallocated topology and identity initial placement. Symbolic, trainable and
+batched values are collection boundaries. The artifact layout is restored.
+Read-only Runtime and offline Deployment consume the evidence. These statements
+concern local compilation and evidence, not hardware execution or SDK ranking.
+
+The ordinary `compiler.compile` path already selects routing automatically;
+it does not call the target-artifact block stage. A coherent ordinary
+user-facing target workflow, broader target/layout admission and any additional
+routing search remain separately scoped product work. Existing protected API
+and serialization changes require their approved proposals; the artifact
+implementation does not implicitly authorize them.
+
+The source-build/published-wheel campaign compares four explicitly different
+workflows under the same frozen task acceptance and Linux resource limits.
+Complete campaign results, independent replay, prospective application-family
+coverage, parameter preservation and resource tradeoffs remain necessary
+before claiming parity or superiority. Local gate-count examples do not close
+those gates.
