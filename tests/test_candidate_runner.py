@@ -244,3 +244,36 @@ def test_replay_preserves_denied_candidates_and_rejects_false_acceptance(bundle,
     seal(root)
     with pytest.raises(ContractError, match='block verdict'):
         replay(root, bundle)
+
+
+@pytest.mark.parametrize('fault', ['none', 'warmup', 'denied'])
+def test_report_keeps_failure_denominators_and_excludes_failed_timing_blocks(bundle, monkeypatch, tmp_path, fault):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('candidate_report', ROOT / 'tools/compiler_candidate_report.py')
+    report = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(report)
+    synthetic_supervisor(monkeypatch, bundle, None if fault == 'none' else 'warmup')
+    if fault == 'denied':
+        def reject(_):
+            raise ContractError('Changed install')
+        monkeypatch.setattr(provenance, 'verify_runtime', reject)
+    reg = registration()
+    root = tmp_path / 'run'
+    campaign.run_campaign(bundle, directory=root, cgroup_parent=tmp_path,
+                          cpu=0, suite='compiler-candidate', candidates={reg.stack_id: reg})
+    seal(root)
+    result = report.summarize(root, bundle)
+    assert len(result['cases']) == 3
+    for row in result['cases']:
+        assert row['expected_records'] == sum(row['measured_record_statuses'].values()) == 30
+        assert row['accepted_records'] == (0 if fault == 'denied' else 30)
+        assert len(row['blocks']) == 10
+        if fault == 'none':
+            assert row['status'] == 'accepted'
+            assert row['complete_block_compile_medians_seconds']['count'] == 10
+        else:
+            assert row['status'] != 'accepted'
+            assert row['complete_block_compile_medians_seconds'] is None
+        if fault == 'denied':
+            assert row['full_cz_count_for_accepted_records'] is None
+    assert result['publication_eligible'] is False

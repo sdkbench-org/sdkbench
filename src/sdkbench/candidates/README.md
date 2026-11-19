@@ -67,6 +67,20 @@ PYTHONPATH=src python -m sdkbench.candidates.cli replay \
   --directory /tmp/compiler-campaign
 ```
 
+Produce a reproducible numerical summary outside the sealed campaign directory:
+
+```sh
+PYTHONPATH=src python tools/compiler_candidate_report.py \
+  --directory /tmp/compiler-campaign --output /tmp/compiler-summary.json
+```
+
+The summary first replays the campaign, then recomputes accepted-record gate
+counts and common depth. It retains failure denominators and reports timing
+medians only for complete accepted blocks, excluding failed warmups. Kernel
+memory peaks cover the entire supervised block. Conditional statistics from
+failed cases never promote those cases to success. SDK-reported native baseline
+counts are labeled separately from independently recomputed output counts.
+
 The existing P1a/P1b runner supplies ten fresh process blocks, two warmups and
 three measured outcomes, frozen seeds, independent P0 evaluators and unchanged
 per-case budgets. Both the parent and worker revalidate each candidate before
