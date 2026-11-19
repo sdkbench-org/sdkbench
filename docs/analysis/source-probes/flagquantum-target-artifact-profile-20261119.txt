@@ -1,0 +1,36 @@
+         5719160 function calls (5424969 primitive calls) in 0.710 seconds
+
+   Ordered by: cumulative time
+   List reduced from 589 to 28 due to restriction <28>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.720    0.720 adapters.py:200(execute)
+        1    0.000    0.000    0.720    0.720 adapters.py:136(_target_artifact_route)
+        1    0.000    0.000    0.714    0.714 artifact_compilation.py:200(compile_circuit_artifact_for_target)
+       74    0.000    0.000    0.425    0.006 __init__.py:583(content_hash)
+       74    0.002    0.000    0.422    0.006 __init__.py:600(to_json)
+        1    0.000    0.000    0.385    0.385 target_legalization.py:223(legalize_circuit_for_target)
+       76    0.003    0.000    0.379    0.005 __init__.py:587(to_dict)
+    42756    0.014    0.000    0.372    0.000 __init__.py:727(_instruction_to_dict)
+413992/128420    0.190    0.000    0.362    0.000 __init__.py:665(_encode_value)
+        1    0.000    0.000    0.191    0.191 native_block_optimization.py:227(optimize_native_blocks)
+  2333629    0.112    0.000    0.171    0.000 {built-in method builtins.isinstance}
+        1    0.000    0.000    0.137    0.137 physical_plan.py:978(build_physical_circuit_plan)
+        2    0.000    0.000    0.137    0.068 native_block_optimization.py:137(_native_matrix_reader)
+        1    0.000    0.000    0.131    0.131 native_block_optimization.py:342(verify_native_block_optimization)
+        2    0.000    0.000    0.126    0.063 native_block_optimization.py:403(_verify_native_baseline)
+        2    0.000    0.000    0.118    0.059 target_conformance.py:653(verify_target_emission)
+        3    0.000    0.000    0.118    0.039 target_emission.py:168(emit_legalized_target)
+        3    0.001    0.000    0.103    0.034 native_gate_legalization.py:340(legalize_native_gates)
+        1    0.000    0.000    0.093    0.093 physical_plan.py:251(__post_init__)
+        6    0.011    0.002    0.084    0.014 schedule_legalization.py:137(schedule_circuit_dependencies)
+        1    0.000    0.000    0.071    0.071 target_artifact.py:17(build_target_artifact)
+        6    0.000    0.000    0.061    0.010 schedule_legalization.py:115(_schedule_identity)
+        3    0.000    0.000    0.060    0.020 native_block_optimization.py:83(_identity)
+   435256    0.030    0.000    0.059    0.000 <frozen abc>:117(__instancecheck__)
+       53    0.000    0.000    0.056    0.001 _cz_blocks.py:93(_candidate)
+      204    0.000    0.000    0.054    0.000 basis_translation.py:725(translate)
+ 1932/204    0.003    0.000    0.054    0.000 basis_translation.py:648(_expand)
+     7846    0.013    0.000    0.052    0.000 __init__.py:374(__post_init__)
+
+

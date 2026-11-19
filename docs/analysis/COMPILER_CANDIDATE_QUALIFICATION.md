@@ -1,9 +1,11 @@
 # Compiler candidate qualification protocol
 
 Status: source-build and published-wheel observation, registration admission, four compiler adapters,
-the frozen campaign runner and independent replay are implemented. Full native
-campaign execution and publication qualification are pending. This document specifies the next
-engineering campaign; it is not a result or a ranking. See
+the frozen campaign runner and independent replay are implemented. The first full
+Linux engineering campaign and local independent replay completed; see
+[the result report](COMPILER_CANDIDATE_RESULTS.md). Publication qualification and
+prospective held-out evaluation remain pending. This document specifies the
+protocol; it is not a ranking. See
 [`candidates/README.md`](../../src/sdkbench/candidates/README.md) for the implemented
 entry points, limits and focused verification. The historical P1b and
 routing-attribution registrations, fixtures, thresholds, resources and archives
@@ -151,5 +153,7 @@ Before any parity or superiority claim, require:
 5. Independent adapter review and the publication environment gates required by
    the existing measurement protocol.
 
-These gates are outstanding. No local development probe, formatting check or
-compiler unit suite substitutes for them.
+The first full frozen engineering campaign now satisfies the execution and replay
+portion of gate 2. The prospective corpus, independent review, publication host
+and remaining product boundaries are outstanding. No local development probe,
+formatting check or compiler unit suite substitutes for those gates.

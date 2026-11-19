@@ -61,7 +61,8 @@ The [compiler candidate qualification protocol](COMPILER_CANDIDATE_QUALIFICATION
 specifies separate source/configuration registration, unchanged frozen routing
 acceptance and resource limits, layout-aware attribution, and prospective
 held-out gates. Its admission, adapters, runner and replay are implemented; positive Linux
-campaign evidence and prospective held-out qualification remain pending. It
+campaign evidence is retained in [the result report](COMPILER_CANDIDATE_RESULTS.md);
+prospective held-out qualification remains pending. It
 does not replace the historical routing results.
 
 
@@ -92,7 +93,8 @@ implementation does not implicitly authorize them.
 
 The source-build/published-wheel campaign compares four explicitly different
 workflows under the same frozen task acceptance and Linux resource limits.
-Complete campaign results, independent replay, prospective application-family
-coverage, parameter preservation and resource tradeoffs remain necessary
+The first complete campaign and independent replay are recorded. Prospective
+application-family coverage, parameter preservation, further resource tradeoffs
+and publication qualification remain necessary
 before claiming parity or superiority. Local gate-count examples do not close
 those gates.

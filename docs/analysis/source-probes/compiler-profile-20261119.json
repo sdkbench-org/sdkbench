@@ -1,0 +1,16 @@
+{
+  "files": {
+    "flagquantum-ordinary-profile-20261119.txt": "6ac0a9b09489b3245eec362b183bd064a6c8e43ae593f01c72e5c8f77257c333",
+    "flagquantum-target-artifact-profile-20261119.txt": "b03e2b8ee9a9c01dc48acd19bdecddd29b5b761523636837b25020b70f73a617"
+  },
+  "fixture": "ROUTE-LINE-06",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "profiled_invocations": 1,
+  "python": "3.12.14",
+  "schema_version": 1,
+  "scope": "single warm cProfile diagnostic on macOS; not a timing comparison or Linux campaign result",
+  "seed": 11,
+  "source": "separately installed source-built wheel, PyTorch 2.10 build environment",
+  "source_commit": "5553fb3d2e186995c7fc27c0fa0859c38abd5a2a",
+  "warmups": 1
+}

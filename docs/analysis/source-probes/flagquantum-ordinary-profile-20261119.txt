@@ -1,0 +1,36 @@
+         225586 function calls (219260 primitive calls) in 0.032 seconds
+
+   Ordered by: cumulative time
+   List reduced from 465 to 28 due to restriction <28>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.032    0.032 adapters.py:200(execute)
+        1    0.000    0.000    0.032    0.032 adapters.py:58(_ordinary_flagquantum_route)
+        1    0.000    0.000    0.016    0.016 pipeline.py:174(compile)
+        1    0.000    0.000    0.016    0.016 pipeline.py:25(compile_circuit)
+        1    0.000    0.000    0.014    0.014 native_gate_legalization.py:340(legalize_native_gates)
+        2    0.000    0.000    0.014    0.007 pipeline.py:112(_optimize_to_fixed_point)
+        2    0.000    0.000    0.014    0.007 pipeline.py:66(_optimize_to_fixed_point)
+        2    0.000    0.000    0.014    0.007 pass_manager.py:613(to_fixed_point)
+       22    0.000    0.000    0.014    0.001 pass_manager.py:654(_applied)
+        4    0.000    0.000    0.008    0.002 __init__.py:583(content_hash)
+        4    0.000    0.000    0.008    0.002 __init__.py:600(to_json)
+        4    0.000    0.000    0.007    0.002 __init__.py:587(to_dict)
+7768/2164    0.003    0.000    0.007    0.000 __init__.py:665(_encode_value)
+      720    0.000    0.000    0.006    0.000 __init__.py:727(_instruction_to_dict)
+        2    0.000    0.000    0.006    0.003 pass_registry.py:88(_collapse_two_qubit_blocks)
+        2    0.000    0.000    0.006    0.003 two_qubit_optimization.py:669(collapse_two_qubit_blocks)
+        1    0.000    0.000    0.006    0.006 native_gate_legalization.py:315(_identity)
+       96    0.000    0.000    0.005    0.000 two_qubit_optimization.py:576(_replacement)
+       62    0.000    0.000    0.005    0.000 basis_translation.py:725(translate)
+   590/62    0.000    0.000    0.005    0.000 basis_translation.py:648(_expand)
+     9785    0.003    0.000    0.004    0.000 operator_schema.py:612(canonical_opcode)
+   176/62    0.000    0.000    0.004    0.000 basis_translation.py:690(rewrite_of)
+      674    0.001    0.000    0.003    0.000 __init__.py:374(__post_init__)
+        3    0.000    0.000    0.003    0.001 commutation.py:380(analyze_commutation)
+    45511    0.002    0.000    0.003    0.000 {built-in method builtins.isinstance}
+     4654    0.001    0.000    0.003    0.000 operator_schema.py:617(get_operator_schema)
+      528    0.000    0.000    0.003    0.000 basis_translation.py:107(_gate)
+       96    0.000    0.000    0.002    0.000 two_qubit_optimization.py:473(_block_product)
+
+

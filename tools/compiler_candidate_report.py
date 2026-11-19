@@ -3,7 +3,7 @@
 import argparse
 from collections import Counter
 from pathlib import Path
-from statistics import median
+from statistics import median, quantiles
 
 from sdkbench.candidates.replay import replay
 from sdkbench.p0 import Bundle, Registration, ResultRecord, evaluate
@@ -11,8 +11,11 @@ from sdkbench.p0.models import canonical_bytes, read_json
 
 
 def spread(values):
+    if not values:
+        return None
+    q1, _, q3 = quantiles(values, n=4, method='inclusive') if len(values) > 1 else values * 3
     return {'count': len(values), 'minimum': min(values), 'median': median(values),
-            'maximum': max(values)} if values else None
+            'maximum': max(values), 'q1': q1, 'q3': q3, 'interquartile_range': q3 - q1}
 
 
 def summarize(directory, bundle):
@@ -73,6 +76,7 @@ def summarize(directory, bundle):
             'metric_notes': [
                 'Counts and dependency depth are recomputed by the independent evaluator.',
                 'Timing uses the median of three accepted measurements within each accepted block.',
+                'Quartiles use inclusive linear interpolation across observed values.',
                 'Incomplete or warmup-failed blocks contribute no timing median; all records remain counted.',
                 'Memory includes the whole supervised block: imports, warmups, measurements and export.',
                 'Accepted-record statistics in a failed case are conditional diagnostics, not case success.',

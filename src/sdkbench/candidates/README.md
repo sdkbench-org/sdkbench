@@ -116,8 +116,10 @@ artifacts or permit a success-only rerun. The runner is an observed engineering
 host; it is not a sealed publication host. A successful workflow run must still
 be inspected before reporting complete campaign execution.
 
-Full native candidate campaign execution, build/install qualification and the
-prospective held-out campaign are pending. Passing local adapter conformance or
+The first full native Linux campaign and local independent replay completed; see
+[the result report](../../../docs/analysis/COMPILER_CANDIDATE_RESULTS.md). Independent
+build attestation, publication-host qualification and the prospective held-out
+campaign remain pending. Passing local adapter conformance or
 synthetic runner tests does not establish measured SDK performance.
 
 For a small change, modify the admission check and run:

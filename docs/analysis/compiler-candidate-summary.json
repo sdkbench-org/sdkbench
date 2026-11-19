@@ -1,0 +1,2960 @@
+{
+  "bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+  "cases": [
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.0243042120000041,
+            0.024498757999992904,
+            0.09043431900002474
+          ],
+          "kernel_memory_peak_bytes": 161103872,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.024406029999994416,
+            0.024499942000005603,
+            0.09395313999999644
+          ],
+          "kernel_memory_peak_bytes": 161099776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.02432941700004676,
+            0.02406368399999792,
+            0.07814442899996266
+          ],
+          "kernel_memory_peak_bytes": 161079296,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.024111387000004925,
+            0.024174442999992607,
+            0.07790862199999538
+          ],
+          "kernel_memory_peak_bytes": 161099776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.024952533000032417,
+            0.024509962000024643,
+            0.08067834300004506
+          ],
+          "kernel_memory_peak_bytes": 161091584,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.02379858000006152,
+            0.023791117999962808,
+            0.08084228399991389
+          ],
+          "kernel_memory_peak_bytes": 161075200,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.02448408499992638,
+            0.027884341000003587,
+            0.11391404599999078
+          ],
+          "kernel_memory_peak_bytes": 161079296,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.024847020999914093,
+            0.027276434999976118,
+            0.10012261899998975
+          ],
+          "kernel_memory_peak_bytes": 161075200,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.024803817999895728,
+            0.02497189400003208,
+            0.09389120100001946
+          ],
+          "kernel_memory_peak_bytes": 161079296,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.02449286499995651,
+            0.024620287999937318,
+            0.08571763100007956
+          ],
+          "kernel_memory_peak_bytes": 161083392,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0005953014999988682,
+        "maximum": 0.027884341000003587,
+        "median": 0.02456011499997146,
+        "minimum": 0.02379858000006152,
+        "q1": 0.024371752250033296,
+        "q3": 0.024967053750032164
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 115,
+        "median": 115.0,
+        "minimum": 115,
+        "q1": 115.0,
+        "q3": 115.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 138,
+        "median": 138.0,
+        "minimum": 138,
+        "q1": 138.0,
+        "q3": 138.0
+      },
+      "instance": "ROUTE-LINE-06",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 18432.0,
+        "maximum": 161103872,
+        "median": 161081344.0,
+        "minimum": 161075200,
+        "q1": 161079296.0,
+        "q3": 161097728.0
+      },
+      "maximum_semantic_error": 1.7795545260754752e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-ordinary",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "full-operator"
+      ],
+      "workflow": "flagquantum-ordinary"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.02866536799999153,
+            0.02860765100001572,
+            0.029231676999984302
+          ],
+          "kernel_memory_peak_bytes": 161464320,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.029380437000043003,
+            0.029634961999988718,
+            0.03025196800001595
+          ],
+          "kernel_memory_peak_bytes": 161464320,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.028936617999988812,
+            0.029060394999987693,
+            0.029051652000021022
+          ],
+          "kernel_memory_peak_bytes": 161443840,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.029509780000012142,
+            0.02905227600001581,
+            0.02905365799995252
+          ],
+          "kernel_memory_peak_bytes": 161468416,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.029052506000027734,
+            0.029322805999981938,
+            0.030153385000005528
+          ],
+          "kernel_memory_peak_bytes": 161468416,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.029453923999994913,
+            0.029310567000038645,
+            0.029795593000017107
+          ],
+          "kernel_memory_peak_bytes": 161456128,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.030241431999911583,
+            0.029998372000022755,
+            0.03067659199996342
+          ],
+          "kernel_memory_peak_bytes": 161460224,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.029911427999991247,
+            0.029901682999934565,
+            0.02954678599996896
+          ],
+          "kernel_memory_peak_bytes": 161452032,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.029565327999989677,
+            0.029076185999997506,
+            0.029149847999974554
+          ],
+          "kernel_memory_peak_bytes": 161456128,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.028694906000055198,
+            0.029012317000024268,
+            0.0289658970000346
+          ],
+          "kernel_memory_peak_bytes": 161456128,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0005375489999863703,
+        "maximum": 0.030241431999911583,
+        "median": 0.029236326999978246,
+        "minimum": 0.02866536799999153,
+        "q1": 0.029052153500003897,
+        "q3": 0.029589702499990267
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 82,
+        "median": 82.0,
+        "minimum": 82,
+        "q1": 82.0,
+        "q3": 82.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 146,
+        "median": 146.0,
+        "minimum": 146,
+        "q1": 146.0,
+        "q3": 146.0
+      },
+      "instance": "ROUTE-GRID-08",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 8192.0,
+        "maximum": 161468416,
+        "median": 161458176.0,
+        "minimum": 161443840,
+        "q1": 161456128.0,
+        "q3": 161464320.0
+      },
+      "maximum_semantic_error": 1.1281259278694545e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-ordinary",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "flagquantum-ordinary"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.06215180600000281,
+            0.0624576189999857,
+            0.06380388000002313
+          ],
+          "kernel_memory_peak_bytes": 166490112,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.06044326899996122,
+            0.061071991999995134,
+            0.061197852999953284
+          ],
+          "kernel_memory_peak_bytes": 166481920,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.0638759579999828,
+            0.06393484799997395,
+            0.0626829290000046
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.061376689000042006,
+            0.062424247000024025,
+            0.07618101399998523
+          ],
+          "kernel_memory_peak_bytes": 166633472,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.06133525899997494,
+            0.062407113999995545,
+            0.07346790500002953
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.060793840000087584,
+            0.06113785100001223,
+            0.061125091999997494
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.06287433900001815,
+            0.06456410099997356,
+            0.0633439420000741
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.06251723299999412,
+            0.06293805199993585,
+            0.06256477499994162
+          ],
+          "kernel_memory_peak_bytes": 166641664,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.06580058600002303,
+            0.06613718699998117,
+            0.06549708600005033
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.06763601700004074,
+            0.0618039339999541,
+            0.06148062400006893
+          ],
+          "kernel_memory_peak_bytes": 166486016,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0011944212500765161,
+        "maximum": 0.06580058600002303,
+        "median": 0.06244093300000486,
+        "minimum": 0.061071991999995134,
+        "q1": 0.06195472899996446,
+        "q3": 0.06314915025004098
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 206,
+        "median": 206.0,
+        "minimum": 206,
+        "q1": 206.0,
+        "q3": 206.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 438,
+        "median": 438.0,
+        "minimum": 438,
+        "q1": 438.0,
+        "q3": 438.0
+      },
+      "instance": "ROUTE-LINE-12",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 3072.0,
+        "maximum": 166641664,
+        "median": 166486016.0,
+        "minimum": 166481920,
+        "q1": 166486016.0,
+        "q3": 166489088.0
+      },
+      "maximum_semantic_error": 1.254391008269162e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-ordinary",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "flagquantum-ordinary"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.7042662439999958,
+            0.7405072090000147,
+            0.722969599999999
+          ],
+          "kernel_memory_peak_bytes": 165609472,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.6932444310000108,
+            0.78039058600001,
+            0.7752739980000172
+          ],
+          "kernel_memory_peak_bytes": 165548032,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.6544755940000186,
+            0.7093845590000001,
+            0.7222685020000199
+          ],
+          "kernel_memory_peak_bytes": 165609472,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.6570190709999792,
+            0.7054940739999438,
+            0.7048360470000148
+          ],
+          "kernel_memory_peak_bytes": 165617664,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.6680651909999824,
+            0.715225739999994,
+            0.7340439149999725
+          ],
+          "kernel_memory_peak_bytes": 165683200,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.6527865010000369,
+            0.7112472779999734,
+            0.7108873729999914
+          ],
+          "kernel_memory_peak_bytes": 165548032,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.6987317299999631,
+            0.7693538949999947,
+            0.7728401090000716
+          ],
+          "kernel_memory_peak_bytes": 165617664,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.6988877359999606,
+            0.8063162800000327,
+            0.7710853730000053
+          ],
+          "kernel_memory_peak_bytes": 165609472,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.7093635989999711,
+            0.7736592599999312,
+            0.7585406959999546
+          ],
+          "kernel_memory_peak_bytes": 165552128,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.6750675099999626,
+            0.7614505770000051,
+            0.7864424220000501
+          ],
+          "kernel_memory_peak_bytes": 165613568,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.055406100750005294,
+        "maximum": 0.7752739980000172,
+        "median": 0.7407551479999768,
+        "minimum": 0.7048360470000148,
+        "q1": 0.711971964749992,
+        "q3": 0.7673780654999973
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 101,
+        "median": 101.0,
+        "minimum": 101,
+        "q1": 101.0,
+        "q3": 101.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 124,
+        "median": 124.0,
+        "minimum": 124,
+        "q1": 124.0,
+        "q3": 124.0
+      },
+      "instance": "ROUTE-LINE-06",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 50176.0,
+        "maximum": 165683200,
+        "median": 165609472.0,
+        "minimum": 165548032,
+        "q1": 165566464.0,
+        "q3": 165616640.0
+      },
+      "maximum_semantic_error": 1.1996703417363011e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-target",
+      "sdk_reported_accepted_block_rewrites": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 5,
+        "median": 5.0,
+        "minimum": 5,
+        "q1": 5.0,
+        "q3": 5.0
+      },
+      "sdk_reported_native_baseline_cz_count": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 138,
+        "median": 138.0,
+        "minimum": 138,
+        "q1": 138.0,
+        "q3": 138.0
+      },
+      "status": "accepted",
+      "verification": [
+        "full-operator"
+      ],
+      "workflow": "flagquantum-target-artifact"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.8501985920000266,
+            0.7612117250000097,
+            0.8107995770000116
+          ],
+          "kernel_memory_peak_bytes": 166178816,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.8074194449999936,
+            0.7353687799999875,
+            0.7988498519999894
+          ],
+          "kernel_memory_peak_bytes": 166285312,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.7679129789999593,
+            0.7126899919999801,
+            0.7686325199999828
+          ],
+          "kernel_memory_peak_bytes": 166309888,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.7549626439999884,
+            0.6995544870000003,
+            0.7516236619999859
+          ],
+          "kernel_memory_peak_bytes": 166150144,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.7639045360000409,
+            0.7139911400000187,
+            0.776264077999997
+          ],
+          "kernel_memory_peak_bytes": 166309888,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.7740918579999061,
+            0.722247259000028,
+            0.7837245160000066
+          ],
+          "kernel_memory_peak_bytes": 166174720,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.7991350280000233,
+            0.754695632999983,
+            0.8247440589999542
+          ],
+          "kernel_memory_peak_bytes": 166170624,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.8369503909999594,
+            0.73947763700005,
+            0.7771774020000066
+          ],
+          "kernel_memory_peak_bytes": 166174720,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.8470481939999672,
+            0.7597469599999158,
+            0.8225386070000695
+          ],
+          "kernel_memory_peak_bytes": 166158336,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.7675833790000297,
+            0.7341631389999748,
+            0.8038481020000745
+          ],
+          "kernel_memory_peak_bytes": 166125568,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.03139795500000275,
+        "maximum": 0.8225386070000695,
+        "median": 0.7756346299999564,
+        "minimum": 0.7516236619999859,
+        "q1": 0.7676657790000121,
+        "q3": 0.7990637340000148
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 82,
+        "median": 82.0,
+        "minimum": 82,
+        "q1": 82.0,
+        "q3": 82.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 140,
+        "median": 140.0,
+        "minimum": 140,
+        "q1": 140.0,
+        "q3": 140.0
+      },
+      "instance": "ROUTE-GRID-08",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 97280.0,
+        "maximum": 166309888,
+        "median": 166174720.0,
+        "minimum": 166125568,
+        "q1": 166161408.0,
+        "q3": 166258688.0
+      },
+      "maximum_semantic_error": 4.511161657335146e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-target",
+      "sdk_reported_accepted_block_rewrites": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 3,
+        "median": 3.0,
+        "minimum": 3,
+        "q1": 3.0,
+        "q3": 3.0
+      },
+      "sdk_reported_native_baseline_cz_count": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 146,
+        "median": 146.0,
+        "minimum": 146,
+        "q1": 146.0,
+        "q3": 146.0
+      },
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "flagquantum-target-artifact"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            2.4476337659999956,
+            2.555838809999983,
+            2.6191834600000163
+          ],
+          "kernel_memory_peak_bytes": 181067776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            2.6336737639999797,
+            2.679397289999997,
+            2.7171044460000076
+          ],
+          "kernel_memory_peak_bytes": 181153792,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            2.388499941999953,
+            2.426506942000003,
+            2.470393554999987
+          ],
+          "kernel_memory_peak_bytes": 181108736,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            2.403081257999986,
+            2.4810056509999754,
+            2.4348929860000226
+          ],
+          "kernel_memory_peak_bytes": 181153792,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            2.363482693000037,
+            2.5079806719999738,
+            2.426167722999992
+          ],
+          "kernel_memory_peak_bytes": 181133312,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            2.4086860799999386,
+            2.6453046249999943,
+            2.6451886609999065
+          ],
+          "kernel_memory_peak_bytes": 181104640,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            2.617415486000027,
+            2.6158991790000528,
+            2.631815776000053
+          ],
+          "kernel_memory_peak_bytes": 181006336,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            2.680869075999908,
+            2.632029149999994,
+            2.7434976949999736
+          ],
+          "kernel_memory_peak_bytes": 181137408,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            2.7079079459999775,
+            2.7402529370000366,
+            2.8059776469999633
+          ],
+          "kernel_memory_peak_bytes": 181080064,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            2.4844491510000353,
+            2.449302966999994,
+            2.54519885600007
+          ],
+          "kernel_memory_peak_bytes": 181157888,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.22356310549994873,
+        "maximum": 2.7402529370000366,
+        "median": 2.586627148000005,
+        "minimum": 2.426167722999992,
+        "q1": 2.4472820272500257,
+        "q3": 2.6708451327499745
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 192,
+        "median": 192.0,
+        "minimum": 192,
+        "q1": 192.0,
+        "q3": 192.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 422,
+        "median": 422.0,
+        "minimum": 422,
+        "q1": 422.0,
+        "q3": 422.0
+      },
+      "instance": "ROUTE-LINE-12",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 63488.0,
+        "maximum": 181157888,
+        "median": 181121024.0,
+        "minimum": 181006336,
+        "q1": 181086208.0,
+        "q3": 181149696.0
+      },
+      "maximum_semantic_error": 3.9894491480007404e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "fq-source-target",
+      "sdk_reported_accepted_block_rewrites": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 8,
+        "median": 8.0,
+        "minimum": 8,
+        "q1": 8.0,
+        "q3": 8.0
+      },
+      "sdk_reported_native_baseline_cz_count": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 438,
+        "median": 438.0,
+        "minimum": 438,
+        "q1": 438.0,
+        "q3": 438.0
+      },
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "flagquantum-target-artifact"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.008197649000010188,
+            0.00828258699999651,
+            0.008316477999983363
+          ],
+          "kernel_memory_peak_bytes": 69705728,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.008314984999998387,
+            0.008443279000005077,
+            0.008771647999992638
+          ],
+          "kernel_memory_peak_bytes": 69758976,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.007857242000000042,
+            0.008016444000020329,
+            0.008012518000043656
+          ],
+          "kernel_memory_peak_bytes": 69701632,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.00788567699999021,
+            0.007914991999996346,
+            0.00790576700001111
+          ],
+          "kernel_memory_peak_bytes": 69758976,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.008194995999986077,
+            0.008034742000006645,
+            0.008209587999999712
+          ],
+          "kernel_memory_peak_bytes": 69701632,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.008062114999916048,
+            0.008074362999991536,
+            0.007997385999942708
+          ],
+          "kernel_memory_peak_bytes": 69758976,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.009305639999979576,
+            0.009222944000043753,
+            0.00925192900001548
+          ],
+          "kernel_memory_peak_bytes": 69754880,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.008591388000013467,
+            0.008813895999992383,
+            0.0089652849999311
+          ],
+          "kernel_memory_peak_bytes": 69705728,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.008485406999966472,
+            0.008400808000033066,
+            0.008402800999988358
+          ],
+          "kernel_memory_peak_bytes": 69754880,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.010063788000024942,
+            0.010075125999946977,
+            0.009877896000034525
+          ],
+          "kernel_memory_peak_bytes": 69758976,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0006259065000620012,
+        "maximum": 0.010063788000024942,
+        "median": 0.008342693999992434,
+        "minimum": 0.00790576700001111,
+        "q1": 0.008095335249933555,
+        "q3": 0.008721241749995556
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 65,
+        "median": 65.0,
+        "minimum": 65,
+        "q1": 65.0,
+        "q3": 65.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 68,
+        "median": 68.0,
+        "minimum": 68,
+        "q1": 68.0,
+        "q3": 68.0
+      },
+      "instance": "ROUTE-LINE-06",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 53248.0,
+        "maximum": 69758976,
+        "median": 69754880.0,
+        "minimum": 69701632,
+        "q1": 69705728.0,
+        "q3": 69758976.0
+      },
+      "maximum_semantic_error": 4.123197957664591e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "qiskit-release-transpile",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "full-operator"
+      ],
+      "workflow": "qiskit-transpile"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.00991773399999829,
+            0.010503843000009283,
+            0.010358642999989343
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.011076822999996239,
+            0.010799733999988348,
+            0.010842077999996036
+          ],
+          "kernel_memory_peak_bytes": 69873664,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.009820288000014443,
+            0.01037367699996139,
+            0.009729470000024776
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.00931284300003199,
+            0.009169273999987126,
+            0.009164857999962805
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.009172158000012587,
+            0.009316244999979517,
+            0.009185646999981145
+          ],
+          "kernel_memory_peak_bytes": 69873664,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.00941551599999002,
+            0.009313511999948787,
+            0.009291277999977865
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.009283375999984855,
+            0.00910953300001438,
+            0.00949563799997577
+          ],
+          "kernel_memory_peak_bytes": 69857280,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.01061214399999244,
+            0.010407783999994535,
+            0.010685635999948317
+          ],
+          "kernel_memory_peak_bytes": 69861376,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.010941665999894212,
+            0.011039444000061849,
+            0.010902506999968864
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.009205166000015197,
+            0.009811705999936748,
+            0.00958124700002827
+          ],
+          "kernel_memory_peak_bytes": 69869568,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0012578587500158278,
+        "maximum": 0.010941665999894212,
+        "median": 0.009700767500021357,
+        "minimum": 0.009169273999987126,
+        "q1": 0.009290909999975838,
+        "q3": 0.010548768749991666
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 47,
+        "median": 45.0,
+        "minimum": 45,
+        "q1": 45.0,
+        "q3": 45.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 85,
+        "median": 85.0,
+        "minimum": 85,
+        "q1": 85.0,
+        "q3": 85.0
+      },
+      "instance": "ROUTE-GRID-08",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 0.0,
+        "maximum": 69873664,
+        "median": 69869568.0,
+        "minimum": 69857280,
+        "q1": 69869568.0,
+        "q3": 69869568.0
+      },
+      "maximum_semantic_error": 1.7576096354984878e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "qiskit-release-transpile",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "qiskit-transpile"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.02373095099997613,
+            0.023857112000001734,
+            0.023733113999981015
+          ],
+          "kernel_memory_peak_bytes": 85397504,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.02350010499998234,
+            0.02362194899995984,
+            0.023432251999963682
+          ],
+          "kernel_memory_peak_bytes": 85393408,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.02156293299998424,
+            0.021870759000023554,
+            0.021695502999989458
+          ],
+          "kernel_memory_peak_bytes": 85327872,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.021617907000006653,
+            0.042311220999977195,
+            0.02194747699996924
+          ],
+          "kernel_memory_peak_bytes": 85139456,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.022093571000027623,
+            0.02206482799999776,
+            0.021788028000003123
+          ],
+          "kernel_memory_peak_bytes": 85393408,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.022772147999944536,
+            0.022419162999995024,
+            0.02190151699994658
+          ],
+          "kernel_memory_peak_bytes": 85323776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.023064583000063976,
+            0.022929619000024104,
+            0.02297554900007981
+          ],
+          "kernel_memory_peak_bytes": 85381120,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.023341178000009677,
+            0.023843420000048354,
+            0.023586130000012417
+          ],
+          "kernel_memory_peak_bytes": 85151744,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.02344516100004057,
+            0.04796939300001668,
+            0.022505468999952427
+          ],
+          "kernel_memory_peak_bytes": 85147648,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.02219345899993641,
+            0.022161149999988083,
+            0.022367042000041693
+          ],
+          "kernel_memory_peak_bytes": 85327872,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0013893832500144754,
+        "maximum": 0.023733113999981015,
+        "median": 0.022697356000037416,
+        "minimum": 0.021695502999989458,
+        "q1": 0.022096985749982423,
+        "q3": 0.0234863689999969
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 14.0,
+        "maximum": 219,
+        "median": 202.0,
+        "minimum": 192,
+        "q1": 199.0,
+        "q3": 213.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 4.0,
+        "maximum": 348,
+        "median": 343.0,
+        "minimum": 339,
+        "q1": 342.0,
+        "q3": 346.0
+      },
+      "instance": "ROUTE-LINE-12",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 195584.0,
+        "maximum": 85397504,
+        "median": 85327872.0,
+        "minimum": 85139456,
+        "q1": 85194752.0,
+        "q3": 85390336.0
+      },
+      "maximum_semantic_error": 1.2558787713144961e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "qiskit-release-transpile",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "qiskit-transpile"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.12390636999998605,
+            0.12460525899999197,
+            0.12464250700000434
+          ],
+          "kernel_memory_peak_bytes": 151883776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.1250626030000035,
+            0.1400933200000054,
+            0.12580176399998777
+          ],
+          "kernel_memory_peak_bytes": 152518656,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.12093484000001808,
+            0.12124978800000008,
+            0.12153273699999545
+          ],
+          "kernel_memory_peak_bytes": 152526848,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.12332723400004397,
+            0.12366791099998409,
+            0.12427382900000339
+          ],
+          "kernel_memory_peak_bytes": 152592384,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.1230878270000062,
+            0.12435414800000899,
+            0.12349908100003404
+          ],
+          "kernel_memory_peak_bytes": 151879680,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.12167098800000531,
+            0.12222449600005802,
+            0.12176529999999275
+          ],
+          "kernel_memory_peak_bytes": 151883776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.13256858600004762,
+            0.13103355600003397,
+            0.1301925290000554
+          ],
+          "kernel_memory_peak_bytes": 151867392,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.12618138699997417,
+            0.12457671399999981,
+            0.12422749400002431
+          ],
+          "kernel_memory_peak_bytes": 152526848,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.12801612399994156,
+            0.12796400500008076,
+            0.1286361439999837
+          ],
+          "kernel_memory_peak_bytes": 151883776,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.12361766599997281,
+            0.12425195799994526,
+            0.12360813099996903
+          ],
+          "kernel_memory_peak_bytes": 151883776,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0019739104999700885,
+        "maximum": 0.13103355600003397,
+        "median": 0.12412231249999195,
+        "minimum": 0.12124978800000008,
+        "q1": 0.12352872725001873,
+        "q3": 0.12550263774998882
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 65,
+        "median": 65.0,
+        "minimum": 65,
+        "q1": 65.0,
+        "q3": 65.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 68,
+        "median": 68.0,
+        "minimum": 68,
+        "q1": 68.0,
+        "q3": 68.0
+      },
+      "instance": "ROUTE-LINE-06",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 641024.0,
+        "maximum": 152592384,
+        "median": 151883776.0,
+        "minimum": 151867392,
+        "q1": 151883776.0,
+        "q3": 152524800.0
+      },
+      "maximum_semantic_error": 1.8383580273310477e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "cirq-release-route",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "full-operator"
+      ],
+      "workflow": "cirq-route-cz"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.16178951199998437,
+            0.15963948300000652,
+            0.1608802939999805
+          ],
+          "kernel_memory_peak_bytes": 152928256,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.15829711999998608,
+            0.16411405000002333,
+            0.15883266299999832
+          ],
+          "kernel_memory_peak_bytes": 152928256,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.1561957540000094,
+            0.15598692800000435,
+            0.15852169999999433
+          ],
+          "kernel_memory_peak_bytes": 153858048,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.1562633760000267,
+            0.15688476899998705,
+            0.15728074899999456
+          ],
+          "kernel_memory_peak_bytes": 152924160,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.15903593199999477,
+            0.160313809999991,
+            0.15887867399999323
+          ],
+          "kernel_memory_peak_bytes": 152920064,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.1582326950000379,
+            0.15763693200005946,
+            0.15819862300008936
+          ],
+          "kernel_memory_peak_bytes": 153849856,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.1578331949999665,
+            0.15719828199996755,
+            0.1656702080000514
+          ],
+          "kernel_memory_peak_bytes": 152932352,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.1622178420000182,
+            0.15709386099990752,
+            0.15717360200005714
+          ],
+          "kernel_memory_peak_bytes": 153862144,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.1642903380000007,
+            0.1682443320000857,
+            0.16596462699999392
+          ],
+          "kernel_memory_peak_bytes": 153886720,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.15729361100000006,
+            0.15869945199995072,
+            0.15829276599993136
+          ],
+          "kernel_memory_peak_bytes": 153862144,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.0016466144999611743,
+        "maximum": 0.16596462699999392,
+        "median": 0.15824569450001036,
+        "minimum": 0.1561957540000094,
+        "q1": 0.15733850025003449,
+        "q3": 0.15898511474999566
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 52,
+        "median": 52.0,
+        "minimum": 52,
+        "q1": 52.0,
+        "q3": 52.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 84,
+        "median": 84.0,
+        "minimum": 84,
+        "q1": 84.0,
+        "q3": 84.0
+      },
+      "instance": "ROUTE-GRID-08",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 932864.0,
+        "maximum": 153886720,
+        "median": 153391104.0,
+        "minimum": 152920064,
+        "q1": 152928256.0,
+        "q3": 153861120.0
+      },
+      "maximum_semantic_error": 8.469999434971913e-15,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "cirq-release-route",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "cirq-route-cz"
+    },
+    {
+      "accepted_records": 30,
+      "blocks": [
+        {
+          "accepted_records": 3,
+          "block": 0,
+          "compile_wall_seconds": [
+            0.5689856289999966,
+            0.5635855319999905,
+            0.564404001999975
+          ],
+          "kernel_memory_peak_bytes": 169443328,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 1,
+          "compile_wall_seconds": [
+            0.5610213699999917,
+            0.5594219139999836,
+            0.5576724809999973
+          ],
+          "kernel_memory_peak_bytes": 169431040,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 2,
+          "compile_wall_seconds": [
+            0.5665287710000371,
+            0.5764622529999883,
+            0.5607868450000524
+          ],
+          "kernel_memory_peak_bytes": 169451520,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 3,
+          "compile_wall_seconds": [
+            0.56845408800001,
+            0.573089025999991,
+            0.5710953530000324
+          ],
+          "kernel_memory_peak_bytes": 169435136,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 4,
+          "compile_wall_seconds": [
+            0.5569302950000292,
+            0.5559318709999843,
+            0.5591115820000141
+          ],
+          "kernel_memory_peak_bytes": 169435136,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 5,
+          "compile_wall_seconds": [
+            0.583206701999984,
+            0.5856312450000587,
+            0.5912077090000594
+          ],
+          "kernel_memory_peak_bytes": 169435136,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 6,
+          "compile_wall_seconds": [
+            0.5556513480000831,
+            0.5634788869999738,
+            0.5695965439999782
+          ],
+          "kernel_memory_peak_bytes": 169439232,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 7,
+          "compile_wall_seconds": [
+            0.5645230439999978,
+            0.5543312890000607,
+            0.55908927400003
+          ],
+          "kernel_memory_peak_bytes": 169439232,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 8,
+          "compile_wall_seconds": [
+            0.5630720069999597,
+            0.5607138509999459,
+            0.563241914999935
+          ],
+          "kernel_memory_peak_bytes": 169435136,
+          "status": "accepted",
+          "timing_eligible": true
+        },
+        {
+          "accepted_records": 3,
+          "block": 9,
+          "compile_wall_seconds": [
+            0.5675962120000122,
+            0.5673385420000159,
+            0.5701139949999288
+          ],
+          "kernel_memory_peak_bytes": 169435136,
+          "status": "accepted",
+          "timing_eligible": true
+        }
+      ],
+      "complete_block_compile_medians_seconds": {
+        "count": 10,
+        "interquartile_range": 0.00699491450004075,
+        "maximum": 0.5856312450000587,
+        "median": 0.5639414444999744,
+        "minimum": 0.5569302950000292,
+        "q1": 0.5603344372499777,
+        "q3": 0.5673293517500184
+      },
+      "dependency_depth_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 198,
+        "median": 198.0,
+        "minimum": 198,
+        "q1": 198.0,
+        "q3": 198.0
+      },
+      "expected_records": 30,
+      "full_cz_count_for_accepted_records": {
+        "count": 30,
+        "interquartile_range": 0.0,
+        "maximum": 360,
+        "median": 360.0,
+        "minimum": 360,
+        "q1": 360.0,
+        "q3": 360.0
+      },
+      "instance": "ROUTE-LINE-12",
+      "kernel_block_memory_peak_bytes": {
+        "count": 10,
+        "interquartile_range": 4096.0,
+        "maximum": 169451520,
+        "median": 169435136.0,
+        "minimum": 169431040,
+        "q1": 169435136.0,
+        "q3": 169439232.0
+      },
+      "maximum_semantic_error": 1.3500462910953273e-14,
+      "measured_record_statuses": {
+        "accepted": 30
+      },
+      "sdk": "cirq-release-route",
+      "sdk_reported_accepted_block_rewrites": null,
+      "sdk_reported_native_baseline_cz_count": null,
+      "status": "accepted",
+      "verification": [
+        "three-probes-only"
+      ],
+      "workflow": "cirq-route-cz"
+    }
+  ],
+  "independent_replay": {
+    "blocks_verified": 120,
+    "bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+    "cases": [
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      }
+    ],
+    "files_verified": 515,
+    "publication_eligible": false,
+    "schema_version": 1,
+    "scope": "independent record replay; build attestation and publication review remain separate"
+  },
+  "metric_notes": [
+    "Counts and dependency depth are recomputed by the independent evaluator.",
+    "Timing uses the median of three accepted measurements within each accepted block.",
+    "Quartiles use inclusive linear interpolation across observed values.",
+    "Incomplete or warmup-failed blocks contribute no timing median; all records remain counted.",
+    "Memory includes the whole supervised block: imports, warmups, measurements and export.",
+    "Accepted-record statistics in a failed case are conditional diagnostics, not case success.",
+    "Six-qubit semantics use the full operator; larger frozen cases use only three probes.",
+    "Restored-layout and free-final-layout workflows are different end-to-end contracts.",
+    "No optimality, global ranking or qualified publication-host claim is made."
+  ],
+  "publication_eligible": false,
+  "registrations": {
+    "cirq-release-route": {
+      "components": [
+        {
+          "artifact_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "name": "sdkbench",
+          "role": "harness",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "c5c3883a93f26002d128e46dffff6893beae0ab486a7e1f00fb0b5ff610a2bd8",
+          "name": "cirq-core",
+          "role": "frontend",
+          "version": "1.7.0"
+        },
+        {
+          "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+          "name": "numpy",
+          "role": "numerical-dependency",
+          "version": "2.5.5"
+        },
+        {
+          "artifact_sha256": "522a61c8e2011b5663d62e2cffbee0e8b1ab1fa748aa7a962cab639c1257ff76",
+          "name": "sympy",
+          "role": "numerical-dependency",
+          "version": "1.14.0"
+        },
+        {
+          "artifact_sha256": "7e7c30fa3d8f840985c2e52b080941f2ff7851aa2dc7964ccc1f0b746bc7b4ba",
+          "name": "networkx",
+          "role": "numerical-dependency",
+          "version": "3.7"
+        }
+      ],
+      "configuration": {
+        "options": {
+          "compiler_options": {
+            "entrypoint": "RouteCQC; optimize_for_target_gateset",
+            "options": {
+              "allow_partial_czs": false,
+              "basis": [
+                "cz",
+                "arbitrary-one-qubit-unitary"
+              ],
+              "compiler_seed_supported": false,
+              "final_layout": "sdk-reported",
+              "initial_layout": "identity",
+              "initial_mapper": "identity",
+              "synthesis_atol": 1e-12
+            },
+            "sdk": "cirq"
+          },
+          "implementation_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "installed_wheel_check": {
+            "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/cirq/__init__.py",
+            "package_tree_sha256": "afc093d1c8f3e05cb3273e41fe990ebf9160902de8509cfe043be48fcbe771b1",
+            "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+            "wheel_members_checked": 1276
+          },
+          "published_wheel": {
+            "distribution": "cirq-core",
+            "filename": "cirq_core-1.7.0-py3-none-any.whl",
+            "independent_attestation": false,
+            "metadata_url": "https://pypi.org/pypi/cirq-core/1.7.0/json",
+            "release_metadata_sha256": "33293465badd0996d58e914999f233e81bd8e70b8c52431050afb0b029de5f99",
+            "sha256": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce",
+            "url": "https://files.pythonhosted.org/packages/da/28/fd3d6b68b4944f0f61a07e14f7ea0823aca50160a4662ab016863e24cb37/cirq_core-1.7.0-py3-none-any.whl",
+            "version": "1.7.0"
+          },
+          "sdk": "cirq",
+          "suite": "compiler-candidate",
+          "workflow": "cirq-route-cz"
+        },
+        "precision": "float64/complex128",
+        "profile": "CPU1-FP64",
+        "threads": 1
+      },
+      "environment": {
+        "dependency_lock_sha256": "ec0811011e7835ce3002fe9b9893e782cd998ad9cba8c4aca4d365a863ca8a35",
+        "host": {
+          "allowed_cpus": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "clock": {
+            "adjustable": false,
+            "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+            "monotonic": true,
+            "resolution": 1e-09
+          },
+          "cpu_count": 4,
+          "cpu_models": [
+            "AMD EPYC 9V74 80-Core Processor"
+          ],
+          "cpuinfo_sha256": "675c0e6ccf8fab316334003cbadd7b97b41dca7d8e6dda0f5ff3fcd9cc4956d0",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "schema_version": 1,
+      "stack_id": "cirq-release-route"
+    },
+    "fq-source-ordinary": {
+      "components": [
+        {
+          "artifact_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "name": "sdkbench",
+          "role": "harness",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "ffafda4b12a2f07bd28cde2cc2402a99c7d8fbaceedf49afdae02ccbe720171f",
+          "name": "flagquantum",
+          "role": "frontend",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+          "name": "numpy",
+          "role": "numerical-dependency",
+          "version": "2.5.5"
+        },
+        {
+          "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+          "name": "torch",
+          "role": "numerical-dependency",
+          "version": "2.14.0+cpu"
+        }
+      ],
+      "configuration": {
+        "options": {
+          "compiler_options": {
+            "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+            "options": {
+              "basis": [
+                "h",
+                "x",
+                "y",
+                "z",
+                "s",
+                "sdg",
+                "rx",
+                "ry",
+                "rz",
+                "cz"
+              ],
+              "compiler_seed_supported": false,
+              "final_layout": "sdk-reported",
+              "initial_layout": "identity",
+              "max_added_operations": 20000,
+              "optimization_level": "default",
+              "routing": "default"
+            },
+            "sdk": "flagquantum"
+          },
+          "implementation_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "installed_wheel_check": {
+            "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+            "package_tree_sha256": "9aa70f35c44913fd1db2875ffcef32a383a91661d92a37bd3a8853029899affb",
+            "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+            "wheel_members_checked": 1353
+          },
+          "sdk": "flagquantum",
+          "source_build": {
+            "build_environment": {
+              "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+              "LC_ALL": "C",
+              "MAX_JOBS": "1",
+              "OMP_NUM_THREADS": "1",
+              "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+              "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+              "PIP_NO_INDEX": "1",
+              "PYTHONHASHSEED": "0",
+              "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+            },
+            "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+            "command": [
+              "/tmp/sdkbench-candidate-build/bin/python",
+              "-m",
+              "build",
+              "--wheel",
+              "--no-isolation",
+              "--outdir",
+              "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+              "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+            ],
+            "distribution": "flagquantum",
+            "environment": {
+              "dependencies": [
+                {
+                  "name": "build",
+                  "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                  "version": "1.6.1"
+                },
+                {
+                  "name": "filelock",
+                  "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                  "version": "4.2.4"
+                },
+                {
+                  "name": "fsspec",
+                  "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                  "version": "2026.9.0"
+                },
+                {
+                  "name": "Jinja2",
+                  "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                  "version": "3.1.6"
+                },
+                {
+                  "name": "MarkupSafe",
+                  "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                  "version": "3.0.3"
+                },
+                {
+                  "name": "mpmath",
+                  "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                  "version": "1.3.0"
+                },
+                {
+                  "name": "networkx",
+                  "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                  "version": "3.7"
+                },
+                {
+                  "name": "numpy",
+                  "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                  "version": "2.5.5"
+                },
+                {
+                  "name": "packaging",
+                  "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                  "version": "26.3"
+                },
+                {
+                  "name": "pip",
+                  "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                  "version": "25.0.1"
+                },
+                {
+                  "name": "pyproject_hooks",
+                  "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                  "version": "1.3.3"
+                },
+                {
+                  "name": "setuptools",
+                  "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                  "version": "84.2.1"
+                },
+                {
+                  "name": "sympy",
+                  "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                  "version": "1.14.0"
+                },
+                {
+                  "name": "torch",
+                  "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                  "version": "2.10.0+cpu"
+                },
+                {
+                  "name": "typing_extensions",
+                  "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                  "version": "4.16.0"
+                },
+                {
+                  "name": "wheel",
+                  "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                  "version": "0.48.0"
+                }
+              ],
+              "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+              "host": {
+                "allowed_cpus": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "clock": {
+                  "adjustable": false,
+                  "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                  "monotonic": true,
+                  "resolution": 1e-09
+                },
+                "cpu_count": 4,
+                "cpu_models": [
+                  "AMD EPYC 9V74 80-Core Processor"
+                ],
+                "cpuinfo_sha256": "a6a7cdedfe19d67ac02715ebda3c70fc509c67eefdf6a8b73a5d1af012e1c16b",
+                "machine": "x86_64",
+                "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                "python": "3.12.14"
+              },
+              "image_descriptor": {
+                "kernel": "7.0.0-1017-azure",
+                "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+              },
+              "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+              "implementation": {
+                "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                "sdkbench_version": "0.4.0"
+              },
+              "schema_version": 1,
+              "scope": "observed engineering environment; not a qualified publication host",
+              "sealed_image": false
+            },
+            "independent_attestation": false,
+            "log": {
+              "filename": "build.log",
+              "sha256": "0a161d13732125d1d4d16cb9bedb352bdbc5de78d27362062312231abbf9a92d"
+            },
+            "returncode": 0,
+            "schema_version": 1,
+            "source_archive": {
+              "filename": "source.zip",
+              "sha256": "99a960b698dec92b75dbb9fcbe89327d2ae666bf704832392ecea9c16b2b005a"
+            },
+            "source_commit": "5553fb3d2e186995c7fc27c0fa0859c38abd5a2a",
+            "wheel": {
+              "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+              "sha256": "89c791ebc7bc5c3d81862337db3498dbbd2fe5fb6a6f6a30c3a97668d8686fa5"
+            }
+          },
+          "suite": "compiler-candidate",
+          "workflow": "flagquantum-ordinary"
+        },
+        "precision": "float64/complex128",
+        "profile": "CPU1-FP64",
+        "threads": 1
+      },
+      "environment": {
+        "dependency_lock_sha256": "ec0811011e7835ce3002fe9b9893e782cd998ad9cba8c4aca4d365a863ca8a35",
+        "host": {
+          "allowed_cpus": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "clock": {
+            "adjustable": false,
+            "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+            "monotonic": true,
+            "resolution": 1e-09
+          },
+          "cpu_count": 4,
+          "cpu_models": [
+            "AMD EPYC 9V74 80-Core Processor"
+          ],
+          "cpuinfo_sha256": "8897bd8294a338fd6d678b505d34073535c536f6187bc6d2ce1a5610622b9e91",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "schema_version": 1,
+      "stack_id": "fq-source-ordinary"
+    },
+    "fq-source-target": {
+      "components": [
+        {
+          "artifact_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "name": "sdkbench",
+          "role": "harness",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "ffafda4b12a2f07bd28cde2cc2402a99c7d8fbaceedf49afdae02ccbe720171f",
+          "name": "flagquantum",
+          "role": "frontend",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+          "name": "numpy",
+          "role": "numerical-dependency",
+          "version": "2.5.5"
+        },
+        {
+          "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+          "name": "torch",
+          "role": "numerical-dependency",
+          "version": "2.14.0+cpu"
+        }
+      ],
+      "configuration": {
+        "options": {
+          "compiler_options": {
+            "entrypoint": "compile_circuit_artifact_for_target",
+            "options": {
+              "basis": [
+                "rx",
+                "rz",
+                "cz"
+              ],
+              "compiler_seed_supported": false,
+              "final_layout": "restored",
+              "initial_layout": "identity",
+              "max_native_added_operations": 20000,
+              "max_routing_added_operations": 20000,
+              "maximum_program_operations": 20000,
+              "profile": "openqasm-3.0",
+              "routing": "default",
+              "serialize_executable_artifact": true
+            },
+            "sdk": "flagquantum"
+          },
+          "implementation_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "installed_wheel_check": {
+            "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+            "package_tree_sha256": "9aa70f35c44913fd1db2875ffcef32a383a91661d92a37bd3a8853029899affb",
+            "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+            "wheel_members_checked": 1353
+          },
+          "sdk": "flagquantum",
+          "source_build": {
+            "build_environment": {
+              "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+              "LC_ALL": "C",
+              "MAX_JOBS": "1",
+              "OMP_NUM_THREADS": "1",
+              "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+              "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+              "PIP_NO_INDEX": "1",
+              "PYTHONHASHSEED": "0",
+              "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+            },
+            "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+            "command": [
+              "/tmp/sdkbench-candidate-build/bin/python",
+              "-m",
+              "build",
+              "--wheel",
+              "--no-isolation",
+              "--outdir",
+              "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+              "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+            ],
+            "distribution": "flagquantum",
+            "environment": {
+              "dependencies": [
+                {
+                  "name": "build",
+                  "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                  "version": "1.6.1"
+                },
+                {
+                  "name": "filelock",
+                  "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                  "version": "4.2.4"
+                },
+                {
+                  "name": "fsspec",
+                  "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                  "version": "2026.9.0"
+                },
+                {
+                  "name": "Jinja2",
+                  "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                  "version": "3.1.6"
+                },
+                {
+                  "name": "MarkupSafe",
+                  "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                  "version": "3.0.3"
+                },
+                {
+                  "name": "mpmath",
+                  "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                  "version": "1.3.0"
+                },
+                {
+                  "name": "networkx",
+                  "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                  "version": "3.7"
+                },
+                {
+                  "name": "numpy",
+                  "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                  "version": "2.5.5"
+                },
+                {
+                  "name": "packaging",
+                  "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                  "version": "26.3"
+                },
+                {
+                  "name": "pip",
+                  "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                  "version": "25.0.1"
+                },
+                {
+                  "name": "pyproject_hooks",
+                  "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                  "version": "1.3.3"
+                },
+                {
+                  "name": "setuptools",
+                  "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                  "version": "84.2.1"
+                },
+                {
+                  "name": "sympy",
+                  "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                  "version": "1.14.0"
+                },
+                {
+                  "name": "torch",
+                  "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                  "version": "2.10.0+cpu"
+                },
+                {
+                  "name": "typing_extensions",
+                  "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                  "version": "4.16.0"
+                },
+                {
+                  "name": "wheel",
+                  "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                  "version": "0.48.0"
+                }
+              ],
+              "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+              "host": {
+                "allowed_cpus": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "clock": {
+                  "adjustable": false,
+                  "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                  "monotonic": true,
+                  "resolution": 1e-09
+                },
+                "cpu_count": 4,
+                "cpu_models": [
+                  "AMD EPYC 9V74 80-Core Processor"
+                ],
+                "cpuinfo_sha256": "a6a7cdedfe19d67ac02715ebda3c70fc509c67eefdf6a8b73a5d1af012e1c16b",
+                "machine": "x86_64",
+                "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                "python": "3.12.14"
+              },
+              "image_descriptor": {
+                "kernel": "7.0.0-1017-azure",
+                "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+              },
+              "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+              "implementation": {
+                "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                "sdkbench_version": "0.4.0"
+              },
+              "schema_version": 1,
+              "scope": "observed engineering environment; not a qualified publication host",
+              "sealed_image": false
+            },
+            "independent_attestation": false,
+            "log": {
+              "filename": "build.log",
+              "sha256": "0a161d13732125d1d4d16cb9bedb352bdbc5de78d27362062312231abbf9a92d"
+            },
+            "returncode": 0,
+            "schema_version": 1,
+            "source_archive": {
+              "filename": "source.zip",
+              "sha256": "99a960b698dec92b75dbb9fcbe89327d2ae666bf704832392ecea9c16b2b005a"
+            },
+            "source_commit": "5553fb3d2e186995c7fc27c0fa0859c38abd5a2a",
+            "wheel": {
+              "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+              "sha256": "89c791ebc7bc5c3d81862337db3498dbbd2fe5fb6a6f6a30c3a97668d8686fa5"
+            }
+          },
+          "suite": "compiler-candidate",
+          "workflow": "flagquantum-target-artifact"
+        },
+        "precision": "float64/complex128",
+        "profile": "CPU1-FP64",
+        "threads": 1
+      },
+      "environment": {
+        "dependency_lock_sha256": "ec0811011e7835ce3002fe9b9893e782cd998ad9cba8c4aca4d365a863ca8a35",
+        "host": {
+          "allowed_cpus": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "clock": {
+            "adjustable": false,
+            "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+            "monotonic": true,
+            "resolution": 1e-09
+          },
+          "cpu_count": 4,
+          "cpu_models": [
+            "AMD EPYC 9V74 80-Core Processor"
+          ],
+          "cpuinfo_sha256": "e55f05224ad72e582480686517a458880712cc3002066cda440c62269df0a7dc",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "schema_version": 1,
+      "stack_id": "fq-source-target"
+    },
+    "qiskit-release-transpile": {
+      "components": [
+        {
+          "artifact_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "name": "sdkbench",
+          "role": "harness",
+          "version": "0.4.0"
+        },
+        {
+          "artifact_sha256": "92bbe851384a6e3a8ed331a3f57c8d8092755a01eb64e3be83a3600abf214750",
+          "name": "qiskit",
+          "role": "frontend",
+          "version": "2.6.2"
+        },
+        {
+          "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+          "name": "numpy",
+          "role": "numerical-dependency",
+          "version": "2.5.5"
+        }
+      ],
+      "configuration": {
+        "options": {
+          "compiler_options": {
+            "entrypoint": "qiskit.transpile",
+            "options": {
+              "approximation_degree": 1.0,
+              "basis": [
+                "cz",
+                "u"
+              ],
+              "compiler_seed_supported": true,
+              "final_layout": "sdk-reported",
+              "initial_layout": "identity",
+              "num_processes": 1,
+              "optimization_level": 2,
+              "qubits_initially_zero": false
+            },
+            "sdk": "qiskit"
+          },
+          "implementation_sha256": "c6b9454f6542a64126b27f682c11f88be1278ecac084e441c9ba0567707f067c",
+          "installed_wheel_check": {
+            "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/qiskit/__init__.py",
+            "package_tree_sha256": "9aa5da67adc106c389ef548158c4b59c498202f3afa3768e0692d16d1788f712",
+            "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+            "wheel_members_checked": 726
+          },
+          "published_wheel": {
+            "distribution": "qiskit",
+            "filename": "qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+            "independent_attestation": false,
+            "metadata_url": "https://pypi.org/pypi/qiskit/2.6.2/json",
+            "release_metadata_sha256": "c716594d20348b4c17984c2ceb37e902135aa7401ec7064ac1ed76b20913dc1c",
+            "sha256": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669",
+            "url": "https://files.pythonhosted.org/packages/49/08/db2ff7cd24c4a14bb035c4cbbf332ab0abc27330a8fb33d1a64da9d01409/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+            "version": "2.6.2"
+          },
+          "sdk": "qiskit",
+          "suite": "compiler-candidate",
+          "workflow": "qiskit-transpile"
+        },
+        "precision": "float64/complex128",
+        "profile": "CPU1-FP64",
+        "threads": 1
+      },
+      "environment": {
+        "dependency_lock_sha256": "ec0811011e7835ce3002fe9b9893e782cd998ad9cba8c4aca4d365a863ca8a35",
+        "host": {
+          "allowed_cpus": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "clock": {
+            "adjustable": false,
+            "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+            "monotonic": true,
+            "resolution": 1e-09
+          },
+          "cpu_count": 4,
+          "cpu_models": [
+            "AMD EPYC 9V74 80-Core Processor"
+          ],
+          "cpuinfo_sha256": "945b81255ac12f48ae024a04f3e36c656588bdbb42e35fa5a085195791c13cfb",
+          "machine": "x86_64",
+          "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+        "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "schema_version": 1,
+      "stack_id": "qiskit-release-transpile"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Observed engineering campaign; conditional metrics do not erase failures"
+}
