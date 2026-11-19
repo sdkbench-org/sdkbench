@@ -1,0 +1,76 @@
+"""Retain and verify every campaign file without changing original evidence."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path, PurePosixPath
+import signal
+import sys
+import tarfile
+import time
+
+signal.alarm(900)
+root = Path(sys.argv[1]).resolve()
+profile = sys.argv[2]
+assert profile in {"ordinary", "target-artifact"}
+evidence = root / "evidence"
+archive = root / f"retained-{profile}.tar.xz"
+started = time.monotonic()
+
+
+def sha(path: Path) -> str:
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+files = []
+for path in sorted(evidence.rglob("*")):
+    assert not path.is_symlink(), path
+    if not path.is_file():
+        continue
+    relative = path.relative_to(evidence)
+    if relative.parts[:2] == ("flagquantum-build", "source"):
+        continue
+    if path.suffix == ".whl" or relative.as_posix() == "flagquantum-build/source.zip":
+        continue
+    files.append((relative.as_posix(), path))
+
+expected = {name: sha(path) for name, path in files}
+manifest = json.loads((evidence / "campaign/MANIFEST.json").read_text())["files"]
+for name, digest in manifest.items():
+    assert expected["campaign/" + name] == digest, name
+
+with tarfile.open(archive, "x:xz", preset=6) as output:
+    for name, path in files:
+        info = output.gettarinfo(str(path), arcname=name)
+        info.uid = info.gid = 0
+        info.uname = info.gname = ""
+        info.mtime = 0
+        with path.open("rb") as stream:
+            output.addfile(info, stream)
+print(json.dumps({"phase": "archive_created", "bytes": archive.stat().st_size,
+                  "seconds": time.monotonic() - started}), flush=True)
+
+verified = set()
+with tarfile.open(archive, "r:xz") as retained:
+    for member in retained:
+        relative = PurePosixPath(member.name)
+        assert member.isfile() and not relative.is_absolute()
+        assert ".." not in relative.parts and member.name not in verified
+        stream = retained.extractfile(member)
+        assert stream is not None
+        with stream:
+            assert hashlib.file_digest(stream, "sha256").hexdigest() == expected[member.name]
+        verified.add(member.name)
+assert verified == set(expected)
+result = {
+    "archive_sha256": sha(archive), "archive_bytes": archive.stat().st_size,
+    "files_verified": len(verified), "campaign_files_verified": len(manifest),
+    "all_campaign_files_preserved": True,
+    "elapsed_seconds": time.monotonic() - started,
+}
+with (root / "retained-archive-verification.json").open("x") as output:
+    json.dump(result, output, indent=2, sort_keys=True, allow_nan=False)
+    output.write("\n")
+print(json.dumps(result), flush=True)

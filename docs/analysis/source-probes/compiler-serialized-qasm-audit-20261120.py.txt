@@ -1,0 +1,106 @@
+"""Check retained literal QASM against independently accepted operation payloads.
+
+This post-campaign audit recognizes only the emitted RX/RZ/CZ profile. It is not
+a general QASM parser or a replacement for artifact identity/conformance checks.
+No participant SDK is imported and no measured compilation is repeated.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+from pathlib import Path
+import re
+import signal
+import sys
+
+signal.alarm(300)
+root = Path(sys.argv[1]).resolve()
+campaign = root / "evidence/campaign"
+
+
+def parse_operations(text: str, width: int) -> list[dict]:
+    lines = text.splitlines()
+    assert lines[:4] == ["OPENQASM 3.0;", 'include "stdgates.inc";',
+                         f"qubit[{width}] q;", f"bit[{width}] c;"]
+    assert lines[-1] == "c = measure q;"
+    operations = []
+    for line in lines[4:-1]:
+        rotation = re.fullmatch(r"(rx|rz)\(([^()]+)\) q\[(\d+)\];", line)
+        entangler = re.fullmatch(r"cz q\[(\d+)\], q\[(\d+)\];", line)
+        if rotation is not None:
+            name, literal, wire = rotation.groups()
+            angle = float(literal)
+            assert math.isfinite(angle) and 0 <= int(wire) < width
+            operations.append({"name": name, "angle": angle, "qubits": [int(wire)]})
+        else:
+            assert entangler is not None, "Unrecognized emitted instruction"
+            wires = [int(wire) for wire in entangler.groups()]
+            assert len(set(wires)) == 2 and all(0 <= wire < width for wire in wires)
+            operations.append({"name": "cz", "qubits": wires})
+    return operations
+
+
+sample = '\n'.join(["OPENQASM 3.0;", 'include "stdgates.inc";', "qubit[2] q;",
+                     "bit[2] c;", "rx(0.25) q[0];", "cz q[0], q[1];", "c = measure q;"])
+expected = [{"name": "rx", "angle": 0.25, "qubits": [0]},
+            {"name": "cz", "qubits": [0, 1]}]
+assert parse_operations(sample, 2) == expected
+negative_controls = [sample.replace("rx(0.25)", "rx(nan)"),
+                     sample.replace("qubit[2]", "qubit[3]"),
+                     sample.replace("cz q[0], q[1];", "cx q[0], q[1];"),
+                     sample.replace("c = measure q;", ""),
+                     sample.replace("q[1]", "q[2]")]
+for corrupted in negative_controls:
+    try:
+        parse_operations(corrupted, 2)
+    except (AssertionError, ValueError):
+        pass
+    else:
+        raise AssertionError("A malformed QASM negative control was accepted")
+assert parse_operations(sample.replace("0.25", "0.5"), 2) != expected
+
+artifacts = []
+counts = {"warmup": 0, "measured": 0}
+for response_path in sorted((campaign / "fq-source-restored").glob("*/block-*/response.json")):
+    response = json.loads(response_path.read_text())
+    records = {"warmup": response["warmups"], "measured": response["records"]}
+    for entry in response["compiler_evidence_files"]:
+        record = records[entry["phase"]][entry["repetition"]]
+        assert record["status"] == "completed"
+        path = response_path.parent / entry["filename"]
+        raw = path.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == entry["sha256"]
+        sidecar = json.loads(raw)
+        artifact = json.loads(sidecar["executable_artifact"])
+        assert artifact["schema"] == "flagquantum.program_artifact"
+        assert artifact["version"] == "2.0" and artifact["kind"] == "executable"
+        assert artifact["profile"]["name"] == "openqasm-3.0"
+        payload = artifact["payload"]
+        assert hashlib.sha256(payload.encode("utf-8")).hexdigest() == artifact["payload_sha256"]
+        width = len(record["payload"]["final_layout"])
+        assert record["payload"]["final_layout"] == list(range(width))
+        emitted = parse_operations(payload, width)
+        assert emitted == record["payload"]["operations"], path
+        counts[entry["phase"]] += 1
+        artifacts.append({"path": path.relative_to(campaign).as_posix(),
+                          "sha256": entry["sha256"], "payload_sha256": artifact["payload_sha256"],
+                          "operation_count": len(emitted)})
+assert counts == {"warmup": 600, "measured": 900}
+result = {"schema_version": 1, "profile": "target-artifact",
+          "classification": "post-campaign supplemental consistency audit; not preregistered acceptance",
+          "participant_sdk_imports": False, "measurement_rerun": False,
+          "artifacts_checked": len(artifacts), "phase_counts": counts,
+          "exact_ordered_operation_payload_match": True,
+          "payload_hashes_verified": True, "identity_measurement_mapping_checked": True,
+          "malformed_negative_controls_rejected": len(negative_controls),
+          "changed_angle_detected": True,
+          "limits": ["Literal RX/RZ/CZ QASM subset only; not general QASM conformance",
+                     "Artifact identity and provenance contracts are not independently reimplemented",
+                     "Numerical assurance inherits the unchanged full-operator/three-probe scope"],
+          "artifacts": artifacts, "publication_eligible": False}
+with (root / "local-serialized-qasm-check.json").open("x") as output:
+    json.dump(result, output, indent=2, sort_keys=True, allow_nan=False)
+    output.write("\n")
+print(json.dumps({key: value for key, value in result.items() if key != "artifacts"}))

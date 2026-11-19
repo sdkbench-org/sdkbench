@@ -1,0 +1,3372 @@
+{
+  "bundle_sha256": "03aec25b5367fad4f9e58efbb13701124aa28f1faf523f3e4cd4d78fceafb3bf",
+  "case_count": 30,
+  "comparison_scope": "Complete target-artifact versus compiler workflows; FlagQuantum includes target validation, artifact construction and serialization. Not a pure compiler timing comparison.",
+  "coverage": {
+    "cirq-route-cz-restored": {
+      "accepted": 30
+    },
+    "flagquantum-target-artifact": {
+      "accepted": 30
+    },
+    "qiskit-transpile-restored": {
+      "accepted": 30
+    }
+  },
+  "independent_replay": {
+    "blocks_verified": 900,
+    "bundle_sha256": "03aec25b5367fad4f9e58efbb13701124aa28f1faf523f3e4cd4d78fceafb3bf",
+    "cases": [
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      }
+    ],
+    "files_verified": 4205,
+    "publication_eligible": false,
+    "schema_version": 1,
+    "scope": "independent record replay; build attestation and publication review remain separate"
+  },
+  "interpretation": [
+    "All participants and all cases remain in the denominator, including failures.",
+    "Ratios are numerator divided by denominator; below one means less of that metric.",
+    "No ratios are emitted when either full case fails, even if some records passed.",
+    "Timing and memory pair the same block index; timing first takes each block's three-run median.",
+    "Zero, missing or nonfinite measurements make the corresponding ratio undefined.",
+    "Quartiles describe observed variation; they are not confidence intervals or significance tests.",
+    "Counts use medians of independently accepted records, not SDK-reported counts.",
+    "No across-case aggregate, universal winner or global SDK ranking is inferred."
+  ],
+  "pairs": [
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0126582278481013,
+        "full_cz_median": 1.024390243902439,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.012328206920756812,
+          "maximum": 0.34386816363088213,
+          "median": 0.3318537444824168,
+          "minimum": 0.32103947431959007,
+          "q1": 0.32682315217709407,
+          "q3": 0.3391513590978509
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0030145591468944133,
+          "maximum": 0.9319050116113566,
+          "median": 0.9316252133431999,
+          "minimum": 0.9274584228137641,
+          "q1": 0.9286381858236994,
+          "q3": 0.9316527449705938
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9195402298850575,
+        "full_cz_median": 0.8235294117647058,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.7911612464758306,
+          "maximum": 18.642006012060858,
+          "median": 18.12606336409953,
+          "minimum": 17.08744216785075,
+          "q1": 17.732597233436266,
+          "q3": 18.523758479912097
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.007443750745986133,
+          "maximum": 2.187958023099021,
+          "median": 2.187265478424015,
+          "minimum": 2.1776500938086305,
+          "q1": 2.180064497214893,
+          "q3": 2.187508247960879
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.9080459770114943,
+        "full_cz_median": 0.803921568627451,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.3352777723579266,
+          "maximum": 57.07876094333802,
+          "median": 54.02212414536636,
+          "minimum": 52.17726591534588,
+          "q1": 53.42436595438163,
+          "q3": 54.759643726739554
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00021540551016085985,
+          "maximum": 2.34805042509528,
+          "median": 2.3479127579737336,
+          "minimum": 2.3473850844277675,
+          "q1": 2.3478050563770236,
+          "q3": 2.3480204618871845
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.007138589263845585,
+          "maximum": 0.311527056427248,
+          "median": 0.2957187171080288,
+          "minimum": 0.28736416337438075,
+          "q1": 0.2913497303610496,
+          "q3": 0.2984883196248952
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00013854778823596536,
+          "maximum": 0.9231961425865335,
+          "median": 0.9229104425934362,
+          "minimum": 0.9227534307215582,
+          "q1": 0.9228423528968578,
+          "q3": 0.9229809006850938
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8046875,
+        "full_cz_median": 0.7692307692307693,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.2922709005144384,
+          "maximum": 20.096964613086698,
+          "median": 19.173929240346148,
+          "minimum": 17.79465355055019,
+          "q1": 18.176847738584787,
+          "q3": 19.469118639099225
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00017221419191404408,
+          "maximum": 2.0757827193273592,
+          "median": 2.0756402455888048,
+          "minimum": 2.0748175182481754,
+          "q1": 2.0755541421083574,
+          "q3": 2.0757263563002715
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8046875,
+        "full_cz_median": 0.7692307692307693,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.2954590456978607,
+          "maximum": 67.28906080489712,
+          "median": 64.24267235035029,
+          "minimum": 60.77037914776565,
+          "q1": 62.745983135235086,
+          "q3": 65.04144218093295
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0005597445858183114,
+          "maximum": 2.249308551830955,
+          "median": 2.2489697739722443,
+          "minimum": 2.2482991315891367,
+          "q1": 2.2485656340987847,
+          "q3": 2.249125378684603
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.6386138613861385,
+        "full_cz_median": 1.4697986577181208,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.019852359895283167,
+          "maximum": 0.4391729382857763,
+          "median": 0.42183538979207114,
+          "minimum": 0.4011379262863146,
+          "q1": 0.4100254903481019,
+          "q3": 0.42987785024338504
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00028948728937661095,
+          "maximum": 0.974338057057617,
+          "median": 0.9729858909150911,
+          "minimum": 0.97266817345108,
+          "q1": 0.9728542373418569,
+          "q3": 0.9731437246312336
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1413793103448275,
+        "full_cz_median": 1.1173469387755102,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5540534540368043,
+          "maximum": 35.78176322424977,
+          "median": 33.47570118474853,
+          "minimum": 31.965103267746713,
+          "q1": 33.096757805520866,
+          "q3": 33.65081125955767
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.050339599387469125,
+          "maximum": 2.067713493164256,
+          "median": 2.0450780807218303,
+          "minimum": 1.9802656546489563,
+          "q1": 1.9984322459082486,
+          "q3": 2.0487718452957178
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.696551724137931,
+        "full_cz_median": 0.7602040816326531,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 4.581627171841703,
+          "maximum": 84.26777220915663,
+          "median": 79.51825648233279,
+          "minimum": 74.97932902199761,
+          "q1": 78.1657630009483,
+          "q3": 82.74739017279
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.05153670258448306,
+          "maximum": 2.1247275609272833,
+          "median": 2.101910663885177,
+          "minimum": 2.035004506000095,
+          "q1": 2.0542610653668008,
+          "q3": 2.105797767951284
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.013013412359322962,
+          "maximum": 0.36850248643552347,
+          "median": 0.35612269758112736,
+          "minimum": 0.3422198774299422,
+          "q1": 0.34886993361048857,
+          "q3": 0.36188334596981153
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.000385184633195923,
+          "maximum": 0.9312716501832421,
+          "median": 0.9309353780366578,
+          "minimum": 0.93061654663622,
+          "q1": 0.9308131509599699,
+          "q3": 0.9311983355931658
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5780607995343949,
+          "maximum": 18.76438185792276,
+          "median": 18.18280385249554,
+          "minimum": 16.886029488493204,
+          "q1": 17.687921542173264,
+          "q3": 18.26598234170766
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00011433441070574091,
+          "maximum": 2.188141592920354,
+          "median": 2.188053097345133,
+          "minimum": 2.186346754701409,
+          "q1": 2.187968261459501,
+          "q3": 2.1880825958702066
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.4923669400247945,
+          "maximum": 53.397181437087795,
+          "median": 50.32127617071853,
+          "minimum": 48.403134717826354,
+          "q1": 49.608382512771655,
+          "q3": 51.10074945279645
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0011806579749471524,
+          "maximum": 2.3512301610714497,
+          "median": 2.350137159179443,
+          "minimum": 2.3483848149021456,
+          "q1": 2.3495568051518965,
+          "q3": 2.3507374631268436
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.01570164108654809,
+          "maximum": 0.3826386718158553,
+          "median": 0.3650548623891764,
+          "minimum": 0.3452384245518551,
+          "q1": 0.35567547965740665,
+          "q3": 0.37137712074395474
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00013668381398401763,
+          "maximum": 0.9333881783960312,
+          "median": 0.9332959431565855,
+          "minimum": 0.9329196880217289,
+          "q1": 0.9332215789068719,
+          "q3": 0.9333582627208559
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.123567313705621,
+          "maximum": 21.341321349962737,
+          "median": 21.044563021637096,
+          "minimum": 17.38443361695512,
+          "q1": 19.119429512728743,
+          "q3": 21.242996826434364
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00020790458512109922,
+          "maximum": 2.139241229573763,
+          "median": 2.1390372813180765,
+          "minimum": 2.1385968921389398,
+          "q1": 2.1389539533820843,
+          "q3": 2.1391618579672054
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 3.839075257628828,
+          "maximum": 59.960786997577166,
+          "median": 56.28623866637282,
+          "minimum": 50.35486313414098,
+          "q1": 53.45828780431505,
+          "q3": 57.29736306194388
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0004291146661579148,
+          "maximum": 2.292806947380449,
+          "median": 2.2919785179683485,
+          "minimum": 2.2915333638025595,
+          "q1": 2.2916904707495434,
+          "q3": 2.2921195854157013
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.03198684119576367,
+          "maximum": 0.39628645913631616,
+          "median": 0.3641560629641991,
+          "minimum": 0.34570013356665974,
+          "q1": 0.3495075066825159,
+          "q3": 0.38149434787827957
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00021038792226701908,
+          "maximum": 0.9285184387488932,
+          "median": 0.9279384873203862,
+          "minimum": 0.9278693229378423,
+          "q1": 0.9278783205486274,
+          "q3": 0.9280887084708944
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.8005580616735983,
+          "maximum": 33.333431031602856,
+          "median": 31.009038247977845,
+          "minimum": 28.864267335244207,
+          "q1": 30.161526250708867,
+          "q3": 31.962084312382466
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00013298277094042632,
+          "maximum": 2.080767993135257,
+          "median": 2.080596294666084,
+          "minimum": 2.08033033033033,
+          "q1": 2.080505691617734,
+          "q3": 2.0806386743886742
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.8086637163645207,
+          "maximum": 88.43919194924723,
+          "median": 84.36823052504326,
+          "minimum": 81.82046197700953,
+          "q1": 83.46613684612703,
+          "q3": 85.27480056249155
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.000613440967145884,
+          "maximum": 2.2423316173316175,
+          "median": 2.2420903038486477,
+          "minimum": 2.240830115830116,
+          "q1": 2.2416076791076796,
+          "q3": 2.2422211200748254
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.6153846153846154,
+        "full_cz_median": 1.2380952380952381,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.010139916531008986,
+          "maximum": 0.36685329781308157,
+          "median": 0.3600299999563037,
+          "minimum": 0.2994794294601381,
+          "q1": 0.3530580015651046,
+          "q3": 0.36319791809611357
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0002735046172029909,
+          "maximum": 0.9323035560290164,
+          "median": 0.9319732205063554,
+          "minimum": 0.9310825539249233,
+          "q1": 0.9317252525320358,
+          "q3": 0.9319987571492387
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3125,
+        "full_cz_median": 1.0833333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.38410023114075464,
+          "maximum": 10.81687909552488,
+          "median": 10.559248494787873,
+          "minimum": 9.452005127802478,
+          "q1": 10.30980478817058,
+          "q3": 10.693905019311334
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00040543758025135546,
+          "maximum": 2.204450041981528,
+          "median": 2.2038325436334194,
+          "minimum": 2.2030706489144776,
+          "q1": 2.2036703850305863,
+          "q3": 2.2040758226108377
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8125,
+        "full_cz_median": 0.875,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.3349681298885159,
+          "maximum": 35.12310980914756,
+          "median": 29.370808882689346,
+          "minimum": 25.993335724090045,
+          "q1": 29.17902486584544,
+          "q3": 29.513992995733958
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006542718876576537,
+          "maximum": 2.3661388988844907,
+          "median": 2.3649013283532785,
+          "minimum": 2.364459637759386,
+          "q1": 2.36466142865711,
+          "q3": 2.365315700544768
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1153846153846154,
+        "full_cz_median": 1.1538461538461537,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.004174835761088791,
+          "maximum": 0.29721394775406257,
+          "median": 0.2829680317864752,
+          "minimum": 0.25615182650826346,
+          "q1": 0.2806929365161715,
+          "q3": 0.2848677722772603
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0002197292772535553,
+          "maximum": 0.9290451095589904,
+          "median": 0.9289109671227858,
+          "minimum": 0.9284831984673171,
+          "q1": 0.9287452231568554,
+          "q3": 0.9289649524341089
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.9907234357505743,
+          "maximum": 11.057467460288,
+          "median": 10.206871403463632,
+          "minimum": 8.232689558612153,
+          "q1": 9.729978430989945,
+          "q3": 10.72070186674052
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006269706382875384,
+          "maximum": 2.190957763236169,
+          "median": 2.190007727515901,
+          "minimum": 2.189134569662387,
+          "q1": 2.189517327468347,
+          "q3": 2.1901442981066346
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.896551724137931,
+        "full_cz_median": 0.8666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.8097659300330164,
+          "maximum": 38.852905555508585,
+          "median": 36.82212771158923,
+          "minimum": 29.218943551683747,
+          "q1": 34.819101151909955,
+          "q3": 37.62886708194297
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00023885807268575476,
+          "maximum": 2.3595478881618086,
+          "median": 2.3575271226140155,
+          "minimum": 2.356692819781265,
+          "q1": 2.3574867740593235,
+          "q3": 2.3577256321320093
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0618556701030928,
+        "full_cz_median": 1.0103092783505154,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.01055235332587115,
+          "maximum": 0.2180311121338974,
+          "median": 0.19946595398111905,
+          "minimum": 0.19205867237854654,
+          "q1": 0.19422598544043138,
+          "q3": 0.20477833876630253
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008661108596454969,
+          "maximum": 0.9273706426024306,
+          "median": 0.9271569921834402,
+          "minimum": 0.9261314080821785,
+          "q1": 0.9264530362708816,
+          "q3": 0.9273191471305271
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1704545454545454,
+        "full_cz_median": 1.101123595505618,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.074086524132742,
+          "maximum": 20.315808705670573,
+          "median": 18.358122117024948,
+          "minimum": 16.969367011972867,
+          "q1": 17.510914753439202,
+          "q3": 18.585001277571944
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006252777938300369,
+          "maximum": 2.1445722300140253,
+          "median": 2.1407212489571803,
+          "minimum": 2.137609036009841,
+          "q1": 2.1402138772540504,
+          "q3": 2.1408391550478805
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.1022727272727273,
+        "full_cz_median": 1.0898876404494382,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.053060967991101,
+          "maximum": 95.87544186719066,
+          "median": 90.2579867413094,
+          "minimum": 86.49836337259111,
+          "q1": 89.78825451353673,
+          "q3": 91.84131548152783
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0021272989927125785,
+          "maximum": 2.3156241234221597,
+          "median": 2.3099170920250165,
+          "minimum": 2.3050212480429435,
+          "q1": 2.308494556315261,
+          "q3": 2.3106218553079736
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.8076923076923077,
+        "full_cz_median": 1.391304347826087,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.005193093087870471,
+          "maximum": 0.3607342200851484,
+          "median": 0.35288034787054834,
+          "minimum": 0.3390309632069789,
+          "q1": 0.3503365094982655,
+          "q3": 0.355529602586136
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 9.646553742215236e-05,
+          "maximum": 0.9355761441879303,
+          "median": 0.9350368295028436,
+          "minimum": 0.9345933910227215,
+          "q1": 0.9349985466707565,
+          "q3": 0.9350950122081787
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3428571428571427,
+        "full_cz_median": 1.28,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.6658650225074627,
+          "maximum": 13.083075242973141,
+          "median": 12.7121218363189,
+          "minimum": 11.204061683975766,
+          "q1": 12.242932821424661,
+          "q3": 12.908797843932124
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0012287406953692681,
+          "maximum": 2.213776579814316,
+          "median": 2.2110066987581836,
+          "minimum": 2.2106050631396252,
+          "q1": 2.2108467983243565,
+          "q3": 2.2120755390197258
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.7428571428571429,
+        "full_cz_median": 0.92,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.864893716663417,
+          "maximum": 37.161174429754325,
+          "median": 36.08611072707291,
+          "minimum": 31.478955723764088,
+          "q1": 35.65248820785717,
+          "q3": 36.517381924520585
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0013179650109829133,
+          "maximum": 2.3662174303683736,
+          "median": 2.3648523361075795,
+          "minimum": 2.3642348434975164,
+          "q1": 2.3645219209288495,
+          "q3": 2.3658398859398324
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8181818181818182,
+        "full_cz_median": 0.90625,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.0040608150993131364,
+          "maximum": 0.1888615934516122,
+          "median": 0.18635244687214209,
+          "minimum": 0.1748812378928816,
+          "q1": 0.18431937216857056,
+          "q3": 0.1883801872678837
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0040745874312795305,
+          "maximum": 0.9275943104514534,
+          "median": 0.9269483730590447,
+          "minimum": 0.9214319266236496,
+          "q1": 0.9230049464138272,
+          "q3": 0.9270795338451068
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9545454545454546,
+        "full_cz_median": 1.0357142857142858,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.0242930070683443,
+          "maximum": 13.569914081489234,
+          "median": 12.610155155232142,
+          "minimum": 10.704641596961837,
+          "q1": 12.039132004007989,
+          "q3": 13.063425011076333
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.011760707823445848,
+          "maximum": 2.1659542513863217,
+          "median": 2.161436608081347,
+          "minimum": 2.1450851749539597,
+          "q1": 2.154037167605649,
+          "q3": 2.165797875429095
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.1666666666666667,
+        "full_cz_median": 1.1428571428571428,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.929656121512437,
+          "maximum": 72.7361001476503,
+          "median": 68.78529401162484,
+          "minimum": 56.694024455565554,
+          "q1": 67.38106641804089,
+          "q3": 70.31072253955332
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.006756944090611672,
+          "maximum": 2.3367794848099805,
+          "median": 2.335740057206353,
+          "minimum": 2.327444322955631,
+          "q1": 2.3294645184270566,
+          "q3": 2.3362214625176683
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0754716981132075,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.009627069314221998,
+          "maximum": 0.19209125369283248,
+          "median": 0.18431241312465366,
+          "minimum": 0.1714890599599345,
+          "q1": 0.1774661180364993,
+          "q3": 0.1870931873507213
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006376175010122109,
+          "maximum": 0.92433440084126,
+          "median": 0.923630776982747,
+          "minimum": 0.92208319403983,
+          "q1": 0.9235159272171546,
+          "q3": 0.9241535447181668
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.6867469879518072,
+        "full_cz_median": 0.8741258741258742,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5222423710446797,
+          "maximum": 17.118982243493395,
+          "median": 16.6385126575301,
+          "minimum": 15.842691205410823,
+          "q1": 16.283418076345676,
+          "q3": 16.805660447390355
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00016520940635977865,
+          "maximum": 2.0592588648706207,
+          "median": 2.0590662265758093,
+          "minimum": 2.0561767838125666,
+          "q1": 2.0589307816493823,
+          "q3": 2.059095991055742
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.6385542168674698,
+        "full_cz_median": 0.8741258741258742,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.5727458668562946,
+          "maximum": 96.97354452297401,
+          "median": 90.37733999956242,
+          "minimum": 87.56475832206705,
+          "q1": 89.30101937641787,
+          "q3": 91.87376524327416
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0014088999099084454,
+          "maximum": 2.2299254526091588,
+          "median": 2.2291189779079055,
+          "minimum": 2.2276526646435606,
+          "q1": 2.2281614791360878,
+          "q3": 2.229570379045996
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.2857142857142858,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.010687844989730522,
+          "maximum": 0.34272396199404637,
+          "median": 0.3271473559418868,
+          "minimum": 0.32360085111913034,
+          "q1": 0.3251263078606865,
+          "q3": 0.33581415285041705
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0003563818330417634,
+          "maximum": 0.9299053595829748,
+          "median": 0.9294044692321842,
+          "minimum": 0.9291207123343115,
+          "q1": 0.929150540082467,
+          "q3": 0.9295069219155088
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.2857142857142858,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.19164621289484884,
+          "maximum": 9.935282461450136,
+          "median": 9.626240387373631,
+          "minimum": 9.165711689958338,
+          "q1": 9.49930952299988,
+          "q3": 9.690955735894729
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008697750063784149,
+          "maximum": 2.212268978387815,
+          "median": 2.211842961645929,
+          "minimum": 2.211185359099392,
+          "q1": 2.2112883804936785,
+          "q3": 2.212158155500057
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.0568180652325694,
+          "maximum": 30.43195535117197,
+          "median": 29.082718248569286,
+          "minimum": 26.87139836741267,
+          "q1": 28.653054777428714,
+          "q3": 29.709872842661284
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006248896600613563,
+          "maximum": 2.380381766724875,
+          "median": 2.379880196605609,
+          "minimum": 2.3789055445186924,
+          "q1": 2.379417253627115,
+          "q3": 2.3800421432871763
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8421052631578947,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.011484648413038145,
+          "maximum": 0.21009314609829755,
+          "median": 0.20183515892196097,
+          "minimum": 0.19308442829512057,
+          "q1": 0.1953303361202411,
+          "q3": 0.20681498453327923
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00018618700396511034,
+          "maximum": 0.9277332930452737,
+          "median": 0.9273844294030524,
+          "minimum": 0.9271958311305792,
+          "q1": 0.9273111822586931,
+          "q3": 0.9274973692626582
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07086913607474443,
+          "maximum": 10.255784544091847,
+          "median": 10.012881609796946,
+          "minimum": 9.75874414429274,
+          "q1": 10.002602443999724,
+          "q3": 10.073471580074468
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008910454346913177,
+          "maximum": 2.1974822504623828,
+          "median": 2.195981405373921,
+          "minimum": 2.1954811017050195,
+          "q1": 2.1956719371065536,
+          "q3": 2.196562982541245
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.1875,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.280056302788914,
+          "maximum": 52.000043869882624,
+          "median": 50.02484442189059,
+          "minimum": 47.661116945254705,
+          "q1": 48.437659328452014,
+          "q3": 50.71771563124093
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00031062488904431973,
+          "maximum": 2.369429031680687,
+          "median": 2.3679096223894867,
+          "minimum": 2.367630402384501,
+          "q1": 2.3677487628927443,
+          "q3": 2.3680593877817886
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3695652173913044,
+        "full_cz_median": 1.2280701754385965,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.006979150213260232,
+          "maximum": 0.22159584873876437,
+          "median": 0.2099923206669274,
+          "minimum": 0.20278676677353588,
+          "q1": 0.20657482324644663,
+          "q3": 0.21355397345970686
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 9.976164665526088e-05,
+          "maximum": 0.9267070008643042,
+          "median": 0.9265029019162707,
+          "minimum": 0.9251953943637664,
+          "q1": 0.926462873577577,
+          "q3": 0.9265626352242322
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.105263157894737,
+        "full_cz_median": 1.0606060606060606,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.9929879269991755,
+          "maximum": 14.641499319185582,
+          "median": 13.83544110174083,
+          "minimum": 11.772368127682089,
+          "q1": 13.317852360380227,
+          "q3": 14.310840287379403
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.01342111607441776,
+          "maximum": 2.1676871534195934,
+          "median": 2.1550521165153125,
+          "minimum": 2.153885891401676,
+          "q1": 2.15418173468802,
+          "q3": 2.167602850762438
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8070175438596491,
+        "full_cz_median": 0.8636363636363636,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 3.8614484780269436,
+          "maximum": 69.33412919777847,
+          "median": 65.32770638358613,
+          "minimum": 56.06513412752266,
+          "q1": 63.704127932245,
+          "q3": 67.56557641027194
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.013774126568048217,
+          "maximum": 2.3396869404493734,
+          "median": 2.3279281317513103,
+          "minimum": 2.3251248493197862,
+          "q1": 2.325576059790816,
+          "q3": 2.3393501863588644
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0681818181818181,
+        "full_cz_median": 1.0512820512820513,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.0056234709605577915,
+          "maximum": 0.254982369739689,
+          "median": 0.24800599937706935,
+          "minimum": 0.23111488539085004,
+          "q1": 0.24488916170388966,
+          "q3": 0.25051263266444745
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0002281854405243866,
+          "maximum": 0.932248914325878,
+          "median": 0.9319715935158329,
+          "minimum": 0.927438381607349,
+          "q1": 0.9318120524930218,
+          "q3": 0.9320402379335462
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8867924528301887,
+        "full_cz_median": 1.025,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.9881711074445221,
+          "maximum": 12.442737308115502,
+          "median": 11.725576433681843,
+          "minimum": 10.658710219810246,
+          "q1": 10.99877533056071,
+          "q3": 11.986946438005232
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004346700287859662,
+          "maximum": 2.193491229106373,
+          "median": 2.180044023281727,
+          "minimum": 2.16963184780694,
+          "q1": 2.1765693302464912,
+          "q3": 2.180916030534351
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8301886792452831,
+        "full_cz_median": 0.975,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.6742511948685532,
+          "maximum": 49.14315757954537,
+          "median": 47.311301666659205,
+          "minimum": 43.67324346050263,
+          "q1": 45.62924058547846,
+          "q3": 48.30349178034702
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0013235863023237648,
+          "maximum": 2.3542614139743665,
+          "median": 2.339311411782478,
+          "minimum": 2.3322405011416194,
+          "q1": 2.338752749575539,
+          "q3": 2.3400763358778627
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8795180722891566,
+        "full_cz_median": 1.0704225352112675,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.00700023630512106,
+          "maximum": 0.2130109667947602,
+          "median": 0.20630406738068544,
+          "minimum": 0.19787738636867144,
+          "q1": 0.2032412721252881,
+          "q3": 0.21024150843040917
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0004248579490685467,
+          "maximum": 0.9315267777887366,
+          "median": 0.9310361814688388,
+          "minimum": 0.9307074588629421,
+          "q1": 0.9308146680878572,
+          "q3": 0.9312395260369257
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.948051948051948,
+        "full_cz_median": 0.987012987012987,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.286218926143146,
+          "maximum": 15.771941532252082,
+          "median": 15.357056799113487,
+          "minimum": 13.533709163265087,
+          "q1": 14.380817992282854,
+          "q3": 15.667036918426
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.007364802113410285,
+          "maximum": 2.150483779169038,
+          "median": 2.1498193438807265,
+          "minimum": 2.142565498468867,
+          "q1": 2.142962460265645,
+          "q3": 2.1503272623790552
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.077922077922078,
+        "full_cz_median": 0.922077922077922,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 4.14501952270615,
+          "maximum": 77.51743234360929,
+          "median": 73.79728376958425,
+          "minimum": 68.39442046222511,
+          "q1": 70.21312030327779,
+          "q3": 74.35813982598394
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.007826065581370667,
+          "maximum": 2.3099032441661924,
+          "median": 2.3088109570564996,
+          "minimum": 2.300669161846433,
+          "q1": 2.3018884340973704,
+          "q3": 2.309714499678741
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0461538461538462,
+        "full_cz_median": 0.9444444444444444,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.010910469171778486,
+          "maximum": 0.19016902472526093,
+          "median": 0.1772517185463319,
+          "minimum": 0.17378350732215814,
+          "q1": 0.1749595669522358,
+          "q3": 0.1858700361240143
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0010688194374153248,
+          "maximum": 0.9281902580472233,
+          "median": 0.9272707789665469,
+          "minimum": 0.9261955780656472,
+          "q1": 0.926778916737681,
+          "q3": 0.9278477361750963
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0461538461538462,
+        "full_cz_median": 0.9659090909090909,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.766087210385198,
+          "maximum": 17.049908063743903,
+          "median": 15.993868040346076,
+          "minimum": 11.974806809622722,
+          "q1": 14.810842742933435,
+          "q3": 16.576929953318633
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0023740028920822276,
+          "maximum": 2.141722972972973,
+          "median": 2.1362781243765294,
+          "minimum": 2.1323578876555667,
+          "q1": 2.1345130116119972,
+          "q3": 2.1368870145040795
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0227272727272727,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 5.363894856256053,
+          "maximum": 93.5369113455326,
+          "median": 88.45121394197761,
+          "minimum": 67.0768698909492,
+          "q1": 84.30439731080955,
+          "q3": 89.6682921670656
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.002911934314090203,
+          "maximum": 2.3123873873873872,
+          "median": 2.3021318373071527,
+          "minimum": 2.29913667451508,
+          "q1": 2.3019084864870565,
+          "q3": 2.3048204208011467
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1666666666666667,
+        "full_cz_median": 1.2461538461538462,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.006093739066932474,
+          "maximum": 0.2068670417095131,
+          "median": 0.20021445437296184,
+          "minimum": 0.19372679573425003,
+          "q1": 0.19591544543290623,
+          "q3": 0.2020091844998387
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00028171750229111225,
+          "maximum": 0.9336753942503584,
+          "median": 0.9334975988736077,
+          "minimum": 0.9331707439720414,
+          "q1": 0.9333467427651925,
+          "q3": 0.9336284602674836
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.7064867818946823,
+          "maximum": 11.648881843657913,
+          "median": 11.108731517595992,
+          "minimum": 10.413605731736292,
+          "q1": 10.755644757966335,
+          "q3": 11.462131539861018
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.003286072461681222,
+          "maximum": 2.1819464033850493,
+          "median": 2.180761075791972,
+          "minimum": 2.177599155127904,
+          "q1": 2.178418575605285,
+          "q3": 2.181704648066966
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8571428571428571,
+        "full_cz_median": 0.8024691358024691,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.5013729413959638,
+          "maximum": 57.12606249033534,
+          "median": 55.87228789656519,
+          "minimum": 53.20025257272577,
+          "q1": 54.98396679571267,
+          "q3": 56.48533973710863
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0032916997939489434,
+          "maximum": 2.337525712606524,
+          "median": 2.336084777515101,
+          "minimum": 2.332492372682469,
+          "q1": 2.3339644121007384,
+          "q3": 2.3372561118946873
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8969072164948454,
+        "full_cz_median": 0.9506172839506173,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.006557931290308461,
+          "maximum": 0.20159634080458474,
+          "median": 0.1942957671272952,
+          "minimum": 0.18541173400605596,
+          "q1": 0.1901967005285048,
+          "q3": 0.19675463181881325
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00010546677339362542,
+          "maximum": 0.9275454523209435,
+          "median": 0.9266636486110211,
+          "minimum": 0.9260491863452832,
+          "q1": 0.9266533731782257,
+          "q3": 0.9267588399516193
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9157894736842105,
+        "full_cz_median": 1.013157894736842,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.2372274976227065,
+          "maximum": 16.795354308840736,
+          "median": 16.01148949767118,
+          "minimum": 12.157036775702446,
+          "q1": 15.300604314999566,
+          "q3": 16.537831812622272
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.006577795595039682,
+          "maximum": 2.1579187065922807,
+          "median": 2.148050472681924,
+          "minimum": 2.147564226166846,
+          "q1": 2.147649293937504,
+          "q3": 2.1542270895325437
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0210526315789474,
+        "full_cz_median": 1.0657894736842106,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 4.820816516002708,
+          "maximum": 86.71564705697294,
+          "median": 83.06205798290638,
+          "minimum": 62.05887271268501,
+          "q1": 80.08919701442092,
+          "q3": 84.91001353042363
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00858439764390262,
+          "maximum": 2.326482978481157,
+          "median": 2.3177087766626734,
+          "minimum": 2.317359496398798,
+          "q1": 2.3175721658254407,
+          "q3": 2.3261565634693433
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1733333333333333,
+        "full_cz_median": 1.1022727272727273,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.013159325667460892,
+          "maximum": 0.22587656655905275,
+          "median": 0.20503266826594405,
+          "minimum": 0.19265138431316187,
+          "q1": 0.1943894022174785,
+          "q3": 0.2075487278849394
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.002907658338893171,
+          "maximum": 0.9379003191074176,
+          "median": 0.9360737016462685,
+          "minimum": 0.93410161430466,
+          "q1": 0.9345728069494497,
+          "q3": 0.9374804652883428
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9119170984455959,
+        "full_cz_median": 1.0157068062827226,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.6244922060695757,
+          "maximum": 25.374915021819877,
+          "median": 22.488448688196378,
+          "minimum": 21.763430687005894,
+          "q1": 22.214483795786833,
+          "q3": 22.83897600185641
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.01755919372591097,
+          "maximum": 1.9984346720148707,
+          "median": 1.978808367403591,
+          "minimum": 1.9657362848893167,
+          "q1": 1.96801814135664,
+          "q3": 1.985577335082551
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.7772020725388601,
+        "full_cz_median": 0.9214659685863874,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.1262909703338266,
+          "maximum": 116.08692302079082,
+          "median": 111.62955533529137,
+          "minimum": 108.08460685894244,
+          "q1": 110.4615100917243,
+          "q3": 112.58780106205813
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.014571775722314051,
+          "maximum": 2.139314190676515,
+          "median": 2.1136611530709013,
+          "minimum": 2.0985563041385946,
+          "q1": 2.105803473597872,
+          "q3": 2.120375249320186
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1346153846153846,
+        "full_cz_median": 1.2666666666666666,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.006740614941941975,
+          "maximum": 0.2142197696176871,
+          "median": 0.2069076981083388,
+          "minimum": 0.19990220240392767,
+          "q1": 0.20265359768069527,
+          "q3": 0.20939421262263724
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0037614642354082406,
+          "maximum": 0.9360086224182875,
+          "median": 0.9311304440881543,
+          "minimum": 0.9306258455679711,
+          "q1": 0.9308201733356818,
+          "q3": 0.93458163757109
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7763157894736842,
+        "full_cz_median": 0.9595959595959596,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.8349431384588524,
+          "maximum": 12.787323655516463,
+          "median": 12.131696041782796,
+          "minimum": 10.739307243192755,
+          "q1": 11.7647379653599,
+          "q3": 12.599681103818753
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.016427483122185116,
+          "maximum": 2.1859000765020893,
+          "median": 2.1808544890374364,
+          "minimum": 2.148683829910327,
+          "q1": 2.1691609130398883,
+          "q3": 2.1855883961620735
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.6842105263157895,
+        "full_cz_median": 0.7575757575757576,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.7823183222950973,
+          "maximum": 61.04152090380787,
+          "median": 58.69469550503666,
+          "minimum": 53.21050278957815,
+          "q1": 57.65975010532121,
+          "q3": 60.442068427616306
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.01697882953275931,
+          "maximum": 2.3487113098740733,
+          "median": 2.3305592094162106,
+          "minimum": 2.306869434485949,
+          "q1": 2.3302767012200576,
+          "q3": 2.347255530752817
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1428571428571428,
+        "full_cz_median": 1.1282051282051282,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.011425532648713571,
+          "maximum": 0.19825550051254467,
+          "median": 0.1872867903222129,
+          "minimum": 0.1802091503337005,
+          "q1": 0.18449148050325323,
+          "q3": 0.1959170131519668
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0018457995693523799,
+          "maximum": 0.9324707723915276,
+          "median": 0.9318170861974494,
+          "minimum": 0.9294983016055326,
+          "q1": 0.9302786287889662,
+          "q3": 0.9321244283583185
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.967032967032967,
+        "full_cz_median": 0.9777777777777777,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.2009875143549937,
+          "maximum": 17.23934252061742,
+          "median": 16.14888357713133,
+          "minimum": 15.082842633413975,
+          "q1": 15.79745940553462,
+          "q3": 16.998446919889613
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004773968675194418,
+          "maximum": 2.1241709858997937,
+          "median": 2.123468137254902,
+          "minimum": 2.118698824708962,
+          "q1": 2.11918666757171,
+          "q3": 2.1239606362469043
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.8461538461538461,
+        "full_cz_median": 0.8666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.7760862780558568,
+          "maximum": 88.57301228007988,
+          "median": 86.55996412160526,
+          "minimum": 82.00118738231211,
+          "q1": 85.42293769412595,
+          "q3": 87.1990239721818
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.001553908186915809,
+          "maximum": 2.2807379333407645,
+          "median": 2.2783319545140635,
+          "minimum": 2.2773909652982787,
+          "q1": 2.277577397450338,
+          "q3": 2.2791313056372537
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.051094890510949,
+        "full_cz_median": 1.0353535353535352,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.005967355424363691,
+          "maximum": 0.1723221800773482,
+          "median": 0.1695453121447965,
+          "minimum": 0.16114841977896882,
+          "q1": 0.1645389810689589,
+          "q3": 0.17050633649332259
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.011215427735502659,
+          "maximum": 0.9321806087114999,
+          "median": 0.9214490066576895,
+          "minimum": 0.9188843225762986,
+          "q1": 0.9201741935956398,
+          "q3": 0.9313896213311424
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9863013698630136,
+        "full_cz_median": 0.9624413145539906,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.2621867008022747,
+          "maximum": 21.825803752287985,
+          "median": 21.49220934473569,
+          "minimum": 21.169036552566126,
+          "q1": 21.382692602860324,
+          "q3": 21.6448793036626
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008149701758770611,
+          "maximum": 1.957191371311044,
+          "median": 1.9521889816145466,
+          "minimum": 1.9465696070035208,
+          "q1": 1.9517381197787875,
+          "q3": 1.9525530899546646
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.9383561643835616,
+        "full_cz_median": 0.9295774647887324,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 4.322441234000991,
+          "maximum": 133.59551048444,
+          "median": 128.3601090912393,
+          "minimum": 122.84568674249729,
+          "q1": 126.27748731917629,
+          "q3": 130.59992855317728
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.025112617948575,
+          "maximum": 2.125406542950067,
+          "median": 2.117650175042308,
+          "minimum": 2.0939670758397564,
+          "q1": 2.0961558103773403,
+          "q3": 2.1212684283259153
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.005336051223904015,
+          "maximum": 0.29707684069474294,
+          "median": 0.28438206058870963,
+          "minimum": 0.265595756206432,
+          "q1": 0.2820352547835179,
+          "q3": 0.2873713060074219
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.000300104383456512,
+          "maximum": 0.9263409720473432,
+          "median": 0.9261935936887045,
+          "minimum": 0.9256518675123326,
+          "q1": 0.9259900384568271,
+          "q3": 0.9262901428402837
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9615384615384616,
+        "full_cz_median": 0.8666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.247683541730229,
+          "maximum": 12.149926587505496,
+          "median": 11.756377405772877,
+          "minimum": 11.066427271911081,
+          "q1": 11.550342759003229,
+          "q3": 11.798026300733458
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.009036648055035013,
+          "maximum": 2.2058170914542727,
+          "median": 2.1964589670978287,
+          "minimum": 2.1877937065016955,
+          "q1": 2.1925071530758227,
+          "q3": 2.2015438011308577
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.9615384615384616,
+        "full_cz_median": 0.8666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.0379426904167062,
+          "maximum": 43.89805070143661,
+          "median": 41.431253142103415,
+          "minimum": 37.781617247837126,
+          "q1": 40.76336810843711,
+          "q3": 41.80131079885382
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.009768368242967451,
+          "maximum": 2.382728635682159,
+          "median": 2.3716298833388745,
+          "minimum": 2.3621438343941468,
+          "q1": 2.367235932284216,
+          "q3": 2.3770043005271835
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2407407407407407,
+        "full_cz_median": 1.2424242424242424,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.007063251564893874,
+          "maximum": 0.2214910869317467,
+          "median": 0.21414376022823584,
+          "minimum": 0.19641659757417299,
+          "q1": 0.20790267895541753,
+          "q3": 0.2149659305203114
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.000251825798444516,
+          "maximum": 0.9294351290882124,
+          "median": 0.9290991330569167,
+          "minimum": 0.9287436580097453,
+          "q1": 0.9289025119357225,
+          "q3": 0.929154337734167
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9852941176470589,
+        "full_cz_median": 0.9761904761904762,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.0499985299990993,
+          "maximum": 12.642042530037225,
+          "median": 11.485855521700405,
+          "minimum": 10.17824100582749,
+          "q1": 10.90853830966805,
+          "q3": 11.958536839667149
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.010945701218819881,
+          "maximum": 2.1977532097004278,
+          "median": 2.1869291187571793,
+          "minimum": 2.1837457917429566,
+          "q1": 2.185163884545249,
+          "q3": 2.1961095857640687
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.7941176470588235,
+        "full_cz_median": 0.7857142857142857,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 3.489439681073719,
+          "maximum": 57.07698086258847,
+          "median": 55.30898380302005,
+          "minimum": 49.44152511037852,
+          "q1": 52.30352784912382,
+          "q3": 55.79296753019754
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.011391150131061956,
+          "maximum": 2.365311459819306,
+          "median": 2.353943486615907,
+          "minimum": 2.3496160661547547,
+          "q1": 2.352723057936896,
+          "q3": 2.364114208067958
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.00420747151126627,
+          "maximum": 0.23470854920524026,
+          "median": 0.22716948935279155,
+          "minimum": 0.21830354574922636,
+          "q1": 0.22564745765245653,
+          "q3": 0.2298549291637228
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004769285932598066,
+          "maximum": 0.9309292024324933,
+          "median": 0.9261418369978327,
+          "minimum": 0.9255101020204041,
+          "q1": 0.9256946418303975,
+          "q3": 0.9304639277629956
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9230769230769231,
+        "full_cz_median": 0.8913043478260869,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.21781177280754527,
+          "maximum": 13.190277682563265,
+          "median": 12.521376666566967,
+          "minimum": 12.230722072300868,
+          "q1": 12.392436773443134,
+          "q3": 12.610248546250679
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.01749751045694614,
+          "maximum": 2.197471793963022,
+          "median": 2.180388759862123,
+          "minimum": 2.1637437156553254,
+          "q1": 2.169066572286185,
+          "q3": 2.186564082743131
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.9230769230769231,
+        "full_cz_median": 0.8913043478260869,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.1665191452094632,
+          "maximum": 57.66134861922324,
+          "median": 55.57558178433757,
+          "minimum": 52.11025381783492,
+          "q1": 54.918251003662206,
+          "q3": 56.08477014887167
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.023123192869083375,
+          "maximum": 2.3621972829297104,
+          "median": 2.3505512327827205,
+          "minimum": 2.335690904839841,
+          "q1": 2.3384658155616576,
+          "q3": 2.361589008430741
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.011340347748265422,
+          "maximum": 0.3131477886151619,
+          "median": 0.29163447000387355,
+          "minimum": 0.2714047092067802,
+          "q1": 0.286236014314669,
+          "q3": 0.2975763620629344
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00045891646547358,
+          "maximum": 0.9329047810365608,
+          "median": 0.9324365035764497,
+          "minimum": 0.9273256543451529,
+          "q1": 0.9322283860484741,
+          "q3": 0.9326873025139477
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.9663474543143451,
+          "maximum": 15.069026256916487,
+          "median": 13.855770573993512,
+          "minimum": 12.569561861259388,
+          "q1": 12.959765223794362,
+          "q3": 13.926112678108707
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.005468815195682097,
+          "maximum": 2.1857319296594717,
+          "median": 2.179799342877259,
+          "minimum": 2.1733223548785507,
+          "q1": 2.179443558363481,
+          "q3": 2.184912373559163
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 3.112326948880977,
+          "maximum": 51.11746031472458,
+          "median": 47.055562769140465,
+          "minimum": 42.93538404617597,
+          "q1": 44.89032726960099,
+          "q3": 48.002654218481965
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.005583147507693731,
+          "maximum": 2.3436856655490854,
+          "median": 2.342448835568102,
+          "minimum": 2.3365407181412814,
+          "q1": 2.3377335728745687,
+          "q3": 2.3433167203822625
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.006004210351160388,
+          "maximum": 0.26371264506388464,
+          "median": 0.25228814619867224,
+          "minimum": 0.24228817975962472,
+          "q1": 0.2502732905251913,
+          "q3": 0.2562775008763517
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.003664974371452301,
+          "maximum": 0.9315721199421244,
+          "median": 0.9311905515588693,
+          "minimum": 0.9260976886827735,
+          "q1": 0.9277300745702679,
+          "q3": 0.9313950489417202
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9285714285714286,
+        "full_cz_median": 0.9183673469387755,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.4145118937442689,
+          "maximum": 15.316671366749826,
+          "median": 14.649633719968698,
+          "minimum": 10.911371251393152,
+          "q1": 13.704442108483741,
+          "q3": 15.11895400222801
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.008993568386185036,
+          "maximum": 2.197798964218456,
+          "median": 2.1891432451117234,
+          "minimum": 2.1774533943017937,
+          "q1": 2.1864587971632186,
+          "q3": 2.1954523655494036
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 0.9285714285714286,
+        "full_cz_median": 0.9183673469387755,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 2.546661531325789,
+          "maximum": 61.70541596342168,
+          "median": 57.77855753530247,
+          "minimum": 42.98908202871535,
+          "q1": 56.07037094295572,
+          "q3": 58.61703247428151
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.008655988750730259,
+          "maximum": 2.3600682593856654,
+          "median": 2.3511857625177197,
+          "minimum": 2.3498446567794127,
+          "q1": 2.3508661393095336,
+          "q3": 2.359522128060264
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-target-artifact",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.00484577305949932,
+          "maximum": 0.2038247271202794,
+          "median": 0.18825084584587187,
+          "minimum": 0.17771500829428646,
+          "q1": 0.18536050004523769,
+          "q3": 0.190206273104737
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 9.687455154183677e-05,
+          "maximum": 0.9201694043917844,
+          "median": 0.9198355601233299,
+          "minimum": 0.9197249951066745,
+          "q1": 0.9197949608733015,
+          "q3": 0.9198918354248433
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-target-artifact": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.0712691971007207,
+          "maximum": 16.92299082403411,
+          "median": 15.608714320336446,
+          "minimum": 14.14147621345563,
+          "q1": 14.867888800194828,
+          "q3": 15.939157997295549
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0003372785639985665,
+          "maximum": 2.163328729281768,
+          "median": 2.163199539769694,
+          "minimum": 2.1624669198020943,
+          "q1": 2.162910117419197,
+          "q3": 2.1632473959831957
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "flagquantum-target-artifact",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 3.702847537617245,
+          "maximum": 85.18347997243116,
+          "median": 83.14580833775871,
+          "minimum": 75.40099837369289,
+          "q1": 80.12026479155362,
+          "q3": 83.82311232917087
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0005793656463022323,
+          "maximum": 2.352074581343155,
+          "median": 2.3516142026817057,
+          "minimum": 2.350074790012657,
+          "q1": 2.3512751513845025,
+          "q3": 2.3518545170308047
+        }
+      },
+      "statuses": {
+        "flagquantum-target-artifact": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    }
+  ],
+  "publication_eligible": false,
+  "schema_version": 1,
+  "source_summary_sha256": "a488eebc1fbec6e8d5b4f7231cc61c3259f59c85d704c1f061000018141ac522",
+  "workflow_profile": "target-artifact"
+}

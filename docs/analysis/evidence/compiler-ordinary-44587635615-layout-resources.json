@@ -1,0 +1,22 @@
+{
+  "profile": "ordinary",
+  "initial_identity_registered_for_all": true,
+  "common_timed_restoration_policy": {
+    "algorithm": "spanning-tree-leaf-token-restoration-v1",
+    "final_layout": "identity",
+    "leaf_order": "ascending",
+    "neighbor_order": "ascending",
+    "optimization_after_restoration": false,
+    "swap_decomposition": "H-CZ-H CNOT triple",
+    "timed": true,
+    "tree_root": 0
+  },
+  "identity_final_layout_warmups": 1800,
+  "identity_final_layout_measurements": 2700,
+  "enforced_cpu_sets": {
+    "0": 900
+  },
+  "memory_cap_bytes": 17179869184,
+  "all_observed_processes_network_isolated": true,
+  "publication_eligible": false
+}

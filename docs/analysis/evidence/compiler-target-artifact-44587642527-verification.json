@@ -1,0 +1,27 @@
+{
+  "all_pair_metrics_and_coverage_match_hosted": true,
+  "blocks_verified": 900,
+  "build_files_hash_verified": true,
+  "case_participant_pairs": 90,
+  "compiler_revision": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+  "elapsed_seconds": 404.5307054580044,
+  "freeze_draw_selection_verified": true,
+  "harness_revision": "9e3992d14342601662443b6720dd6757905c3f3b",
+  "independent_replay_matches_hosted": true,
+  "measured_records": 2700,
+  "participant_imports_denied": [
+    "flagquantum",
+    "qiskit",
+    "cirq"
+  ],
+  "profile": "target-artifact",
+  "publication_eligible": false,
+  "published_wheels_hash_verified": true,
+  "report_helper_paths_verified": true,
+  "retained_nonce_regeneration_matches": true,
+  "run_id": 44587642527,
+  "schema_version": 1,
+  "summary_digest_matches_hosted": false,
+  "warmup_records_expected": 1800,
+  "warmup_records_retained": 1800
+}

@@ -1,0 +1,1164 @@
+{
+  "all_campaign_files_preserved": true,
+  "analysis_audit_artifacts": {
+    "evidence/compiler-ordinary-44587635615-audit-attempt1.txt": {
+      "bytes": 384,
+      "sha256": "01a964b138a8bc6b93febf7bce84338e91718e020c7ce37babf29305207985b1"
+    },
+    "evidence/compiler-ordinary-44587635615-audit-attempt2.txt": {
+      "bytes": 899,
+      "sha256": "167a46ba7249bba9795085c66a0fb2142337651117ddcd5570f00a75dabd6ea0"
+    },
+    "evidence/compiler-qualification-selection-20261120.json": {
+      "bytes": 538,
+      "sha256": "893d5a1c89b6fb57a83d55c6d0c774334598a70ab1bf8241c9ab1a11042cf777"
+    },
+    "source-probes/compiler-qualification-audit-20261120.py.txt": {
+      "bytes": 6978,
+      "sha256": "8e9582e600534a2e617419c2a41805613161f2884c1d69c2ce74a3b37198af2a"
+    }
+  },
+  "analysis_failure_retained": "The first local replay passed, then report comparison failed because an older scratch helper shadowed the pinned helper. The audit entry now pins and verifies helper paths. The second local audit passed. Neither measurement nor draw was rerun.",
+  "archive_bytes": 2974976,
+  "archive_policy": "All original campaign files, complete preparation bundles, freeze/draw/selection, registrations, release metadata, build record/log, requirements and hosted replay/comparisons are retained unchanged. Wheels, source.zip and extracted compiler source remain in the original hash-verified GitHub artifact; they are not duplicated here. Original artifact expiry is explicit. No raw measurement or failure record is omitted.",
+  "archive_sha256": "bf55b4f809a65225c239d54148f24321452a72d249ca59667b8f4481334033c2",
+  "campaign_files_verified": 2705,
+  "compiler_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+  "draw": {
+    "entropy_source": "secrets.token_bytes(32)",
+    "freeze_sha256": "1800527c9eecc5e0eb60b452932b6d4849b188b016bfec14789abaa15e725c26",
+    "nonce": "fd4ce141e050adb05b51c8dccc6784652aaff5e2a8bd7cee024d92c8edec66db",
+    "recorded_at_utc": "2026-11-19T18:28:11.530969+00:00",
+    "redraw_allowed": false,
+    "schema_version": 1
+  },
+  "elapsed_seconds": 2.9034612920004292,
+  "files_verified": 2907,
+  "freeze": {
+    "base_bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+    "campaign_wall_limit_seconds": 16200,
+    "execution": "unchanged protocol: ten blocks, two warmups, three measured compilations",
+    "harness_revision": "9e3992d14342601662443b6720dd6757905c3f3b",
+    "harness_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+    "preparation_source_sha256": "5a1d7fb2a8f630d8cc106c22a4bd7ccf1a806064a9e4321a2092bfa73034f3ed",
+    "qualification": "local event record; not an independent timestamp or attestation",
+    "recorded_at_utc": "2026-11-19T18:28:11.527854+00:00",
+    "registrations": [
+      {
+        "components": [
+          {
+            "artifact_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "1c84b45043bbd9f275f0c653c01e01f7755eefef1d2215ba009ecfcc45a86d64",
+            "name": "flagquantum",
+            "role": "frontend",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+            "name": "torch",
+            "role": "numerical-dependency",
+            "version": "2.14.0+cpu"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+              "options": {
+                "basis": [
+                  "h",
+                  "x",
+                  "y",
+                  "z",
+                  "s",
+                  "sdg",
+                  "rx",
+                  "ry",
+                  "rz",
+                  "cz"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "max_added_operations": 20000,
+                "optimization_level": "default",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "routing": "default"
+              },
+              "sdk": "flagquantum"
+            },
+            "implementation_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+              "package_tree_sha256": "409ad18995e3a27ea6c72f7ada5e3106cedaa05dd5ba4c31d6ce61634f12279b",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1326
+            },
+            "sdk": "flagquantum",
+            "source_build": {
+              "build_environment": {
+                "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "LC_ALL": "C",
+                "MAX_JOBS": "1",
+                "OMP_NUM_THREADS": "1",
+                "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+                "PIP_NO_INDEX": "1",
+                "PYTHONHASHSEED": "0",
+                "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+              },
+              "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+              "command": [
+                "/tmp/sdkbench-candidate-build/bin/python",
+                "-m",
+                "build",
+                "--wheel",
+                "--no-isolation",
+                "--outdir",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+              ],
+              "distribution": "flagquantum",
+              "environment": {
+                "dependencies": [
+                  {
+                    "name": "build",
+                    "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                    "version": "1.6.1"
+                  },
+                  {
+                    "name": "filelock",
+                    "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                    "version": "4.2.4"
+                  },
+                  {
+                    "name": "fsspec",
+                    "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                    "version": "2026.9.0"
+                  },
+                  {
+                    "name": "Jinja2",
+                    "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                    "version": "3.1.6"
+                  },
+                  {
+                    "name": "MarkupSafe",
+                    "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                    "version": "3.0.3"
+                  },
+                  {
+                    "name": "mpmath",
+                    "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                    "version": "1.3.0"
+                  },
+                  {
+                    "name": "networkx",
+                    "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                    "version": "3.7"
+                  },
+                  {
+                    "name": "numpy",
+                    "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                    "version": "2.5.5"
+                  },
+                  {
+                    "name": "packaging",
+                    "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                    "version": "26.3"
+                  },
+                  {
+                    "name": "pip",
+                    "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                    "version": "25.0.1"
+                  },
+                  {
+                    "name": "pyproject_hooks",
+                    "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                    "version": "1.3.3"
+                  },
+                  {
+                    "name": "setuptools",
+                    "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                    "version": "84.2.1"
+                  },
+                  {
+                    "name": "sympy",
+                    "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                    "version": "1.14.0"
+                  },
+                  {
+                    "name": "torch",
+                    "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                    "version": "2.10.0+cpu"
+                  },
+                  {
+                    "name": "typing_extensions",
+                    "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                    "version": "4.16.0"
+                  },
+                  {
+                    "name": "wheel",
+                    "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                    "version": "0.48.0"
+                  }
+                ],
+                "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+                "host": {
+                  "allowed_cpus": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "clock": {
+                    "adjustable": false,
+                    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                    "monotonic": true,
+                    "resolution": 1e-09
+                  },
+                  "cpu_count": 4,
+                  "cpu_models": [
+                    "Intel(R) Xeon(R) 6975P-C"
+                  ],
+                  "cpuinfo_sha256": "26d540658752d64f0e1a006e5620b63862b89fd075f6d6513f7f9d5c352b04eb",
+                  "machine": "x86_64",
+                  "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+                  "python": "3.12.14"
+                },
+                "image_descriptor": {
+                  "kernel": "7.0.0-1014-aws",
+                  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                  "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39"
+                },
+                "image_descriptor_sha256": "4204399e805068e4628d809400c56cde8752386ed9b004f718d65b92f097f748",
+                "implementation": {
+                  "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                  "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                  "sdkbench_version": "0.4.0"
+                },
+                "schema_version": 1,
+                "scope": "observed engineering environment; not a qualified publication host",
+                "sealed_image": false
+              },
+              "independent_attestation": false,
+              "log": {
+                "filename": "build.log",
+                "sha256": "372c5009c24f4d9572c46d74deedae2ee080a203236794ddb0dcd1398e102c89"
+              },
+              "returncode": 0,
+              "schema_version": 1,
+              "source_archive": {
+                "filename": "source.zip",
+                "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+              },
+              "source_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+              "wheel": {
+                "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+                "sha256": "2ab25d1282b91f5de9401bcd871149b68aac79ce081f995db43417c339aae379"
+              }
+            },
+            "suite": "compiler-candidate",
+            "workflow": "flagquantum-ordinary-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "93b8ff338a2a2b96c66a66776473c71d0ddb784498166f5aa79695c9a288f4f1",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "Intel(R) Xeon(R) 6975P-C"
+            ],
+            "cpuinfo_sha256": "1760060b3b129e8102fdbfaff820461e24d216724d9654044009b05a422df583",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "4204399e805068e4628d809400c56cde8752386ed9b004f718d65b92f097f748",
+          "os": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "fq-source-restored"
+      },
+      {
+        "components": [
+          {
+            "artifact_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "92bbe851384a6e3a8ed331a3f57c8d8092755a01eb64e3be83a3600abf214750",
+            "name": "qiskit",
+            "role": "frontend",
+            "version": "2.6.2"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "qiskit.transpile",
+              "options": {
+                "approximation_degree": 1.0,
+                "basis": [
+                  "cz",
+                  "u"
+                ],
+                "compiler_seed_supported": true,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "num_processes": 1,
+                "optimization_level": 2,
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "qubits_initially_zero": false
+              },
+              "sdk": "qiskit"
+            },
+            "implementation_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/qiskit/__init__.py",
+              "package_tree_sha256": "9aa5da67adc106c389ef548158c4b59c498202f3afa3768e0692d16d1788f712",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 726
+            },
+            "published_wheel": {
+              "distribution": "qiskit",
+              "filename": "qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+              "independent_attestation": false,
+              "metadata_url": "https://pypi.org/pypi/qiskit/2.6.2/json",
+              "release_metadata_sha256": "c716594d20348b4c17984c2ceb37e902135aa7401ec7064ac1ed76b20913dc1c",
+              "sha256": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669",
+              "url": "https://files.pythonhosted.org/packages/49/08/db2ff7cd24c4a14bb035c4cbbf332ab0abc27330a8fb33d1a64da9d01409/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+              "version": "2.6.2"
+            },
+            "sdk": "qiskit",
+            "suite": "compiler-candidate",
+            "workflow": "qiskit-transpile-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "93b8ff338a2a2b96c66a66776473c71d0ddb784498166f5aa79695c9a288f4f1",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "Intel(R) Xeon(R) 6975P-C"
+            ],
+            "cpuinfo_sha256": "9a0c4131053e542a8c932c3abe37fba6e25f2ae67bb5ca1962d7c4989a5b46e4",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "4204399e805068e4628d809400c56cde8752386ed9b004f718d65b92f097f748",
+          "os": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "qiskit-release-restored"
+      },
+      {
+        "components": [
+          {
+            "artifact_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "c5c3883a93f26002d128e46dffff6893beae0ab486a7e1f00fb0b5ff610a2bd8",
+            "name": "cirq-core",
+            "role": "frontend",
+            "version": "1.7.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "522a61c8e2011b5663d62e2cffbee0e8b1ab1fa748aa7a962cab639c1257ff76",
+            "name": "sympy",
+            "role": "numerical-dependency",
+            "version": "1.14.0"
+          },
+          {
+            "artifact_sha256": "7e7c30fa3d8f840985c2e52b080941f2ff7851aa2dc7964ccc1f0b746bc7b4ba",
+            "name": "networkx",
+            "role": "numerical-dependency",
+            "version": "3.7"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "RouteCQC; optimize_for_target_gateset",
+              "options": {
+                "allow_partial_czs": false,
+                "basis": [
+                  "cz",
+                  "arbitrary-one-qubit-unitary"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "initial_mapper": "identity",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "synthesis_atol": 1e-12
+              },
+              "sdk": "cirq"
+            },
+            "implementation_sha256": "3688ca3e17a2e94b2f180d0584bc8f1f25b4f12a3ec4fac2cc320bf3e6f643c8",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/cirq/__init__.py",
+              "package_tree_sha256": "afc093d1c8f3e05cb3273e41fe990ebf9160902de8509cfe043be48fcbe771b1",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1276
+            },
+            "published_wheel": {
+              "distribution": "cirq-core",
+              "filename": "cirq_core-1.7.0-py3-none-any.whl",
+              "independent_attestation": false,
+              "metadata_url": "https://pypi.org/pypi/cirq-core/1.7.0/json",
+              "release_metadata_sha256": "33293465badd0996d58e914999f233e81bd8e70b8c52431050afb0b029de5f99",
+              "sha256": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce",
+              "url": "https://files.pythonhosted.org/packages/da/28/fd3d6b68b4944f0f61a07e14f7ea0823aca50160a4662ab016863e24cb37/cirq_core-1.7.0-py3-none-any.whl",
+              "version": "1.7.0"
+            },
+            "sdk": "cirq",
+            "suite": "compiler-candidate",
+            "workflow": "cirq-route-cz-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "93b8ff338a2a2b96c66a66776473c71d0ddb784498166f5aa79695c9a288f4f1",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "Intel(R) Xeon(R) 6975P-C"
+            ],
+            "cpuinfo_sha256": "a45b5e692c589106f6e394c8a03e2a837713b7bb8543d296a53841746a70df82",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "4204399e805068e4628d809400c56cde8752386ed9b004f718d65b92f097f748",
+          "os": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "cirq-release-restored"
+      }
+    ],
+    "schema_version": 1,
+    "selection": {
+      "case_count": 30,
+      "families": [
+        "qaoa",
+        "ising",
+        "hopping",
+        "qft",
+        "repetition"
+      ],
+      "topologies": [
+        "line",
+        "grid"
+      ],
+      "widths": [
+        6,
+        8,
+        12
+      ]
+    },
+    "workflow_profile": "ordinary",
+    "workflow_run": {
+      "GITHUB_REPOSITORY": "sdkbench-org/sdkbench",
+      "GITHUB_RUN_ATTEMPT": "1",
+      "GITHUB_RUN_ID": "44587635615",
+      "GITHUB_SHA": "9e3992d14342601662443b6720dd6757905c3f3b"
+    }
+  },
+  "github_artifact_expires_at": "2027-02-17T18:25:28Z",
+  "github_artifact_id": 14567447242,
+  "github_artifact_sha256": "sha256:1eb74128366c141378912a9885df7c64af7c6556a65a77c43e64c1ea126036ba",
+  "github_run_id": 44587635615,
+  "harness_commit": "9e3992d14342601662443b6720dd6757905c3f3b",
+  "layout_resource_check": {
+    "all_observed_processes_network_isolated": true,
+    "common_timed_restoration_policy": {
+      "algorithm": "spanning-tree-leaf-token-restoration-v1",
+      "final_layout": "identity",
+      "leaf_order": "ascending",
+      "neighbor_order": "ascending",
+      "optimization_after_restoration": false,
+      "swap_decomposition": "H-CZ-H CNOT triple",
+      "timed": true,
+      "tree_root": 0
+    },
+    "enforced_cpu_sets": {
+      "0": 900
+    },
+    "identity_final_layout_measurements": 2700,
+    "identity_final_layout_warmups": 1800,
+    "initial_identity_registered_for_all": true,
+    "memory_cap_bytes": 17179869184,
+    "profile": "ordinary",
+    "publication_eligible": false
+  },
+  "local_verification": {
+    "all_pair_metrics_and_coverage_match_hosted": true,
+    "blocks_verified": 900,
+    "build_files_hash_verified": true,
+    "case_participant_pairs": 90,
+    "compiler_revision": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+    "elapsed_seconds": 313.51608070800285,
+    "freeze_draw_selection_verified": true,
+    "harness_revision": "9e3992d14342601662443b6720dd6757905c3f3b",
+    "independent_replay_matches_hosted": true,
+    "measured_records": 2700,
+    "participant_imports_denied": [
+      "flagquantum",
+      "qiskit",
+      "cirq"
+    ],
+    "profile": "ordinary",
+    "publication_eligible": false,
+    "published_wheels_hash_verified": true,
+    "report_helper_paths_verified": true,
+    "retained_nonce_regeneration_matches": true,
+    "run_id": 44587635615,
+    "schema_version": 1,
+    "summary_digest_matches_hosted": false,
+    "warmup_records_expected": 1800,
+    "warmup_records_retained": 1800
+  },
+  "omitted_binary_artifacts": [
+    {
+      "bytes": 4361328,
+      "path": "flagquantum-build/flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+      "sha256": "2ab25d1282b91f5de9401bcd871149b68aac79ce081f995db43417c339aae379"
+    },
+    {
+      "bytes": 76022188,
+      "path": "flagquantum-build/source.zip",
+      "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+    },
+    {
+      "bytes": 2116400,
+      "path": "releases/cirq_core-1.7.0-py3-none-any.whl",
+      "sha256": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce"
+    },
+    {
+      "bytes": 9513711,
+      "path": "releases/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "sha256": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669"
+    }
+  ],
+  "profile": "ordinary",
+  "publication_eligible": false,
+  "retained_archive": "compiler-ordinary-44587635615.tar.xz",
+  "retained_result_files": {
+    "compiler-ordinary-44587635615-comparisons.json": {
+      "bytes": 110404,
+      "sha256": "804bad680af135deb7fa4a7557405ac80d70e59df405e39897b060e5ffe06763"
+    },
+    "compiler-ordinary-44587635615-layout-resources.json": {
+      "bytes": 657,
+      "sha256": "7b92f6e90494e3125185bb2d5b5b2711466f50b6457c7c7229caac07340cc507"
+    },
+    "compiler-ordinary-44587635615-summary-reconciliation.json": {
+      "bytes": 16266,
+      "sha256": "84678eeb4723147b3bb9b0a0da80389cc82c20c86a48340f12439807d7c829a8"
+    },
+    "compiler-ordinary-44587635615-summary.json.gz": {
+      "bytes": 52800,
+      "sha256": "3db3d478b916e1db37c3601bd39bf1c14b8cf4819ba29e2e97572990563639ca"
+    },
+    "compiler-ordinary-44587635615-verification.json": {
+      "bytes": 871,
+      "sha256": "0bcc2b8d953adb2d06f60802d2f297c1de9ece64fc737ff4f8a2d6ffae786a56"
+    },
+    "compiler-ordinary-44587635615.tar.xz": {
+      "bytes": 2974976,
+      "sha256": "bf55b4f809a65225c239d54148f24321452a72d249ca59667b8f4481334033c2"
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "cohort_bundle_sha256": "612afb433d15a36be0b0ad63e84f27a4069123e3f00026876481a5c02a267d6e",
+    "draw_sha256": "fe250fc047321f7aeabb9022bb4820b07544a597dd5526823733f869a8fd344e",
+    "freeze_sha256": "1800527c9eecc5e0eb60b452932b6d4849b188b016bfec14789abaa15e725c26",
+    "full_bundle_sha256": "adb813b56dffaffc87ef6616f61723afc43c04c0f231b8c6b6b68677f7b83206",
+    "instances": [
+      "APP-QAOA-LINE-06",
+      "APP-QAOA-GRID-06",
+      "APP-ISING-LINE-06",
+      "APP-ISING-GRID-06",
+      "APP-HOPPING-LINE-06",
+      "APP-HOPPING-GRID-06",
+      "APP-QFT-LINE-06",
+      "APP-QFT-GRID-06",
+      "APP-REPETITION-LINE-06",
+      "APP-REPETITION-GRID-06",
+      "APP-QAOA-LINE-08",
+      "APP-QAOA-GRID-08",
+      "APP-ISING-LINE-08",
+      "APP-ISING-GRID-08",
+      "APP-HOPPING-LINE-08",
+      "APP-HOPPING-GRID-08",
+      "APP-QFT-LINE-08",
+      "APP-QFT-GRID-08",
+      "APP-REPETITION-LINE-08",
+      "APP-REPETITION-GRID-08",
+      "APP-QAOA-LINE-12",
+      "APP-QAOA-GRID-12",
+      "APP-ISING-LINE-12",
+      "APP-ISING-GRID-12",
+      "APP-HOPPING-LINE-12",
+      "APP-HOPPING-GRID-12",
+      "APP-QFT-LINE-12",
+      "APP-QFT-GRID-12",
+      "APP-REPETITION-LINE-12",
+      "APP-REPETITION-GRID-12"
+    ]
+  },
+  "summary_digest_reconciliation": {
+    "all_other_local_summary_fields_unchanged": true,
+    "differences": [
+      {
+        "hosted_maximum_semantic_error": 7.945078971113882e-15,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 7.950506997591072e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.4562124874641876e-15,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 5.431022213568952e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2546625440110784e-14,
+        "instance": "APP-HOPPING-LINE-06",
+        "local_maximum_semantic_error": 1.1993307552444478e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.5995906900691105e-14,
+        "instance": "APP-HOPPING-GRID-06",
+        "local_maximum_semantic_error": 1.509903313490213e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 2.9303171598054862e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 1.895778961066142e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.7185879474016e-14,
+        "instance": "APP-REPETITION-LINE-06",
+        "local_maximum_semantic_error": 1.725709470544147e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.318959776503784e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 4.828592746002905e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.556316823877836e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 3.159049096299604e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.864580430638685e-15,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 8.099683797877964e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.611817743156661e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 4.559354937679021e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.328552479068552e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 7.551203270057867e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0438421584269341e-14,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 1.0160817837115698e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.337998508784373e-15,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 8.676536775128875e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.11111714091457e-15,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 6.833567016980842e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0078303285574499e-14,
+        "instance": "APP-REPETITION-LINE-08",
+        "local_maximum_semantic_error": 9.735374480328098e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.692950751536395e-15,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 7.24778014375058e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.3706309149268031e-14,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 1.3645613173589771e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.86229460092324e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 1.0091165437130179e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.245773440419782e-15,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 9.750871862941462e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.389045635292782e-15,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 7.621420282514213e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.1879685831379505e-14,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 1.1657636046363317e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.609864098852541e-14,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 1.5043901813766525e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.1654229166500399e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 1.1524715281200814e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.898100006179663e-15,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 8.867420456125497e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.811555157968702e-15,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 7.972375408414345e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.082208675455819e-15,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 6.122668601968501e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.8160823301169858e-15,
+        "instance": "APP-QAOA-LINE-06",
+        "local_maximum_semantic_error": 1.8452761694870047e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.319270561714127e-15,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 4.308824046522781e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.8391341617266757e-14,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 1.839465339681759e-14,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.4457739489332885e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 3.4293583382910304e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.6136471996107275e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 1.6446788765263184e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.7388818282700985e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 1.9223616666200533e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.2854571976242787e-15,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 2.3876248941963683e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.4387028659243803e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 1.9641850382783467e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.267622835648261e-15,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 4.199269307755593e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.8250515126511132e-14,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 1.8222713855715666e-14,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.281593980460266e-14,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 1.283556586842441e-14,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.965479214789474e-15,
+        "instance": "APP-REPETITION-LINE-08",
+        "local_maximum_semantic_error": 3.979805003092568e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.655330759269495e-15,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 4.723343357811471e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.210365485844777e-15,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 4.8739296574786475e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.6156647945527624e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 3.631171975936043e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.36255104310828e-15,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 3.4597745288321243e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.6566061640417864e-15,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 3.739696897365126e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.3692211635563985e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 5.378602565537622e-14,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.21368474112597e-14,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 5.204472749647753e-14,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.3914935841127266e-15,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 2.474608423806412e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.814145307657198e-15,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 3.875954584124818e-15,
+        "sdk": "qiskit-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.5065547695649203e-15,
+        "instance": "APP-QAOA-LINE-06",
+        "local_maximum_semantic_error": 2.5129527840075525e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.944941983577414e-15,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 6.990879649140764e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.921057752913316e-14,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 2.916597302166838e-14,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.1309716410295114e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 3.143648250621278e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.04746621261025e-15,
+        "instance": "APP-REPETITION-LINE-06",
+        "local_maximum_semantic_error": 9.090957362871364e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0866724356409397e-14,
+        "instance": "APP-REPETITION-GRID-06",
+        "local_maximum_semantic_error": 1.0853610145910271e-14,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.623746175455571e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 2.4230156504798003e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.7115313159311418e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 1.5515838457795456e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.5634869929928818e-15,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 2.5018537765542007e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.87011978114731e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 2.864620473168085e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.586387972437495e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 3.614204670886888e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.142932254379626e-15,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 4.199836829648326e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.124933588283614e-15,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 2.1416803579322102e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.104405337175168e-15,
+        "instance": "APP-REPETITION-LINE-08",
+        "local_maximum_semantic_error": 3.976515735881105e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.855927796350635e-15,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 4.009888267732675e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.479500338504557e-15,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 6.540208428319177e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.130105195324123e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 3.4400122020558205e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.8271969516545033e-14,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 2.814853291154892e-14,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.112095314311144e-15,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 4.043273888810479e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.565101764453908e-15,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 2.520261287364686e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.298921210346403e-15,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 5.593643756042162e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.4591502649036967e-15,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 2.4973945783860897e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.6146374660448706e-15,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 2.6011228427125407e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.1679574341491606e-15,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 2.1960256329892053e-15,
+        "sdk": "cirq-release-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.456432934547248e-15,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 3.532271868319066e-15,
+        "sdk": "cirq-release-restored"
+      }
+    ],
+    "hosted_summary_sha256": "b8d0c7552ffe5fc61a805dee55a31ff469feb6e008ec67d6e114470593979926",
+    "interpretation": "The local/hosted summary digest difference is fully accounted for by independently recomputed semantic-error values. Original local and hosted errors remain retained; both use the unchanged semantic threshold. Pair metrics and coverage were already independently matched.",
+    "only_fields_replaced": "cases[*].maximum_semantic_error",
+    "profile": "ordinary",
+    "reconstructed_digest_matches_hosted": true,
+    "reconstructed_hosted_summary_sha256": "b8d0c7552ffe5fc61a805dee55a31ff469feb6e008ec67d6e114470593979926",
+    "schema_version": 1
+  }
+}
