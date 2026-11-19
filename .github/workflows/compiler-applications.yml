@@ -1,0 +1,147 @@
+name: Compiler application matched-layout qualification
+on:
+  workflow_dispatch:
+    inputs:
+      flagquantum_revision:
+        description: 'Full 40-character FlagQuantum commit already merged into main'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  matched-applications:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: ${{ github.workspace }}/src
+      MPLCONFIGDIR: /tmp/sdkbench-candidate-matplotlib
+      FQ_REVISION: ${{ inputs.flagquantum_revision }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Retrieve the immutable FlagQuantum candidate
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: flagos-ai/FlagQuantum
+          ref: ${{ inputs.flagquantum_revision }}
+          fetch-depth: 0
+          path: candidate-source/FlagQuantum
+          persist-credentials: false
+      - name: Require an immutable integrated compiler
+        run: |
+          test "$GITHUB_RUN_ATTEMPT" = 1
+          [[ "$FQ_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          test "$(git -C candidate-source/FlagQuantum rev-parse HEAD)" = "$FQ_REVISION"
+          git -C candidate-source/FlagQuantum merge-base --is-ancestor "$FQ_REVISION" origin/main
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12.14'
+      - name: Prepare the separate Stable ABI build environment
+        timeout-minutes: 15
+        run: |
+          python -m venv /tmp/sdkbench-candidate-build
+          /tmp/sdkbench-candidate-build/bin/python -m pip install 'torch==2.10.0+cpu' --index-url https://download.pytorch.org/whl/cpu --timeout 30 --retries 1
+          /tmp/sdkbench-candidate-build/bin/python -m pip install 'build==1.6.1' 'setuptools==84.2.1' 'wheel==0.48.0' 'numpy==2.5.5' --timeout 30 --retries 1
+      - name: Build from the retained immutable source archive
+        timeout-minutes: 20
+        run: |
+          mkdir -p candidate-evidence
+          /tmp/sdkbench-candidate-build/bin/python tools/build_compiler_candidate.py \
+            --repository candidate-source/FlagQuantum \
+            --revision "$FQ_REVISION" \
+            --distribution flagquantum --directory candidate-evidence/flagquantum-build --timeout 900
+      - name: Retain published comparator wheels and release metadata
+        timeout-minutes: 10
+        run: |
+          mkdir -p candidate-evidence/releases
+          python -m pip download --no-deps --only-binary=:all: 'qiskit==2.6.2' 'cirq-core==1.7.0' \
+            --dest candidate-evidence/releases --timeout 30 --retries 1
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.request import urlopen
+          root = Path('candidate-evidence/releases')
+          for name, version in [('qiskit', '2.6.2'), ('cirq-core', '1.7.0')]:
+              with urlopen(f'https://pypi.org/pypi/{name}/{version}/json', timeout=45) as response:
+                  (root / f'{name}.json').write_bytes(response.read())
+          PY
+      - name: Install the shared measurement environment
+        timeout-minutes: 15
+        run: |
+          python -m pip install 'torch==2.14.0+cpu' --index-url https://download.pytorch.org/whl/cpu --timeout 30 --retries 1
+          python -m pip install '.[dev]' 'numpy==2.5.5' candidate-evidence/releases/*.whl --timeout 30 --retries 1
+          python -m pip install --no-deps candidate-evidence/flagquantum-build/*.whl --timeout 30 --retries 1
+          python -m pip check
+          python -m pip freeze --all > candidate-evidence/measurement-requirements.txt
+      - name: Check native adapter semantics
+        timeout-minutes: 15
+        env:
+          SDKBENCH_NATIVE_CANDIDATE_TESTS: '1'
+        run: python -m pytest tests/test_candidate_native_adapters.py -q
+      - name: Register the three matched-layout workflows before drawing cases
+        timeout-minutes: 10
+        run: |
+          python -m sdkbench.candidates.cli register --stack-id fq-source-restored \
+            --workflow flagquantum-ordinary-restored --build-directory candidate-evidence/flagquantum-build \
+            --output candidate-evidence/fq-restored.json
+          python -m sdkbench.candidates.cli register-wheel --stack-id qiskit-release-restored \
+            --workflow qiskit-transpile-restored --wheel candidate-evidence/releases/qiskit-*.whl \
+            --release-metadata candidate-evidence/releases/qiskit.json --output candidate-evidence/qiskit-restored.json
+          python -m sdkbench.candidates.cli register-wheel --stack-id cirq-release-restored \
+            --workflow cirq-route-cz-restored --wheel candidate-evidence/releases/cirq_core-*.whl \
+            --release-metadata candidate-evidence/releases/cirq-core.json --output candidate-evidence/cirq-restored.json
+      - name: Freeze registrations and draw the preregistered cohort once
+        timeout-minutes: 10
+        run: |
+          python tools/prepare_compiler_applications.py \
+            --registration candidate-evidence/fq-restored.json \
+            --registration candidate-evidence/qiskit-restored.json \
+            --registration candidate-evidence/cirq-restored.json \
+            --output candidate-evidence/preparation > candidate-evidence/preparation-stdout.json
+      - name: Delegate a disposable cgroup subtree on the CI VM
+        run: |
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-candidate-ci
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-candidate-ci/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-candidate-ci/operator
+          sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-candidate-ci
+      - name: Run every preregistered case with unchanged acceptance and limits
+        timeout-minutes: 270
+        run: |
+          sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-candidate-ci/operator/cgroup.procs"
+          cpu=$(python -c 'import os; print(min(os.sched_getaffinity(0)))')
+          python -m sdkbench.candidates.cli run --cpu "$cpu" \
+            --cgroup-parent /sys/fs/cgroup/sdkbench-candidate-ci \
+            --bundle candidate-evidence/preparation/cohort \
+            --registration candidate-evidence/fq-restored.json \
+            --registration candidate-evidence/qiskit-restored.json \
+            --registration candidate-evidence/cirq-restored.json \
+            --directory candidate-evidence/campaign > candidate-evidence/campaign-stdout.json
+      - name: Independently replay every retained outcome
+        if: always()
+        timeout-minutes: 30
+        run: |
+          if test -f candidate-evidence/campaign/MANIFEST.json; then
+            python -m sdkbench.candidates.cli replay --directory candidate-evidence/campaign \
+              --bundle candidate-evidence/preparation/cohort \
+              > candidate-evidence/independent-replay.json
+          else
+            echo 'No complete campaign manifest was produced.'
+            exit 1
+          fi
+      - name: Retain builds, failures, registrations and raw campaign evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: compiler-application-evidence
+          path: candidate-evidence
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Check descendant cleanup
+        if: always()
+        run: |
+          if test -d /sys/fs/cgroup/sdkbench-candidate-ci/operator; then sudo rmdir /sys/fs/cgroup/sdkbench-candidate-ci/operator; fi
+          if test -d /sys/fs/cgroup/sdkbench-candidate-ci; then
+            test -z "$(find /sys/fs/cgroup/sdkbench-candidate-ci -mindepth 1 -type d -print)"
+            sudo rmdir /sys/fs/cgroup/sdkbench-candidate-ci
+          fi
