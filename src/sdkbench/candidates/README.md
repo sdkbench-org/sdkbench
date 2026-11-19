@@ -5,7 +5,13 @@ P1a/P1b release admissions. It owns build observations, installed-wheel checks
 and their binding to the existing P0 `Registration`. It does not own quantum
 semantics, acceptance thresholds, SDK compilation algorithms or resource limits.
 
-Dependencies are the standard library and the existing P0/P1a provenance code.
+Application generation and new W03 bundle construction are also owned here;
+they use NumPy and the existing P0 semantics only for fixture auditing, never
+participant performance or acceptance decisions. See the
+[application protocol](../../../docs/analysis/COMPILER_APPLICATION_PROTOCOL.md).
+Physics anchors independently check the meaning of the recipes.
+
+Admission dependencies are the standard library and existing P0/P1a provenance code.
 The explicit build command uses the repository's existing development dependency
 `build`; its environment must already satisfy the candidate's build requirements.
 It performs no dependency installation and inherits only recorded build controls.
@@ -50,7 +56,10 @@ origin `published_wheel`. Neither this observation nor source-build observation
 is an independent publisher or build attestation.
 
 Supported workflows are `flagquantum-ordinary`, `flagquantum-target-artifact`,
-`qiskit-transpile` and `cirq-route-cz`. They have distinct configurations. The
+`qiskit-transpile` and `cirq-route-cz`. Three additional `-restored` workflows
+apply the same timed final-layout postprocessing to the ordinary FlagQuantum,
+Qiskit and Cirq outputs. All have distinct configurations. See the
+[matched-layout control](../../../docs/analysis/COMPILER_MATCHED_LAYOUT_CONTROL.md). The
 ordinary FlagQuantum path uses the current `compiler.lowering` module boundary;
 the historical P1b adapter continues to use its pinned release boundary.
 

@@ -1,6 +1,7 @@
 """Declared compiler workflows; numerical acceptance remains owned by P0."""
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
+import math
 
 from ..p0.models import digest, require
 from ..p1a.common import UnsupportedCapability
@@ -38,6 +39,18 @@ WORKFLOWS = {
 }
 
 
+# Preserve the original open-output configurations; controls get new identities.
+for _name in ('flagquantum-ordinary', 'qiskit-transpile', 'cirq-route-cz'):
+    _control = deepcopy(WORKFLOWS[_name])
+    _control['options']['postprocessing'] = {
+        'final_layout': 'identity', 'algorithm': 'spanning-tree-leaf-token-restoration-v1',
+        'tree_root': 0, 'neighbor_order': 'ascending', 'leaf_order': 'ascending',
+        'swap_decomposition': 'H-CZ-H CNOT triple', 'optimization_after_restoration': False,
+        'timed': True,
+    }
+    WORKFLOWS[_name + '-restored'] = _control
+
+
 def workflow_configuration(name):
     """Return the complete supported configuration to bind before execution."""
     require(name in WORKFLOWS, 'Unknown candidate compiler workflow')
@@ -59,7 +72,11 @@ def _ordinary_flagquantum_route(adapter, fixture, seed):
     from flagquantum.compiler import CouplingMap, compile, final_layout
     from flagquantum.compiler.lowering.native_gate_legalization import legalize_native_gates
     from ..diagnostics.routing import target_snapshot
-    circuit, _ = adapter.build(fixture, 'observable')
+    circuit = adapter.fq.Circuit(fixture['n_qubits'], device='cpu', dtype=adapter.torch.complex128)
+    for operation in fixture['operations']:
+        params = ({'theta': adapter.torch.tensor(operation['angle'], dtype=adapter.torch.float64)}
+                  if operation['name'] in ('rx', 'ry', 'rz', 'rzz') else {})
+        circuit.gate(operation['name'], operation['qubits'], params=params)
     basis = WORKFLOWS['flagquantum-ordinary']['options']['basis']
     routed = compile(circuit, coupling_map=CouplingMap(fixture['n_qubits'], fixture['target_edges']),
                      config=circuit.runtime_config)
@@ -74,7 +91,12 @@ def _ordinary_flagquantum_route(adapter, fixture, seed):
 
 def _qiskit_route(adapter, fixture, seed):
     from qiskit.quantum_info import Operator
-    source, _ = adapter.build(fixture, 'observable')
+    source = adapter.qiskit.QuantumCircuit(fixture['n_qubits'])
+    for operation in fixture['operations']:
+        arguments = list(operation['qubits'])
+        if operation['name'] in ('rx', 'ry', 'rz', 'rzz'):
+            arguments.insert(0, operation['angle'])
+        getattr(source, operation['name'])(*arguments)
     n = fixture['n_qubits']
     compiled = adapter.qiskit.transpile(
         source, basis_gates=['cz', 'u'],
@@ -108,7 +130,18 @@ def _cirq_route(adapter, fixture, seed):
     graph = nx.Graph()
     graph.add_nodes_from(qubits)
     graph.add_edges_from((qubits[a], qubits[b]) for a, b in fixture['target_edges'])
-    source, _ = adapter.build(fixture, 'observable')
+    source_operations = []
+    for operation in fixture['operations']:
+        selected = [qubits[q] for q in operation['qubits']]
+        name = operation['name']
+        if name in ('rx', 'ry', 'rz'):
+            source_operations.append(getattr(cirq, name)(operation['angle']).on(*selected))
+        elif name == 'rzz':
+            source_operations.append(cirq.ZZPowGate(exponent=operation['angle'] / math.pi,
+                                                   global_shift=-0.5).on(*selected))
+        else:
+            source_operations.append({'h': cirq.H, 'x': cirq.X, 'cx': cirq.CNOT, 'cz': cirq.CZ}[name].on(*selected))
+    source = cirq.Circuit(source_operations)
     routed, initial, final = cirq.RouteCQC(graph).route_circuit(
         source, initial_mapper=cirq.HardCodedInitialMapper({q: q for q in qubits}))
     require(all(initial[q] == q for q in qubits), 'Compiler changed initial layout')
@@ -201,17 +234,23 @@ class CompilerAdapter:
         import time
         require(kind == 'route', 'Candidate compiler adapter only supports routing tasks')
         validate_fixture(kind, fixture)
+        if any('parameter' in operation for operation in fixture['operations']):
+            raise UnsupportedCapability('Candidate routing workflows require explicit numeric bindings')
         with compile_deadline(120):
             started = time.perf_counter()
             self.native.audit = {'native_program_builds': 0, 'native_executions': 0}
-            if self.workflow == 'flagquantum-target-artifact':
+            base_workflow = self.workflow.removesuffix('-restored')
+            if base_workflow == 'flagquantum-target-artifact':
                 payload = _target_artifact_route(self.native, fixture, seed)
-            elif self.workflow == 'flagquantum-ordinary':
+            elif base_workflow == 'flagquantum-ordinary':
                 payload = _ordinary_flagquantum_route(self.native, fixture, seed)
-            elif self.workflow == 'qiskit-transpile':
+            elif base_workflow == 'qiskit-transpile':
                 payload = _qiskit_route(self.native, fixture, seed)
             else:
                 payload = _cirq_route(self.native, fixture, seed)
+            if self.workflow.endswith('-restored'):
+                from .layout import restore_payload
+                self.native.audit.update(restore_payload(payload, fixture['target_edges']))
             payload['compile_wall_seconds'] = time.perf_counter() - started
         self.audit = dict(self.native.audit)
         return payload
