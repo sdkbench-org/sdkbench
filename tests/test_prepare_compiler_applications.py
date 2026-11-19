@@ -55,12 +55,17 @@ def registration_paths(directory, workflows):
     return paths
 
 
+@pytest.mark.parametrize("profile", ["ordinary", "target-artifact"])
 def test_freeze_precedes_single_draw_and_selected_cases_keep_original_bytes(
     preparation,
     tmp_path,
     monkeypatch,
+    profile,
 ):
-    paths = registration_paths(tmp_path, sorted(preparation.WORKFLOWS))
+    workflows = (
+        preparation.WORKFLOWS if profile == "ordinary" else preparation.TARGET_WORKFLOWS
+    )
+    paths = registration_paths(tmp_path, sorted(workflows))
     output = tmp_path / "campaign"
     admissions = []
     monkeypatch.setattr(
@@ -71,12 +76,15 @@ def test_freeze_precedes_single_draw_and_selected_cases_keep_original_bytes(
     def draw(size):
         freeze = read_json(output / "freeze.json")
         assert size == 32 and len(freeze["registrations"]) == 3
+        assert freeze["workflow_profile"] == profile
         assert len(admissions) == 3
         draws.append(size)
         return bytes.fromhex("01" * 32)
 
     monkeypatch.setattr(preparation.secrets, "token_bytes", draw)
-    cohort = preparation.prepare(ROOT / "docs/implementation", paths, output)
+    cohort = preparation.prepare(
+        ROOT / "docs/implementation", paths, output, profile=profile
+    )
     full = Bundle(output / "full-bundle")
     assert len(full.cases) == 60 and len(cohort.cases) == 30
     assert cohort.plan["execution_profile"] == full.plan["execution_profile"]
@@ -94,7 +102,9 @@ def test_freeze_precedes_single_draw_and_selected_cases_keep_original_bytes(
     assert read_json(output / "draw.json")["freeze_sha256"] == digest(freeze)
     assert read_json(output / "selection.json")["cohort_bundle_sha256"] == cohort.sha256
     with pytest.raises(FileExistsError):
-        preparation.prepare(ROOT / "docs/implementation", paths, output)
+        preparation.prepare(
+            ROOT / "docs/implementation", paths, output, profile=profile
+        )
     assert draws == [32]
 
 
@@ -119,3 +129,21 @@ def test_runtime_change_is_rejected_before_creating_a_draw(
     with pytest.raises(ContractError, match="component changed"):
         preparation.prepare(ROOT / "docs/implementation", paths, tmp_path / "campaign")
     assert not (tmp_path / "campaign").exists()
+
+
+@pytest.mark.parametrize("profile", ["unknown", "target-artifact"])
+def test_incorrect_profile_is_rejected_before_runtime_or_entropy(
+    preparation, tmp_path, monkeypatch, profile
+):
+    paths = registration_paths(tmp_path, sorted(preparation.WORKFLOWS))
+    monkeypatch.setattr(
+        preparation, "verify_runtime", lambda _: pytest.fail("Runtime admission")
+    )
+    monkeypatch.setattr(
+        preparation.secrets, "token_bytes", lambda _: pytest.fail("Entropy draw")
+    )
+    with pytest.raises(ContractError):
+        preparation.prepare(
+            ROOT / "docs/implementation", paths, tmp_path / "run", profile=profile
+        )
+    assert not (tmp_path / "run").exists()

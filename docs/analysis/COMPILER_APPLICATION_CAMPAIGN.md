@@ -67,7 +67,8 @@ failure and cannot replace it in reported results.
 ## Execute and inspect
 
 Dispatch `.github/workflows/compiler-applications.yml` with the integrated
-40-character compiler commit. The workflow itself must be merged before the
+40-character compiler commit and a declared `workflow_profile`: `ordinary`
+(the default) or `target-artifact`. The workflow itself must be merged before the
 production run, so its checkout is an immutable integrated harness revision.
 No automatic run is triggered by pushing this workflow.
 
@@ -131,7 +132,7 @@ and case; correctness, resource failures and other metrics remain separate.
 
 The output binds the recomputed summary digest and independent replay report.
 It remains publication-ineligible and supports no global SDK ranking. The
-eight focused report tests cover exact ratios, immutable input, failures,
+Focused report tests cover exact ratios, immutable input, failures,
 undefined values, refused incomplete/mixed comparisons and CLI replay of a
 sealed synthetic campaign with all three participants denied access. These
 synthetic results are not measurements of any SDK.
@@ -178,3 +179,47 @@ The 42 conformance tests include this workflow, but the three-participant
 prospective campaign does not. A target-aware campaign must freeze this distinct
 workflow before its draw, retain those costs and report its result separately;
 ordinary-path results must not be presented as evidence for all compiler changes.
+
+## Target-artifact qualification profile
+
+The `target-artifact` dispatch profile selects the existing
+`flagquantum-target-artifact` registration instead of
+`flagquantum-ordinary-restored`. Qiskit and Cirq retain their existing restored
+registrations. There are exactly three participants per campaign; no extra
+FlagQuantum result is selected after inspecting outcomes. The profile is
+validated against the complete registration set and written into the freeze
+before entropy is requested. Unknown or mixed profiles fail before the draw.
+
+Both profiles retain the same 30-case selection rule, independent reference
+generation, acceptance, per-compilation and cumulative resource bounds, ten
+blocks and all failures. The target profile enables measurement of the existing
+target-aware CZ pass without changing any participant adapter or injecting a
+benchmark-only optimization. Whole-workflow time and memory include FlagQuantum
+target validation, provenance, artifact construction and serialization. This
+is an end-to-end target-artifact versus compiler-workflow comparison, not a
+pure synthesis timing comparison. The report carries this distinction in
+`comparison_scope` and retains exact workflow names in each pair.
+
+For manual preparation and reporting, pass the same profile explicitly:
+
+```bash
+PYTHONPATH=src python tools/prepare_compiler_applications.py \
+  --profile target-artifact \
+  --registration candidate-evidence/fq-target.json \
+  --registration candidate-evidence/qiskit-restored.json \
+  --registration candidate-evidence/cirq-restored.json \
+  --output candidate-evidence/preparation
+PYTHONPATH=src python tools/compare_compiler_applications.py \
+  --profile target-artifact \
+  --directory candidate-evidence/campaign \
+  --bundle candidate-evidence/preparation/cohort \
+  --output candidate-evidence/comparisons.json
+```
+
+The workflow generates the corresponding source registration, independently
+replays the completed campaign and writes this comparison before uploading
+evidence. Existing output paths cannot be overwritten. Each profile uses its
+own freeze and single draw; separate campaigns must not be treated as matched
+case pairs or combined to select a favorable result. Preregister intended
+profiles before execution and retain both when both are run. Neither profile
+has been executed as a prospective campaign at the time of this change.
