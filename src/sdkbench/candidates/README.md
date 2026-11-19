@@ -5,7 +5,13 @@ P1a/P1b release admissions. It owns build observations, installed-wheel checks
 and their binding to the existing P0 `Registration`. It does not own quantum
 semantics, acceptance thresholds, SDK compilation algorithms or resource limits.
 
-Dependencies are the standard library and the existing P0/P1a provenance code.
+Application generation and new W03 bundle construction are also owned here;
+they use NumPy and the existing P0 semantics only for fixture auditing, never
+participant performance or acceptance decisions. See the
+[application protocol](../../../docs/analysis/COMPILER_APPLICATION_PROTOCOL.md).
+Physics anchors independently check the meaning of the recipes.
+
+Admission dependencies are the standard library and existing P0/P1a provenance code.
 The explicit build command uses the repository's existing development dependency
 `build`; its environment must already satisfy the candidate's build requirements.
 It performs no dependency installation and inherits only recorded build controls.

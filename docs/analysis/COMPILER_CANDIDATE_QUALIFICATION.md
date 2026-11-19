@@ -100,6 +100,11 @@ two-body dependency depth.
 
 ## Prospective held-out extension
 
+Numeric application recipes and a hash-manifested development bundle builder
+are now implemented. The [application protocol](COMPILER_APPLICATION_PROTOCOL.md)
+specifies all 60 cases, physics anchors, unchanged acceptance/resources and
+prospective draw ordering. No prospective corpus has yet been drawn or executed.
+
 The three frozen inputs are development diagnostics and cannot support a global
 SDK ranking. A separate task bundle must cover actual application families:
 
