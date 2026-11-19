@@ -1,0 +1,270 @@
+{
+  "archive_policy": "Every original campaign file plus release metadata, build record/log, environment lock and remote replay. Binary wheels, source.zip and extracted source remain in the original GitHub artifact and are not duplicated here.",
+  "build": {
+    "build_environment": {
+      "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+      "LC_ALL": "C",
+      "MAX_JOBS": "1",
+      "OMP_NUM_THREADS": "1",
+      "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+      "PIP_NO_INDEX": "1",
+      "PYTHONHASHSEED": "0",
+      "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+    },
+    "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+    "command": [
+      "/tmp/sdkbench-candidate-build/bin/python",
+      "-m",
+      "build",
+      "--wheel",
+      "--no-isolation",
+      "--outdir",
+      "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+      "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+    ],
+    "distribution": "flagquantum",
+    "environment": {
+      "dependencies": [
+        {
+          "name": "build",
+          "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+          "version": "1.6.1"
+        },
+        {
+          "name": "filelock",
+          "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+          "version": "4.2.4"
+        },
+        {
+          "name": "fsspec",
+          "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+          "version": "2026.9.0"
+        },
+        {
+          "name": "Jinja2",
+          "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+          "version": "3.1.6"
+        },
+        {
+          "name": "MarkupSafe",
+          "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+          "version": "3.0.3"
+        },
+        {
+          "name": "mpmath",
+          "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+          "version": "1.3.0"
+        },
+        {
+          "name": "networkx",
+          "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+          "version": "3.7"
+        },
+        {
+          "name": "numpy",
+          "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+          "version": "2.5.5"
+        },
+        {
+          "name": "packaging",
+          "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+          "version": "26.3"
+        },
+        {
+          "name": "pip",
+          "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+          "version": "25.0.1"
+        },
+        {
+          "name": "pyproject_hooks",
+          "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+          "version": "1.3.3"
+        },
+        {
+          "name": "setuptools",
+          "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+          "version": "84.2.1"
+        },
+        {
+          "name": "sympy",
+          "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+          "version": "1.14.0"
+        },
+        {
+          "name": "torch",
+          "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+          "version": "2.10.0+cpu"
+        },
+        {
+          "name": "typing_extensions",
+          "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+          "version": "4.16.0"
+        },
+        {
+          "name": "wheel",
+          "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+          "version": "0.48.0"
+        }
+      ],
+      "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+      "host": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "clock": {
+          "adjustable": false,
+          "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+          "monotonic": true,
+          "resolution": 1e-09
+        },
+        "cpu_count": 4,
+        "cpu_models": [
+          "AMD EPYC 9V74 80-Core Processor"
+        ],
+        "cpuinfo_sha256": "a6a7cdedfe19d67ac02715ebda3c70fc509c67eefdf6a8b73a5d1af012e1c16b",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "image_descriptor": {
+        "kernel": "7.0.0-1017-azure",
+        "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+        "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+      },
+      "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+      "implementation": {
+        "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+        "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+        "sdkbench_version": "0.4.0"
+      },
+      "schema_version": 1,
+      "scope": "observed engineering environment; not a qualified publication host",
+      "sealed_image": false
+    },
+    "independent_attestation": false,
+    "log": {
+      "filename": "build.log",
+      "sha256": "0a161d13732125d1d4d16cb9bedb352bdbc5de78d27362062312231abbf9a92d"
+    },
+    "returncode": 0,
+    "schema_version": 1,
+    "source_archive": {
+      "filename": "source.zip",
+      "sha256": "99a960b698dec92b75dbb9fcbe89327d2ae666bf704832392ecea9c16b2b005a"
+    },
+    "source_commit": "5553fb3d2e186995c7fc27c0fa0859c38abd5a2a",
+    "wheel": {
+      "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+      "sha256": "89c791ebc7bc5c3d81862337db3498dbbd2fe5fb6a6f6a30c3a97668d8686fa5"
+    }
+  },
+  "campaign_harness_commit": "1d52d14d2761d434a4fb5a34c120938d419e17b6",
+  "campaign_manifest_sha256": "5a81957013f95974ed694293c283407d31f1578044fd8b235585158ae2659367",
+  "flagquantum_integration_commit": "5baf8d97d6575390c24cb8075ba629ecffb71786",
+  "flagquantum_source_commit": "5553fb3d2e186995c7fc27c0fa0859c38abd5a2a",
+  "github_artifact_id": 14503148139,
+  "github_artifact_sha256": "c1432bf90ea8bf153c7e5840ebdd0eed46cd31ae4c612cc7bc787c95971c671b",
+  "github_run_id": 44466785968,
+  "omitted_binary_artifacts": [
+    {
+      "bytes": 4358184,
+      "path": "flagquantum-build/flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+      "sha256": "89c791ebc7bc5c3d81862337db3498dbbd2fe5fb6a6f6a30c3a97668d8686fa5"
+    },
+    {
+      "bytes": 60084536,
+      "path": "flagquantum-build/source.zip",
+      "sha256": "99a960b698dec92b75dbb9fcbe89327d2ae666bf704832392ecea9c16b2b005a"
+    },
+    {
+      "bytes": 2116400,
+      "path": "releases/cirq_core-1.7.0-py3-none-any.whl",
+      "sha256": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce"
+    },
+    {
+      "bytes": 9513711,
+      "path": "releases/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "sha256": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669"
+    }
+  ],
+  "publication_eligible": false,
+  "replay": {
+    "blocks_verified": 120,
+    "bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+    "cases": [
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "fq-source-ordinary",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "fq-source-target",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "qiskit-release-transpile",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-06",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-GRID-08",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      },
+      {
+        "instance": "ROUTE-LINE-12",
+        "sdk": "cirq-release-route",
+        "status": "accepted"
+      }
+    ],
+    "files_verified": 515,
+    "publication_eligible": false,
+    "schema_version": 1,
+    "scope": "independent record replay; build attestation and publication review remain separate"
+  },
+  "retained_archive": "compiler-candidate-1d52d14.tar.gz",
+  "retained_archive_sha256": "4a68cbea2c6547443c53b51025b3df3aff091a0df2c6b314bf15acc78fe38495",
+  "retained_files": 527,
+  "schema_version": 1,
+  "summary_sha256": "5e5d8a1413aab5b1982f9f11a71d3f275887b754fa3d998e645e4c28e08463fb"
+}
