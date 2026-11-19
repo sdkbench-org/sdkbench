@@ -99,3 +99,39 @@ Local validation: eight preparation/bundle tests pass; Ruff and YAML/shell
 syntax checks pass. The broader local suite exceeded its 300-second budget and
 a runner-inclusive subset exceeded 180 seconds; neither is reported as passing.
 Full Linux CI and the actual campaign remain required.
+
+## Descriptive paired comparisons
+
+After the campaign completes, run:
+
+```bash
+PYTHONPATH=src python tools/compare_compiler_applications.py \
+  --directory candidate-evidence/campaign \
+  --bundle candidate-evidence/preparation/cohort \
+  --output candidate-evidence/comparisons.json
+```
+
+The command invokes independent replay through the existing summary tool before
+comparison. Every case and every matched-restoration workflow remains in the
+coverage denominator. All three unordered participant pairs are emitted for
+each case, with explicit numerator/denominator names and original statuses.
+Neither participant receives a performance ratio if either complete case failed,
+even when some measured records passed. No across-case winner is calculated.
+
+For a fully accepted pair, full-CZ and dependency-depth ratios divide the
+independently recomputed record medians. Timing ratios pair identical block
+indices and divide each block's three-measurement median. Memory ratios pair
+whole-process kernel peaks by block. The report retains count, median, range
+and inclusive quartiles of the ten ratios. These are descriptive variation,
+not confidence intervals, significance tests or proof of a speedup. Zero,
+missing and nonfinite inputs produce an undefined ratio without deleting the
+case or selecting only convenient blocks. Memory includes import, warmup and
+export costs. A lower ratio favors the named numerator only for that metric
+and case; correctness, resource failures and other metrics remain separate.
+
+The output binds the recomputed summary digest and independent replay report.
+It remains publication-ineligible and supports no global SDK ranking. The
+eight focused report tests cover exact ratios, immutable input, failures,
+undefined values, refused incomplete/mixed comparisons and CLI replay of a
+sealed synthetic campaign with all three participants denied access. These
+synthetic results are not measurements of any SDK.
