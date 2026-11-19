@@ -80,8 +80,11 @@ binding or ignoring angles.
 Report open-layout output as complete workflow cost. FlagQuantum's restored
 artifact layout differs from the Qiskit/Cirq free final layouts, so that
 comparison cannot isolate synthesis. A separately registered matched-restoration
-cohort remains required: its obligation, timing and optimization order must be
-declared for every SDK. That control is not implemented by this generator.
+cohort uses the separately registered `flagquantum-ordinary-restored`,
+`qiskit-transpile-restored` and `cirq-route-cz-restored` workflows. See the
+[matched-layout control](COMPILER_MATCHED_LAYOUT_CONTROL.md) for its exact
+obligation, timing, cost accounting and limitations. The generator does not
+select workflows or establish a prospective draw.
 
 ## Prospective draw procedure
 

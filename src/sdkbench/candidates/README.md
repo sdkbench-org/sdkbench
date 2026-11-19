@@ -56,7 +56,10 @@ origin `published_wheel`. Neither this observation nor source-build observation
 is an independent publisher or build attestation.
 
 Supported workflows are `flagquantum-ordinary`, `flagquantum-target-artifact`,
-`qiskit-transpile` and `cirq-route-cz`. They have distinct configurations. The
+`qiskit-transpile` and `cirq-route-cz`. Three additional `-restored` workflows
+apply the same timed final-layout postprocessing to the ordinary FlagQuantum,
+Qiskit and Cirq outputs. All have distinct configurations. See the
+[matched-layout control](../../../docs/analysis/COMPILER_MATCHED_LAYOUT_CONTROL.md). The
 ordinary FlagQuantum path uses the current `compiler.lowering` module boundary;
 the historical P1b adapter continues to use its pinned release boundary.
 

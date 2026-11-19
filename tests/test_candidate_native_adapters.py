@@ -50,6 +50,9 @@ print(json.dumps({'payload': payload, 'audit': adapter.audit}))
                       None, bundle.cases['ROUTE-LINE-06'], 0)
     assert metrics['max_semantic_error'] <= bundle.cases['ROUTE-LINE-06']['acceptance']['semantic_atol']
     assert output['audit']['native_compilations'] == 1
+    if workflow.endswith('-restored'):
+        assert output['payload']['final_layout'] == list(range(6))
+        assert output['audit']['restoration_cz_count'] % 3 == 0
     if workflow == 'flagquantum-target-artifact':
         assert output['payload']['final_layout'] == list(range(6))
         assert output['audit']['serialized_artifact_bytes'] > 0

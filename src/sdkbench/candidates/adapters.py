@@ -39,6 +39,18 @@ WORKFLOWS = {
 }
 
 
+# Preserve the original open-output configurations; controls get new identities.
+for _name in ('flagquantum-ordinary', 'qiskit-transpile', 'cirq-route-cz'):
+    _control = deepcopy(WORKFLOWS[_name])
+    _control['options']['postprocessing'] = {
+        'final_layout': 'identity', 'algorithm': 'spanning-tree-leaf-token-restoration-v1',
+        'tree_root': 0, 'neighbor_order': 'ascending', 'leaf_order': 'ascending',
+        'swap_decomposition': 'H-CZ-H CNOT triple', 'optimization_after_restoration': False,
+        'timed': True,
+    }
+    WORKFLOWS[_name + '-restored'] = _control
+
+
 def workflow_configuration(name):
     """Return the complete supported configuration to bind before execution."""
     require(name in WORKFLOWS, 'Unknown candidate compiler workflow')
@@ -227,14 +239,18 @@ class CompilerAdapter:
         with compile_deadline(120):
             started = time.perf_counter()
             self.native.audit = {'native_program_builds': 0, 'native_executions': 0}
-            if self.workflow == 'flagquantum-target-artifact':
+            base_workflow = self.workflow.removesuffix('-restored')
+            if base_workflow == 'flagquantum-target-artifact':
                 payload = _target_artifact_route(self.native, fixture, seed)
-            elif self.workflow == 'flagquantum-ordinary':
+            elif base_workflow == 'flagquantum-ordinary':
                 payload = _ordinary_flagquantum_route(self.native, fixture, seed)
-            elif self.workflow == 'qiskit-transpile':
+            elif base_workflow == 'qiskit-transpile':
                 payload = _qiskit_route(self.native, fixture, seed)
             else:
                 payload = _cirq_route(self.native, fixture, seed)
+            if self.workflow.endswith('-restored'):
+                from .layout import restore_payload
+                self.native.audit.update(restore_payload(payload, fixture['target_edges']))
             payload['compile_wall_seconds'] = time.perf_counter() - started
         self.audit = dict(self.native.audit)
         return payload
