@@ -76,7 +76,7 @@ failure and cannot replace it in reported results.
 
 Dispatch `.github/workflows/compiler-applications.yml` with the integrated
 40-character compiler commit and a declared `workflow_profile`: `ordinary`
-(the default) or `target-artifact`. The workflow itself must be merged before the
+(the default), `target-artifact` or `routing-policies`. The workflow itself must be merged before the
 production run, so its checkout is an immutable integrated harness revision.
 No automatic run is triggered by pushing this workflow.
 
@@ -262,3 +262,47 @@ not a resource-qualified comparison. Full CI, main-branch integration and both
 prospective profiles were still required at the rehearsal stage. The later result
 reports above identify the integrated compiler and retain both prospective
 campaigns. Test elapsed times are not compilation performance measurements.
+
+## Same-revision routing-policy controls
+
+The `routing-policies` profile compares the omitted FlagQuantum routing keyword
+with explicit `restore_after_each_gate`, `persistent_layout` and `sabre`. It
+reuses ordinary compilation, native gate legalization and timed external
+identity restoration. The keyword is the only varied input. Preparation and
+reporting require the same source build, wheel, dependencies, configuration
+and stable host facts. Raw `/proc/cpuinfo` hashes remain retained observations
+and may differ as CPU frequencies change. Missing, duplicate or mixed controls
+are rejected before entropy or comparative claims.
+
+The selection, references, acceptance, supervisor and all resource ceilings
+are unchanged. A complete study has 120 case/policy pairs, 1,200 blocks,
+2,400 warmups, 3,600 measurements and 180 pairwise comparisons. All six pairs
+per case remain represented, including failures without performance ratios.
+The fourth workflow does not enlarge either outer execution ceiling.
+
+The [execution declaration](COMPILER_ROUTING_POLICY_DECLARATION_20261120.md)
+records the fixed compiler and later-qualification evidence gap before dispatch.
+This profile does not replace either three-SDK result or establish an SDK rank.
+`sabre_layout` changes the initial-placement contract and is excluded. The
+target-artifact workflow is not substituted for ordinary compilation.
+
+Native conformance now covers ten workflows across the frozen input and five
+application families, checking that the real compiler receives the omitted or
+explicit routing keyword. Preparation/runner tests cover admission, limits,
+rotation, retained failures and replay. Reporting tests reject unmatched
+compiler artifacts and retain every pair without rescuing failed cases.
+
+To report an executed study, pass its profile explicitly:
+
+```bash
+PYTHONPATH=src python tools/compare_compiler_applications.py \
+  --profile routing-policies \
+  --directory candidate-evidence/campaign \
+  --bundle candidate-evidence/preparation/cohort \
+  --output candidate-evidence/comparisons.json
+```
+
+Expected for a complete study: replay verifies 1,200 blocks; all 120 case/policy
+outcomes remain in coverage, with 180 pair rows and `publication_eligible=false`.
+Those counts imply no policy passes or outperforms another. Actual execution
+and independent audit remain required.

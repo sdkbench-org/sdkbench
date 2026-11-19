@@ -1,15 +1,21 @@
 """Synthetic lifecycle checks; no simulated outcome is published as SDK evidence."""
+import json
 from copy import deepcopy
 from pathlib import Path
-import json
 
 import pytest
+from p0_cases import positive_payload
 
 from sdkbench.candidates import adapters, provenance, worker
 from sdkbench.p0 import Bundle, Registration, ResultRecord
-from sdkbench.p0.models import ContractError, Identity, canonical_bytes, digest, read_json
+from sdkbench.p0.models import (
+    ContractError,
+    Identity,
+    canonical_bytes,
+    digest,
+    read_json,
+)
 from sdkbench.p1a import campaign
-from p0_cases import positive_payload
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -25,7 +31,9 @@ def registration(stack='candidate-qiskit', workflow='qiskit-transpile'):
                                  'role': 'frontend', 'artifact_sha256': 'a' * 64}],
                         {'profile': 'CPU1-FP64', 'precision': 'float64/complex128', 'threads': 1,
                          'options': {'suite': 'compiler-candidate', 'sdk': config['sdk'],
-                                     'workflow': workflow, 'compiler_options': config}},
+                                     'workflow': workflow, 'compiler_options': config,
+                                     'source_build': {'source_commit': 'd' * 40,
+                                                      'wheel': {'sha256': 'e' * 64}}}},
                         {'python': 'test', 'os': 'test', 'image_sha256': 'b' * 64,
                          'dependency_lock_sha256': 'c' * 64, 'host': {'scope': 'synthetic-only'}})
 
@@ -51,7 +59,8 @@ def test_candidate_worker_admits_before_import_and_preserves_all_calls(bundle, m
         compiler_evidence = None
     class Adapter:
         native = Native()
-        audit = {'native_compilations': 1}
+        def __init__(self):
+            self.audit = {'native_compilations': 1}
         def execute(self, kind, fixture, seed):
             calls.append(seed)
             return positive_payload(bundle, 'ROUTE-LINE-06')
@@ -94,6 +103,18 @@ def test_unregistered_options_fail_before_native_import(monkeypatch):
         adapters.load_adapter(changed)
 
 
+@pytest.mark.parametrize('workflow', sorted(adapters.ROUTING_POLICY_WORKFLOWS))
+def test_routing_control_rejects_strategy_mutation_before_import(monkeypatch, workflow):
+    from sdkbench.p1b import common
+    reg = registration('candidate-policy', workflow)
+    config = deepcopy(reg.configuration)
+    config['options']['compiler_options']['options']['routing'] = 'sabre_layout'
+    changed = Registration(reg.stack_id, reg.components, config, reg.environment)
+    monkeypatch.setattr(common, 'load_adapter', lambda _: pytest.fail('Imported mutated control'))
+    with pytest.raises(ContractError, match='registered configuration'):
+        adapters.load_adapter(changed)
+
+
 def synthetic_supervisor(monkeypatch, bundle, fault=None):
     calls = []
     monkeypatch.setattr(provenance, 'verify_runtime', admission)
@@ -117,7 +138,12 @@ def synthetic_supervisor(monkeypatch, bundle, fault=None):
         elif fault == 'warmup':
             result['warmups'][0]['payload']['final_layout'] = [0] * 6
         elif fault == 'timeout':
-            return {'execution_status': 'timeout', 'pid': 123, 'stdout': '', 'stderr': ''}
+            from dataclasses import asdict
+            return {'execution_status': 'timeout', 'pid': 123, 'stdout': '', 'stderr': '',
+                    'returncode': -9, 'wall_seconds': kwargs['limits'].wall_seconds,
+                    'kernel_memory_peak_bytes': 1024, 'limits': asdict(kwargs['limits']),
+                    'enforced_cpu_set': str(kwargs['limits'].cpu),
+                    'network_policy': 'seccomp-deny-sockets-and-io-uring'}
         from dataclasses import asdict
         return {'execution_status': 'completed', 'pid': 123, 'stdout': json.dumps(result), 'stderr': '',
                 'returncode': 0, 'wall_seconds': 0.01, 'kernel_memory_peak_bytes': 1024,
@@ -144,6 +170,34 @@ def test_candidates_reuse_full_protocol_seeds_budgets_and_rotation(bundle, monke
         assert req['compiler_seed'] == bundle.plan['execution_profile']['compiler_seeds'][req['block']]
         assert limits.memory_bytes == 16 * 1024 ** 3
         assert 0 < limits.wall_seconds <= case['case_wall_limit_seconds']
+
+
+@pytest.mark.parametrize('fault', [None, 'warmup', 'timeout'])
+def test_four_policy_campaign_keeps_limits_rotation_and_failure_records(
+    bundle, monkeypatch, tmp_path, fault,
+):
+    from sdkbench.candidates.replay import replay
+    calls = synthetic_supervisor(monkeypatch, bundle, fault)
+    regs = {name: registration(name, name) for name in sorted(adapters.ROUTING_POLICY_WORKFLOWS)}
+    root = tmp_path / 'run'
+    result = campaign.run_campaign(
+        bundle, directory=root, cgroup_parent=tmp_path, cpu=0,
+        suite='compiler-candidate', candidates=regs,
+    )
+    assert len(result['outcomes']) == 12
+    assert all(row['record_count'] == 30 for row in result['outcomes'])
+    assert all((row['case_verdict']['status'] == 'accepted') == (fault is None)
+               for row in result['outcomes'])
+    assert [req['identity']['stack_id'] for req, _ in calls[:4]] == list(regs)
+    assert [req['identity']['stack_id'] for req, _ in calls[12:16]] == list(regs)[1:] + list(regs)[:1]
+    for req, limits in calls:
+        assert limits.memory_bytes == 16 * 1024 ** 3
+        assert 0 < limits.wall_seconds <= bundle.cases[req['identity']['instance_id']]['case_wall_limit_seconds']
+        assert req['compiler_seed'] == bundle.plan['execution_profile']['compiler_seeds'][req['block']]
+    seal(root)
+    independent = replay(root, bundle)
+    assert independent['blocks_verified'] == 120
+    assert len(independent['cases']) == 12
 
 
 @pytest.mark.parametrize('fault', ['admission', 'version', 'warmup', 'timeout'])

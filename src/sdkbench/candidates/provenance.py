@@ -3,12 +3,13 @@
 These checks establish artifact identity, not independent build attestation or
 publication-host qualification. Historical release admission is unchanged.
 """
-from importlib import metadata, util
 import hashlib
-from pathlib import Path, PurePosixPath
 import platform
 import re
 import sys
+from copy import deepcopy
+from importlib import metadata, util
+from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
 from zipfile import ZipFile
 
@@ -16,6 +17,38 @@ from ..p0.models import digest, keys, read_json, require
 from ..p0.registration import Registration
 from ..p1a.common import DISTRIBUTIONS
 from ..p1a.provenance import capture_environment, distribution_fingerprint
+from .adapters import ROUTING_POLICY_WORKFLOWS, workflow_configuration
+
+
+def verify_routing_policy_controls(registrations: list[Registration]) -> None:
+    """Require matched native source builds, varying only the routing policy."""
+    require(len(registrations) == len(ROUTING_POLICY_WORKFLOWS)
+            and len({r.stack_id for r in registrations}) == len(registrations)
+            and {r.configuration['options']['workflow'] for r in registrations}
+            == ROUTING_POLICY_WORKFLOWS,
+            'Routing controls require four distinct matched-restoration workflows')
+    controls = []
+    for registration in registrations:
+        configuration = deepcopy(registration.configuration)
+        options = configuration['options']
+        require(options.get('sdk') == 'flagquantum'
+                and isinstance(options.get('source_build'), dict)
+                and re.fullmatch('[0-9a-f]{40}', options['source_build'].get('source_commit', ''))
+                and isinstance(options['source_build'].get('wheel'), dict)
+                and re.fullmatch('[0-9a-f]{64}', options['source_build']['wheel'].get('sha256', '')),
+                'Routing controls require a native FlagQuantum source build')
+        require(options.get('compiler_options') == workflow_configuration(options['workflow']),
+                'Routing control differs from its registered configuration')
+        options['workflow'] = 'flagquantum-ordinary-restored'
+        options['compiler_options'] = workflow_configuration(options['workflow'])
+        environment = deepcopy(registration.environment)
+        # /proc/cpuinfo includes changing CPU frequencies. Keep raw observations
+        # in registrations, but compare stable host facts across controls.
+        environment['host'].pop('cpuinfo_sha256', None)
+        controls.append({'components': registration.components,
+                         'configuration': configuration, 'environment': environment})
+    require(all(control == controls[0] for control in controls[1:]),
+            'Routing controls must share the same source build, wheel and environment')
 
 
 def file_sha256(path):

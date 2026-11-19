@@ -1,12 +1,11 @@
 """Declared compiler workflows; numerical acceptance remains owned by P0."""
-from copy import deepcopy
-from datetime import datetime, timedelta, timezone
 import math
+from copy import deepcopy
+from datetime import UTC, datetime, timedelta
 
 from ..p0.models import digest, require
 from ..p1a.common import UnsupportedCapability
 from ..p1b.common import compile_deadline, matrix_payload, validate_fixture
-
 
 WORKFLOWS = {
     'flagquantum-ordinary': {
@@ -51,6 +50,20 @@ for _name in ('flagquantum-ordinary', 'qiskit-transpile', 'cirq-route-cz'):
     WORKFLOWS[_name + '-restored'] = _control
 
 
+# Matched controls vary only the native routing keyword, retaining the ordinary
+# compilation, legalization and timed identity-restoration boundaries.
+ROUTING_POLICY_WORKFLOWS = frozenset({
+    'flagquantum-ordinary-restored',
+    'flagquantum-restore-after-each-gate-restored',
+    'flagquantum-persistent-layout-restored',
+    'flagquantum-sabre-restored',
+})
+for _strategy in ('restore_after_each_gate', 'persistent_layout', 'sabre'):
+    _control = deepcopy(WORKFLOWS['flagquantum-ordinary-restored'])
+    _control['options']['routing'] = _strategy
+    WORKFLOWS['flagquantum-' + _strategy.replace('_', '-') + '-restored'] = _control
+
+
 def workflow_configuration(name):
     """Return the complete supported configuration to bind before execution."""
     require(name in WORKFLOWS, 'Unknown candidate compiler workflow')
@@ -68,9 +81,12 @@ def _normalize_operations(program, basis):
     return operations
 
 
-def _ordinary_flagquantum_route(adapter, fixture, seed):
+def _ordinary_flagquantum_route(adapter, fixture, seed, *, routing='default'):
     from flagquantum.compiler import CouplingMap, compile, final_layout
-    from flagquantum.compiler.lowering.native_gate_legalization import legalize_native_gates
+    from flagquantum.compiler.lowering.native_gate_legalization import (
+        legalize_native_gates,
+    )
+
     from ..diagnostics.routing import target_snapshot
     circuit = adapter.fq.Circuit(fixture['n_qubits'], device='cpu', dtype=adapter.torch.complex128)
     for operation in fixture['operations']:
@@ -78,8 +94,9 @@ def _ordinary_flagquantum_route(adapter, fixture, seed):
                   if operation['name'] in ('rx', 'ry', 'rz', 'rzz') else {})
         circuit.gate(operation['name'], operation['qubits'], params=params)
     basis = WORKFLOWS['flagquantum-ordinary']['options']['basis']
+    routing_options = {} if routing == 'default' else {'routing_strategy': routing}
     routed = compile(circuit, coupling_map=CouplingMap(fixture['n_qubits'], fixture['target_edges']),
-                     config=circuit.runtime_config)
+                      config=circuit.runtime_config, **routing_options)
     require(list(routed.metadata['routing']['initial_logical_to_physical'])
             == list(range(fixture['n_qubits'])), 'Compiler changed initial layout')
     compiled = legalize_native_gates(routed, snapshot=target_snapshot(fixture, basis),
@@ -167,13 +184,22 @@ def _cirq_route(adapter, fixture, seed):
 
 
 def _target_artifact_route(adapter, fixture, seed):
-    from flagquantum.compiler.artifacts.artifact_compilation import compile_circuit_artifact_for_target
+    from flagquantum.compiler.artifacts.artifact_compilation import (
+        compile_circuit_artifact_for_target,
+    )
     from flagquantum.compiler.routing import CouplingMap
     from flagquantum.core._artifacts import ProgramArtifactV2
     from flagquantum.core.ir import CircuitIR, Instruction, MeasurementNode
     from flagquantum.core.target_capabilities import (
-        CapabilityFact, CapabilityScope, EvidenceLevel, EvidenceReference,
-        FactExposure, FactSource, SupportStatus, TargetCapabilitySnapshot, TargetIdentity,
+        CapabilityFact,
+        CapabilityScope,
+        EvidenceLevel,
+        EvidenceReference,
+        FactExposure,
+        FactSource,
+        SupportStatus,
+        TargetCapabilitySnapshot,
+        TargetIdentity,
     )
     n = fixture['n_qubits']
     if any('parameter' in op for op in fixture['operations']):
@@ -183,7 +209,7 @@ def _target_artifact_route(adapter, fixture, seed):
                     params={'theta': op['angle']} if 'angle' in op else {})
         for op in fixture['operations']),
         measurements=(MeasurementNode('samples', tuple(range(n))),), dtype='complex128')
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     scope = CapabilityScope(device_ids=('sdkbench-abstract-cz',))
     facts = {'qubits.logical_capacity': n, 'limits.maximum_program_operations': 20000,
              'precision.effective_dtype': 'complex128', 'gates.native': ('rx', 'rz', 'cz'),
@@ -224,7 +250,7 @@ def _target_artifact_route(adapter, fixture, seed):
 
 
 class CompilerAdapter:
-    """Reuse native adapters; add only the explicitly registered artifact path."""
+    """Execute registered native workflows through shared acceptance boundaries."""
     def __init__(self, native, workflow):
         self.native = native
         self.workflow = workflow
@@ -242,8 +268,10 @@ class CompilerAdapter:
             base_workflow = self.workflow.removesuffix('-restored')
             if base_workflow == 'flagquantum-target-artifact':
                 payload = _target_artifact_route(self.native, fixture, seed)
-            elif base_workflow == 'flagquantum-ordinary':
-                payload = _ordinary_flagquantum_route(self.native, fixture, seed)
+            elif base_workflow == 'flagquantum-ordinary' or self.workflow in ROUTING_POLICY_WORKFLOWS:
+                payload = _ordinary_flagquantum_route(
+                    self.native, fixture, seed,
+                    routing=WORKFLOWS[self.workflow]['options']['routing'])
             elif base_workflow == 'qiskit-transpile':
                 payload = _qiskit_route(self.native, fixture, seed)
             else:

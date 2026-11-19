@@ -7,15 +7,20 @@ attestation, a publication qualification, or a replacement for replay.
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timezone
 import hashlib
 import os
-from pathlib import Path
 import secrets
 import subprocess
+from datetime import UTC, datetime
+from pathlib import Path
 
+from sdkbench.candidates.adapters import ROUTING_POLICY_WORKFLOWS
 from sdkbench.candidates.application_bundle import build_bundle
-from sdkbench.candidates.provenance import implementation_fingerprint, verify_runtime
+from sdkbench.candidates.provenance import (
+    implementation_fingerprint,
+    verify_routing_policy_controls,
+    verify_runtime,
+)
 from sdkbench.p0 import Bundle, Registration
 from sdkbench.p0.models import canonical_bytes, digest, read_json, require
 
@@ -47,17 +52,24 @@ def prepare(
     profile: str = "ordinary",
 ) -> Bundle:
     """Retain 30 preregistered line/grid cases with unchanged acceptance."""
-    require(profile in {"ordinary", "target-artifact"}, "Unknown workflow profile")
-    expected = WORKFLOWS if profile == "ordinary" else TARGET_WORKFLOWS
+    profiles = {
+        "ordinary": WORKFLOWS,
+        "target-artifact": TARGET_WORKFLOWS,
+        "routing-policies": ROUTING_POLICY_WORKFLOWS,
+    }
+    require(profile in profiles, "Unknown workflow profile")
+    expected = profiles[profile]
     admitted = [Registration(**read_json(path)) for path in registrations]
     require(
-        len(admitted) == 3 and len({r.stack_id for r in admitted}) == 3,
-        "Exactly three distinct matched-layout registrations are required",
+        len(admitted) == len(expected) and len({r.stack_id for r in admitted}) == len(expected),
+        f"Exactly {len(expected)} distinct matched-layout registrations are required",
     )
     require(
         {r.configuration["options"]["workflow"] for r in admitted} == expected,
-        "The cohort requires the three matched-restoration workflows for its profile",
+        "The cohort requires the matched-restoration workflows for its profile",
     )
+    if profile == "routing-policies":
+        verify_routing_policy_controls(admitted)
     for registration in admitted:
         verify_runtime(registration)
     baseline = Bundle(base)
@@ -71,7 +83,7 @@ def prepare(
     ).strip()
     freeze = {
         "schema_version": 1,
-        "recorded_at_utc": datetime.now(timezone.utc).isoformat(),
+        "recorded_at_utc": datetime.now(UTC).isoformat(),
         "harness_revision": revision,
         "harness_sha256": implementation_fingerprint(),
         "preparation_source_sha256": hashlib.sha256(
@@ -107,7 +119,7 @@ def prepare(
         output / "draw.json",
         {
             "schema_version": 1,
-            "recorded_at_utc": datetime.now(timezone.utc).isoformat(),
+            "recorded_at_utc": datetime.now(UTC).isoformat(),
             "freeze_sha256": digest(freeze),
             "nonce": nonce,
             "entropy_source": "secrets.token_bytes(32)",
@@ -177,7 +189,7 @@ def main() -> None:
     parser.add_argument("--registration", type=Path, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--profile", choices=("ordinary", "target-artifact"), default="ordinary"
+        "--profile", choices=("ordinary", "target-artifact", "routing-policies"), default="ordinary"
     )
     args = parser.parse_args()
     bundle = prepare(args.base, args.registration, args.output, profile=args.profile)
