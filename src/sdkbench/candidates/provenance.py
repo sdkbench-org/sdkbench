@@ -158,7 +158,8 @@ def create_registration(*, stack_id, sdk, workflow, options, build_directory,
     of the participant SDK is performed by this function.
     """
     require(sdk in DISTRIBUTIONS, 'Unknown candidate SDK')
-    require(isinstance(stack_id, str) and stack_id.strip() and stack_id not in DISTRIBUTIONS,
+    require(isinstance(stack_id, str) and re.fullmatch('[a-z][a-z0-9-]*', stack_id)
+            and stack_id not in DISTRIBUTIONS,
             'Candidate stack ID must differ from historical release IDs')
     require(isinstance(workflow, str) and workflow.strip(), 'Missing declared public workflow')
     require(isinstance(options, dict) and options, 'Missing declared compiler options')

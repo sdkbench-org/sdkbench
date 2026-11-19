@@ -54,19 +54,27 @@ def _failure_records(identity, block, count, status, reason):
     return [ResultRecord(identity, block, r, status, reason=reason) for r in range(count)]
 
 
-def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None, suite='p1a'):
+def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None, suite='p1a', candidate=None):
     directory = Path(directory); directory.mkdir(parents=True, exist_ok=False)
     case = bundle.cases[identity.instance_id]; kind = case['kind']; protocol = mode == 'protocol'
     count = 3 if protocol and kind != 'sampling' else 1; warmup_count = 2 if protocol and kind != 'sampling' else 0
     request = {**bundle.request(identity, block), 'kind': kind, 'execution_mode': mode, 'suite': suite}
+    if candidate is not None:
+        require(suite == 'compiler-candidate' and kind == 'route', 'Candidate execution is routing-only')
+        require(candidate.identity(bundle, identity.instance_id) == identity, 'Candidate registration identity mismatch')
+        request['candidate_registration'] = candidate.to_dict()
     write(directory / 'request.json', request)
     execution = None; response = None; warmup_verdicts = []; verdicts = []
     if budget.remaining <= 0:
         records = _failure_records(identity, block, count, 'timeout', 'Complete case wall budget exhausted before this block')
     else:
         try:
+            if candidate is not None:
+                from ..candidates.provenance import verify_runtime
+                verify_runtime(candidate)
             limits = replace(Limits.for_case(case, cpu), wall_seconds=min(case['case_wall_limit_seconds'], budget.remaining))
-            execution = run_command([sys.executable, '-m', 'sdkbench.p1a.worker', '--sdk', sdk, str((directory / 'request.json').resolve())],
+            module = 'sdkbench.p1a.worker' if candidate is None else 'sdkbench.candidates.worker'
+            execution = run_command([sys.executable, '-m', module, '--sdk', sdk, str((directory / 'request.json').resolve())],
                                     cwd=directory, cgroup_parent=cgroup_parent, limits=limits, environment=runtime_environment)
             if execution['execution_status'] != 'completed':
                 status = execution['execution_status']
@@ -76,10 +84,15 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
             else:
                 (directory / 'response.json').write_text(execution['stdout'], encoding='utf-8')
                 response = read_json(directory / 'response.json')
-                keys(response, ('schema_version', 'request_sha256', 'sdk', 'sdk_version', 'worker_pid', 'sdk_import_wall_seconds', 'warmups', 'records', 'native_audit', 'warnings'))
+                extra = ('candidate_admission', 'compiler_evidence_files') if candidate is not None else ()
+                keys(response, ('schema_version', 'request_sha256', 'sdk', 'sdk_version', 'worker_pid', 'sdk_import_wall_seconds', 'warmups', 'records', 'native_audit', 'warnings') + extra)
                 require(response['schema_version'] == 1 and response['sdk'] == sdk and response['request_sha256'] == digest(request), 'Worker response binding mismatch')
                 require(response['worker_pid'] == execution['pid'], 'Worker PID does not match supervised process')
-                require(response['sdk_version'] == VERSIONS[sdk], 'Worker SDK version differs from registration')
+                if candidate is None:
+                    require(response['sdk_version'] == VERSIONS[sdk], 'Worker SDK version differs from registration')
+                else:
+                    from ..candidates.response import verify_response
+                    verify_response(candidate, response, directory)
                 require(len(response['records']) == count and len(response['warmups']) == warmup_count, 'Wrong block warmup/repetition count')
                 records = [ResultRecord.from_dict(r) for r in response['records']]
                 for r, record in enumerate(records):
@@ -90,6 +103,8 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
                     warmup_verdicts.append(evaluate(bundle, record, identity))
         except IsolationUnavailable as exc:
             records = _failure_records(identity, block, count, 'access-blocked', str(exc))
+        except ImportError as exc:
+            records = _failure_records(identity, block, count, 'install-failed', str(exc))
         except (OSError, ValueError, KeyError, TypeError) as exc:
             records = _failure_records(identity, block, count, 'error', f'Invalid worker/execution evidence: {type(exc).__name__}: {exc}')
     verdicts = [evaluate(bundle, record, identity) for record in records]
@@ -104,13 +119,23 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
     return evidence
 
 
-def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None, suite='p1a'):
+def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None, suite='p1a', candidates=None):
     require(mode in ('protocol', 'qualification'), 'Unknown execution mode')
-    require(sdks and len(set(sdks)) == len(sdks) and set(sdks) <= set(SDKS), 'Invalid SDK selection')
-    require(suite in ('p1a', 'p1b'), 'Unknown adapter suite')
-    if suite == 'p1b':
+    if candidates is not None:
+        import re
+        require(suite == 'compiler-candidate' and isinstance(candidates, dict) and candidates,
+                'Candidate registrations require the candidate suite')
+        require(all(isinstance(value, Registration) and key == value.stack_id
+                    and re.fullmatch('[a-z][a-z0-9-]*', key) and key not in SDKS
+                    for key, value in candidates.items()), 'Invalid candidate registrations')
+        sdks = tuple(candidates)
+        selected_workflows = ('W03',)
+    else:
+        require(sdks and len(set(sdks)) == len(sdks) and set(sdks) <= set(SDKS), 'Invalid SDK selection')
+        require(suite in ('p1a', 'p1b'), 'Unknown adapter suite')
+    if candidates is None and suite == 'p1b':
         from ..p1b.common import WORKFLOWS as selected_workflows
-    else:selected_workflows = WORKFLOWS
+    elif candidates is None:selected_workflows = WORKFLOWS
     available = [c['id'] for c in bundle.plan['instances'] if c['workflow'] in selected_workflows]
     selected = list(instances) if instances is not None else available
     require(selected and len(set(selected)) == len(selected) and set(selected) <= set(available), 'Invalid suite case selection')
@@ -122,6 +147,16 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
                  'artifact_sha256': environment['implementation'].get('runtime_source_sha256', environment['implementation']['p0_p1a_source_sha256'])}
     cache = {}
     for sdk in sdks:
+        if candidates is not None:
+            registrations[sdk] = candidates[sdk]
+            try:
+                from ..candidates.provenance import verify_runtime
+                verify_runtime(candidates[sdk])
+                admissions[sdk] = {'status': 'admitted', 'reason': None}
+            except (OSError, ValueError, KeyError, TypeError, ImportError) as exc:
+                admissions[sdk] = {'status': 'install-failed' if isinstance(exc, ImportError) else 'access-blocked',
+                                   'reason': f'Candidate admission failed: {type(exc).__name__}: {exc}'}
+            continue
         entries = [framework]; reason = None
         dependencies = [DISTRIBUTIONS[sdk], 'numpy'] + (['torch'] if sdk == 'flagquantum' else ['sympy', 'networkx'] if sdk == 'cirq' else [])
         if suite == 'p1b' and sdk == 'qiskit':dependencies.append('qiskit-algorithms')
@@ -156,9 +191,10 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
                     output = directory / sdk / instance / f'block-{block:02}'; output.mkdir(parents=True); write(output / 'evidence.json', evidence)
                 else:
                     with budgets[key].active():
+                        extra = {'candidate': registrations[sdk]} if candidates is not None else {}
                         evidence = run_block(bundle, identities[key], sdk, block, mode=mode,
                                              directory=directory / sdk / instance / f'block-{block:02}', cgroup_parent=cgroup_parent,
-                                             cpu=cpu, budget=budgets[key], runtime_environment=runtime_environment, suite=suite)
+                                             cpu=cpu, budget=budgets[key], runtime_environment=runtime_environment, suite=suite, **extra)
                     if budgets[key].remaining <= 0 and evidence['block_verdict']['status'] == 'accepted':
                         evidence['block_verdict'] = Verdict('timeout', ('Complete case budget exhausted during evidence export',)).to_dict()
                         write(directory / sdk / instance / f'block-{block:02}' / 'evidence.json', evidence)
@@ -186,6 +222,9 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
               'publication_eligible': False, 'sdks': list(sdks), 'instances': selected, 'unselected_instances': sorted(set(available) - set(selected)),
               'outcomes': outcomes, 'workflows': workflows, 'admissions': admissions, 'implementation': source_fingerprint(),
               'remaining_gates': ['independent review', 'sealed dedicated host/image', 'reviewed participant environments']}
+    if candidates is not None:
+        from ..candidates.provenance import implementation_fingerprint
+        report['candidate_implementation_sha256'] = implementation_fingerprint()
     write(directory / 'report.json', report)
     lines = ['# ' + suite.upper() + ' execution evidence', '', 'Scope: ' + report['scope'] + '. Publication eligible: false.', '',
              'No ranking is inferred. A qualification pass is one process block, not complete-case acceptance.', '',

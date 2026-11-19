@@ -1,7 +1,8 @@
 # Compiler candidate qualification protocol
 
-Status: source-build observation and registration admission implemented; candidate
-adapters, campaign execution and replay pending. This document specifies the next
+Status: source-build observation, registration admission, four compiler adapters,
+the frozen campaign runner and independent replay are implemented. Full native
+campaign execution and publication qualification are pending. This document specifies the next
 engineering campaign; it is not a result or a ranking. See
 [`candidates/README.md`](../../src/sdkbench/candidates/README.md) for the implemented
 entry points, limits and focused verification. The historical P1b and

@@ -22,31 +22,50 @@ PYTHONPATH=src python tools/build_compiler_candidate.py \
 The command retains `source.zip`, the wheel, `build.log` and `build.json`. Failed
 and timed-out builds retain their observations too; timed-out build process
 groups are killed. Install the retained wheel in a separate measurement
-environment before calling `create_registration`. Supply a unique stack ID,
-public workflow and explicit compiler options. Call `verify_runtime` in each
-fresh worker before importing the SDK. For example, after installing the wheel:
+environment, then register one of the declared workflows:
 
-```python
-from pathlib import Path
-from sdkbench.candidates.provenance import create_registration, verify_runtime
-from sdkbench.p0.models import canonical_bytes
-
-registration = create_registration(
-    stack_id="qiskit-source-transpile",
-    sdk="qiskit",
-    workflow="qiskit.transpile",
-    options={"optimization_level": 2, "basis_gates": ["cz", "u"],
-             "initial_layout": "identity", "final_layout": "permutation-allowed"},
-    build_directory="/tmp/qiskit-candidate-build",
-)
-verify_runtime(registration)
-with Path("candidate-registration.json").open("xb") as output:
-    output.write(canonical_bytes(registration.to_dict()))
+```sh
+PYTHONPATH=src python -m sdkbench.candidates.cli register \
+  --stack-id qiskit-source-transpile --workflow qiskit-transpile \
+  --build-directory /tmp/qiskit-candidate-build \
+  --output /tmp/qiskit-candidate-registration.json
 ```
 
-The options above illustrate registration, not an implemented runner or a
-complete option set for the frozen campaign. Neither function compiles a task or
-claims complete-case qualification.
+Supported workflows are `flagquantum-ordinary`, `flagquantum-target-artifact`,
+`qiskit-transpile` and `cirq-route-cz`. They have distinct configurations. The
+ordinary FlagQuantum path uses the current `compiler.lowering` module boundary;
+the historical P1b adapter continues to use its pinned release boundary.
+
+Run all three unchanged frozen routing tasks on a host with a delegated Linux
+cgroup-v2 subtree and libseccomp. Repeat `--registration` to counterbalance more
+than one candidate/configuration in the same measurement environment:
+
+```sh
+PYTHONPATH=src python -m sdkbench.candidates.cli run \
+  --registration /tmp/qiskit-candidate-registration.json \
+  --directory /tmp/compiler-campaign --cpu 0 \
+  --cgroup-parent /sys/fs/cgroup/DELEGATED_SUBTREE
+PYTHONPATH=src python -m sdkbench.candidates.cli replay \
+  --directory /tmp/compiler-campaign
+```
+
+The existing P1a/P1b runner supplies ten fresh process blocks, two warmups and
+three measured outcomes, frozen seeds, independent P0 evaluators and unchanged
+per-case budgets. Both the parent and worker revalidate each candidate before
+SDK import. The existing Linux supervisor enforces the same CPU, memory and
+network rules. Unsupported or rejected configurations remain explicit failures;
+there is no execution fallback on hosts without the required isolation.
+Target-artifact compilation includes serialization in its measured interval and
+retains one compiler-evidence file per successful outcome. Filesystem export,
+imports, admission and independent validation also consume the cumulative case
+budget. The complete campaign is content-hashed for replay without SDK imports.
+
+Replay checks complete case/block accounting, registration and request binding,
+seeds, measured and warmup semantics, enforced resource fields, compiler-file
+hashes and case/workflow verdicts. It verifies normalized circuit semantics;
+retained SDK artifact envelopes are not promoted to independently verified
+compiler provenance by this replay. Source-to-wheel attestation and qualified
+publication-host evidence remain separate gates.
 
 The admission check compares wheel files, installed distribution fingerprints,
 the package tree and Python module resolution. It rejects shadowing, extra
@@ -56,18 +75,30 @@ installed-distribution fingerprint. Wheels that require `.data` relocation are
 explicitly unsupported pending a reviewed mapping. This is a build observation,
 not an independent attestation of source-to-wheel reproducibility.
 
-The campaign runner, candidate adapters and full independent campaign replay
-are still pending. Do not use these helpers as evidence that the frozen routing
-campaign or its strict Linux controls have executed.
+Full native candidate campaign execution, build/install qualification and the
+prospective held-out campaign are pending. Passing local adapter conformance or
+synthetic runner tests does not establish measured SDK performance.
 
 For a small change, modify the admission check and run:
 
 ```sh
 PYTHONPATH=src python -m pytest -q \
-  tests/test_candidate_provenance.py tests/test_candidate_build.py
+  tests/test_candidate_provenance.py tests/test_candidate_build.py \
+  tests/test_candidate_runner.py
 ```
 
 Synthetic wheel tests exercise replacement at a fixed version, import shadowing,
 configuration identity and worker revalidation. Build tests verify retained
 input/output evidence and process-group cleanup. They do not replace native SDK
 or Linux-supervisor tests.
+
+Native adapter conformance is opt-in and checks the six-qubit full operator. Use
+a prepared environment with the desired compiler revision already selected:
+
+```sh
+SDKBENCH_NATIVE_CANDIDATE_TESTS=1 PYTHONPATH=src \
+  python -m pytest -q tests/test_candidate_native_adapters.py
+```
+
+These tests call the adapter directly. They intentionally do not claim the
+wheel admission chain, ten-block campaign, Linux controls or timing ranking.
