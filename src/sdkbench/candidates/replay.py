@@ -1,8 +1,10 @@
 """Replay a complete candidate campaign without importing participant SDKs."""
+from dataclasses import asdict
 from pathlib import Path
 
 from ..p0 import Registration, ResultRecord, evaluate, evaluate_case, evaluate_workflow
-from ..p0.models import digest, read_json, require
+from ..p0.models import digest, finite, integer, read_json, require
+from ..p0.supervisor import Limits
 from .provenance import file_sha256
 from .response import verify_response
 
@@ -40,6 +42,7 @@ def replay(directory, bundle):
         identity = registration.identity(bundle, instance)
         records = []
         statuses = []
+        execution_wall_seconds = 0.0
         paths = sorted((root / name / instance).glob('*/evidence.json'))
         require(len(paths) == 10, 'Incomplete candidate block set')
         for block, path in enumerate(paths):
@@ -53,11 +56,20 @@ def replay(directory, bundle):
             response = evidence.get('response')
             execution = evidence.get('execution')
             if execution is not None:
-                limits = execution['limits']
                 case = bundle.cases[instance]
-                require(limits['memory_bytes'] == case['process_memory_limit_gib'] * 1024**3
-                        and 0 < limits['wall_seconds'] <= case['case_wall_limit_seconds'],
+                limits = execution.get('limits')
+                require(isinstance(limits, dict), 'Missing candidate resource limits')
+                for field in ('memory_bytes', 'output_bytes', 'file_bytes', 'tasks'):
+                    integer(limits.get(field), 1)
+                expected_limits = asdict(Limits.for_case(case, integer(limits.get('cpu'))))
+                wall_limit = finite(limits.get('wall_seconds'))
+                expected_limits['wall_seconds'] = wall_limit
+                require(limits == expected_limits
+                        and 0 < wall_limit <= case['case_wall_limit_seconds'],
                         'Candidate resource limits differ from frozen protocol')
+                elapsed = finite(execution.get('wall_seconds'))
+                require(elapsed >= 0, 'Invalid candidate execution elapsed time')
+                execution_wall_seconds += elapsed
                 require(execution['network_policy'] == 'seccomp-deny-sockets-and-io-uring',
                         'Candidate network isolation missing')
                 require(execution['enforced_cpu_set'] == str(limits['cpu']),
@@ -93,11 +105,17 @@ def replay(directory, bundle):
                         and execution['execution_status'] == 'completed'
                         and admissions[name]['status'] == 'admitted',
                         'Accepted block lacks successful admission and supervised execution')
+                require(type(execution.get('returncode')) is int and execution['returncode'] == 0,
+                        'Accepted block has an unsuccessful process exit')
+                integer(execution.get('kernel_memory_peak_bytes'), 1)
             statuses.append(status)
             records.extend(current)
         independent = evaluate_case(bundle, identity, [r.to_dict() for r in records])
         failed = [status for status in statuses if status != 'accepted']
         status = failed[0] if failed else independent.status
+        if status == 'accepted':
+            require(execution_wall_seconds <= bundle.cases[instance]['case_wall_limit_seconds'],
+                    'Accepted candidate case exceeds its cumulative execution wall budget')
         require(outcome['record_count'] == 30 and outcome['blocks'] == 10
                 and outcome['case_verdict']['status'] == status,
                 'Candidate case report replay disagrees')
