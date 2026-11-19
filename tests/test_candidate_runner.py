@@ -120,6 +120,7 @@ def synthetic_supervisor(monkeypatch, bundle, fault=None):
             return {'execution_status': 'timeout', 'pid': 123, 'stdout': '', 'stderr': ''}
         from dataclasses import asdict
         return {'execution_status': 'completed', 'pid': 123, 'stdout': json.dumps(result), 'stderr': '',
+                'returncode': 0, 'wall_seconds': 0.01, 'kernel_memory_peak_bytes': 1024,
                 'limits': asdict(kwargs['limits']), 'enforced_cpu_set': str(kwargs['limits'].cpu),
                 'network_policy': 'seccomp-deny-sockets-and-io-uring'}
     monkeypatch.setattr(campaign, 'run_command', run)
