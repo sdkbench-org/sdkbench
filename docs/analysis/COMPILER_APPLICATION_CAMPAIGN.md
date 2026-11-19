@@ -135,3 +135,29 @@ eight focused report tests cover exact ratios, immutable input, failures,
 undefined values, refused incomplete/mixed comparisons and CLI replay of a
 sealed synthetic campaign with all three participants denied access. These
 synthetic results are not measurements of any SDK.
+
+## Current compiler development conformance
+
+On 2026-11-19, the unmodified native adapter conformance suite passed all
+42 cases in 130.25 seconds against FlagQuantum source revision
+`5e7fe0ad824022b3d5ea160062b70603f09a20a5`, Qiskit 2.6.2 and Cirq 1.7.0.
+The environment was macOS 27.0 ARM64, Python 3.12.14, PyTorch 2.14.0 and
+NumPy 2.5.5, with numerical thread counts set to one. FlagQuantum and its
+SABRE module were imported from the candidate source checkout, not an older
+installed wheel. This compiler revision was still awaiting integration.
+
+```bash
+SDKBENCH_NATIVE_CANDIDATE_TESTS=1 OMP_NUM_THREADS=1 \
+  OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  PYTHONPATH=src:/path/to/FlagQuantum:/path/to/native-extension \
+  python -m pytest tests/test_candidate_native_adapters.py -q
+```
+
+The suite covers the original frozen routing input plus all five application
+families at six qubits across seven registered workflows. Each output passes
+the unchanged independent full-operator check, and restored workflows must
+return identity final layout. These checks establish development adapter
+conformance only: they are neither the prospective draw nor a supervised
+Linux campaign, do not cover larger widths or every topology, and provide no
+comparative timing or memory result. Pytest elapsed time is suite overhead,
+not an SDK compilation measurement.
