@@ -1,0 +1,244 @@
+{
+  "acceptance": {
+    "final_layout": "allowed only with explicit logical reconstruction",
+    "initial_layout": "identity",
+    "normalization_error_limit": 1e-10,
+    "per_compile_wall_limit_seconds": 120,
+    "primary_quality": "number of physical full CZ interactions; report compile-time/interaction-count Pareto points; no scalar winner",
+    "semantic_atol": 1e-08,
+    "semantic_rtol": 0.0,
+    "target": "full CZ and arbitrary one-qubit unitaries on listed undirected edges; no ancillas",
+    "target_violations_allowed": 0,
+    "verification": "n=6: full operator up to one global phase; n=8,12: three complete output probe states up to one global phase per probe; probe checks are not a universal equivalence proof"
+  },
+  "cohort": {
+    "case_count": 10,
+    "families": [
+      "qaoa",
+      "ising",
+      "hopping",
+      "qft",
+      "repetition"
+    ],
+    "nonce": "0101010101010101010101010101010101010101010101010101010101010101",
+    "selection": "development cohort, publicly specified nonce, not blind or prospective",
+    "topologies": [
+      "line",
+      "grid"
+    ],
+    "width": 6,
+    "workflow_count": 7
+  },
+  "date_utc": "2026-11-19",
+  "evidence_class": "development-only; not a resource-qualified or prospective campaign",
+  "execution_limits": {
+    "complete_resource_qualification": false,
+    "linux_cgroup": false,
+    "memory_peak_measurement": false,
+    "outer_process_seconds": 240,
+    "per_compilation_alarm_seconds": 120,
+    "seccomp": false
+  },
+  "flagquantum_revision": "338f9bb5051f37a9b8ee9c604d70e166db2a1f2a",
+  "flagquantum_revision_status": "unmerged branch; no integration or release claim",
+  "flagquantum_sabre_sha256": "4ae94a7ccdee25b2f41cd75f35fd095876b23c49146d0567994388fd56b7efcb",
+  "harness_files_sha256": {
+    "src/sdkbench/candidates/adapters.py": "b30c6dccbd48436a72476ccebc2a80211b289fc09d3539bbf3de88f9eb1a0d7e",
+    "src/sdkbench/candidates/applications.py": "4bc9f15ec97841300296ff3eed545816ec268970e4e90fa5d18be6157611f1e1",
+    "src/sdkbench/candidates/layout.py": "88d639247a5f973651e91c9b5f39935119c2936589d7007fc1a70cff15fb5a14",
+    "src/sdkbench/p0/evaluators.py": "f0aaa675dc682fbc46a6e0311ed41e3f927e11b5cdc80d9f740e2bdaa959a661",
+    "src/sdkbench/p0/semantics.py": "8430c0d5c854b3ed1ce3ca6ef19209165961d3202c199a8f07fcf0a4c81bbb2b"
+  },
+  "limitations": [
+    "No admission registration or immutable wheel replay; source checkout used directly",
+    "No balanced repeated measurement blocks or controlled peak-memory result",
+    "No global SDK ranking or significance claim",
+    "Matched restoration controls deliver the same layout but do not isolate optimal native fixed-layout synthesis"
+  ],
+  "maximum_operator_entry_error": 1.8889772244826903e-14,
+  "outcomes_sha256": "2b75ac70a3ec9f707fd6f75dd97dadecb701481ecdf9b7078059c8f63f064e04",
+  "runtime": {
+    "compiler_seed": 0,
+    "device": "cpu",
+    "dtype": "complex128",
+    "host_exclusive": false,
+    "numerical_threads": 1,
+    "packages": {
+      "cirq-core": "1.7.0",
+      "numpy": "2.5.5",
+      "qiskit": "2.6.2",
+      "torch": "2.14.0"
+    },
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.14 (main, Sep  1 2026, 14:09:38) [Clang 22.1.3 ]",
+    "retained_compilations_per_case": 1,
+    "warmups": 0
+  },
+  "sdkbench_revision": "d18c53e19134311d61e0c74012503e76941b4795",
+  "workflows": {
+    "cirq-route-cz": {
+      "entrypoint": "RouteCQC; optimize_for_target_gateset",
+      "options": {
+        "allow_partial_czs": false,
+        "basis": [
+          "cz",
+          "arbitrary-one-qubit-unitary"
+        ],
+        "compiler_seed_supported": false,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "initial_mapper": "identity",
+        "synthesis_atol": 1e-12
+      },
+      "sdk": "cirq"
+    },
+    "cirq-route-cz-restored": {
+      "entrypoint": "RouteCQC; optimize_for_target_gateset",
+      "options": {
+        "allow_partial_czs": false,
+        "basis": [
+          "cz",
+          "arbitrary-one-qubit-unitary"
+        ],
+        "compiler_seed_supported": false,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "initial_mapper": "identity",
+        "postprocessing": {
+          "algorithm": "spanning-tree-leaf-token-restoration-v1",
+          "final_layout": "identity",
+          "leaf_order": "ascending",
+          "neighbor_order": "ascending",
+          "optimization_after_restoration": false,
+          "swap_decomposition": "H-CZ-H CNOT triple",
+          "timed": true,
+          "tree_root": 0
+        },
+        "synthesis_atol": 1e-12
+      },
+      "sdk": "cirq"
+    },
+    "flagquantum-ordinary": {
+      "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+      "options": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "compiler_seed_supported": false,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "max_added_operations": 20000,
+        "optimization_level": "default",
+        "routing": "default"
+      },
+      "sdk": "flagquantum"
+    },
+    "flagquantum-ordinary-restored": {
+      "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+      "options": {
+        "basis": [
+          "h",
+          "x",
+          "y",
+          "z",
+          "s",
+          "sdg",
+          "rx",
+          "ry",
+          "rz",
+          "cz"
+        ],
+        "compiler_seed_supported": false,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "max_added_operations": 20000,
+        "optimization_level": "default",
+        "postprocessing": {
+          "algorithm": "spanning-tree-leaf-token-restoration-v1",
+          "final_layout": "identity",
+          "leaf_order": "ascending",
+          "neighbor_order": "ascending",
+          "optimization_after_restoration": false,
+          "swap_decomposition": "H-CZ-H CNOT triple",
+          "timed": true,
+          "tree_root": 0
+        },
+        "routing": "default"
+      },
+      "sdk": "flagquantum"
+    },
+    "flagquantum-target-artifact": {
+      "entrypoint": "compile_circuit_artifact_for_target",
+      "options": {
+        "basis": [
+          "rx",
+          "rz",
+          "cz"
+        ],
+        "compiler_seed_supported": false,
+        "final_layout": "restored",
+        "initial_layout": "identity",
+        "max_native_added_operations": 20000,
+        "max_routing_added_operations": 20000,
+        "maximum_program_operations": 20000,
+        "profile": "openqasm-3.0",
+        "routing": "default",
+        "serialize_executable_artifact": true
+      },
+      "sdk": "flagquantum"
+    },
+    "qiskit-transpile": {
+      "entrypoint": "qiskit.transpile",
+      "options": {
+        "approximation_degree": 1.0,
+        "basis": [
+          "cz",
+          "u"
+        ],
+        "compiler_seed_supported": true,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "num_processes": 1,
+        "optimization_level": 2,
+        "qubits_initially_zero": false
+      },
+      "sdk": "qiskit"
+    },
+    "qiskit-transpile-restored": {
+      "entrypoint": "qiskit.transpile",
+      "options": {
+        "approximation_degree": 1.0,
+        "basis": [
+          "cz",
+          "u"
+        ],
+        "compiler_seed_supported": true,
+        "final_layout": "sdk-reported",
+        "initial_layout": "identity",
+        "num_processes": 1,
+        "optimization_level": 2,
+        "postprocessing": {
+          "algorithm": "spanning-tree-leaf-token-restoration-v1",
+          "final_layout": "identity",
+          "leaf_order": "ascending",
+          "neighbor_order": "ascending",
+          "optimization_after_restoration": false,
+          "swap_decomposition": "H-CZ-H CNOT triple",
+          "timed": true,
+          "tree_root": 0
+        },
+        "qubits_initially_zero": false
+      },
+      "sdk": "qiskit"
+    }
+  }
+}

@@ -170,3 +170,12 @@ content-hash calls. The profiles identify optimization opportunities, not
 permission to skip validation, alter identities or cache hashes globally for
 mutable nested IR data. Any performance change must preserve tamper rejection,
 replay and serialization equivalence and be remeasured independently.
+
+## Additional development reading
+
+The [2026-11-19 application reading](COMPILER_DEVELOPMENT_20261119.md) records ten
+six-qubit application cases across seven existing workflow configurations using
+an unmerged FlagQuantum source revision. It includes complete-operator
+acceptance and matched-restoration controls, but no resource qualification or
+prospective draw. Its results are separate development observations and do not
+replace the frozen Linux campaign above.
