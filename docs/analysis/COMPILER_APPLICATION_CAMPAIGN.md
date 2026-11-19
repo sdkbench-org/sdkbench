@@ -1,8 +1,11 @@
 # Matched-layout application campaign
 
-Status: execution workflow and preparation checks implemented. No campaign
-result or publication qualification is claimed. This is a preregistered reduced
-cohort of the [application protocol](COMPILER_APPLICATION_PROTOCOL.md).
+Status: execution workflow and preparation checks implemented. The first
+[ordinary application result](COMPILER_ORDINARY_RESULTS_20261120.md) retains
+complete evidence and all participant comparisons. Target-artifact results
+remain separate. No publication qualification is claimed. This is a
+preregistered reduced cohort of the
+[application protocol](COMPILER_APPLICATION_PROTOCOL.md).
 
 The [2026-11-19 execution declaration](COMPILER_QUALIFICATION_DECLARATION_20261119.md)
 records the intention to run both profiles on the same integrated compiler and
@@ -226,7 +229,9 @@ evidence. Existing output paths cannot be overwritten. Each profile uses its
 own freeze and single draw; separate campaigns must not be treated as matched
 case pairs or combined to select a favorable result. Preregister intended
 profiles before execution and retain both when both are run. Neither profile
-has been executed as a prospective campaign at the time of this change.
+had been executed prospectively when the profile implementation was introduced.
+The ordinary result linked above records the first completed campaign; the
+separately declared target-artifact campaign retains its own outcome.
 
 ## Combined compiler integration rehearsal
 

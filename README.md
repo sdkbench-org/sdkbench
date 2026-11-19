@@ -17,6 +17,8 @@ The [P1b qualification report](docs/implementation/P1B_QUALIFICATION.md) records
 
 The [routing attribution analysis](docs/analysis/FLAGQUANTUM_ROUTING_ANALYSIS.md) separates default routing, adapter configuration and native optimization effects using 264 independently checked diagnostic outcomes. The [native compiler integration proposal](docs/analysis/COMPILER_INTEGRATION_PLAN.md) describes follow-up engineering without changing historical benchmark results.
 
+The [ordinary compiler application report](docs/analysis/COMPILER_ORDINARY_RESULTS_20261120.md) retains 900 independently replayed blocks across 30 application cases and three SDK workflows. It reports every case, all three participant pairings, quality/time/memory trade-offs and the limits of probe-only checks. It establishes no global SDK ranking or publication qualification.
+
 ## Requirements and task design
 
 SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).

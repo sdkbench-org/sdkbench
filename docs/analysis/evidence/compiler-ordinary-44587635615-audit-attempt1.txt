@@ -1,0 +1,6 @@
+{"phase": "provenance_verified", "profile": "ordinary", "seconds": 0.579009250002855}
+Traceback (most recent call last):
+  File "/private/tmp/audit-sdkbench-compiler-qualification-20261120.py", line 103, in <module>
+    comparison = compare(summary, profile=profile)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: compare() got an unexpected keyword argument 'profile'

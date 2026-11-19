@@ -1,0 +1,3372 @@
+{
+  "bundle_sha256": "612afb433d15a36be0b0ad63e84f27a4069123e3f00026876481a5c02a267d6e",
+  "case_count": 30,
+  "comparison_scope": "Complete ordinary compiler workflows with restored output layout.",
+  "coverage": {
+    "cirq-route-cz-restored": {
+      "accepted": 30
+    },
+    "flagquantum-ordinary-restored": {
+      "accepted": 30
+    },
+    "qiskit-transpile-restored": {
+      "accepted": 30
+    }
+  },
+  "independent_replay": {
+    "blocks_verified": 900,
+    "bundle_sha256": "612afb433d15a36be0b0ad63e84f27a4069123e3f00026876481a5c02a267d6e",
+    "cases": [
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "fq-source-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "qiskit-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-06",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-08",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QAOA-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-ISING-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-HOPPING-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-QFT-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-LINE-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      },
+      {
+        "instance": "APP-REPETITION-GRID-12",
+        "sdk": "cirq-release-restored",
+        "status": "accepted"
+      }
+    ],
+    "files_verified": 2705,
+    "publication_eligible": false,
+    "schema_version": 1,
+    "scope": "independent record replay; build attestation and publication review remain separate"
+  },
+  "interpretation": [
+    "All participants and all cases remain in the denominator, including failures.",
+    "Ratios are numerator divided by denominator; below one means less of that metric.",
+    "No ratios are emitted when either full case fails, even if some records passed.",
+    "Timing and memory pair the same block index; timing first takes each block's three-run median.",
+    "Zero, missing or nonfinite measurements make the corresponding ratio undefined.",
+    "Quartiles describe observed variation; they are not confidence intervals or significance tests.",
+    "Counts use medians of independently accepted records, not SDK-reported counts.",
+    "No across-case aggregate, universal winner or global SDK ranking is inferred."
+  ],
+  "pairs": [
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0348837209302326,
+        "full_cz_median": 1.0666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.05395726209785856,
+          "maximum": 4.4761320141857235,
+          "median": 4.431733923301983,
+          "minimum": 4.364957472000058,
+          "q1": 4.382020415647688,
+          "q3": 4.435977677745546
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0031401678255496,
+          "maximum": 0.9530500867081506,
+          "median": 0.9529395278569741,
+          "minimum": 0.9485264124005711,
+          "q1": 0.9498749610906184,
+          "q3": 0.953015128916168
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.141025641025641,
+        "full_cz_median": 1.1162790697674418,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.3361602359592055,
+          "maximum": 17.73758534527467,
+          "median": 17.44087769738683,
+          "minimum": 17.03973934992198,
+          "q1": 17.2209833883201,
+          "q3": 17.557143624279306
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.007153824011904231,
+          "maximum": 2.199399682184686,
+          "median": 2.199264381517237,
+          "minimum": 2.189559792843691,
+          "q1": 2.192154693671048,
+          "q3": 2.1993085176829523
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1025641025641026,
+        "full_cz_median": 1.0465116279069768,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06934797328466136,
+          "maximum": 4.031393980495186,
+          "median": 3.944399126822499,
+          "minimum": 3.8184751248367887,
+          "q1": 3.9159050435644422,
+          "q3": 3.9852530168491036
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00029765324869757137,
+          "maximum": 2.3083804143126176,
+          "median": 2.3078507543618993,
+          "minimum": 2.30753839816395,
+          "q1": 2.307660620170065,
+          "q3": 2.3079582734187625
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.162162162162162,
+        "full_cz_median": 1.1216216216216217,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.08366090121562575,
+          "maximum": 5.7613766909499695,
+          "median": 5.633533761871446,
+          "minimum": 5.512743557017267,
+          "q1": 5.585830080132424,
+          "q3": 5.66949098134805
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 8.012904083365413e-05,
+          "maximum": 0.9698179979777554,
+          "median": 0.9679718900882227,
+          "minimum": 0.9676791670878399,
+          "q1": 0.9679103157149718,
+          "q3": 0.9679904447558054
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2169811320754718,
+        "full_cz_median": 1.2028985507246377,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5803494983212651,
+          "maximum": 26.678422954874218,
+          "median": 25.989584147561846,
+          "minimum": 24.937987070863205,
+          "q1": 25.795057723360962,
+          "q3": 26.375407221682227
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 9.749303621164884e-05,
+          "maximum": 2.1372625480474627,
+          "median": 2.133259052924791,
+          "minimum": 2.1329656862745097,
+          "q1": 2.133217270194986,
+          "q3": 2.1333147632311977
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0471698113207548,
+        "full_cz_median": 1.0724637681159421,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06845464870284701,
+          "maximum": 4.703061805442922,
+          "median": 4.6314277550533465,
+          "minimum": 4.469694374248308,
+          "q1": 4.59361394438365,
+          "q3": 4.662068593086497
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00015320334261836877,
+          "maximum": 2.204568245125348,
+          "median": 2.203844011142061,
+          "minimum": 2.203776948359423,
+          "q1": 2.2038022284122563,
+          "q3": 2.2039554317548746
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2939068100358424,
+        "full_cz_median": 1.3121387283236994,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.1310985958295987,
+          "maximum": 8.394131236060797,
+          "median": 8.300793084798542,
+          "minimum": 8.114446134960628,
+          "q1": 8.226800128953844,
+          "q3": 8.357898724783443
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0007261016639235063,
+          "maximum": 1.038511070384863,
+          "median": 1.0383820125085366,
+          "minimum": 1.0375565946708232,
+          "q1": 1.037737580129632,
+          "q3": 1.0384636817935555
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0403458213256485,
+        "full_cz_median": 1.060747663551402,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.1706471930409208,
+          "maximum": 38.71809066652515,
+          "median": 36.54459241882725,
+          "minimum": 35.308709299492094,
+          "q1": 35.703753512929595,
+          "q3": 36.874400705970515
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.01977429810800535,
+          "maximum": 2.0380540435458787,
+          "median": 2.0127666826980968,
+          "minimum": 1.9891376529741012,
+          "q1": 2.0119711662450217,
+          "q3": 2.031745464353027
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-GRID-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8040345821325648,
+        "full_cz_median": 0.8084112149532711,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.15464072538891127,
+          "maximum": 4.669977089748675,
+          "median": 4.383335158180429,
+          "minimum": 4.222830051385671,
+          "q1": 4.318126315278906,
+          "q3": 4.472767040667817
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.020033718746520934,
+          "maximum": 1.9627235614307932,
+          "median": 1.9399102593884727,
+          "minimum": 1.9156112138892842,
+          "q1": 1.937553229332055,
+          "q3": 1.957586948078576
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9142857142857143,
+        "full_cz_median": 0.9166666666666666,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.026484105207099873,
+          "maximum": 4.60163711133517,
+          "median": 4.532516133238611,
+          "minimum": 4.442616413621305,
+          "q1": 4.514331447058632,
+          "q3": 4.540815552265732
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008250657889977697,
+          "maximum": 0.9464509048214604,
+          "median": 0.9462977615559356,
+          "minimum": 0.9451370299553856,
+          "q1": 0.9455432287681714,
+          "q3": 0.9463682945571692
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.28216167195058617,
+          "maximum": 18.329506171342096,
+          "median": 18.0990520419145,
+          "minimum": 17.53182803762614,
+          "q1": 17.92472123036376,
+          "q3": 18.206882902314348
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0002800047158686425,
+          "maximum": 2.185805234614478,
+          "median": 2.185563971984709,
+          "minimum": 2.185381668140289,
+          "q1": 2.185407333176138,
+          "q3": 2.1856873378920065
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.09375,
+        "full_cz_median": 1.0909090909090908,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.03378155898489599,
+          "maximum": 4.060971980145852,
+          "median": 4.002418112655412,
+          "minimum": 3.8428797522861045,
+          "q1": 3.995947135253709,
+          "q3": 4.029728694238605
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0019295007829551736,
+          "maximum": 2.312249469464749,
+          "median": 2.309567319028531,
+          "minimum": 2.3093609997642064,
+          "q1": 2.3094357432632604,
+          "q3": 2.3113652440462156
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9270833333333334,
+        "full_cz_median": 0.9285714285714286,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06209230626280693,
+          "maximum": 5.057170646492867,
+          "median": 5.0046279411526475,
+          "minimum": 4.937849199231441,
+          "q1": 4.972066683983555,
+          "q3": 5.034158990246362
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00472967763793708,
+          "maximum": 0.9530849795856262,
+          "median": 0.950537945049414,
+          "minimum": 0.9451603919285009,
+          "q1": 0.9462378689859896,
+          "q3": 0.9509675466239267
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.30396741011831807,
+          "maximum": 23.624211733081996,
+          "median": 23.24691176626639,
+          "minimum": 22.534887956456597,
+          "q1": 22.998438646922025,
+          "q3": 23.302406057040344
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.012840442513157857,
+          "maximum": 2.101957494407159,
+          "median": 2.099801460550718,
+          "minimum": 2.0877467703148596,
+          "q1": 2.088225456566424,
+          "q3": 2.101065899079582
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0786516853932584,
+        "full_cz_median": 1.0769230769230769,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.05829567822567494,
+          "maximum": 4.68132403960428,
+          "median": 4.624564110904352,
+          "minimum": 4.516056867917628,
+          "q1": 4.605125873688227,
+          "q3": 4.663421551913902
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0022785867217303135,
+          "maximum": 2.2110564010743063,
+          "median": 2.2086793622961416,
+          "minimum": 2.2052457916223926,
+          "q1": 2.206745718862053,
+          "q3": 2.2090243055837835
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9491525423728814,
+        "full_cz_median": 0.953125,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.09230242693040402,
+          "maximum": 6.775222753165613,
+          "median": 6.603822999870615,
+          "minimum": 6.513924091028663,
+          "q1": 6.544626802853324,
+          "q3": 6.636929229783728
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0017317909555896183,
+          "maximum": 0.9796489824491225,
+          "median": 0.9779497136718592,
+          "minimum": 0.977181475847278,
+          "q1": 0.9777514358814712,
+          "q3": 0.9794832268370608
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.3524538911030817,
+          "maximum": 34.56391223144854,
+          "median": 33.34174940165969,
+          "minimum": 32.61291586930095,
+          "q1": 32.74231568747396,
+          "q3": 34.09476957857704
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0002448604125109277,
+          "maximum": 2.020701374942067,
+          "median": 2.017922439147295,
+          "minimum": 2.0176649327908533,
+          "q1": 2.017780581210809,
+          "q3": 2.01802544162332
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-HOPPING-LINE-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0535714285714286,
+        "full_cz_median": 1.0491803278688525,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.16019710402001675,
+          "maximum": 5.174217168101482,
+          "median": 5.027556488618527,
+          "minimum": 4.954701035865492,
+          "q1": 4.993772566232811,
+          "q3": 5.1539696702528275
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.002793245588559312,
+          "maximum": 2.065149096152856,
+          "median": 2.0634495545140856,
+          "minimum": 2.0598413842826244,
+          "q1": 2.0609009399189855,
+          "q3": 2.063694185507545
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1785714285714286,
+        "full_cz_median": 1.0833333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.04300764103714938,
+          "maximum": 3.7207133703758823,
+          "median": 3.6355109492662248,
+          "minimum": 3.5814180460851155,
+          "q1": 3.6231359617498446,
+          "q3": 3.666143602786994
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00031205175305426547,
+          "maximum": 0.939644576462153,
+          "median": 0.9391999959781867,
+          "minimum": 0.9387347732623605,
+          "q1": 0.9390388299066947,
+          "q3": 0.939350881659749
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.242443244803777,
+          "maximum": 9.085114985357222,
+          "median": 8.914424548736017,
+          "minimum": 8.685398522031155,
+          "q1": 8.801871268939834,
+          "q3": 9.044314513743611
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008834980533096726,
+          "maximum": 2.1980951239966453,
+          "median": 2.19738221660573,
+          "minimum": 2.193386354123064,
+          "q1": 2.1970500149745433,
+          "q3": 2.197933513027853
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8484848484848485,
+        "full_cz_median": 0.9230769230769231,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.028520703632581856,
+          "maximum": 2.4726105931929445,
+          "median": 2.449451535409312,
+          "minimum": 2.3977110653223854,
+          "q1": 2.4350161656093805,
+          "q3": 2.4635368692419624
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006990105677950886,
+          "maximum": 2.3405810122791255,
+          "median": 2.3398424624944827,
+          "minimum": 2.3353067814854684,
+          "q1": 2.339278227014076,
+          "q3": 2.3399772375818713
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2580645161290323,
+        "full_cz_median": 1.1666666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06583638171331474,
+          "maximum": 3.862469918915293,
+          "median": 3.8087369387835204,
+          "minimum": 3.7055968675272544,
+          "q1": 3.772388335981201,
+          "q3": 3.8382247176945157
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00011041786879806281,
+          "maximum": 0.9425936334372286,
+          "median": 0.9424644234945454,
+          "minimum": 0.9420641405372281,
+          "q1": 0.9424005518510002,
+          "q3": 0.9425109697197983
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.2288338293135137,
+          "maximum": 10.909607926484925,
+          "median": 10.673004536199077,
+          "minimum": 10.346589949009115,
+          "q1": 10.566853216926338,
+          "q3": 10.795687046239852
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00033705019701724126,
+          "maximum": 2.1868887439985776,
+          "median": 2.1865275744971204,
+          "minimum": 2.186036863628282,
+          "q1": 2.186373873873874,
+          "q3": 2.186710924070891
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7948717948717948,
+        "full_cz_median": 0.8571428571428571,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06204971498984113,
+          "maximum": 2.898445875084097,
+          "median": 2.8135206470077816,
+          "minimum": 2.746040879313111,
+          "q1": 2.767421328930245,
+          "q3": 2.829471043920086
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00018196189257357887,
+          "maximum": 2.3212422949265052,
+          "median": 2.3199478413146997,
+          "minimum": 2.3197415990043266,
+          "q1": 2.319879089615932,
+          "q3": 2.3200610515085054
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3246753246753247,
+        "full_cz_median": 1.206896551724138,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07115393470280384,
+          "maximum": 5.189347661534547,
+          "median": 5.084854221462368,
+          "minimum": 5.0363434751309315,
+          "q1": 5.062770373459077,
+          "q3": 5.133924308161881
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00016878311750756492,
+          "maximum": 0.9624520879564252,
+          "median": 0.9599279436544232,
+          "minimum": 0.9596493879401542,
+          "q1": 0.9598319730070268,
+          "q3": 0.9600007561245344
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8292682926829268,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.578116067730214,
+          "maximum": 18.48851031775365,
+          "median": 17.41217413242522,
+          "minimum": 16.440167689513373,
+          "q1": 17.126076518389105,
+          "q3": 17.70419258611932
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004316467402426305,
+          "maximum": 2.1356502242152464,
+          "median": 2.1233594346505056,
+          "minimum": 2.115083550768889,
+          "q1": 2.122597359184356,
+          "q3": 2.126913826586782
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-GRID-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.6260162601626016,
+        "full_cz_median": 0.8285714285714286,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.08701832318890634,
+          "maximum": 3.6710185492805376,
+          "median": 3.4141077883794813,
+          "minimum": 3.1806589656440862,
+          "q1": 3.380775900999838,
+          "q3": 3.4677942241887445
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0016173913409263108,
+          "maximum": 2.224794036877207,
+          "median": 2.211963339582525,
+          "minimum": 2.203419942260715,
+          "q1": 2.2104177084987437,
+          "q3": 2.21203509983967
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8103448275862069,
+        "full_cz_median": 0.9487179487179487,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06549948747727719,
+          "maximum": 4.062348248468121,
+          "median": 3.997859569221078,
+          "minimum": 3.9143166884175877,
+          "q1": 3.982002501013352,
+          "q3": 4.047501988490629
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00039882157750203984,
+          "maximum": 0.9433114678782001,
+          "median": 0.942638526684083,
+          "minimum": 0.9391945315887469,
+          "q1": 0.9425159083675401,
+          "q3": 0.9429147299450421
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9215686274509803,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.16773599784928095,
+          "maximum": 10.985975504615977,
+          "median": 10.81300839888862,
+          "minimum": 10.544954510911417,
+          "q1": 10.696139411049032,
+          "q3": 10.863875408898313
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00041575006912308865,
+          "maximum": 2.2552321679175056,
+          "median": 2.2550491183110624,
+          "minimum": 2.2468118860211117,
+          "q1": 2.2546943847774203,
+          "q3": 2.2551101348465434
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1372549019607843,
+        "full_cz_median": 1.054054054054054,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.03193711767289198,
+          "maximum": 2.7679962468192763,
+          "median": 2.698707250882941,
+          "minimum": 2.609121582169826,
+          "q1": 2.676825784914622,
+          "q3": 2.708762902587514
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006406736225512688,
+          "maximum": 2.3925193727500154,
+          "median": 2.392110803943671,
+          "minimum": 2.3907127166219184,
+          "q1": 2.3916346329855394,
+          "q3": 2.3922753066080906
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9701492537313433,
+        "full_cz_median": 1.0392156862745099,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06914586687537128,
+          "maximum": 5.037503625704571,
+          "median": 4.927586713623981,
+          "minimum": 4.866545501079883,
+          "q1": 4.89502776011161,
+          "q3": 4.964173626986981
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0034350754390894966,
+          "maximum": 0.9508046678361681,
+          "median": 0.9459614069592568,
+          "minimum": 0.9454185089190426,
+          "q1": 0.9458801545736514,
+          "q3": 0.9493152300127409
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2264150943396226,
+        "full_cz_median": 1.1041666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.4500461487682337,
+          "maximum": 15.17562783591475,
+          "median": 14.663834404066302,
+          "minimum": 14.092027188615768,
+          "q1": 14.362127257392748,
+          "q3": 14.812173406160982
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.008633372571177134,
+          "maximum": 2.2015773056323935,
+          "median": 2.1897419299527243,
+          "minimum": 2.189559792843691,
+          "q1": 2.189633356873823,
+          "q3": 2.1982667294450002
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2641509433962264,
+        "full_cz_median": 1.0625,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.12726212658834424,
+          "maximum": 3.052369171896942,
+          "median": 2.9466955276270133,
+          "minimum": 2.877350526708558,
+          "q1": 2.9051180492690496,
+          "q3": 3.032380175857394
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0009857666629424777,
+          "maximum": 2.316402801483138,
+          "median": 2.315019716320405,
+          "minimum": 2.3146774952919023,
+          "q1": 2.3148733952953493,
+          "q3": 2.315859161958292
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8952380952380953,
+        "full_cz_median": 0.9487179487179487,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07242106907276735,
+          "maximum": 4.966856311014338,
+          "median": 4.727434205020908,
+          "minimum": 4.650451346660034,
+          "q1": 4.701725454864434,
+          "q3": 4.774146523937201
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00011486291134732429,
+          "maximum": 0.9602242859646049,
+          "median": 0.9599444428660526,
+          "minimum": 0.959832824465689,
+          "q1": 0.9598918943902932,
+          "q3": 0.9600067573016405
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8867924528301887,
+        "full_cz_median": 0.925,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 1.2338095184975941,
+          "maximum": 18.205377645560212,
+          "median": 16.77350396751511,
+          "minimum": 13.388239371359731,
+          "q1": 16.337426714965204,
+          "q3": 17.5712362334628
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.007650677354032354,
+          "maximum": 2.1067230583324177,
+          "median": 2.0993705516185948,
+          "minimum": 2.084850790889819,
+          "q1": 2.0919689119170983,
+          "q3": 2.0996195892711307
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-ISING-LINE-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9905660377358491,
+        "full_cz_median": 0.975,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.22173884052353188,
+          "maximum": 3.8280678753373927,
+          "median": 3.527712350437416,
+          "minimum": 2.7999327202927646,
+          "q1": 3.4675015584084194,
+          "q3": 3.6892403989319513
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.008391938592816839,
+          "maximum": 2.1945512468417006,
+          "median": 2.1868808494335283,
+          "minimum": 2.17193020601185,
+          "q1": 2.178974638669212,
+          "q3": 2.1873665772620288
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.6666666666666667,
+        "full_cz_median": 1.2380952380952381,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.0304556223528194,
+          "maximum": 4.097012143704687,
+          "median": 3.982238642851523,
+          "minimum": 3.9421291353727064,
+          "q1": 3.9693298057220465,
+          "q3": 3.999785428074866
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0001738186294889532,
+          "maximum": 0.9395246162534011,
+          "median": 0.9389252301227928,
+          "minimum": 0.9384453673793776,
+          "q1": 0.938817645550141,
+          "q3": 0.93899146417963
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.031119814871840568,
+          "maximum": 7.715807234188511,
+          "median": 7.552200014579143,
+          "minimum": 7.514665557572785,
+          "q1": 7.539055375489277,
+          "q3": 7.570175190361118
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0015783807007490047,
+          "maximum": 2.2056519643287538,
+          "median": 2.2046018441739372,
+          "minimum": 2.2036000240804285,
+          "q1": 2.203865374194714,
+          "q3": 2.205443754895463
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.6,
+        "full_cz_median": 0.8076923076923077,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.024137337379369628,
+          "maximum": 1.9344579725745157,
+          "median": 1.89432999124439,
+          "minimum": 1.84073692173042,
+          "q1": 1.8910426070753756,
+          "q3": 1.9151799444547453
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0019558440441080904,
+          "maximum": 2.350183768150871,
+          "median": 2.3473614491812955,
+          "minimum": 2.346818373367046,
+          "q1": 2.3471486468202576,
+          "q3": 2.3491044908643657
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1521739130434783,
+        "full_cz_median": 1.135135135135135,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.0401562932104822,
+          "maximum": 5.016466128546166,
+          "median": 4.932673938357171,
+          "minimum": 4.856646297028274,
+          "q1": 4.911928164592036,
+          "q3": 4.952084457802518
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00018250106850659087,
+          "maximum": 0.9460107672288419,
+          "median": 0.9455936767370704,
+          "minimum": 0.9452676681374175,
+          "q1": 0.9454788919160755,
+          "q3": 0.9456613929845821
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8833333333333333,
+        "full_cz_median": 0.9333333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.4396917419295576,
+          "maximum": 11.06077565271543,
+          "median": 10.520332911633735,
+          "minimum": 9.91678725231176,
+          "q1": 10.41789887880842,
+          "q3": 10.857590620737978
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.017391892962870692,
+          "maximum": 2.2580704105250335,
+          "median": 2.241031227335456,
+          "minimum": 2.2357375467374263,
+          "q1": 2.240103348241267,
+          "q3": 2.2574952412041376
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7666666666666667,
+        "full_cz_median": 0.8222222222222222,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.12537375462448397,
+          "maximum": 2.2367415127779684,
+          "median": 2.133258330974643,
+          "minimum": 2.027630365689341,
+          "q1": 2.08326452667831,
+          "q3": 2.208638281302794
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.018811958901041148,
+          "maximum": 2.3881715190644415,
+          "median": 2.369658523064823,
+          "minimum": 2.364250391991316,
+          "q1": 2.3689729765121923,
+          "q3": 2.3877849354132334
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8924731182795699,
+        "full_cz_median": 1.0222222222222221,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07174281724453913,
+          "maximum": 4.945952177457147,
+          "median": 4.8552931518576345,
+          "minimum": 4.767208986769661,
+          "q1": 4.814601426319719,
+          "q3": 4.886344243564258
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00023363820677479996,
+          "maximum": 0.9566972847481579,
+          "median": 0.9564674438351474,
+          "minimum": 0.9562047478493403,
+          "q1": 0.9563654485104931,
+          "q3": 0.9565990867172679
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9880952380952381,
+        "full_cz_median": 1.0952380952380953,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.36094163915066346,
+          "maximum": 16.632613364823253,
+          "median": 16.242259743607228,
+          "minimum": 15.944389314199782,
+          "q1": 16.0524941083052,
+          "q3": 16.413435747455864
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.000278455959939361,
+          "maximum": 2.166161933603794,
+          "median": 2.1657764720190764,
+          "minimum": 2.1653907678244972,
+          "q1": 2.165621741538291,
+          "q3": 2.1659001974982304
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-GRID-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1071428571428572,
+        "full_cz_median": 1.0714285714285714,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.08172832442499756,
+          "maximum": 3.431129994178215,
+          "median": 3.367471844117665,
+          "minimum": 3.2515637189431685,
+          "q1": 3.3150636022823003,
+          "q3": 3.396791926707298
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0003616177947769472,
+          "maximum": 2.2646672379320196,
+          "median": 2.264360592390161,
+          "minimum": 2.2639396709323583,
+          "q1": 2.264138009825203,
+          "q3": 2.26449962761998
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.025,
+        "full_cz_median": 0.9722222222222222,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.10780882909621337,
+          "maximum": 5.469914571258606,
+          "median": 5.381767586266179,
+          "minimum": 5.291068497348859,
+          "q1": 5.317814644099531,
+          "q3": 5.425623473195745
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0005679097336818151,
+          "maximum": 0.9449046377256225,
+          "median": 0.9448080167697736,
+          "minimum": 0.9440797036658577,
+          "q1": 0.9443033120498052,
+          "q3": 0.944871221783487
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.025,
+        "full_cz_median": 0.9722222222222222,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.3800962281462308,
+          "maximum": 11.2694199929246,
+          "median": 10.929061183193518,
+          "minimum": 10.575029842616487,
+          "q1": 10.763366490015812,
+          "q3": 11.143462718162043
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00011842027355069007,
+          "maximum": 2.18860662047729,
+          "median": 2.188441838409955,
+          "minimum": 2.1866643000828305,
+          "q1": 2.188347445082598,
+          "q3": 2.188465865356149
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.046898736586326706,
+          "maximum": 2.082307973593272,
+          "median": 2.0452547220315855,
+          "minimum": 1.9771652604610896,
+          "q1": 2.0135914044519145,
+          "q3": 2.0604901410382412
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0013806334511352603,
+          "maximum": 2.317958434483984,
+          "median": 2.3162304588535254,
+          "minimum": 2.3144006626434743,
+          "q1": 2.31613772277814,
+          "q3": 2.317518356229275
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3725490196078431,
+        "full_cz_median": 1.103448275862069,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06083972277097782,
+          "maximum": 6.7235482504063855,
+          "median": 6.569625969989145,
+          "minimum": 6.515207119560975,
+          "q1": 6.553977724154418,
+          "q3": 6.614817446925396
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00038310074268044225,
+          "maximum": 0.9572447160682455,
+          "median": 0.9555900742911214,
+          "minimum": 0.9547374313047018,
+          "q1": 0.9552495591310689,
+          "q3": 0.9556326598737493
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1666666666666667,
+        "full_cz_median": 1.0847457627118644,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.33451229869803356,
+          "maximum": 16.108374497809514,
+          "median": 15.639541667203222,
+          "minimum": 15.119558885089074,
+          "q1": 15.420451604415682,
+          "q3": 15.754963903113715
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.003077247524363891,
+          "maximum": 2.1586654415987137,
+          "median": 2.1559235704369772,
+          "minimum": 2.154751650875682,
+          "q1": 2.1549615252096013,
+          "q3": 2.158038772733965
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.85,
+        "full_cz_median": 0.9830508474576272,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.04669698531447075,
+          "maximum": 2.434039549894355,
+          "median": 2.3723187768132608,
+          "minimum": 2.3005685635047874,
+          "q1": 2.3485687962972333,
+          "q3": 2.395265781611704
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.003101935844228354,
+          "maximum": 2.2589804011724812,
+          "median": 2.2562666906730877,
+          "minimum": 2.254967267715631,
+          "q1": 2.2550964741012978,
+          "q3": 2.258198409945526
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.22,
+        "full_cz_median": 1.3253968253968254,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.1427384532030711,
+          "maximum": 8.248334337041097,
+          "median": 8.167705257318175,
+          "minimum": 7.893728401113363,
+          "q1": 8.065798803401632,
+          "q3": 8.208537256604703
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0003546394651905427,
+          "maximum": 0.9971666415926984,
+          "median": 0.9950706880908402,
+          "minimum": 0.9947714707427514,
+          "q1": 0.9949151291190661,
+          "q3": 0.9952697685842566
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.196078431372549,
+        "full_cz_median": 1.3046875,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5366105404789074,
+          "maximum": 24.482317350230872,
+          "median": 23.454121926130185,
+          "minimum": 21.563444819634,
+          "q1": 23.07514242577084,
+          "q3": 23.611752966249746
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.022298260898205857,
+          "maximum": 2.146311187867667,
+          "median": 2.1387656314033014,
+          "minimum": 2.109772920203735,
+          "q1": 2.1169432668048604,
+          "q3": 2.1392415277030663
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QAOA-LINE-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9803921568627451,
+        "full_cz_median": 0.984375,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.04714227825070738,
+          "maximum": 3.0348733153852625,
+          "median": 2.85375730653166,
+          "minimum": 2.731718615577476,
+          "q1": 2.843290054690416,
+          "q3": 2.8904323329411232
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.022657188956148655,
+          "maximum": 2.1569971396189755,
+          "median": 2.1491810848547668,
+          "minimum": 2.115868215820468,
+          "q1": 2.1275270495926057,
+          "q3": 2.1501842385487544
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0769230769230769,
+        "full_cz_median": 1.08,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.031976522516286465,
+          "maximum": 3.5988032592219303,
+          "median": 3.5043293041070065,
+          "minimum": 3.259437270093608,
+          "q1": 3.47929122263648,
+          "q3": 3.5112677451527663
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00021854331604231891,
+          "maximum": 0.9473187166594349,
+          "median": 0.9471313942547839,
+          "minimum": 0.9468836900783223,
+          "q1": 0.9470353712872754,
+          "q3": 0.9472539146033178
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.15124423749822746,
+          "maximum": 11.314746706185844,
+          "median": 10.932130679827656,
+          "minimum": 10.853710456096207,
+          "q1": 10.900486618211822,
+          "q3": 11.05173085571005
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0028365109758214935,
+          "maximum": 2.1819570966794006,
+          "median": 2.1803152005600888,
+          "minimum": 2.1777164984745365,
+          "q1": 2.1783979706225245,
+          "q3": 2.181234481598346
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9285714285714286,
+        "full_cz_median": 0.9259259259259259,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07151418284608635,
+          "maximum": 3.329933837255441,
+          "median": 3.1394218666743257,
+          "minimum": 3.069493481428996,
+          "q1": 3.1209030887038405,
+          "q3": 3.192417271549927
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.003293763669148131,
+          "maximum": 2.303420310296192,
+          "median": 2.3020123344587837,
+          "minimum": 2.2994602206054915,
+          "q1": 2.299872328411011,
+          "q3": 2.303166092080159
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7909090909090909,
+        "full_cz_median": 0.875,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.03824279223699811,
+          "maximum": 4.349440432500186,
+          "median": 4.308624276386118,
+          "minimum": 4.2105595095474175,
+          "q1": 4.289615759235354,
+          "q3": 4.327858551472352
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00019945490704886826,
+          "maximum": 0.956440493926921,
+          "median": 0.9560519998396481,
+          "minimum": 0.9553429429732664,
+          "q1": 0.9559246749229211,
+          "q3": 0.95612412982997
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9157894736842105,
+        "full_cz_median": 1.013157894736842,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.41646341861950553,
+          "maximum": 16.594044465448757,
+          "median": 16.01980122151031,
+          "minimum": 15.506918504750839,
+          "q1": 15.910682406268888,
+          "q3": 16.327145824888394
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00436095327637398,
+          "maximum": 2.155842677443224,
+          "median": 2.148143947032332,
+          "minimum": 2.1462031418363297,
+          "q1": 2.147712287445078,
+          "q3": 2.152073240721452
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1578947368421053,
+        "full_cz_median": 1.1578947368421053,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07588152432675432,
+          "maximum": 3.843882492754812,
+          "median": 3.732037436630125,
+          "minimum": 3.625223679173301,
+          "q1": 3.6858415931495006,
+          "q3": 3.761723117476255
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.005111345421352276,
+          "maximum": 2.2548807558768287,
+          "median": 2.2466538152622535,
+          "minimum": 2.245845857199569,
+          "q1": 2.2465298948049273,
+          "q3": 2.2516412402262795
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9214659685863874,
+        "full_cz_median": 0.9509803921568627,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.026035728872173536,
+          "maximum": 5.40351656992606,
+          "median": 5.307947684558261,
+          "minimum": 5.243771870749244,
+          "q1": 5.299428642401094,
+          "q3": 5.325464371273267
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006354694288213114,
+          "maximum": 1.0045486956307934,
+          "median": 1.0043517299313254,
+          "minimum": 1.0034638628212058,
+          "q1": 1.0037656468339464,
+          "q3": 1.0044011162627677
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9119170984455959,
+        "full_cz_median": 1.0157068062827226,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.7713764752931596,
+          "maximum": 23.709586019553083,
+          "median": 22.349787096724945,
+          "minimum": 17.611069778678747,
+          "q1": 21.782771095872302,
+          "q3": 22.554147571165462
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.019795309435931774,
+          "maximum": 1.9983368390158,
+          "median": 1.971572837633749,
+          "minimum": 1.9657877008950053,
+          "q1": 1.9659271379758412,
+          "q3": 1.985722447411773
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-GRID-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9896373056994818,
+        "full_cz_median": 1.068062827225131,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.17454479011734314,
+          "maximum": 4.4589659152331285,
+          "median": 4.21709268397839,
+          "minimum": 3.2691093808939673,
+          "q1": 4.077641882596277,
+          "q3": 4.25218667271362
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.017946748895220965,
+          "maximum": 1.9911950300836472,
+          "median": 1.962957757863338,
+          "minimum": 1.9574570479811348,
+          "q1": 1.9588446295518533,
+          "q3": 1.9767913784470743
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7972972972972973,
+        "full_cz_median": 0.811965811965812,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06477809848581462,
+          "maximum": 4.130308686669112,
+          "median": 4.01298755458841,
+          "minimum": 3.9652952285457386,
+          "q1": 3.997252319237912,
+          "q3": 4.062030417723727
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0001297600071803462,
+          "maximum": 0.948514097028194,
+          "median": 0.9434573326299183,
+          "minimum": 0.9430972754741894,
+          "q1": 0.9433716657481828,
+          "q3": 0.9435014257553631
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7763157894736842,
+        "full_cz_median": 0.9595959595959596,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.1995368091546439,
+          "maximum": 12.777777887467758,
+          "median": 12.122340941375173,
+          "minimum": 11.95320338084569,
+          "q1": 12.016010953649857,
+          "q3": 12.215547762804501
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.02376422930356359,
+          "maximum": 2.189430942152651,
+          "median": 2.169377683174557,
+          "minimum": 2.148617378225153,
+          "q1": 2.1618830137536387,
+          "q3": 2.1856472430572023
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9736842105263158,
+        "full_cz_median": 1.1818181818181819,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.044075504642047125,
+          "maximum": 3.1206041866273417,
+          "median": 3.0292302992088453,
+          "minimum": 2.8940218002169114,
+          "q1": 3.0076520182418154,
+          "q3": 3.0517275228838625
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.03355506329334501,
+          "maximum": 2.31713058318131,
+          "median": 2.2997985128640543,
+          "minimum": 2.2766437286763432,
+          "q1": 2.283173639962066,
+          "q3": 2.316728703255411
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7333333333333333,
+        "full_cz_median": 0.7857142857142857,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.0631328103960147,
+          "maximum": 4.43040733797542,
+          "median": 4.320900978516574,
+          "minimum": 4.283198107079267,
+          "q1": 4.303008929333732,
+          "q3": 4.366141739729747
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0019245791150745983,
+          "maximum": 0.9571952199236795,
+          "median": 0.9568972009539349,
+          "minimum": 0.9547941767068273,
+          "q1": 0.9550496201888171,
+          "q3": 0.9569741993038917
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.967032967032967,
+        "full_cz_median": 0.9777777777777777,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5774854605167832,
+          "maximum": 17.104447757171027,
+          "median": 16.671493823840304,
+          "minimum": 15.84849178523655,
+          "q1": 16.221129597621676,
+          "q3": 16.79861505813846
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004680751957598428,
+          "maximum": 2.1314288908765655,
+          "median": 2.1232975901847295,
+          "minimum": 2.1187611408199643,
+          "q1": 2.1200545445311603,
+          "q3": 2.1247352964887587
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3186813186813187,
+        "full_cz_median": 1.2444444444444445,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.14003701478921027,
+          "maximum": 3.9440462671142456,
+          "median": 3.802867634646254,
+          "minimum": 3.677300935863604,
+          "q1": 3.744879339130386,
+          "q3": 3.8849163539195963
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0013046571357051562,
+          "maximum": 2.2267441860465116,
+          "median": 2.219050269392759,
+          "minimum": 2.218527183600713,
+          "q1": 2.218863142650253,
+          "q3": 2.2201677997859584
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.6990291262135923,
+        "full_cz_median": 0.7677902621722846,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.055762098565007356,
+          "maximum": 4.696701446256155,
+          "median": 4.621411072969622,
+          "minimum": 4.578816143423019,
+          "q1": 4.584734945871541,
+          "q3": 4.6404970444365485
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0006905902280031073,
+          "maximum": 0.9958141685527244,
+          "median": 0.994966322321559,
+          "minimum": 0.9941443739825546,
+          "q1": 0.994875161749551,
+          "q3": 0.9955657519775541
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.9863013698630136,
+        "full_cz_median": 0.9624413145539906,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.6820106466407054,
+          "maximum": 22.271613425613204,
+          "median": 21.693148628069245,
+          "minimum": 21.16308287269997,
+          "q1": 21.39184676808765,
+          "q3": 22.073857414728355
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004730157207928576,
+          "maximum": 1.9583592590819892,
+          "median": 1.9520958418500682,
+          "minimum": 1.9461542120534652,
+          "q1": 1.947989402036834,
+          "q3": 1.9527195592447626
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-QFT-LINE-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.4109589041095891,
+        "full_cz_median": 1.2535211267605635,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.16730511648153001,
+          "maximum": 4.82521812704224,
+          "median": 4.677885262526391,
+          "minimum": 4.602580604371886,
+          "q1": 4.6205064727760075,
+          "q3": 4.7878115892575375
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0037430643795326457,
+          "maximum": 1.9668547924239526,
+          "median": 1.9614457103386624,
+          "minimum": 1.9561432716548541,
+          "q1": 1.9585368589130367,
+          "q3": 1.9622799232925694
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7971014492753623,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06642267767997545,
+          "maximum": 4.276089856853687,
+          "median": 4.192057530573209,
+          "minimum": 4.141449778439922,
+          "q1": 4.166548689958045,
+          "q3": 4.2329713676380205
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0005840055717358794,
+          "maximum": 0.9432410340247267,
+          "median": 0.9423327249778704,
+          "minimum": 0.9420337944764919,
+          "q1": 0.9422107379832262,
+          "q3": 0.9427947435549621
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.2222222222222223,
+        "full_cz_median": 1.3333333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.5661035858442585,
+          "maximum": 12.31184884940936,
+          "median": 11.819150829714285,
+          "minimum": 11.289848481755827,
+          "q1": 11.62503947633379,
+          "q3": 12.191143062178048
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.006665668555451809,
+          "maximum": 2.218044209514656,
+          "median": 2.210786368808768,
+          "minimum": 2.2050424184490383,
+          "q1": 2.206867175493916,
+          "q3": 2.213532844049368
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.5333333333333334,
+        "full_cz_median": 1.3333333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.09010894389370883,
+          "maximum": 2.9520589775051462,
+          "median": 2.7957408343694414,
+          "minimum": 2.7105182630360978,
+          "q1": 2.784808708728409,
+          "q3": 2.8749176526221176
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.006933019615546598,
+          "maximum": 2.3517750946116416,
+          "median": 2.3464095346469427,
+          "minimum": 2.339128876142678,
+          "q1": 2.342183153676001,
+          "q3": 2.3491161732915478
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1967213114754098,
+        "full_cz_median": 1.25,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.028066482469104592,
+          "maximum": 3.7919835779597584,
+          "median": 3.722586937349334,
+          "minimum": 3.366413773690339,
+          "q1": 3.71762197874415,
+          "q3": 3.7456884612132546
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00017457436978940422,
+          "maximum": 0.9466268473849453,
+          "median": 0.9463474415296462,
+          "minimum": 0.9458928571428571,
+          "q1": 0.9462832850016188,
+          "q3": 0.9464578593714082
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.028169014084507,
+        "full_cz_median": 1.0465116279069768,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07571379592832805,
+          "maximum": 12.572985988126373,
+          "median": 12.381446856801865,
+          "minimum": 12.104738447155494,
+          "q1": 12.338887022334205,
+          "q3": 12.414600818262533
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.00514402934583158,
+          "maximum": 2.1921371563700855,
+          "median": 2.188438957910112,
+          "minimum": 2.180566992118574,
+          "q1": 2.1866566327492265,
+          "q3": 2.191800662095058
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8591549295774648,
+        "full_cz_median": 0.8372093023255814,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.04550417622606284,
+          "maximum": 3.6117389434463267,
+          "median": 3.32764788716207,
+          "minimum": 3.2748529360590553,
+          "q1": 3.2890248585139483,
+          "q3": 3.334529034740011
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.005177526344596561,
+          "maximum": 2.3173327027666115,
+          "median": 2.3121573120880408,
+          "minimum": 2.304140689330667,
+          "q1": 2.3108538663092126,
+          "q3": 2.316031392653809
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.3823529411764706,
+        "full_cz_median": 1.3958333333333333,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.04171473866491571,
+          "maximum": 4.566651314501793,
+          "median": 4.522058496388354,
+          "minimum": 4.456654782593822,
+          "q1": 4.493243976619665,
+          "q3": 4.5349587152845805
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0005001782394227217,
+          "maximum": 0.9563193243105729,
+          "median": 0.9515443723663879,
+          "minimum": 0.9513839422000611,
+          "q1": 0.9514971896726041,
+          "q3": 0.9519973679120268
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.032967032967033,
+        "full_cz_median": 1.098360655737705,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.4897530639884682,
+          "maximum": 15.330823015965004,
+          "median": 14.571275220255824,
+          "minimum": 14.12781872906294,
+          "q1": 14.41683270246449,
+          "q3": 14.906585766452958
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.03060994066849343,
+          "maximum": 2.1927767354596623,
+          "median": 2.184388050269681,
+          "minimum": 2.1495488246450947,
+          "q1": 2.1619649552686586,
+          "q3": 2.192574895937152
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-GRID-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 0.7472527472527473,
+        "full_cz_median": 0.7868852459016393,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.12221852234418451,
+          "maximum": 3.3777467170198263,
+          "median": 3.233516603845337,
+          "minimum": 3.149300393375274,
+          "q1": 3.176536995516234,
+          "q3": 3.2987555178604184
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.03257906310303671,
+          "maximum": 2.3046435272045027,
+          "median": 2.29568086677644,
+          "minimum": 2.259037875739985,
+          "q1": 2.271371119389865,
+          "q3": 2.3039501824929016
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.92,
+        "full_cz_median": 0.9166666666666666,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07591212922284107,
+          "maximum": 5.028319899746812,
+          "median": 4.937117299014256,
+          "minimum": 4.824643821883868,
+          "q1": 4.88773597776888,
+          "q3": 4.963648106991721
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0008278056605850459,
+          "maximum": 0.9481911453957586,
+          "median": 0.9441947734384161,
+          "minimum": 0.9439366550398453,
+          "q1": 0.9440208259076327,
+          "q3": 0.9448486315682177
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.1566897187470282,
+          "maximum": 13.756566768547973,
+          "median": 13.59649028855653,
+          "minimum": 13.404936218610453,
+          "q1": 13.5187105672446,
+          "q3": 13.675400285991628
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.018954242235924124,
+          "maximum": 2.1998818665091555,
+          "median": 2.1899122946915224,
+          "minimum": 2.1680018712356004,
+          "q1": 2.171096552164879,
+          "q3": 2.190050794400803
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-06",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0869565217391304,
+        "full_cz_median": 1.0909090909090908,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.08126432751489565,
+          "maximum": 2.8219514831615027,
+          "median": 2.7651155323621066,
+          "minimum": 2.6783783988519216,
+          "q1": 2.7210662245134527,
+          "q3": 2.8023305520283484
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.022825623323387223,
+          "maximum": 2.320082693443591,
+          "median": 2.318478506783187,
+          "minimum": 2.2955250073120794,
+          "q1": 2.2969824247897397,
+          "q3": 2.319808048113127
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0277777777777777,
+        "full_cz_median": 0.9803921568627451,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.09648310208059652,
+          "maximum": 5.152627887493932,
+          "median": 5.080328305982638,
+          "minimum": 4.9862032772462435,
+          "q1": 5.029692345966653,
+          "q3": 5.12617544804725
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.004325107234865122,
+          "maximum": 0.9511003689098079,
+          "median": 0.9466841380218846,
+          "minimum": 0.9458284610300473,
+          "q1": 0.9465904251790596,
+          "q3": 0.9509155324139247
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.088235294117647,
+        "full_cz_median": 1.0416666666666667,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.20969585682558112,
+          "maximum": 14.725721121600028,
+          "median": 14.301475637540157,
+          "minimum": 13.774427138655502,
+          "q1": 14.198216847691606,
+          "q3": 14.407912704517187
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.010135179740178746,
+          "maximum": 2.191780018761726,
+          "median": 2.181426436684922,
+          "minimum": 2.181077437129961,
+          "q1": 2.181197332863878,
+          "q3": 2.1913325126040566
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-08",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0588235294117647,
+        "full_cz_median": 1.0625,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.06548828881159752,
+          "maximum": 2.8598617246796922,
+          "median": 2.8089695197707707,
+          "minimum": 2.739350956869865,
+          "q1": 2.787019980803138,
+          "q3": 2.8525082696147357
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.0010934595977261097,
+          "maximum": 2.3064024390243905,
+          "median": 2.3041974440145387,
+          "minimum": 2.3039451316020867,
+          "q1": 2.3041388204947824,
+          "q3": 2.3052322800925085
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "flagquantum-ordinary-restored",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 0.8554216867469879,
+        "full_cz_median": 0.9047619047619048,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.10615012692248715,
+          "maximum": 4.965217068317761,
+          "median": 4.8917933628609696,
+          "minimum": 4.460657452270969,
+          "q1": 4.845719631110632,
+          "q3": 4.951869758033119
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.005461332926385953,
+          "maximum": 0.9550470378845665,
+          "median": 0.949349710092753,
+          "minimum": 0.9489832231825115,
+          "q1": 0.9492439036296418,
+          "q3": 0.9547052365560278
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "flagquantum-ordinary-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "cirq-route-cz-restored",
+      "ratios": {
+        "dependency_depth_median": 1.0,
+        "full_cz_median": 1.0,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.3901613381751652,
+          "maximum": 14.930443428719162,
+          "median": 14.541768194162621,
+          "minimum": 14.184839397162238,
+          "q1": 14.398872640519713,
+          "q3": 14.789033978694878
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.023310196287237517,
+          "maximum": 2.18480158268358,
+          "median": 2.160087240552386,
+          "minimum": 2.1456980286223346,
+          "q1": 2.146421742298833,
+          "q3": 2.1697319385860707
+        }
+      },
+      "statuses": {
+        "cirq-route-cz-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    },
+    {
+      "both_complete": true,
+      "denominator_workflow": "qiskit-transpile-restored",
+      "instance": "APP-REPETITION-LINE-12",
+      "numerator_workflow": "flagquantum-ordinary-restored",
+      "ratios": {
+        "dependency_depth_median": 1.1690140845070423,
+        "full_cz_median": 1.105263157894737,
+        "paired_block_compile_time": {
+          "count": 10,
+          "interquartile_range": 0.07039796429358258,
+          "maximum": 3.347139651155663,
+          "median": 2.989378119805645,
+          "minimum": 2.8919120189450336,
+          "q1": 2.934078484912083,
+          "q3": 3.0044764492056655
+        },
+        "paired_block_memory_peak": {
+          "count": 10,
+          "interquartile_range": 0.021361836820078306,
+          "maximum": 2.288815176908752,
+          "median": 2.2626288757236477,
+          "minimum": 2.260344827586207,
+          "q1": 2.26097641072456,
+          "q3": 2.2823382475446383
+        }
+      },
+      "statuses": {
+        "flagquantum-ordinary-restored": "accepted",
+        "qiskit-transpile-restored": "accepted"
+      }
+    }
+  ],
+  "publication_eligible": false,
+  "schema_version": 1,
+  "source_summary_sha256": "415bf24748961f840025ecf26c5b8847cc46033fa0f69bb3fb95c74226e79105",
+  "workflow_profile": "ordinary"
+}

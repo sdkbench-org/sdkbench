@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-11-19T18:25:22.751958+00:00",
+  "flagquantum_revision": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+  "sdkbench_revision": "9e3992d14342601662443b6720dd6757905c3f3b",
+  "profiles": [
+    "ordinary",
+    "target-artifact"
+  ],
+  "comparator_versions": {
+    "qiskit": "2.6.2",
+    "cirq-core": "1.7.0"
+  },
+  "compiler_main_smoke_run": 44585780031,
+  "compiler_main_smoke_conclusion": "success",
+  "status": "dispatched_once_each",
+  "runs": {
+    "ordinary": 44587635615,
+    "target-artifact": 44587642527
+  }
+}

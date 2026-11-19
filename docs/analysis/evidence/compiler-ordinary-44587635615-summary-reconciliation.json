@@ -1,0 +1,450 @@
+{
+  "all_other_local_summary_fields_unchanged": true,
+  "differences": [
+    {
+      "hosted_maximum_semantic_error": 7.945078971113882e-15,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 7.950506997591072e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.4562124874641876e-15,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 5.431022213568952e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2546625440110784e-14,
+      "instance": "APP-HOPPING-LINE-06",
+      "local_maximum_semantic_error": 1.1993307552444478e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.5995906900691105e-14,
+      "instance": "APP-HOPPING-GRID-06",
+      "local_maximum_semantic_error": 1.509903313490213e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 2.9303171598054862e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 1.895778961066142e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.7185879474016e-14,
+      "instance": "APP-REPETITION-LINE-06",
+      "local_maximum_semantic_error": 1.725709470544147e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.318959776503784e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 4.828592746002905e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.556316823877836e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 3.159049096299604e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.864580430638685e-15,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 8.099683797877964e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.611817743156661e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 4.559354937679021e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.328552479068552e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 7.551203270057867e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0438421584269341e-14,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 1.0160817837115698e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.337998508784373e-15,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 8.676536775128875e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.11111714091457e-15,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 6.833567016980842e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0078303285574499e-14,
+      "instance": "APP-REPETITION-LINE-08",
+      "local_maximum_semantic_error": 9.735374480328098e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.692950751536395e-15,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 7.24778014375058e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.3706309149268031e-14,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 1.3645613173589771e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.86229460092324e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 1.0091165437130179e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.245773440419782e-15,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 9.750871862941462e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.389045635292782e-15,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 7.621420282514213e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.1879685831379505e-14,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 1.1657636046363317e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.609864098852541e-14,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 1.5043901813766525e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.1654229166500399e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 1.1524715281200814e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.898100006179663e-15,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 8.867420456125497e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.811555157968702e-15,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 7.972375408414345e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.082208675455819e-15,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 6.122668601968501e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.8160823301169858e-15,
+      "instance": "APP-QAOA-LINE-06",
+      "local_maximum_semantic_error": 1.8452761694870047e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.319270561714127e-15,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 4.308824046522781e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.8391341617266757e-14,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 1.839465339681759e-14,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.4457739489332885e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 3.4293583382910304e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.6136471996107275e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 1.6446788765263184e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.7388818282700985e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 1.9223616666200533e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.2854571976242787e-15,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 2.3876248941963683e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.4387028659243803e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 1.9641850382783467e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.267622835648261e-15,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 4.199269307755593e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.8250515126511132e-14,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 1.8222713855715666e-14,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.281593980460266e-14,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 1.283556586842441e-14,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.965479214789474e-15,
+      "instance": "APP-REPETITION-LINE-08",
+      "local_maximum_semantic_error": 3.979805003092568e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.655330759269495e-15,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 4.723343357811471e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.210365485844777e-15,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 4.8739296574786475e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.6156647945527624e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 3.631171975936043e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.36255104310828e-15,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 3.4597745288321243e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.6566061640417864e-15,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 3.739696897365126e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.3692211635563985e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 5.378602565537622e-14,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.21368474112597e-14,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 5.204472749647753e-14,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.3914935841127266e-15,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 2.474608423806412e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.814145307657198e-15,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 3.875954584124818e-15,
+      "sdk": "qiskit-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.5065547695649203e-15,
+      "instance": "APP-QAOA-LINE-06",
+      "local_maximum_semantic_error": 2.5129527840075525e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.944941983577414e-15,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 6.990879649140764e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.921057752913316e-14,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 2.916597302166838e-14,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.1309716410295114e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 3.143648250621278e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.04746621261025e-15,
+      "instance": "APP-REPETITION-LINE-06",
+      "local_maximum_semantic_error": 9.090957362871364e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0866724356409397e-14,
+      "instance": "APP-REPETITION-GRID-06",
+      "local_maximum_semantic_error": 1.0853610145910271e-14,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.623746175455571e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 2.4230156504798003e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.7115313159311418e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 1.5515838457795456e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.5634869929928818e-15,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 2.5018537765542007e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.87011978114731e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 2.864620473168085e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.586387972437495e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 3.614204670886888e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.142932254379626e-15,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 4.199836829648326e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.124933588283614e-15,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 2.1416803579322102e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.104405337175168e-15,
+      "instance": "APP-REPETITION-LINE-08",
+      "local_maximum_semantic_error": 3.976515735881105e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.855927796350635e-15,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 4.009888267732675e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.479500338504557e-15,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 6.540208428319177e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.130105195324123e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 3.4400122020558205e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.8271969516545033e-14,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 2.814853291154892e-14,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.112095314311144e-15,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 4.043273888810479e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.565101764453908e-15,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 2.520261287364686e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.298921210346403e-15,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 5.593643756042162e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.4591502649036967e-15,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 2.4973945783860897e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.6146374660448706e-15,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 2.6011228427125407e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.1679574341491606e-15,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 2.1960256329892053e-15,
+      "sdk": "cirq-release-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.456432934547248e-15,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 3.532271868319066e-15,
+      "sdk": "cirq-release-restored"
+    }
+  ],
+  "hosted_summary_sha256": "b8d0c7552ffe5fc61a805dee55a31ff469feb6e008ec67d6e114470593979926",
+  "interpretation": "The local/hosted summary digest difference is fully accounted for by independently recomputed semantic-error values. Original local and hosted errors remain retained; both use the unchanged semantic threshold. Pair metrics and coverage were already independently matched.",
+  "only_fields_replaced": "cases[*].maximum_semantic_error",
+  "profile": "ordinary",
+  "reconstructed_digest_matches_hosted": true,
+  "reconstructed_hosted_summary_sha256": "b8d0c7552ffe5fc61a805dee55a31ff469feb6e008ec67d6e114470593979926",
+  "schema_version": 1
+}
