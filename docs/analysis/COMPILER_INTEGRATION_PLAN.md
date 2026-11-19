@@ -54,3 +54,11 @@ Evaluate generated families, application circuits and held-out topologies in add
 ## Proposed implementation boundary
 
 FlagQuantum should own the IR analyses, target-dependent passes, orchestration and public API. SDKBench should own the neutral task specification, independent acceptance, resource enforcement and transparent adapter registration. Improvements go upstream and are then measured as a new participant version. This document does not modify FlagQuantum, claim that either compiler has been ported, or replace historical results.
+
+## Candidate qualification follow-through
+
+The [compiler candidate qualification protocol](COMPILER_CANDIDATE_QUALIFICATION.md)
+specifies separate source/configuration registration, unchanged frozen routing
+acceptance and resource limits, layout-aware attribution, and prospective
+held-out gates. It is a plan awaiting implementation and evidence, not a
+replacement for the historical routing results.
