@@ -214,6 +214,17 @@ def test_full_candidate_replay_and_resealed_seed_corruption(bundle, monkeypatch,
         replay(root, bundle)
 
 
+def test_replay_accepts_counterbalance_order_independent_of_sorted_json(bundle, monkeypatch, tmp_path):
+    from sdkbench.candidates.replay import replay
+    monkeypatch.setattr(provenance, 'verify_runtime', lambda _: (_ for _ in ()).throw(ContractError('Not installed')))
+    registrations = {name: registration(name) for name in ('candidate-z', 'candidate-a')}
+    root = tmp_path / 'run'
+    campaign.run_campaign(bundle, directory=root, cgroup_parent=tmp_path, cpu=0,
+                          suite='compiler-candidate', candidates=registrations)
+    seal(root)
+    assert replay(root, bundle)['blocks_verified'] == 60
+
+
 def test_replay_preserves_denied_candidates_and_rejects_false_acceptance(bundle, monkeypatch, tmp_path):
     from sdkbench.candidates.replay import replay
     def reject(_):

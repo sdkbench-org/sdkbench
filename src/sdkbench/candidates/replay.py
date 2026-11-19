@@ -25,7 +25,8 @@ def replay(directory, bundle):
     registrations = {name: Registration(**raw)
                      for name, raw in read_json(root / 'registrations.json').items()}
     instances = [case['id'] for case in bundle.plan['instances'] if case['kind'] == 'route']
-    require(report['instances'] == instances and report['sdks'] == list(registrations),
+    require(report['instances'] == instances and len(report['sdks']) == len(registrations)
+            and set(report['sdks']) == set(registrations),
             'Incomplete candidate campaign scope')
     expected_pairs = {(name, instance) for name in registrations for instance in instances}
     outcomes = {(row['sdk'], row['instance']): row for row in report['outcomes']}
