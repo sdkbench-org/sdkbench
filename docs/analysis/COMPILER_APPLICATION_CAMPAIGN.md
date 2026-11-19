@@ -223,3 +223,28 @@ own freeze and single draw; separate campaigns must not be treated as matched
 case pairs or combined to select a favorable result. Preregister intended
 profiles before execution and retain both when both are run. Neither profile
 has been executed as a prospective campaign at the time of this change.
+
+## Combined compiler integration rehearsal
+
+A local merge of the layer-lookahead revision
+`5e7fe0ad824022b3d5ea160062b70603f09a20a5` and CZ cleanup revision
+`abde94db5cef007495cc1bce41ce36f673747cff` produced source tree
+`8124ea2d3bdb7923811ae250bf66cbc6ed14c194`. Both source parents are still
+pre-integration candidates. The merge applied without conflicts.
+
+The combination passed 1,629 selected compiler-related tests across 56 files
+in 42.31 seconds and all 42 SDKBench native adapter conformance cases in
+22.87 seconds. Source imports were checked to load both FlagQuantum and its
+CZ cleanup from the combined checkout. The compiler selection includes
+phase/gradient routing, symbolic preservation, CZ cleanup, target block
+optimization, physical provenance and artifact pipeline checks. It is not
+the complete repository suite.
+
+[The rehearsal record](evidence/compiler-combined-20261119.json) lists every
+selected compiler test file, source parents/tree, environment and log hashes.
+Reconstruct the source by merging the second parent into the first and checking
+the tree hash; the local merge commit itself is not published or a release
+identity. These passing checks establish local compatibility of the changes,
+not a resource-qualified comparison. Full CI, main-branch integration and both
+prospective profiles remain required. Test elapsed times are not compilation
+performance measurements.
