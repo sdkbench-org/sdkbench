@@ -99,3 +99,82 @@ Local validation: eight preparation/bundle tests pass; Ruff and YAML/shell
 syntax checks pass. The broader local suite exceeded its 300-second budget and
 a runner-inclusive subset exceeded 180 seconds; neither is reported as passing.
 Full Linux CI and the actual campaign remain required.
+
+## Descriptive paired comparisons
+
+After the campaign completes, run:
+
+```bash
+PYTHONPATH=src python tools/compare_compiler_applications.py \
+  --directory candidate-evidence/campaign \
+  --bundle candidate-evidence/preparation/cohort \
+  --output candidate-evidence/comparisons.json
+```
+
+The command invokes independent replay through the existing summary tool before
+comparison. Every case and every matched-restoration workflow remains in the
+coverage denominator. All three unordered participant pairs are emitted for
+each case, with explicit numerator/denominator names and original statuses.
+Neither participant receives a performance ratio if either complete case failed,
+even when some measured records passed. No across-case winner is calculated.
+
+For a fully accepted pair, full-CZ and dependency-depth ratios divide the
+independently recomputed record medians. Timing ratios pair identical block
+indices and divide each block's three-measurement median. Memory ratios pair
+whole-process kernel peaks by block. The report retains count, median, range
+and inclusive quartiles of the ten ratios. These are descriptive variation,
+not confidence intervals, significance tests or proof of a speedup. Zero,
+missing and nonfinite inputs produce an undefined ratio without deleting the
+case or selecting only convenient blocks. Memory includes import, warmup and
+export costs. A lower ratio favors the named numerator only for that metric
+and case; correctness, resource failures and other metrics remain separate.
+
+The output binds the recomputed summary digest and independent replay report.
+It remains publication-ineligible and supports no global SDK ranking. The
+eight focused report tests cover exact ratios, immutable input, failures,
+undefined values, refused incomplete/mixed comparisons and CLI replay of a
+sealed synthetic campaign with all three participants denied access. These
+synthetic results are not measurements of any SDK.
+
+## Current compiler development conformance
+
+On 2026-11-19, the unmodified native adapter conformance suite passed all
+42 cases in 130.25 seconds against FlagQuantum source revision
+`5e7fe0ad824022b3d5ea160062b70603f09a20a5`, Qiskit 2.6.2 and Cirq 1.7.0.
+The environment was macOS 27.0 ARM64, Python 3.12.14, PyTorch 2.14.0 and
+NumPy 2.5.5, with numerical thread counts set to one. FlagQuantum and its
+SABRE module were imported from the candidate source checkout, not an older
+installed wheel. This compiler revision was still awaiting integration.
+
+```bash
+SDKBENCH_NATIVE_CANDIDATE_TESTS=1 OMP_NUM_THREADS=1 \
+  OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  PYTHONPATH=src:/path/to/FlagQuantum:/path/to/native-extension \
+  python -m pytest tests/test_candidate_native_adapters.py -q
+```
+
+The suite covers the original frozen routing input plus all five application
+families at six qubits across seven registered workflows. Each output passes
+the unchanged independent full-operator check, and restored workflows must
+return identity final layout. These checks establish development adapter
+conformance only: they are neither the prospective draw nor a supervised
+Linux campaign, do not cover larger widths or every topology, and provide no
+comparative timing or memory result. Pytest elapsed time is suite overhead,
+not an SDK compilation measurement.
+
+The three-participant campaign above measures ordinary compiler workflows.
+At the inspected FlagQuantum revision, the ordinary adapter calls
+`compiler.compile` followed by `legalize_native_gates`. It does not invoke
+the automatic CZ block optimization owned by `legalize_circuit_for_target`.
+Consequently this campaign cannot establish the benefit of the Cirq-derived
+CZ cleanup or the target-aware block resynthesis. Absence of that pass in the
+ordinary workflow is itself a product limitation, not permission to insert
+it privately into the benchmark adapter.
+
+The separately registered `flagquantum-target-artifact` workflow exercises
+that target-aware path and retains its block-rewrite evidence. It also includes
+target validation, artifact construction and serialization in its timed work.
+The 42 conformance tests include this workflow, but the three-participant
+prospective campaign does not. A target-aware campaign must freeze this distinct
+workflow before its draw, retain those costs and report its result separately;
+ordinary-path results must not be presented as evidence for all compiler changes.
