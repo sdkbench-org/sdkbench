@@ -6,6 +6,14 @@ on:
         description: 'Full 40-character FlagQuantum commit already merged into main'
         required: true
         type: string
+      workflow_profile:
+        description: 'Ordinary compiler or target-artifact path (includes artifact overhead)'
+        required: true
+        default: ordinary
+        type: choice
+        options:
+          - ordinary
+          - target-artifact
 permissions:
   contents: read
 jobs:
@@ -18,6 +26,7 @@ jobs:
       PYTHONPATH: ${{ github.workspace }}/src
       MPLCONFIGDIR: /tmp/sdkbench-candidate-matplotlib
       FQ_REVISION: ${{ inputs.flagquantum_revision }}
+      WORKFLOW_PROFILE: ${{ inputs.workflow_profile }}
     steps:
       - uses: actions/checkout@v7.0.1
       - name: Retrieve the immutable FlagQuantum candidate
@@ -34,6 +43,11 @@ jobs:
           [[ "$FQ_REVISION" =~ ^[0-9a-f]{40}$ ]]
           test "$(git -C candidate-source/FlagQuantum rev-parse HEAD)" = "$FQ_REVISION"
           git -C candidate-source/FlagQuantum merge-base --is-ancestor "$FQ_REVISION" origin/main
+          case "$WORKFLOW_PROFILE" in
+            ordinary) echo 'FQ_WORKFLOW=flagquantum-ordinary-restored' >> "$GITHUB_ENV" ;;
+            target-artifact) echo 'FQ_WORKFLOW=flagquantum-target-artifact' >> "$GITHUB_ENV" ;;
+            *) echo 'Unknown workflow profile' >&2; exit 1 ;;
+          esac
       - uses: actions/setup-python@v7.1.0
         with:
           python-version: '3.12.14'
@@ -82,7 +96,7 @@ jobs:
         timeout-minutes: 10
         run: |
           python -m sdkbench.candidates.cli register --stack-id fq-source-restored \
-            --workflow flagquantum-ordinary-restored --build-directory candidate-evidence/flagquantum-build \
+            --workflow "$FQ_WORKFLOW" --build-directory candidate-evidence/flagquantum-build \
             --output candidate-evidence/fq-restored.json
           python -m sdkbench.candidates.cli register-wheel --stack-id qiskit-release-restored \
             --workflow qiskit-transpile-restored --wheel candidate-evidence/releases/qiskit-*.whl \
@@ -94,6 +108,7 @@ jobs:
         timeout-minutes: 10
         run: |
           python tools/prepare_compiler_applications.py \
+            --profile "$WORKFLOW_PROFILE" \
             --registration candidate-evidence/fq-restored.json \
             --registration candidate-evidence/qiskit-restored.json \
             --registration candidate-evidence/cirq-restored.json \
@@ -118,6 +133,7 @@ jobs:
             --registration candidate-evidence/cirq-restored.json \
             --directory candidate-evidence/campaign > candidate-evidence/campaign-stdout.json
       - name: Independently replay every retained outcome
+        id: replay
         if: always()
         timeout-minutes: 30
         run: |
@@ -129,6 +145,15 @@ jobs:
             echo 'No complete campaign manifest was produced.'
             exit 1
           fi
+      - name: Compare complete workflows without omitting failures
+        if: ${{ always() && steps.replay.outcome == 'success' }}
+        timeout-minutes: 30
+        run: |
+          python tools/compare_compiler_applications.py \
+            --profile "$WORKFLOW_PROFILE" \
+            --directory candidate-evidence/campaign \
+            --bundle candidate-evidence/preparation/cohort \
+            --output candidate-evidence/comparisons.json
       - name: Retain builds, failures, registrations and raw campaign evidence
         if: always()
         uses: actions/upload-artifact@v7.0.2

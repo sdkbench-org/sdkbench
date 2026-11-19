@@ -67,7 +67,8 @@ failure and cannot replace it in reported results.
 ## Execute and inspect
 
 Dispatch `.github/workflows/compiler-applications.yml` with the integrated
-40-character compiler commit. The workflow itself must be merged before the
+40-character compiler commit and a declared `workflow_profile`: `ordinary`
+(the default) or `target-artifact`. The workflow itself must be merged before the
 production run, so its checkout is an immutable integrated harness revision.
 No automatic run is triggered by pushing this workflow.
 
@@ -131,7 +132,7 @@ and case; correctness, resource failures and other metrics remain separate.
 
 The output binds the recomputed summary digest and independent replay report.
 It remains publication-ineligible and supports no global SDK ranking. The
-eight focused report tests cover exact ratios, immutable input, failures,
+Focused report tests cover exact ratios, immutable input, failures,
 undefined values, refused incomplete/mixed comparisons and CLI replay of a
 sealed synthetic campaign with all three participants denied access. These
 synthetic results are not measurements of any SDK.
@@ -178,3 +179,72 @@ The 42 conformance tests include this workflow, but the three-participant
 prospective campaign does not. A target-aware campaign must freeze this distinct
 workflow before its draw, retain those costs and report its result separately;
 ordinary-path results must not be presented as evidence for all compiler changes.
+
+## Target-artifact qualification profile
+
+The `target-artifact` dispatch profile selects the existing
+`flagquantum-target-artifact` registration instead of
+`flagquantum-ordinary-restored`. Qiskit and Cirq retain their existing restored
+registrations. There are exactly three participants per campaign; no extra
+FlagQuantum result is selected after inspecting outcomes. The profile is
+validated against the complete registration set and written into the freeze
+before entropy is requested. Unknown or mixed profiles fail before the draw.
+
+Both profiles retain the same 30-case selection rule, independent reference
+generation, acceptance, per-compilation and cumulative resource bounds, ten
+blocks and all failures. The target profile enables measurement of the existing
+target-aware CZ pass without changing any participant adapter or injecting a
+benchmark-only optimization. Whole-workflow time and memory include FlagQuantum
+target validation, provenance, artifact construction and serialization. This
+is an end-to-end target-artifact versus compiler-workflow comparison, not a
+pure synthesis timing comparison. The report carries this distinction in
+`comparison_scope` and retains exact workflow names in each pair.
+
+For manual preparation and reporting, pass the same profile explicitly:
+
+```bash
+PYTHONPATH=src python tools/prepare_compiler_applications.py \
+  --profile target-artifact \
+  --registration candidate-evidence/fq-target.json \
+  --registration candidate-evidence/qiskit-restored.json \
+  --registration candidate-evidence/cirq-restored.json \
+  --output candidate-evidence/preparation
+PYTHONPATH=src python tools/compare_compiler_applications.py \
+  --profile target-artifact \
+  --directory candidate-evidence/campaign \
+  --bundle candidate-evidence/preparation/cohort \
+  --output candidate-evidence/comparisons.json
+```
+
+The workflow generates the corresponding source registration, independently
+replays the completed campaign and writes this comparison before uploading
+evidence. Existing output paths cannot be overwritten. Each profile uses its
+own freeze and single draw; separate campaigns must not be treated as matched
+case pairs or combined to select a favorable result. Preregister intended
+profiles before execution and retain both when both are run. Neither profile
+has been executed as a prospective campaign at the time of this change.
+
+## Combined compiler integration rehearsal
+
+A local merge of the layer-lookahead revision
+`5e7fe0ad824022b3d5ea160062b70603f09a20a5` and CZ cleanup revision
+`abde94db5cef007495cc1bce41ce36f673747cff` produced source tree
+`8124ea2d3bdb7923811ae250bf66cbc6ed14c194`. Both source parents are still
+pre-integration candidates. The merge applied without conflicts.
+
+The combination passed 1,629 selected compiler-related tests across 56 files
+in 42.31 seconds and all 42 SDKBench native adapter conformance cases in
+22.87 seconds. Source imports were checked to load both FlagQuantum and its
+CZ cleanup from the combined checkout. The compiler selection includes
+phase/gradient routing, symbolic preservation, CZ cleanup, target block
+optimization, physical provenance and artifact pipeline checks. It is not
+the complete repository suite.
+
+[The rehearsal record](evidence/compiler-combined-20261119.json) lists every
+selected compiler test file, source parents/tree, environment and log hashes.
+Reconstruct the source by merging the second parent into the first and checking
+the tree hash; the local merge commit itself is not published or a release
+identity. These passing checks establish local compatibility of the changes,
+not a resource-qualified comparison. Full CI, main-branch integration and both
+prospective profiles remain required. Test elapsed times are not compilation
+performance measurements.

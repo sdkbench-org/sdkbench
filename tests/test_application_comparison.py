@@ -115,8 +115,9 @@ def test_incomplete_or_mixed_controls_fail_closed(tool, fault):
         tool.compare(source)
 
 
+@pytest.mark.parametrize("profile", ["ordinary", "target-artifact"])
 def test_cli_replays_denied_campaign_and_keeps_all_participants(
-    tool, monkeypatch, tmp_path
+    tool, monkeypatch, tmp_path, profile
 ):
     from sdkbench.candidates import provenance
     from sdkbench.p0 import Bundle
@@ -129,7 +130,8 @@ def test_cli_replays_denied_campaign_and_keeps_all_participants(
 
     monkeypatch.setattr(provenance, "verify_runtime", reject)
     bundle = Bundle(ROOT / "docs/implementation")
-    candidates = {name: registration(name, name) for name in sorted(tool.WORKFLOWS)}
+    workflows = tool.WORKFLOWS if profile == "ordinary" else tool.TARGET_WORKFLOWS
+    candidates = {name: registration(name, name) for name in sorted(workflows)}
     root = tmp_path / "campaign"
     campaign.run_campaign(
         bundle,
@@ -151,15 +153,34 @@ def test_cli_replays_denied_campaign_and_keeps_all_participants(
             str(bundle.directory),
             "--output",
             str(output),
+            "--profile",
+            profile,
         ],
     )
     tool.main()
     result = read_json(output)
     assert result["independent_replay"]["blocks_verified"] == 90
     assert result["case_count"] == 3 and len(result["pairs"]) == 9
-    assert set(result["coverage"]) == tool.WORKFLOWS
+    assert set(result["coverage"]) == workflows
+    assert result["workflow_profile"] == profile
     assert all(row == {"access-blocked": 3} for row in result["coverage"].values())
     assert all(row["ratios"] is None for row in result["pairs"])
     assert result["publication_eligible"] is False
     with pytest.raises(FileExistsError):
         tool.main()
+
+
+def test_target_artifact_comparison_discloses_overhead_and_rejects_mixed_profiles(tool):
+    source = summary(tool)
+    for row in source["cases"]:
+        if row["workflow"] == "flagquantum-ordinary-restored":
+            row["workflow"] = "flagquantum-target-artifact"
+    with pytest.raises(ContractError):
+        tool.compare(source)
+    result = tool.compare(source, profile="target-artifact")
+    assert len(result["pairs"]) == 6
+    assert "serialization" in result["comparison_scope"]
+    assert "Not a pure compiler timing comparison" in result["comparison_scope"]
+    assert set(result["coverage"]) == tool.TARGET_WORKFLOWS
+    with pytest.raises(ContractError):
+        tool.compare(source, profile="unknown")

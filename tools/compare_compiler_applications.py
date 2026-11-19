@@ -20,6 +20,9 @@ WORKFLOWS = frozenset(
         "cirq-route-cz-restored",
     }
 )
+TARGET_WORKFLOWS = (WORKFLOWS - {"flagquantum-ordinary-restored"}) | {
+    "flagquantum-target-artifact"
+}
 
 
 def _positive_ratio(numerator: float, denominator: float) -> float | None:
@@ -31,14 +34,18 @@ def _positive_ratio(numerator: float, denominator: float) -> float | None:
     return value if math.isfinite(value) else None
 
 
-def compare(summary: dict) -> dict:
+def compare(summary: dict, *, profile: str = "ordinary") -> dict:
     """Describe all three pairings; failed cases receive no performance ratios."""
     require(summary["publication_eligible"] is False, "Unexpected publication claim")
+    require(profile in {"ordinary", "target-artifact"}, "Unknown workflow profile")
+    expected = WORKFLOWS if profile == "ordinary" else TARGET_WORKFLOWS
     by_case = {}
     coverage = {}
     for row in summary["cases"]:
         workflow = row["workflow"]
-        require(workflow in WORKFLOWS, "Expected matched-restoration workflows")
+        require(
+            workflow in expected, "Expected matched-restoration workflows for profile"
+        )
         current = by_case.setdefault(row["instance"], {})
         require(workflow not in current, "Duplicate workflow within a case")
         current[workflow] = row
@@ -46,8 +53,8 @@ def compare(summary: dict) -> dict:
     require(by_case, "Empty comparison")
     pairs = []
     for instance, rows in sorted(by_case.items()):
-        require(set(rows) == WORKFLOWS, "Missing workflow within a case")
-        for first, second in combinations(sorted(WORKFLOWS), 2):
+        require(set(rows) == expected, "Missing workflow within a case")
+        for first, second in combinations(sorted(expected), 2):
             left, right = rows[first], rows[second]
             complete = all(
                 row["status"] == "accepted"
@@ -118,6 +125,13 @@ def compare(summary: dict) -> dict:
         "source_summary_sha256": digest(summary),
         "independent_replay": summary["independent_replay"],
         "publication_eligible": False,
+        "workflow_profile": profile,
+        "comparison_scope": (
+            "Complete ordinary compiler workflows with restored output layout."
+            if profile == "ordinary"
+            else "Complete target-artifact versus compiler workflows; FlagQuantum includes "
+            "target validation, artifact construction and serialization. Not a pure compiler timing comparison."
+        ),
         "case_count": len(by_case),
         "coverage": {key: dict(value) for key, value in sorted(coverage.items())},
         "pairs": pairs,
@@ -139,8 +153,13 @@ def main() -> None:
     parser.add_argument("--directory", type=Path, required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--profile", choices=("ordinary", "target-artifact"), default="ordinary"
+    )
     args = parser.parse_args()
-    result = compare(summarize(args.directory, Bundle(args.bundle)))
+    result = compare(
+        summarize(args.directory, Bundle(args.bundle)), profile=args.profile
+    )
     with args.output.open("xb") as output:
         output.write(canonical_bytes(result))
     print(

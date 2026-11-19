@@ -26,6 +26,9 @@ WORKFLOWS = frozenset(
         "cirq-route-cz-restored",
     }
 )
+TARGET_WORKFLOWS = (WORKFLOWS - {"flagquantum-ordinary-restored"}) | {
+    "flagquantum-target-artifact"
+}
 FAMILIES = ("qaoa", "ising", "hopping", "qft", "repetition")
 WIDTHS = (6, 8, 12)
 TOPOLOGIES = ("line", "grid")
@@ -36,16 +39,24 @@ def _write_new(path: Path, value: object) -> None:
         output.write(canonical_bytes(value))
 
 
-def prepare(base: Path, registrations: list[Path], output: Path) -> Bundle:
+def prepare(
+    base: Path,
+    registrations: list[Path],
+    output: Path,
+    *,
+    profile: str = "ordinary",
+) -> Bundle:
     """Retain 30 preregistered line/grid cases with unchanged acceptance."""
+    require(profile in {"ordinary", "target-artifact"}, "Unknown workflow profile")
+    expected = WORKFLOWS if profile == "ordinary" else TARGET_WORKFLOWS
     admitted = [Registration(**read_json(path)) for path in registrations]
     require(
         len(admitted) == 3 and len({r.stack_id for r in admitted}) == 3,
         "Exactly three distinct matched-layout registrations are required",
     )
     require(
-        {r.configuration["options"]["workflow"] for r in admitted} == WORKFLOWS,
-        "The cohort requires the three matched-restoration workflows",
+        {r.configuration["options"]["workflow"] for r in admitted} == expected,
+        "The cohort requires the three matched-restoration workflows for its profile",
     )
     for registration in admitted:
         verify_runtime(registration)
@@ -67,6 +78,7 @@ def prepare(base: Path, registrations: list[Path], output: Path) -> Bundle:
             Path(__file__).read_bytes()
         ).hexdigest(),
         "base_bundle_sha256": baseline.sha256,
+        "workflow_profile": profile,
         "selection": {
             "families": list(FAMILIES),
             "widths": list(WIDTHS),
@@ -164,8 +176,11 @@ def main() -> None:
     parser.add_argument("--base", type=Path, default=Path("docs/implementation"))
     parser.add_argument("--registration", type=Path, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--profile", choices=("ordinary", "target-artifact"), default="ordinary"
+    )
     args = parser.parse_args()
-    bundle = prepare(args.base, args.registration, args.output)
+    bundle = prepare(args.base, args.registration, args.output, profile=args.profile)
     print(
         canonical_bytes(
             {
