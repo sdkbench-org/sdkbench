@@ -4,6 +4,10 @@ Status: execution workflow and preparation checks implemented. No campaign
 result or publication qualification is claimed. This is a preregistered reduced
 cohort of the [application protocol](COMPILER_APPLICATION_PROTOCOL.md).
 
+The [2026-11-19 execution declaration](COMPILER_QUALIFICATION_DECLARATION_20261119.md)
+records the intention to run both profiles on the same integrated compiler and
+harness revisions before either prospective campaign is dispatched.
+
 ## Selection fixed before execution
 
 The cohort contains all five families (QAOA, Ising, hopping, QFT and repetition),
