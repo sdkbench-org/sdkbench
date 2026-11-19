@@ -1,7 +1,10 @@
 # Compiler candidate qualification protocol
 
-Status: implementation and execution pending. This document specifies the next
-engineering campaign; it is not a result or a ranking. The historical P1b and
+Status: source-build observation and registration admission implemented; candidate
+adapters, campaign execution and replay pending. This document specifies the next
+engineering campaign; it is not a result or a ranking. See
+[`candidates/README.md`](../../src/sdkbench/candidates/README.md) for the implemented
+entry points, limits and focused verification. The historical P1b and
 routing-attribution registrations, fixtures, thresholds, resources and archives
 remain the baseline. No development checkout is admitted as an old release.
 
