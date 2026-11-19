@@ -19,6 +19,8 @@ The [routing attribution analysis](docs/analysis/FLAGQUANTUM_ROUTING_ANALYSIS.md
 
 The [ordinary compiler application report](docs/analysis/COMPILER_ORDINARY_RESULTS_20261120.md) retains 900 independently replayed blocks across 30 application cases and three SDK workflows. It reports every case, all three participant pairings, quality/time/memory trade-offs and the limits of probe-only checks. It establishes no global SDK ranking or publication qualification.
 
+The separate [target-artifact application report](docs/analysis/COMPILER_TARGET_ARTIFACT_RESULTS_20261120.md) covers the second declared cohort. It includes FlagQuantum's target validation, native CZ optimization, provenance and serialization costs, with all three workflows delivering identity output placement. The two profiles draw independent cases and must not be combined into an improvement estimate or a favorable per-case profile selection.
+
 ## Requirements and task design
 
 SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).

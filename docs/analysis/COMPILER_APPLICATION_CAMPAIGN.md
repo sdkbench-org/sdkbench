@@ -1,9 +1,10 @@
 # Matched-layout application campaign
 
-Status: execution workflow and preparation checks implemented. The first
-[ordinary application result](COMPILER_ORDINARY_RESULTS_20261120.md) retains
-complete evidence and all participant comparisons. Target-artifact results
-remain separate. No publication qualification is claimed. This is a
+Status: both declared campaigns completed on the same immutable compiler and
+harness. The [ordinary application result](COMPILER_ORDINARY_RESULTS_20261120.md)
+and separate [target-artifact result](COMPILER_TARGET_ARTIFACT_RESULTS_20261120.md)
+retain complete evidence and all participant comparisons. No publication
+qualification is claimed. This is a
 preregistered reduced cohort of the
 [application protocol](COMPILER_APPLICATION_PROTOCOL.md).
 
@@ -230,8 +231,11 @@ own freeze and single draw; separate campaigns must not be treated as matched
 case pairs or combined to select a favorable result. Preregister intended
 profiles before execution and retain both when both are run. Neither profile
 had been executed prospectively when the profile implementation was introduced.
-The ordinary result linked above records the first completed campaign; the
-separately declared target-artifact campaign retains its own outcome.
+The two result reports linked above retain the separately declared campaigns.
+The target-artifact report distinguishes FlagQuantum's internal layout restoration
+from the common external restoration used by Qiskit and Cirq. All workflows must
+deliver identity output placement; this does not make their algorithms or timed
+work identical.
 
 ## Combined compiler integration rehearsal
 
@@ -255,5 +259,6 @@ Reconstruct the source by merging the second parent into the first and checking
 the tree hash; the local merge commit itself is not published or a release
 identity. These passing checks establish local compatibility of the changes,
 not a resource-qualified comparison. Full CI, main-branch integration and both
-prospective profiles remain required. Test elapsed times are not compilation
-performance measurements.
+prospective profiles were still required at the rehearsal stage. The later result
+reports above identify the integrated compiler and retain both prospective
+campaigns. Test elapsed times are not compilation performance measurements.

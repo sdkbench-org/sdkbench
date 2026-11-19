@@ -1,0 +1,106 @@
+"""Audit delivered layouts, supervised limits and hosted error reconciliation."""
+
+from __future__ import annotations
+
+from collections import Counter
+import copy
+import json
+from pathlib import Path
+import signal
+import sys
+
+signal.alarm(600)
+sys.path.insert(0, str(Path.cwd() / "src"))
+from sdkbench.p0.models import digest
+
+root = Path(sys.argv[1]).resolve()
+profile = sys.argv[2]
+
+
+def read(path):
+    return json.loads(path.read_text())
+
+
+def write(path, value):
+    with path.open("x") as stream:
+        json.dump(value, stream, indent=2, sort_keys=True, allow_nan=False)
+        stream.write("\n")
+
+
+campaign = root / "evidence/campaign"
+registrations = read(campaign / "registrations.json")
+policies = []
+external_restoration_workflows = []
+native_restoration_workflows = []
+for registration in registrations.values():
+    config = registration["configuration"]
+    options = config["options"]["compiler_options"]["options"]
+    assert config["threads"] == 1 and options["initial_layout"] == "identity"
+    workflow = config["options"]["workflow"]
+    if "postprocessing" in options:
+        policies.append(options["postprocessing"])
+        external_restoration_workflows.append(workflow)
+    else:
+        assert profile == "target-artifact" and workflow == "flagquantum-target-artifact"
+        assert options["final_layout"] == "restored"
+        native_restoration_workflows.append(workflow)
+assert len(policies) == (3 if profile == "ordinary" else 2)
+assert all(policy == policies[0] for policy in policies)
+assert policies[0]["timed"] is True and policies[0]["final_layout"] == "identity"
+
+counts = Counter()
+cpu_sets = Counter()
+for path in sorted(campaign.glob("*/*/block-*/evidence.json")):
+    evidence = read(path)
+    execution = evidence["execution"]
+    assert execution["limits"]["memory_bytes"] == 16 * 2**30
+    assert execution["network_policy"] == "seccomp-deny-sockets-and-io-uring"
+    cpu_sets[execution["enforced_cpu_set"]] += 1
+    response = read(path.with_name("response.json"))
+    for key in ("warmups", "records"):
+        for record in response[key]:
+            placement = record["payload"]["final_layout"]
+            assert placement == list(range(len(placement)))
+            counts[key] += 1
+assert sum(cpu_sets.values()) == 900
+write(root / "local-layout-resource-check.json", {
+    "profile": profile, "initial_identity_registered_for_all": True,
+    "common_timed_restoration_policy": policies[0],
+    "external_restoration_workflows": sorted(external_restoration_workflows),
+    "native_restoration_workflows": native_restoration_workflows,
+    "restoration_scope": "Identical delivered identity layout; target-artifact uses native restoration, while the two comparison workflows share external timed restoration.",
+    "identity_final_layout_warmups": counts["warmups"],
+    "identity_final_layout_measurements": counts["records"],
+    "enforced_cpu_sets": dict(cpu_sets), "memory_cap_bytes": 16 * 2**30,
+    "all_observed_processes_network_isolated": True, "publication_eligible": False,
+})
+
+summary = read(root / "local-summary.json")
+reconstructed = copy.deepcopy(summary)
+differences = []
+for row in reconstructed["cases"]:
+    errors = []
+    for path in sorted((campaign / row["sdk"] / row["instance"]).glob("block-*/evidence.json")):
+        for verdict in read(path)["record_verdicts"]:
+            if verdict["status"] == "accepted":
+                errors.append(verdict["metrics"]["max_semantic_error"])
+    hosted_error = max(errors) if errors else None
+    if row["maximum_semantic_error"] != hosted_error:
+        differences.append({"sdk": row["sdk"], "instance": row["instance"],
+                            "local_maximum_semantic_error": row["maximum_semantic_error"],
+                            "hosted_maximum_semantic_error": hosted_error})
+    row["maximum_semantic_error"] = hosted_error
+expected = read(root / "evidence/comparisons.json")["source_summary_sha256"]
+assert digest(reconstructed) == expected
+write(root / "local-summary-digest-reconciliation.json", {
+    "schema_version": 1, "profile": profile, "differences": differences,
+    "only_fields_replaced": "cases[*].maximum_semantic_error",
+    "all_other_local_summary_fields_unchanged": True,
+    "hosted_summary_sha256": expected,
+    "reconstructed_hosted_summary_sha256": digest(reconstructed),
+    "reconstructed_digest_matches_hosted": True,
+    "interpretation": "Only independently recomputed semantic errors may differ. Both error sets remain retained; all other summary fields reconstruct the hosted digest without modification.",
+})
+print(json.dumps({"layout_counts": dict(counts), "cpu_sets": dict(cpu_sets),
+                  "semantic_error_differences": len(differences),
+                  "reconstructed_digest_matches_hosted": True}))

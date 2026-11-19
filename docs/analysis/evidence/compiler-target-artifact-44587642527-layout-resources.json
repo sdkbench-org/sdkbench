@@ -1,0 +1,30 @@
+{
+  "all_observed_processes_network_isolated": true,
+  "common_timed_restoration_policy": {
+    "algorithm": "spanning-tree-leaf-token-restoration-v1",
+    "final_layout": "identity",
+    "leaf_order": "ascending",
+    "neighbor_order": "ascending",
+    "optimization_after_restoration": false,
+    "swap_decomposition": "H-CZ-H CNOT triple",
+    "timed": true,
+    "tree_root": 0
+  },
+  "enforced_cpu_sets": {
+    "0": 900
+  },
+  "external_restoration_workflows": [
+    "cirq-route-cz-restored",
+    "qiskit-transpile-restored"
+  ],
+  "identity_final_layout_measurements": 2700,
+  "identity_final_layout_warmups": 1800,
+  "initial_identity_registered_for_all": true,
+  "memory_cap_bytes": 17179869184,
+  "native_restoration_workflows": [
+    "flagquantum-target-artifact"
+  ],
+  "profile": "target-artifact",
+  "publication_eligible": false,
+  "restoration_scope": "Identical delivered identity layout; target-artifact uses native restoration, while the two comparison workflows share external timed restoration."
+}
