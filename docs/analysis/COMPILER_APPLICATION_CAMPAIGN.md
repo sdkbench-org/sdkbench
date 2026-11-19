@@ -161,3 +161,20 @@ conformance only: they are neither the prospective draw nor a supervised
 Linux campaign, do not cover larger widths or every topology, and provide no
 comparative timing or memory result. Pytest elapsed time is suite overhead,
 not an SDK compilation measurement.
+
+The three-participant campaign above measures ordinary compiler workflows.
+At the inspected FlagQuantum revision, the ordinary adapter calls
+`compiler.compile` followed by `legalize_native_gates`. It does not invoke
+the automatic CZ block optimization owned by `legalize_circuit_for_target`.
+Consequently this campaign cannot establish the benefit of the Cirq-derived
+CZ cleanup or the target-aware block resynthesis. Absence of that pass in the
+ordinary workflow is itself a product limitation, not permission to insert
+it privately into the benchmark adapter.
+
+The separately registered `flagquantum-target-artifact` workflow exercises
+that target-aware path and retains its block-rewrite evidence. It also includes
+target validation, artifact construction and serialization in its timed work.
+The 42 conformance tests include this workflow, but the three-participant
+prospective campaign does not. A target-aware campaign must freeze this distinct
+workflow before its draw, retain those costs and report its result separately;
+ordinary-path results must not be presented as evidence for all compiler changes.
