@@ -1,4 +1,4 @@
-"""Register verified builds or run the unchanged frozen routing protocol."""
+"""Register verified compiler artifacts or run the unchanged frozen routing protocol."""
 import argparse
 import os
 from pathlib import Path
@@ -7,7 +7,7 @@ from ..p0 import Bundle, Registration
 from ..p0.models import canonical_bytes, read_json
 from ..p1a.campaign import run_campaign
 from .adapters import WORKFLOWS, workflow_configuration
-from .provenance import create_registration, file_sha256
+from .provenance import create_registration, create_wheel_registration, file_sha256
 
 
 def main(argv=None):
@@ -18,6 +18,12 @@ def main(argv=None):
     register.add_argument('--workflow', required=True, choices=tuple(WORKFLOWS))
     register.add_argument('--build-directory', required=True, type=Path)
     register.add_argument('--output', required=True, type=Path)
+    wheel = subparsers.add_parser('register-wheel', help='Register a verified published wheel')
+    wheel.add_argument('--stack-id', required=True)
+    wheel.add_argument('--workflow', required=True, choices=tuple(WORKFLOWS))
+    wheel.add_argument('--wheel', required=True, type=Path)
+    wheel.add_argument('--release-metadata', required=True, type=Path)
+    wheel.add_argument('--output', required=True, type=Path)
     run = subparsers.add_parser('run', help='Execute all three frozen routing tasks')
     run.add_argument('--registration', action='append', required=True, type=Path)
     run.add_argument('--bundle', type=Path, default=Path('docs/implementation'))
@@ -28,11 +34,14 @@ def main(argv=None):
     replay_parser.add_argument('--bundle', type=Path, default=Path('docs/implementation'))
     replay_parser.add_argument('--directory', required=True, type=Path)
     args = parser.parse_args(argv)
-    if args.command == 'register':
+    if args.command in ('register', 'register-wheel'):
         config = workflow_configuration(args.workflow)
-        result = create_registration(stack_id=args.stack_id, sdk=config['sdk'],
-                                     workflow=args.workflow, options=config,
-                                     build_directory=args.build_directory)
+        common = dict(stack_id=args.stack_id, sdk=config['sdk'], workflow=args.workflow, options=config)
+        if args.command == 'register':
+            result = create_registration(**common, build_directory=args.build_directory)
+        else:
+            result = create_wheel_registration(**common, wheel=args.wheel,
+                                               release_metadata=args.release_metadata)
         with args.output.open('xb') as output:
             output.write(canonical_bytes(result.to_dict()))
         return 0

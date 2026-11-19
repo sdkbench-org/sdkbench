@@ -9,6 +9,7 @@ from pathlib import Path, PurePosixPath
 import platform
 import re
 import sys
+from urllib.parse import urlsplit
 from zipfile import ZipFile
 
 from ..p0.models import digest, keys, read_json, require
@@ -167,6 +168,62 @@ def create_registration(*, stack_id, sdk, workflow, options, build_directory,
     require(build['distribution'] == DISTRIBUTIONS[sdk], 'Candidate build distribution mismatch')
     installed_check = verify_installed_wheel(DISTRIBUTIONS[sdk],
                                            Path(build_directory) / build['wheel']['filename'])
+    return _registration(stack_id=stack_id, sdk=sdk, workflow=workflow, options=options,
+                         origin={'source_build': build}, installed_check=installed_check,
+                         environment=environment)
+
+
+def create_wheel_registration(*, stack_id, sdk, workflow, options, wheel,
+                              release_metadata, environment=None):
+    """Admit a published wheel against retained PyPI release metadata.
+
+    This is a release-download observation, not a source build or independent
+    publisher attestation. The installed payload undergoes the same checks as
+    a source-built wheel. No network access or SDK import occurs here.
+    """
+    require(sdk in DISTRIBUTIONS, 'Unknown candidate SDK')
+    wheel = Path(wheel)
+    require(wheel.is_file() and not wheel.is_symlink() and wheel.suffix == '.whl',
+            'Published release requires a retained wheel')
+    release_metadata = Path(release_metadata)
+    require(release_metadata.is_file() and not release_metadata.is_symlink(),
+            'Published release requires retained PyPI metadata')
+    release = read_json(release_metadata)
+    normalize = lambda name: re.sub('[-_.]+', '-', name).lower()
+    distribution = DISTRIBUTIONS[sdk]
+    installed = metadata.distribution(distribution)
+    require(normalize(release['info']['name']) == normalize(distribution)
+            and release['info']['version'] == installed.version,
+            'Published release metadata differs from installed SDK')
+    matches = [entry for entry in release['urls'] if entry['filename'] == wheel.name]
+    require(len(matches) == 1, 'Published wheel must match exactly one release file')
+    entry = matches[0]
+    url = urlsplit(entry['url'])
+    require(url.scheme == 'https' and url.hostname == 'files.pythonhosted.org'
+            and url.username is None and url.password is None and url.port in (None, 443),
+            'Published wheel requires the declared PyPI file origin')
+    require(entry['packagetype'] == 'bdist_wheel' and entry.get('yanked') is False
+            and type(entry['size']) is int and entry['size'] == wheel.stat().st_size
+            and entry['digests']['sha256'] == file_sha256(wheel),
+            'Published wheel differs from retained release metadata or is yanked')
+    check = verify_installed_wheel(distribution, wheel)
+    origin = {'published_wheel': {
+        'distribution': distribution, 'version': installed.version,
+        'filename': wheel.name, 'sha256': file_sha256(wheel), 'url': entry['url'],
+        'release_metadata_sha256': file_sha256(release_metadata),
+        'metadata_url': f'https://pypi.org/pypi/{distribution}/{installed.version}/json',
+        'independent_attestation': False,
+    }}
+    return _registration(stack_id=stack_id, sdk=sdk, workflow=workflow, options=options,
+                         origin=origin, installed_check=check, environment=environment)
+
+
+def _registration(*, stack_id, sdk, workflow, options, origin, installed_check, environment):
+    require(isinstance(stack_id, str) and re.fullmatch('[a-z][a-z0-9-]*', stack_id)
+            and stack_id not in DISTRIBUTIONS,
+            'Candidate stack ID must differ from historical release IDs')
+    require(isinstance(workflow, str) and workflow.strip(), 'Missing declared public workflow')
+    require(isinstance(options, dict) and options, 'Missing declared compiler options')
     environment = capture_environment() if environment is None else environment
     names = [DISTRIBUTIONS[sdk], 'numpy']
     names += ['torch'] if sdk == 'flagquantum' else ['sympy', 'networkx'] if sdk == 'cirq' else []
@@ -179,7 +236,7 @@ def create_registration(*, stack_id, sdk, workflow, options, build_directory,
     configuration = {
         'profile': 'CPU1-FP64', 'precision': 'float64/complex128', 'threads': 1,
         'options': {'suite': 'compiler-candidate', 'sdk': sdk, 'workflow': workflow,
-                    'compiler_options': options, 'source_build': build,
+                    'compiler_options': options, **origin,
                     'installed_wheel_check': installed_check,
                     'implementation_sha256': implementation_fingerprint()},
     }

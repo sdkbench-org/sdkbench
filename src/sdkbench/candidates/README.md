@@ -1,6 +1,6 @@
 # Compiler candidate admission
 
-This package identifies newly built compilers without changing the historical
+This package identifies source-built and published-wheel compiler candidates without changing the historical
 P1a/P1b release admissions. It owns build observations, installed-wheel checks
 and their binding to the existing P0 `Registration`. It does not own quantum
 semantics, acceptance thresholds, SDK compilation algorithms or resource limits.
@@ -30,6 +30,24 @@ PYTHONPATH=src python -m sdkbench.candidates.cli register \
   --build-directory /tmp/qiskit-candidate-build \
   --output /tmp/qiskit-candidate-registration.json
 ```
+
+Published comparator wheels can be admitted without pretending they were built
+from source. Retain the exact wheel and its version-specific PyPI JSON response,
+install the wheel in the measurement environment, then run:
+
+```sh
+PYTHONPATH=src python -m sdkbench.candidates.cli register-wheel \
+  --stack-id qiskit-release-transpile --workflow qiskit-transpile \
+  --wheel /tmp/qiskit-VERSION-PLATFORM.whl \
+  --release-metadata /tmp/qiskit-release.json \
+  --output /tmp/qiskit-release-registration.json
+```
+
+Admission checks the distribution, installed version, wheel filename, SHA-256,
+size, non-yanked release status and PyPI file origin before checking every
+installed payload byte. It retains the release metadata hash and labels the
+origin `published_wheel`. Neither this observation nor source-build observation
+is an independent publisher or build attestation.
 
 Supported workflows are `flagquantum-ordinary`, `flagquantum-target-artifact`,
 `qiskit-transpile` and `cirq-route-cz`. They have distinct configurations. The
@@ -74,6 +92,15 @@ package files, changed dependencies and changed harness source. Installer-writte
 installed-distribution fingerprint. Wheels that require `.data` relocation are
 explicitly unsupported pending a reviewed mapping. This is a build observation,
 not an independent attestation of source-to-wheel reproducibility.
+
+The `Compiler candidate qualification` GitHub Actions workflow builds its fixed
+FlagQuantum commit with PyTorch 2.10, then installs that retained wheel alongside
+published Qiskit 2.6.2 and Cirq 1.7.0 wheels in the common PyTorch 2.14 environment.
+It registers four workflows, runs all frozen routing cases under Linux controls,
+and independently replays the retained campaign. Failure does not discard
+artifacts or permit a success-only rerun. The runner is an observed engineering
+host; it is not a sealed publication host. A successful workflow run must still
+be inspected before reporting complete campaign execution.
 
 Full native candidate campaign execution, build/install qualification and the
 prospective held-out campaign are pending. Passing local adapter conformance or

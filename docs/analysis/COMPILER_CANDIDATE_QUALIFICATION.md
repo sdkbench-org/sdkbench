@@ -1,6 +1,6 @@
 # Compiler candidate qualification protocol
 
-Status: source-build observation, registration admission, four compiler adapters,
+Status: source-build and published-wheel observation, registration admission, four compiler adapters,
 the frozen campaign runner and independent replay are implemented. Full native
 campaign execution and publication qualification are pending. This document specifies the next
 engineering campaign; it is not a result or a ranking. See
@@ -31,7 +31,9 @@ Each participant/configuration must record:
   and build environment. A version string alone cannot identify a checkout.
 - Installed non-bytecode file fingerprint, complete dependency/environment
   observations and SDKBench source fingerprint, including the new adapter and
-  runner. Keep observed engineering hosts labeled as unsealed.
+  runner. Published release comparators retain the exact wheel, version-specific
+  PyPI JSON response, its hash and declared file origin instead of fabricated
+  source-build evidence. Keep observed engineering hosts labeled as unsealed.
 - Public entry point, all explicit options and remaining defaults, target basis,
   precision, initial and final layout obligations, seed support, search/trial
   effort, permitted ancillas, compiler objective and stage ordering.

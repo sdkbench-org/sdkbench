@@ -1,0 +1,131 @@
+name: Compiler candidate qualification
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/compiler-candidates.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-routing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: ${{ github.workspace }}/src
+      MPLCONFIGDIR: /tmp/sdkbench-candidate-matplotlib
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Retrieve the immutable FlagQuantum candidate
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: flagos-ai/FlagQuantum
+          ref: 5553fb3d2e186995c7fc27c0fa0859c38abd5a2a
+          path: candidate-source/FlagQuantum
+          persist-credentials: false
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12.14'
+      - name: Prepare the separate Stable ABI build environment
+        timeout-minutes: 15
+        run: |
+          python -m venv /tmp/sdkbench-candidate-build
+          /tmp/sdkbench-candidate-build/bin/python -m pip install 'torch==2.10.0+cpu' --index-url https://download.pytorch.org/whl/cpu --timeout 30 --retries 1
+          /tmp/sdkbench-candidate-build/bin/python -m pip install 'build==1.6.1' 'setuptools==84.2.1' 'wheel==0.48.0' 'numpy==2.5.5' --timeout 30 --retries 1
+      - name: Build from the retained immutable source archive
+        timeout-minutes: 20
+        run: |
+          mkdir -p candidate-evidence
+          /tmp/sdkbench-candidate-build/bin/python tools/build_compiler_candidate.py \
+            --repository candidate-source/FlagQuantum \
+            --revision 5553fb3d2e186995c7fc27c0fa0859c38abd5a2a \
+            --distribution flagquantum --directory candidate-evidence/flagquantum-build --timeout 900
+      - name: Retain published comparator wheels and release metadata
+        timeout-minutes: 10
+        run: |
+          mkdir -p candidate-evidence/releases
+          python -m pip download --no-deps --only-binary=:all: 'qiskit==2.6.2' 'cirq-core==1.7.0' \
+            --dest candidate-evidence/releases --timeout 30 --retries 1
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.request import urlopen
+          root = Path('candidate-evidence/releases')
+          for name, version in [('qiskit', '2.6.2'), ('cirq-core', '1.7.0')]:
+              with urlopen(f'https://pypi.org/pypi/{name}/{version}/json', timeout=45) as response:
+                  (root / f'{name}.json').write_bytes(response.read())
+          PY
+      - name: Install the shared measurement environment
+        timeout-minutes: 15
+        run: |
+          python -m pip install 'torch==2.14.0+cpu' --index-url https://download.pytorch.org/whl/cpu --timeout 30 --retries 1
+          python -m pip install '.[dev]' 'numpy==2.5.5' candidate-evidence/releases/*.whl --timeout 30 --retries 1
+          python -m pip install --no-deps candidate-evidence/flagquantum-build/*.whl --timeout 30 --retries 1
+          python -m pip check
+          python -m pip freeze --all > candidate-evidence/measurement-requirements.txt
+      - name: Check native adapter semantics
+        timeout-minutes: 15
+        env:
+          SDKBENCH_NATIVE_CANDIDATE_TESTS: '1'
+        run: python -m pytest tests/test_candidate_native_adapters.py -q
+      - name: Register all four workflows with their actual origins
+        timeout-minutes: 10
+        run: |
+          python -m sdkbench.candidates.cli register --stack-id fq-source-ordinary \
+            --workflow flagquantum-ordinary --build-directory candidate-evidence/flagquantum-build \
+            --output candidate-evidence/fq-ordinary.json
+          python -m sdkbench.candidates.cli register --stack-id fq-source-target \
+            --workflow flagquantum-target-artifact --build-directory candidate-evidence/flagquantum-build \
+            --output candidate-evidence/fq-target.json
+          python -m sdkbench.candidates.cli register-wheel --stack-id qiskit-release-transpile \
+            --workflow qiskit-transpile --wheel candidate-evidence/releases/qiskit-*.whl \
+            --release-metadata candidate-evidence/releases/qiskit.json --output candidate-evidence/qiskit.json
+          python -m sdkbench.candidates.cli register-wheel --stack-id cirq-release-route \
+            --workflow cirq-route-cz --wheel candidate-evidence/releases/cirq_core-*.whl \
+            --release-metadata candidate-evidence/releases/cirq-core.json --output candidate-evidence/cirq.json
+      - name: Delegate a disposable cgroup subtree on the CI VM
+        run: |
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-candidate-ci
+          sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-candidate-ci/cgroup.subtree_control'
+          sudo mkdir /sys/fs/cgroup/sdkbench-candidate-ci/operator
+          sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-candidate-ci
+      - name: Run the complete unchanged frozen protocol
+        timeout-minutes: 225
+        run: |
+          sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-candidate-ci/operator/cgroup.procs"
+          cpu=$(python -c 'import os; print(min(os.sched_getaffinity(0)))')
+          python -m sdkbench.candidates.cli run --cpu "$cpu" \
+            --cgroup-parent /sys/fs/cgroup/sdkbench-candidate-ci \
+            --registration candidate-evidence/fq-ordinary.json \
+            --registration candidate-evidence/fq-target.json \
+            --registration candidate-evidence/qiskit.json \
+            --registration candidate-evidence/cirq.json \
+            --directory candidate-evidence/campaign > candidate-evidence/campaign-stdout.json
+      - name: Independently replay every retained outcome
+        if: always()
+        timeout-minutes: 30
+        run: |
+          if test -f candidate-evidence/campaign/MANIFEST.json; then
+            python -m sdkbench.candidates.cli replay --directory candidate-evidence/campaign \
+              > candidate-evidence/independent-replay.json
+          else
+            echo 'No complete campaign manifest was produced.'
+            exit 1
+          fi
+      - name: Retain builds, failures, registrations and raw campaign evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: compiler-candidate-evidence
+          path: candidate-evidence
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Check descendant cleanup
+        if: always()
+        run: |
+          if test -d /sys/fs/cgroup/sdkbench-candidate-ci/operator; then sudo rmdir /sys/fs/cgroup/sdkbench-candidate-ci/operator; fi
+          if test -d /sys/fs/cgroup/sdkbench-candidate-ci; then
+            test -z "$(find /sys/fs/cgroup/sdkbench-candidate-ci -mindepth 1 -type d -print)"
+            sudo rmdir /sys/fs/cgroup/sdkbench-candidate-ci
+          fi

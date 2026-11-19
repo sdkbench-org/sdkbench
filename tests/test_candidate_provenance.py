@@ -156,3 +156,51 @@ def test_worker_can_recheck_before_sdk_import(monkeypatch, build, installed, fau
     else:
         with pytest.raises(ContractError):
             candidate.verify_runtime(admitted)
+
+
+@pytest.mark.parametrize('fault', ['none', 'payload', 'version', 'distribution',
+                                  'digest', 'size', 'yanked', 'origin', 'duplicate'])
+def test_published_wheel_admission_and_worker_revalidation(installed, monkeypatch, tmp_path, fault):
+    site, wheel, _ = installed
+    monkeypatch.setattr(candidate, 'capture_environment', environment)
+    monkeypatch.setattr(candidate, 'distribution_fingerprint',
+                        lambda name: {'name': name, 'version': '9.9', 'artifact_sha256': 'e' * 64})
+    release = {'info': {'name': 'qiskit', 'version': '9.9'}, 'urls': [{
+        'filename': wheel.name, 'url': 'https://files.pythonhosted.org/packages/candidate.whl',
+        'packagetype': 'bdist_wheel', 'yanked': False, 'size': wheel.stat().st_size,
+        'digests': {'sha256': candidate.file_sha256(wheel)},
+    }]}
+    entry = release['urls'][0]
+    if fault == 'payload':
+        (site / 'qiskit/compiler.py').write_text('changed = True\n')
+    elif fault == 'version':
+        release['info']['version'] = '9.8'
+    elif fault == 'distribution':
+        release['info']['name'] = 'different-sdk'
+    elif fault == 'digest':
+        entry['digests']['sha256'] = 'f' * 64
+    elif fault == 'size':
+        entry['size'] += 1
+    elif fault == 'yanked':
+        entry['yanked'] = True
+    elif fault == 'origin':
+        entry['url'] = 'https://files.pythonhosted.org.example.com/candidate.whl'
+    elif fault == 'duplicate':
+        release['urls'].append(deepcopy(entry))
+    path = tmp_path / 'release.json'
+    path.write_bytes(canonical_bytes(release))
+    arguments = dict(stack_id='qiskit-published', sdk='qiskit', workflow='qiskit-transpile',
+                     options={'optimization_level': 2}, wheel=wheel, release_metadata=path)
+    if fault != 'none':
+        with pytest.raises(ContractError):
+            candidate.create_wheel_registration(**arguments)
+        return
+    admitted = candidate.create_wheel_registration(**arguments)
+    origin = admitted.configuration['options']['published_wheel']
+    assert origin['sha256'] == candidate.file_sha256(wheel)
+    assert origin['release_metadata_sha256'] == candidate.file_sha256(path)
+    assert 'source_build' not in admitted.configuration['options']
+    candidate.verify_runtime(admitted)
+    (site / 'qiskit/compiler.py').write_text('changed_after_admission = True\n')
+    with pytest.raises(ContractError, match='package tree changed'):
+        candidate.verify_runtime(admitted)
