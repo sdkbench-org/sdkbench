@@ -7,13 +7,14 @@ on:
         required: true
         type: string
       workflow_profile:
-        description: 'Ordinary compiler or target-artifact path (includes artifact overhead)'
+        description: 'Ordinary, target-artifact, or matched native routing-policy controls'
         required: true
         default: ordinary
         type: choice
         options:
           - ordinary
           - target-artifact
+          - routing-policies
 permissions:
   contents: read
 jobs:
@@ -46,6 +47,7 @@ jobs:
           case "$WORKFLOW_PROFILE" in
             ordinary) echo 'FQ_WORKFLOW=flagquantum-ordinary-restored' >> "$GITHUB_ENV" ;;
             target-artifact) echo 'FQ_WORKFLOW=flagquantum-target-artifact' >> "$GITHUB_ENV" ;;
+            routing-policies) echo 'FQ_WORKFLOW=flagquantum-ordinary-restored' >> "$GITHUB_ENV" ;;
             *) echo 'Unknown workflow profile' >&2; exit 1 ;;
           esac
       - uses: actions/setup-python@v7.1.0
@@ -92,26 +94,41 @@ jobs:
         env:
           SDKBENCH_NATIVE_CANDIDATE_TESTS: '1'
         run: python -m pytest tests/test_candidate_native_adapters.py -q
-      - name: Register the three matched-layout workflows before drawing cases
+      - name: Register the declared matched-layout workflows before drawing cases
         timeout-minutes: 10
         run: |
           python -m sdkbench.candidates.cli register --stack-id fq-source-restored \
             --workflow "$FQ_WORKFLOW" --build-directory candidate-evidence/flagquantum-build \
             --output candidate-evidence/fq-restored.json
-          python -m sdkbench.candidates.cli register-wheel --stack-id qiskit-release-restored \
-            --workflow qiskit-transpile-restored --wheel candidate-evidence/releases/qiskit-*.whl \
-            --release-metadata candidate-evidence/releases/qiskit.json --output candidate-evidence/qiskit-restored.json
-          python -m sdkbench.candidates.cli register-wheel --stack-id cirq-release-restored \
-            --workflow cirq-route-cz-restored --wheel candidate-evidence/releases/cirq_core-*.whl \
-            --release-metadata candidate-evidence/releases/cirq-core.json --output candidate-evidence/cirq-restored.json
+          if test "$WORKFLOW_PROFILE" = routing-policies; then
+            for strategy in restore-after-each-gate persistent-layout sabre; do
+              python -m sdkbench.candidates.cli register --stack-id "fq-policy-$strategy" \
+                --workflow "flagquantum-$strategy-restored" \
+                --build-directory candidate-evidence/flagquantum-build \
+                --output "candidate-evidence/fq-policy-$strategy.json"
+            done
+          else
+            python -m sdkbench.candidates.cli register-wheel --stack-id qiskit-release-restored \
+              --workflow qiskit-transpile-restored --wheel candidate-evidence/releases/qiskit-*.whl \
+              --release-metadata candidate-evidence/releases/qiskit.json --output candidate-evidence/qiskit-restored.json
+            python -m sdkbench.candidates.cli register-wheel --stack-id cirq-release-restored \
+              --workflow cirq-route-cz-restored --wheel candidate-evidence/releases/cirq_core-*.whl \
+              --release-metadata candidate-evidence/releases/cirq-core.json --output candidate-evidence/cirq-restored.json
+          fi
       - name: Freeze registrations and draw the preregistered cohort once
         timeout-minutes: 10
         run: |
+          registrations=(--registration candidate-evidence/fq-restored.json)
+          if test "$WORKFLOW_PROFILE" = routing-policies; then
+            for registration in candidate-evidence/fq-policy-*.json; do
+              registrations+=(--registration "$registration")
+            done
+          else
+            registrations+=(--registration candidate-evidence/qiskit-restored.json --registration candidate-evidence/cirq-restored.json)
+          fi
           python tools/prepare_compiler_applications.py \
             --profile "$WORKFLOW_PROFILE" \
-            --registration candidate-evidence/fq-restored.json \
-            --registration candidate-evidence/qiskit-restored.json \
-            --registration candidate-evidence/cirq-restored.json \
+            "${registrations[@]}" \
             --output candidate-evidence/preparation > candidate-evidence/preparation-stdout.json
       - name: Delegate a disposable cgroup subtree on the CI VM
         run: |
@@ -125,12 +142,18 @@ jobs:
         run: |
           sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-candidate-ci/operator/cgroup.procs"
           cpu=$(python -c 'import os; print(min(os.sched_getaffinity(0)))')
+          registrations=(--registration candidate-evidence/fq-restored.json)
+          if test "$WORKFLOW_PROFILE" = routing-policies; then
+            for registration in candidate-evidence/fq-policy-*.json; do
+              registrations+=(--registration "$registration")
+            done
+          else
+            registrations+=(--registration candidate-evidence/qiskit-restored.json --registration candidate-evidence/cirq-restored.json)
+          fi
           python -m sdkbench.candidates.cli run --cpu "$cpu" \
             --cgroup-parent /sys/fs/cgroup/sdkbench-candidate-ci \
             --bundle candidate-evidence/preparation/cohort \
-            --registration candidate-evidence/fq-restored.json \
-            --registration candidate-evidence/qiskit-restored.json \
-            --registration candidate-evidence/cirq-restored.json \
+            "${registrations[@]}" \
             --directory candidate-evidence/campaign > candidate-evidence/campaign-stdout.json
       - name: Independently replay every retained outcome
         id: replay

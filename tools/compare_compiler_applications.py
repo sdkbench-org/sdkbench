@@ -3,14 +3,17 @@
 from __future__ import annotations
 
 import argparse
+import math
 from collections import Counter
 from itertools import combinations
-import math
 from pathlib import Path
 from statistics import median
 
 from compiler_candidate_report import spread, summarize
-from sdkbench.p0 import Bundle
+
+from sdkbench.candidates.adapters import ROUTING_POLICY_WORKFLOWS
+from sdkbench.candidates.provenance import verify_routing_policy_controls
+from sdkbench.p0 import Bundle, Registration
 from sdkbench.p0.models import canonical_bytes, digest, require
 
 WORKFLOWS = frozenset(
@@ -35,10 +38,31 @@ def _positive_ratio(numerator: float, denominator: float) -> float | None:
 
 
 def compare(summary: dict, *, profile: str = "ordinary") -> dict:
-    """Describe all three pairings; failed cases receive no performance ratios."""
+    """Describe every pairing; failed cases receive no performance ratios."""
     require(summary["publication_eligible"] is False, "Unexpected publication claim")
-    require(profile in {"ordinary", "target-artifact"}, "Unknown workflow profile")
-    expected = WORKFLOWS if profile == "ordinary" else TARGET_WORKFLOWS
+    profiles = {
+        "ordinary": WORKFLOWS,
+        "target-artifact": TARGET_WORKFLOWS,
+        "routing-policies": ROUTING_POLICY_WORKFLOWS,
+    }
+    require(profile in profiles, "Unknown workflow profile")
+    expected = profiles[profile]
+    if profile == "routing-policies":
+        verify_routing_policy_controls([
+            Registration(**raw) for raw in summary["registrations"].values()
+        ])
+    scopes = {
+        "ordinary": "Complete ordinary compiler workflows with restored output layout.",
+        "routing-policies": (
+            "Matched native routing-policy controls on one compiler revision; ordinary "
+            "compilation, native legalization and timed identity restoration are included. "
+            "Not an SDK ranking or an isolated router timing comparison."
+        ),
+        "target-artifact": (
+            "Complete target-artifact versus compiler workflows; FlagQuantum includes "
+            "target validation, artifact construction and serialization. Not a pure compiler timing comparison."
+        ),
+    }
     by_case = {}
     coverage = {}
     for row in summary["cases"]:
@@ -126,12 +150,7 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
         "independent_replay": summary["independent_replay"],
         "publication_eligible": False,
         "workflow_profile": profile,
-        "comparison_scope": (
-            "Complete ordinary compiler workflows with restored output layout."
-            if profile == "ordinary"
-            else "Complete target-artifact versus compiler workflows; FlagQuantum includes "
-            "target validation, artifact construction and serialization. Not a pure compiler timing comparison."
-        ),
+        "comparison_scope": scopes[profile],
         "case_count": len(by_case),
         "coverage": {key: dict(value) for key, value in sorted(coverage.items())},
         "pairs": pairs,
@@ -154,7 +173,7 @@ def main() -> None:
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--profile", choices=("ordinary", "target-artifact"), default="ordinary"
+        "--profile", choices=("ordinary", "target-artifact", "routing-policies"), default="ordinary"
     )
     args = parser.parse_args()
     result = compare(

@@ -1,8 +1,8 @@
 """Comparison reporting retains failures and uses paired complete blocks."""
 
 import importlib.util
-from pathlib import Path
 from copy import deepcopy
+from pathlib import Path
 
 import pytest
 
@@ -22,10 +22,13 @@ def tool(monkeypatch):
     return module
 
 
-def summary(tool):
+def summary(tool, workflows=None):
+    from test_candidate_runner import registration
+
+    workflows = workflows or tool.WORKFLOWS
     rows = []
     for instance in ("case-a", "case-b"):
-        for scale, workflow in enumerate(sorted(tool.WORKFLOWS), 1):
+        for scale, workflow in enumerate(sorted(workflows), 1):
             rows.append(
                 {
                     "instance": instance,
@@ -55,6 +58,7 @@ def summary(tool):
         "publication_eligible": False,
         "bundle_sha256": "a" * 64,
         "independent_replay": {"blocks_verified": 60},
+        "registrations": {name: registration(name, name).to_dict() for name in workflows},
         "cases": rows,
     }
 
@@ -115,22 +119,27 @@ def test_incomplete_or_mixed_controls_fail_closed(tool, fault):
         tool.compare(source)
 
 
-@pytest.mark.parametrize("profile", ["ordinary", "target-artifact"])
+@pytest.mark.parametrize("profile", ["ordinary", "target-artifact", "routing-policies"])
 def test_cli_replays_denied_campaign_and_keeps_all_participants(
     tool, monkeypatch, tmp_path, profile
 ):
+    from test_candidate_runner import registration, seal
+
     from sdkbench.candidates import provenance
     from sdkbench.p0 import Bundle
     from sdkbench.p0.models import read_json
     from sdkbench.p1a import campaign
-    from test_candidate_runner import registration, seal
 
     def reject(_):
         raise ContractError("Synthetic unavailable installation")
 
     monkeypatch.setattr(provenance, "verify_runtime", reject)
     bundle = Bundle(ROOT / "docs/implementation")
-    workflows = tool.WORKFLOWS if profile == "ordinary" else tool.TARGET_WORKFLOWS
+    workflows = {
+        "ordinary": tool.WORKFLOWS,
+        "target-artifact": tool.TARGET_WORKFLOWS,
+        "routing-policies": tool.ROUTING_POLICY_WORKFLOWS,
+    }[profile]
     candidates = {name: registration(name, name) for name in sorted(workflows)}
     root = tmp_path / "campaign"
     campaign.run_campaign(
@@ -159,8 +168,9 @@ def test_cli_replays_denied_campaign_and_keeps_all_participants(
     )
     tool.main()
     result = read_json(output)
-    assert result["independent_replay"]["blocks_verified"] == 90
-    assert result["case_count"] == 3 and len(result["pairs"]) == 9
+    count = len(workflows)
+    assert result["independent_replay"]["blocks_verified"] == 30 * count
+    assert result["case_count"] == 3 and len(result["pairs"]) == 3 * count * (count - 1) // 2
     assert set(result["coverage"]) == workflows
     assert result["workflow_profile"] == profile
     assert all(row == {"access-blocked": 3} for row in result["coverage"].values())
@@ -184,3 +194,34 @@ def test_target_artifact_comparison_discloses_overhead_and_rejects_mixed_profile
     assert set(result["coverage"]) == tool.TARGET_WORKFLOWS
     with pytest.raises(ContractError):
         tool.compare(source, profile="unknown")
+
+
+def test_routing_policy_comparison_retains_six_pairs_and_failed_case_denominators(tool):
+    source = summary(tool, tool.ROUTING_POLICY_WORKFLOWS)
+    before = deepcopy(source)
+    result = tool.compare(source, profile="routing-policies")
+    assert source == before
+    assert len(result["pairs"]) == 12
+    assert set(result["coverage"]) == tool.ROUTING_POLICY_WORKFLOWS
+    assert "one compiler revision" in result["comparison_scope"]
+    assert all(row["ratios"]["paired_block_compile_time"]["count"] == 10
+               for row in result["pairs"])
+    source["cases"][0]["status"] = "timeout"
+    result = tool.compare(source, profile="routing-policies")
+    affected = [row for row in result["pairs"] if row["instance"] == "case-a"]
+    assert len(affected) == 6
+    assert sum(row["ratios"] is None for row in affected) == 3
+    assert result["coverage"][source["cases"][0]["workflow"]] == {
+        "timeout": 1, "accepted": 1,
+    }
+    with pytest.raises(ContractError):
+        tool.compare(source, profile="ordinary")
+
+
+def test_routing_policy_report_rejects_different_compiler_artifacts(tool):
+    source = summary(tool, tool.ROUTING_POLICY_WORKFLOWS)
+    next(iter(source["registrations"].values()))["configuration"]["options"][
+        "source_build"
+    ]["wheel"]["sha256"] = "f" * 64
+    with pytest.raises(ContractError, match="same source build, wheel and environment"):
+        tool.compare(source, profile="routing-policies")
