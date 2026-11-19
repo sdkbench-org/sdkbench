@@ -136,3 +136,7 @@ attribution controls, recorded prospective draw, complete outcomes including
 compile time/memory/full-CZ/common-depth metrics, independent replay, adapter
 review and publication-host qualification remain required. No generator or local
 test result establishes a global ranking or superiority.
+
+The first reduced matched-layout run is specified in
+[the application campaign](COMPILER_APPLICATION_CAMPAIGN.md). Its workflow and
+preparation record do not themselves establish an executed prospective result.
