@@ -1,0 +1,193 @@
+name: Compiler revision installed-wheel conformance
+on:
+  workflow_dispatch:
+    inputs:
+      first_revision:
+        description: First immutable FlagQuantum commit already merged into main
+        required: true
+        type: string
+      second_revision:
+        description: Second immutable FlagQuantum commit already merged into main
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  installed-wheels:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: ${{ github.workspace }}/src
+      FIRST_REVISION: ${{ inputs.first_revision }}
+      SECOND_REVISION: ${{ inputs.second_revision }}
+      MPLCONFIGDIR: /tmp/sdkbench-revision-conformance-matplotlib
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: flagos-ai/FlagQuantum
+          ref: ${{ inputs.first_revision }}
+          fetch-depth: 0
+          path: compiler-source
+          persist-credentials: false
+      - name: Require two distinct integrated source revisions
+        timeout-minutes: 2
+        run: |
+          test "$GITHUB_RUN_ATTEMPT" = 1
+          [[ "$FIRST_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$SECOND_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          test "$FIRST_REVISION" != "$SECOND_REVISION"
+          for revision in "$FIRST_REVISION" "$SECOND_REVISION"; do
+            git -C compiler-source cat-file -e "$revision^{commit}"
+            git -C compiler-source merge-base --is-ancestor "$revision" origin/main
+          done
+          mkdir -p wheel-conformance/common/wheels wheel-conformance/torch
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12.14'
+      - name: Prepare the common Stable ABI build environment
+        timeout-minutes: 15
+        run: |
+          python -m venv /tmp/sdkbench-revision-build
+          /tmp/sdkbench-revision-build/bin/python -m pip install 'torch==2.10.0+cpu' --index-url https://download.pytorch.org/whl/cpu --timeout 30 --retries 1
+          /tmp/sdkbench-revision-build/bin/python -m pip install 'build==1.6.1' 'setuptools==84.2.1' 'wheel==0.48.0' 'numpy==2.5.5' --timeout 30 --retries 1
+          /tmp/sdkbench-revision-build/bin/python -m pip freeze --all > wheel-conformance/build-requirements.txt
+          /tmp/sdkbench-revision-build/bin/python -m build --wheel --no-isolation --outdir wheel-conformance/common/wheels .
+      - name: Build both retained source archives with the same tool and budget
+        timeout-minutes: 35
+        run: |
+          for role in first second; do
+            revision="$FIRST_REVISION"
+            if test "$role" = second; then revision="$SECOND_REVISION"; fi
+            /tmp/sdkbench-revision-build/bin/python tools/build_compiler_candidate.py \
+              --repository compiler-source --revision "$revision" \
+              --distribution flagquantum --directory "wheel-conformance/$role/build" \
+              --timeout 900 > "wheel-conformance/$role-build-stdout.json"
+          done
+      - name: Retain one common dependency wheelhouse and hashed lock
+        timeout-minutes: 15
+        run: |
+          python -m pip download --no-deps --only-binary=:all: 'torch==2.14.0+cpu' --index-url https://download.pytorch.org/whl/cpu --dest wheel-conformance/torch --timeout 30 --retries 1
+          pip_version=$(python -c 'from importlib.metadata import version; print(version("pip"))')
+          python -m pip download --only-binary=:all: --dest wheel-conformance/common/wheels \
+            wheel-conformance/torch/*.whl wheel-conformance/common/wheels/sdkbench-*.whl \
+            'numpy==2.5.5' 'qiskit==2.6.2' 'cirq-core==1.7.0' 'pytest>=7,<10' \
+            "pip==$pip_version" 'setuptools==84.2.1' 'wheel==0.48.0' --timeout 30 --retries 1
+          python - <<'PY'
+          import hashlib
+          import re
+          from email.parser import BytesParser
+          from pathlib import Path
+          from zipfile import ZipFile
+          root = Path('wheel-conformance/common')
+          records = {}
+          for path in sorted((root / 'wheels').glob('*.whl')):
+              with ZipFile(path) as wheel:
+                  names = [name for name in wheel.namelist() if name.endswith('.dist-info/METADATA')]
+                  assert len(names) == 1, path
+                  metadata = BytesParser().parsebytes(wheel.read(names[0]))
+              name = re.sub(r'[-_.]+', '-', metadata['Name']).lower()
+              assert name not in records, f'Ambiguous wheel distribution: {name}'
+              records[name] = f"{name}=={metadata['Version']} --hash=sha256:{hashlib.sha256(path.read_bytes()).hexdigest()}"
+          assert 'flagquantum' not in records
+          (root / 'requirements.txt').write_text('\n'.join(records[name] for name in sorted(records)) + '\n')
+          PY
+      - name: Install shared dependencies and isolated frontend wheels
+        timeout-minutes: 15
+        run: |
+          python -m venv /tmp/sdkbench-revision-common
+          /tmp/sdkbench-revision-common/bin/python -m pip install --no-index \
+            --find-links wheel-conformance/common/wheels --require-hashes \
+            -r wheel-conformance/common/requirements.txt
+          for role in first second; do
+            python -m venv --without-pip "/tmp/sdkbench-revision-$role"
+            "/tmp/sdkbench-revision-$role/bin/python" - "$role" <<'PY'
+          import site
+          import sys
+          from pathlib import Path
+          role = sys.argv[1]
+          shared = Path('/tmp/sdkbench-revision-common/lib/python3.12/site-packages')
+          assert shared.is_dir()
+          prefix = Path(sys.prefix)
+          assert prefix == Path('/tmp/sdkbench-revision-' + role)
+          (Path(site.getsitepackages()[0]) / 'sdkbench-common-dependencies.pth').write_text(str(shared) + '\n')
+          PY
+            "/tmp/sdkbench-revision-$role/bin/python" -m pip install --no-index --no-deps "wheel-conformance/$role/build/"*.whl
+            "/tmp/sdkbench-revision-$role/bin/python" -m pip check
+            "/tmp/sdkbench-revision-$role/bin/python" -m pip freeze --all > "wheel-conformance/$role/installed-requirements.txt"
+          done
+      - name: Check installed bytes and retain development admissions without a draw
+        timeout-minutes: 15
+        run: |
+          for role in first second; do
+            "/tmp/sdkbench-revision-$role/bin/python" - "$role" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          from sdkbench.candidates.adapters import workflow_configuration
+          from sdkbench.candidates.environment import interpreter_identity
+          from sdkbench.candidates.provenance import create_registration, verify_runtime
+          from sdkbench.p1a.provenance import capture_environment
+          role = sys.argv[1]
+          root = Path('wheel-conformance') / role
+          inventory = capture_environment()
+          records = {}
+          for workflow in ('flagquantum-ordinary-restored', 'flagquantum-target-artifact'):
+              registration = create_registration(stack_id='development-' + role,
+                  sdk='flagquantum', workflow=workflow, options=workflow_configuration(workflow),
+                  build_directory=root / 'build', environment=inventory)
+              verify_runtime(registration)
+              records[workflow] = registration.to_dict()
+          (root / 'development-admissions.json').write_text(json.dumps({
+              'scope': 'installed-wheel conformance only; not a study freeze',
+              'inventory': inventory, 'interpreter': interpreter_identity(sys.executable),
+              'registrations': records, 'entropy_drawn': False, 'publication_eligible': False,
+          }, indent=2) + '\n')
+          PY
+          done
+          /tmp/sdkbench-revision-common/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          from sdkbench.candidates.revisions import verify_revision_control
+          from sdkbench.p0 import Registration
+          root = Path('wheel-conformance')
+          records = [json.loads((root / role / 'development-admissions.json').read_text()) for role in ('first', 'second')]
+          assert len({record['interpreter']['python'] for record in records}) == 2
+          assert len({record['interpreter']['executable_sha256'] for record in records}) == 1
+          for workflow in records[0]['registrations']:
+              registrations = [Registration(**record['registrations'][workflow]) for record in records]
+              inventories = {registration.stack_id: record['inventory'] for registration, record in zip(registrations, records, strict=True)}
+              verify_revision_control(registrations, inventories)
+          (root / 'joint-development-check.json').write_text(json.dumps({
+              'matched_non_frontend_inputs': True, 'distinct_interpreters': True,
+              'scope': 'development admission only; not a joint study freeze',
+              'entropy_drawn': False, 'campaign_executed': False, 'publication_eligible': False,
+          }, indent=2) + '\n')
+          PY
+      - name: Apply identical independent operator and restored-layout acceptance
+        timeout-minutes: 15
+        env:
+          SDKBENCH_NATIVE_CANDIDATE_TESTS: '1'
+        run: |
+          conformance_status=0
+          for role in first second; do
+            if ! "/tmp/sdkbench-revision-$role/bin/python" -m pytest tests/test_candidate_native_adapters.py \
+              -k 'flagquantum-ordinary-restored or flagquantum-target-artifact' -q \
+              --junitxml="wheel-conformance/$role/conformance.xml" \
+              2>&1 | tee "wheel-conformance/$role/conformance.log"; then
+              conformance_status=1
+            fi
+          done
+          exit "$conformance_status"
+      - name: Retain builds, dependencies, admissions and all available failures
+        if: always()
+        timeout-minutes: 10
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: compiler-revision-wheel-conformance
+          path: wheel-conformance
+          if-no-files-found: error
+          retention-days: 90
