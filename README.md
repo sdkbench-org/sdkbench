@@ -21,7 +21,7 @@ The [ordinary compiler application report](docs/analysis/COMPILER_ORDINARY_RESUL
 
 The separate [target-artifact application report](docs/analysis/COMPILER_TARGET_ARTIFACT_RESULTS_20261120.md) covers the second declared cohort. It includes FlagQuantum's target validation, native CZ optimization, provenance and serialization costs, with all three workflows delivering identity output placement. The two profiles draw independent cases and must not be combined into an improvement estimate or a favorable per-case profile selection.
 
-The separately declared [routing-policy control study](docs/analysis/COMPILER_ROUTING_POLICY_DECLARATION_20261120.md) will measure default policy costs against explicit choices on the same compiler revision, host and cohort, under unchanged acceptance and resource limits. Its execution and independent audit remain pending.
+The [routing-policy control report](docs/analysis/COMPILER_ROUTING_POLICY_RESULTS_20261120.md) retains 1,200 independently replayed blocks, all 120 accepted case/policy outcomes and 180 pair rows from one compiler revision, host and cohort. It records default-versus-explicit quality, latency and memory tradeoffs under unchanged acceptance and resources. Host qualification remains incomplete, and the later study cannot retroactively satisfy the original before-merge timing requirement.
 
 ## Requirements and task design
 

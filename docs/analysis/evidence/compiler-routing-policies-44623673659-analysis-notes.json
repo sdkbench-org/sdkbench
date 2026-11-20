@@ -1,0 +1,6 @@
+{
+  "recorded_at_utc": "2026-11-19T23:20:28.424596+00:00",
+  "study_artifact_observed": false,
+  "scope": "Local analysis helper labels only. Replace a hardcoded measured_records=3600 with separate expected, retained-result-record and independently accepted counts. The frozen harness, evaluators, admission, campaign, thresholds and budgets are unchanged.",
+  "reason": "Failure-aware reporting must not label expected record slots as actual successful measurements."
+}

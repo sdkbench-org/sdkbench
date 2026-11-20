@@ -1,0 +1,209 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 135911709862,
+      "run_id": 44623673659,
+      "workflow_name": "Compiler application matched-layout qualification",
+      "head_branch": "feat/compiler-routing-policy-controls",
+      "run_url": "https://api.github.com/repos/sdkbench-org/sdkbench/actions/runs/44623673659",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVyk5cs8AAAAfpPgcpg",
+      "head_sha": "9ce37f85bef327603bc64f63eec7e0fddc9436ef",
+      "url": "https://api.github.com/repos/sdkbench-org/sdkbench/actions/jobs/135911709862",
+      "html_url": "https://github.com/sdkbench-org/sdkbench/actions/runs/44623673659/job/135911709862",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-19T21:56:01Z",
+      "started_at": "2026-11-19T21:56:03Z",
+      "completed_at": "2026-11-20T01:02:41Z",
+      "name": "matched-applications",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-19T21:56:04Z",
+          "completed_at": "2026-11-19T21:56:05Z"
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-19T21:56:05Z",
+          "completed_at": "2026-11-19T21:56:08Z"
+        },
+        {
+          "name": "Retrieve the immutable FlagQuantum candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-19T21:56:08Z",
+          "completed_at": "2026-11-19T21:56:15Z"
+        },
+        {
+          "name": "Require an immutable integrated compiler",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-19T21:56:15Z",
+          "completed_at": "2026-11-19T21:56:15Z"
+        },
+        {
+          "name": "Run actions/setup-python@v7.1.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-19T21:56:15Z",
+          "completed_at": "2026-11-19T21:56:23Z"
+        },
+        {
+          "name": "Prepare the separate Stable ABI build environment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-19T21:56:23Z",
+          "completed_at": "2026-11-19T21:56:52Z"
+        },
+        {
+          "name": "Build from the retained immutable source archive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-19T21:56:52Z",
+          "completed_at": "2026-11-19T21:57:28Z"
+        },
+        {
+          "name": "Retain published comparator wheels and release metadata",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-19T21:57:28Z",
+          "completed_at": "2026-11-19T21:57:29Z"
+        },
+        {
+          "name": "Install the shared measurement environment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-19T21:57:29Z",
+          "completed_at": "2026-11-19T21:58:24Z"
+        },
+        {
+          "name": "Check native adapter semantics",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-19T21:58:24Z",
+          "completed_at": "2026-11-19T22:00:01Z"
+        },
+        {
+          "name": "Register the declared matched-layout workflows before drawing cases",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-19T22:00:01Z",
+          "completed_at": "2026-11-19T22:00:10Z"
+        },
+        {
+          "name": "Freeze registrations and draw the preregistered cohort once",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-19T22:00:10Z",
+          "completed_at": "2026-11-19T22:00:19Z"
+        },
+        {
+          "name": "Delegate a disposable cgroup subtree on the CI VM",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-19T22:00:19Z",
+          "completed_at": "2026-11-19T22:00:19Z"
+        },
+        {
+          "name": "Run every preregistered case with unchanged acceptance and limits",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-11-19T22:00:19Z",
+          "completed_at": "2026-11-20T00:18:20Z"
+        },
+        {
+          "name": "Independently replay every retained outcome",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-11-20T00:18:20Z",
+          "completed_at": "2026-11-20T00:37:34Z"
+        },
+        {
+          "name": "Compare complete workflows without omitting failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-20T00:37:34Z",
+          "completed_at": "2026-11-20T01:01:57Z"
+        },
+        {
+          "name": "Retain builds, failures, registrations and raw campaign evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-20T01:01:57Z",
+          "completed_at": "2026-11-20T01:02:37Z"
+        },
+        {
+          "name": "Check descendant cleanup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-11-20T01:02:37Z",
+          "completed_at": "2026-11-20T01:02:37Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.1.0",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 34,
+          "started_at": "2026-11-20T01:02:37Z",
+          "completed_at": "2026-11-20T01:02:37Z"
+        },
+        {
+          "name": "Post Retrieve the immutable FlagQuantum candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 35,
+          "started_at": "2026-11-20T01:02:37Z",
+          "completed_at": "2026-11-20T01:02:37Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 36,
+          "started_at": "2026-11-20T01:02:37Z",
+          "completed_at": "2026-11-20T01:02:38Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 37,
+          "started_at": "2026-11-20T01:02:38Z",
+          "completed_at": "2026-11-20T01:02:38Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/sdkbench-org/sdkbench/check-runs/135911709862",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000511,
+      "runner_name": "GitHub Actions 1000000511",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

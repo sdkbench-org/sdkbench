@@ -1,0 +1,648 @@
+{
+  "all_other_local_summary_fields_unchanged": true,
+  "differences": [
+    {
+      "hosted_maximum_semantic_error": 2.6924339008921937e-15,
+      "instance": "APP-QAOA-LINE-06",
+      "local_maximum_semantic_error": 2.6945789820192467e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.705695711431699e-15,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 4.6818152337592315e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.828193870057737e-15,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 4.293510341864436e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+      "instance": "APP-HOPPING-LINE-06",
+      "local_maximum_semantic_error": 9.446966773865963e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.3109126141498433e-14,
+      "instance": "APP-HOPPING-GRID-06",
+      "local_maximum_semantic_error": 1.3117556363566088e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 2.9303171598054862e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 1.895778961066142e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.034117999026818e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 4.127003035640143e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.381486615589416e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 2.2593106746536497e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.071877118273721e-15,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 6.020145321624637e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.07168117740638e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 5.474044100912244e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.784357850085917e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 6.107235845698196e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.093213640861839e-15,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 7.782902944203376e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2201353881851484e-14,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 1.2716325333626893e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.851948985570778e-15,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 1.0542004624876669e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.780094579515994e-15,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 8.335897026989042e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.338253484994866e-15,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 7.0654296933386575e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.305128536768941e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 3.2486179086280272e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.654632453927555e-15,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 1.0226752665043885e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.816681691848143e-15,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 7.759470657616146e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 2.047105065988175e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.7647289590820527e-14,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 2.7090647060268293e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0723157491414757e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 1.0433383266549301e-14,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.248733984042286e-15,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 8.10384682246086e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.308551387940943e-15,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 9.958799546941644e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.979399773470822e-15,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 5.256366709256431e-15,
+      "sdk": "fq-source-restored"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.0299377648567433e-15,
+      "instance": "APP-QAOA-GRID-06",
+      "local_maximum_semantic_error": 3.035304115729628e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2024924957129407e-14,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 1.1457506993117877e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.206335383118183e-15,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 5.999314860941095e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+      "instance": "APP-HOPPING-LINE-06",
+      "local_maximum_semantic_error": 9.446966773865963e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.3109126141498433e-14,
+      "instance": "APP-HOPPING-GRID-06",
+      "local_maximum_semantic_error": 1.3117556363566088e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.234164004211517e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 4.2220989363198226e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.558523653980509e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 2.5086788580512933e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.560389026133136e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 7.377450794711089e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.9804098642604125e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 4.388476007099622e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.462985437974817e-14,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 1.5184709889555048e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.401461901943877e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 8.277864862230015e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.784357850085917e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 6.107235845698196e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.093213640861839e-15,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 7.782902944203376e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.5032117221745862e-14,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 2.4284847908343737e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.466519754762067e-14,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 1.615632006264565e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.2231983039116786e-14,
+      "instance": "APP-REPETITION-LINE-08",
+      "local_maximum_semantic_error": 3.089825254781357e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.219048136854448e-14,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 1.2427092118457758e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.581127736740937e-14,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 1.5332361857451686e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.85175015425272e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 7.529004455451707e-15,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.471168238361641e-14,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 4.488331682501143e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.017102920793314e-14,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 2.011381761234907e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 2.047105065988175e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.7647289590820527e-14,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 2.7090647060268293e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.10409260800969e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 3.070729236648713e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9593332980956015e-14,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 1.9551440256493165e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.6413381145299908e-14,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 1.6630130152770118e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.194576887619141e-14,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 1.1355694385831896e-14,
+      "sdk": "fq-policy-persistent-layout"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.1549930104065168e-15,
+      "instance": "APP-QAOA-GRID-06",
+      "local_maximum_semantic_error": 2.1556631856153973e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2256404618577723e-14,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 1.2425852229989085e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.176523879792922e-15,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 9.0347276465301e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+      "instance": "APP-HOPPING-LINE-06",
+      "local_maximum_semantic_error": 9.446966773865963e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.7987752545143425e-14,
+      "instance": "APP-HOPPING-GRID-06",
+      "local_maximum_semantic_error": 1.7990858562913845e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.135743801963486e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 6.152074598578623e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.137024177327419e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 4.144239498426246e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.105969438009307e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 6.875109865312971e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.757268488191713e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 3.911074787101517e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.6916448407296428e-14,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 1.6978246909626372e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0360268205438103e-14,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 1.0298478087633716e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.784357850085917e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 6.107235845698196e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.5193433528676085e-14,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 1.4386628127932887e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.4655189797903014e-14,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 3.408299926069308e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.0966140926069434e-14,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 2.199608353753207e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.123160380038814e-14,
+      "instance": "APP-REPETITION-LINE-08",
+      "local_maximum_semantic_error": 3.000893623527598e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2892728160340791e-14,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 1.378188182657119e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.291121773579794e-14,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 1.2269792344002917e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.0497522935846126e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 7.055009263194515e-15,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.1321837376570526e-14,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 4.1722317531920525e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.18373462510216e-14,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 2.1722923021336995e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 2.047105065988175e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.5906391406748344e-14,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 5.701855265112794e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.956612612763364e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 4.0042679975359755e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.2647304961536615e-14,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 2.214020008530675e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.353718961872246e-14,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 3.3043511108041736e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.4426412665466387e-14,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 1.464316409798054e-14,
+      "sdk": "fq-policy-restore-after-each-gate"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.6924339008921937e-15,
+      "instance": "APP-QAOA-LINE-06",
+      "local_maximum_semantic_error": 2.6945789820192467e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.705695711431699e-15,
+      "instance": "APP-ISING-LINE-06",
+      "local_maximum_semantic_error": 4.6818152337592315e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.828193870057737e-15,
+      "instance": "APP-ISING-GRID-06",
+      "local_maximum_semantic_error": 4.293510341864436e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.780975451285777e-15,
+      "instance": "APP-HOPPING-LINE-06",
+      "local_maximum_semantic_error": 1.0009038592031513e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.399874682196077e-14,
+      "instance": "APP-HOPPING-GRID-06",
+      "local_maximum_semantic_error": 1.3888689896168541e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+      "instance": "APP-QFT-LINE-06",
+      "local_maximum_semantic_error": 2.9303171598054862e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+      "instance": "APP-QFT-GRID-06",
+      "local_maximum_semantic_error": 1.895778961066142e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.034117999026818e-15,
+      "instance": "APP-QAOA-LINE-08",
+      "local_maximum_semantic_error": 4.127003035640143e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.381486615589416e-15,
+      "instance": "APP-QAOA-GRID-08",
+      "local_maximum_semantic_error": 2.2593106746536497e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 6.071877118273721e-15,
+      "instance": "APP-ISING-LINE-08",
+      "local_maximum_semantic_error": 6.020145321624637e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.07168117740638e-15,
+      "instance": "APP-ISING-GRID-08",
+      "local_maximum_semantic_error": 5.474044100912244e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 5.784357850085917e-15,
+      "instance": "APP-HOPPING-LINE-08",
+      "local_maximum_semantic_error": 6.032609073124265e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.589711668120925e-15,
+      "instance": "APP-HOPPING-GRID-08",
+      "local_maximum_semantic_error": 8.403524785993876e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.2201353881851484e-14,
+      "instance": "APP-QFT-LINE-08",
+      "local_maximum_semantic_error": 1.2716325333626893e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.851948985570778e-15,
+      "instance": "APP-QFT-GRID-08",
+      "local_maximum_semantic_error": 1.0542004624876669e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.780094579515994e-15,
+      "instance": "APP-REPETITION-GRID-08",
+      "local_maximum_semantic_error": 8.335897026989042e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.338253484994866e-15,
+      "instance": "APP-QAOA-LINE-12",
+      "local_maximum_semantic_error": 7.0654296933386575e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 3.305128536768941e-15,
+      "instance": "APP-QAOA-GRID-12",
+      "local_maximum_semantic_error": 3.2486179086280272e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.654632453927555e-15,
+      "instance": "APP-ISING-LINE-12",
+      "local_maximum_semantic_error": 1.0226752665043885e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 7.816681691848143e-15,
+      "instance": "APP-ISING-GRID-12",
+      "local_maximum_semantic_error": 7.759470657616146e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+      "instance": "APP-HOPPING-LINE-12",
+      "local_maximum_semantic_error": 2.080476653381259e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 2.6979858147236448e-14,
+      "instance": "APP-HOPPING-GRID-12",
+      "local_maximum_semantic_error": 2.7368743660586386e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 1.0723157491414757e-14,
+      "instance": "APP-QFT-LINE-12",
+      "local_maximum_semantic_error": 1.0433383266549301e-14,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 8.248733984042286e-15,
+      "instance": "APP-QFT-GRID-12",
+      "local_maximum_semantic_error": 8.10384682246086e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 9.308551387940943e-15,
+      "instance": "APP-REPETITION-LINE-12",
+      "local_maximum_semantic_error": 9.958799546941644e-15,
+      "sdk": "fq-policy-sabre"
+    },
+    {
+      "hosted_maximum_semantic_error": 4.979399773470822e-15,
+      "instance": "APP-REPETITION-GRID-12",
+      "local_maximum_semantic_error": 5.256366709256431e-15,
+      "sdk": "fq-policy-sabre"
+    }
+  ],
+  "hosted_summary_sha256": "8fb93611d5e51794cdbcf712dd203654dcd3137d90b0d67b1f521d397b89f94a",
+  "interpretation": "Both local and hosted semantic errors remain retained. Only their maxima are substituted to verify the original hosted digest; acceptance is unchanged.",
+  "only_fields_replaced": "cases[*].maximum_semantic_error",
+  "profile": "routing-policies",
+  "reconstructed_digest_matches_hosted": true,
+  "reconstructed_hosted_summary_sha256": "8fb93611d5e51794cdbcf712dd203654dcd3137d90b0d67b1f521d397b89f94a",
+  "schema_version": 1
+}

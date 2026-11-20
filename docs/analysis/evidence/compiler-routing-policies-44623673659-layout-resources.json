@@ -1,0 +1,42 @@
+{
+  "block_statuses": {
+    "accepted": 1200
+  },
+  "common_timed_restoration_policy": {
+    "algorithm": "spanning-tree-leaf-token-restoration-v1",
+    "final_layout": "identity",
+    "leaf_order": "ascending",
+    "neighbor_order": "ascending",
+    "optimization_after_restoration": false,
+    "swap_decomposition": "H-CZ-H CNOT triple",
+    "timed": true,
+    "tree_root": 0
+  },
+  "controls_recorded_for_all_retained_executions": true,
+  "enforced_cpu_sets": {
+    "0": 1200
+  },
+  "execution_statuses": {
+    "completed": 1200
+  },
+  "external_restoration_workflows": [
+    "flagquantum-ordinary-restored",
+    "flagquantum-persistent-layout-restored",
+    "flagquantum-restore-after-each-gate-restored",
+    "flagquantum-sabre-restored"
+  ],
+  "initial_identity_registered_for_all": true,
+  "memory_cap_bytes": 17179869184,
+  "native_restoration_workflows": [],
+  "profile": "routing-policies",
+  "publication_eligible": false,
+  "record_and_layout_counts": {
+    "records:accepted": 3600,
+    "records:accepted-identity-layout": 3600,
+    "records:retained": 3600,
+    "warmups:accepted": 2400,
+    "warmups:accepted-identity-layout": 2400,
+    "warmups:retained": 2400
+  },
+  "scope": "Accepted payloads have identity layout. Failed and unavailable execution evidence remains counted; recorded control policy is not independent kernel attestation."
+}
