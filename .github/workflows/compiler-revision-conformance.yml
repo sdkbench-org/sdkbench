@@ -86,7 +86,10 @@ jobs:
           records = {}
           for path in sorted((root / 'wheels').glob('*.whl')):
               with ZipFile(path) as wheel:
-                  names = [name for name in wheel.namelist() if name.endswith('.dist-info/METADATA')]
+                  names = [name for name in wheel.namelist()
+                           if len(name.split('/')) == 2
+                           and name.split('/')[0].endswith('.dist-info')
+                           and name.split('/')[1] == 'METADATA']
                   assert len(names) == 1, path
                   metadata = BytesParser().parsebytes(wheel.read(names[0]))
               name = re.sub(r'[-_.]+', '-', metadata['Name']).lower()
@@ -97,6 +100,8 @@ jobs:
           PY
       - name: Install shared dependencies and isolated frontend wheels
         timeout-minutes: 15
+        env:
+          PYTHONPATH: ''
         run: |
           python -m venv /tmp/sdkbench-revision-common
           /tmp/sdkbench-revision-common/bin/python -m pip install --no-index \
@@ -121,6 +126,8 @@ jobs:
           done
       - name: Check installed bytes and retain development admissions without a draw
         timeout-minutes: 15
+        env:
+          PYTHONPATH: ''
         run: |
           for role in first second; do
             "/tmp/sdkbench-revision-$role/bin/python" - "$role" <<'PY'
@@ -171,6 +178,7 @@ jobs:
         timeout-minutes: 15
         env:
           SDKBENCH_NATIVE_CANDIDATE_TESTS: '1'
+          PYTHONPATH: ''
         run: |
           conformance_status=0
           for role in first second; do
@@ -188,6 +196,17 @@ jobs:
         uses: actions/upload-artifact@v7.0.2
         with:
           name: compiler-revision-wheel-conformance
-          path: wheel-conformance
+          path: |
+            wheel-conformance/*.txt
+            wheel-conformance/*.json
+            wheel-conformance/common/
+            wheel-conformance/*/build/*.zip
+            wheel-conformance/*/build/*.whl
+            wheel-conformance/*/build/*.json
+            wheel-conformance/*/build/*.log
+            wheel-conformance/*/*.txt
+            wheel-conformance/*/*.json
+            wheel-conformance/*/*.xml
+            wheel-conformance/*/*.log
           if-no-files-found: error
           retention-days: 90

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "run_id": 44764569267,
+  "run_attempt": 1,
+  "harness_commit": "39ff9929579b7efbc24444947f28a6920614170a",
+  "result": "failure before installation and native semantic checks",
+  "failure_stage": "Retain one common dependency wheelhouse and hashed lock",
+  "reason": "canonical wheel metadata selector also selected vendored nested metadata",
+  "artifact_id": 14644015023,
+  "artifact_sha256": "868d2d42340cf8de163b78c1caa0bc7896bdacd7cf467d69cfd957e82388e2b3",
+  "artifact_bytes": 785642395,
+  "artifact_expires_at": "2027-02-18T15:34:09Z",
+  "archive_matches_github_digest": true,
+  "builds": {
+    "first": {
+      "source_commit": "df35fb74c2bab72ab3af5eb635e9a22774929688",
+      "returncode": 0,
+      "wheel": {
+        "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+        "sha256": "53bf531a53911dfb7d6489058dcb5b2e7fd50d7aff62273f883fe197e2b3c9f3"
+      },
+      "source_archive": {
+        "filename": "source.zip",
+        "sha256": "190c3049e7444731c3494004766e62b694a7e8f3b87a12039dd54eab6c2e48ce"
+      },
+      "build_log": {
+        "filename": "build.log",
+        "sha256": "bacf9a5e7f91076a8e49997d109a1ec10fb6400d0e34cf31b74411ccffae5b7b"
+      },
+      "build_inputs_and_outputs_hash_verified": true,
+      "source_archive_commit_comment_verified": true
+    },
+    "second": {
+      "source_commit": "846032c764f4b3c3228f96a906e3ddad7123ab98",
+      "returncode": 0,
+      "wheel": {
+        "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+        "sha256": "53a68321d124d1807ef41153cee06762601ada83bc8af9d6c5a624920d1f5ef7"
+      },
+      "source_archive": {
+        "filename": "source.zip",
+        "sha256": "c2386bc3bb0e7f1b05238be351a428968b10a280ddbdd99016384718d754d8ee"
+      },
+      "build_log": {
+        "filename": "build.log",
+        "sha256": "28ea7fd3fff1f4b172aed122a0df008b5a9d1ec0a623116a2b0c06ae02babcef"
+      },
+      "build_inputs_and_outputs_hash_verified": true,
+      "source_archive_commit_comment_verified": true
+    }
+  },
+  "metadata_diagnosis": {
+    "distribution": "setuptools",
+    "version": "84.2.1",
+    "old_candidate_count": 13,
+    "canonical_candidate_count": 1,
+    "canonical_path": "setuptools-84.2.1.dist-info/METADATA",
+    "nested_candidates_are_not_the_wheel_root_metadata": true
+  },
+  "installed_wheel_admission_executed": false,
+  "native_semantic_checks_executed": false,
+  "study_entropy_drawn": false,
+  "performance_comparison_executed": false,
+  "server_actions_performed": false,
+  "correction_validation": {
+    "actual_setuptools_root_metadata_accepted": true,
+    "multiple_root_metadata_rejected": true,
+    "duplicate_normalized_distribution_names_rejected": true,
+    "source_override_shadowing_reproduced_locally": true,
+    "cleared_source_override_installs_requested_wheel_locally": true,
+    "installed_harness_python_files_equal_frozen_source": true,
+    "python_files_checked": 49,
+    "required_retained_files_checked": 49,
+    "temporary_expanded_source_and_duplicate_download_excluded": true,
+    "retained_uncompressed_bytes_for_original_failed_artifact": 459081758,
+    "scope": "local setup checks; corrected Linux run still required"
+  }
+}
