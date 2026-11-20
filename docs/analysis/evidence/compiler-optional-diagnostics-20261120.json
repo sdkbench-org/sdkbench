@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "evidence_file": "compiler-optional-diagnostics-20261120.json.gz",
+  "sha256": "a55066fdd308831f20a7768eacb4b1f1e0acb0a868fb8053597aaae5a4ff70bb",
+  "uncompressed_sha256": "c395d3d56fa91d8963110acb7c1887479a63d4e2042bbd69c683cf029c95e497",
+  "scope": "local source adapter conformance; no installed-wheel or performance qualification",
+  "before": {
+    "baseline": "6 passed, 6 failed",
+    "candidate": "12 passed"
+  },
+  "after": {
+    "baseline": "12 passed",
+    "candidate": "12 passed"
+  },
+  "retained_original_failures": true,
+  "acceptance_changed": false,
+  "native_compilation_calls_changed": false,
+  "timing_or_rank_claim": false,
+  "all_candidate_workflows_source_conformance": "60 passed in 146.20 seconds; no performance claim"
+}

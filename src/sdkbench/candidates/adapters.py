@@ -239,13 +239,16 @@ def _target_artifact_route(adapter, fixture, seed):
     adapter.compiler_evidence = {'executable_artifact': serialized,
                                  'target_snapshot_id': snapshot.snapshot_id}
     operations = _normalize_operations(result.legalization.program, ('rx', 'rz', 'cz'))
-    stage = result.legalization.native_block_optimization
+    missing = object()
+    stage = getattr(result.legalization, 'native_block_optimization', missing)
     baseline = result.legalization.native_gate_legalization.program
     adapter.audit.update(native_program_builds=1, native_compilations=1,
                          compiler_seed_supported=0, native_baseline_cz_count=sum(
                              op.name == 'cz' for op in baseline.instructions),
-                         accepted_block_rewrites=len(stage.rewrites) if stage is not None else 0,
+                         native_block_optimization_evidence_available=int(stage is not missing),
                          serialized_artifact_bytes=len(serialized.encode('utf-8')))
+    if stage is not missing:
+        adapter.audit['accepted_block_rewrites'] = len(stage.rewrites) if stage is not None else 0
     return {'operations': operations, 'final_layout': list(result.physical_plan.final_logical_to_physical)}
 
 
