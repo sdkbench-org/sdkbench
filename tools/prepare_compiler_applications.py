@@ -16,11 +16,13 @@ from pathlib import Path
 
 from sdkbench.candidates.adapters import ROUTING_POLICY_WORKFLOWS
 from sdkbench.candidates.application_bundle import build_bundle
+from sdkbench.candidates.environment import admit_interpreter, interpreter_identity
 from sdkbench.candidates.provenance import (
     implementation_fingerprint,
     verify_routing_policy_controls,
     verify_runtime,
 )
+from sdkbench.candidates.revisions import verify_revision_control
 from sdkbench.p0 import Bundle, Registration
 from sdkbench.p0.models import canonical_bytes, digest, read_json, require
 
@@ -50,28 +52,40 @@ def prepare(
     output: Path,
     *,
     profile: str = "ordinary",
+    interpreters: dict[str, str] | None = None,
+    inventories: dict[str, Path] | None = None,
 ) -> Bundle:
     """Retain 30 preregistered line/grid cases with unchanged acceptance."""
     profiles = {
         "ordinary": WORKFLOWS,
         "target-artifact": TARGET_WORKFLOWS,
         "routing-policies": ROUTING_POLICY_WORKFLOWS,
+        "revision-control": None,
     }
     require(profile in profiles, "Unknown workflow profile")
     expected = profiles[profile]
     admitted = [Registration(**read_json(path)) for path in registrations]
-    require(
-        len(admitted) == len(expected) and len({r.stack_id for r in admitted}) == len(expected),
-        f"Exactly {len(expected)} distinct matched-layout registrations are required",
-    )
-    require(
-        {r.configuration["options"]["workflow"] for r in admitted} == expected,
-        "The cohort requires the matched-restoration workflows for its profile",
-    )
-    if profile == "routing-policies":
-        verify_routing_policy_controls(admitted)
-    for registration in admitted:
-        verify_runtime(registration)
+    if output.exists():
+        raise FileExistsError(output)
+    revision_environments = None
+    if profile == "revision-control":
+        require(interpreters is not None and inventories is not None
+                and set(interpreters) == set(inventories) == {r.stack_id for r in admitted}
+                and len(set(interpreters.values())) == 2,
+                "Revision controls require complete distinct interpreter and inventory selections")
+        observed = {name: read_json(path) for name, path in inventories.items()}
+        verify_revision_control(admitted, observed)
+        identities = {name: interpreter_identity(python) for name, python in interpreters.items()}
+        environment = {key: os.environ[key] for key in ("LD_LIBRARY_PATH",) if key in os.environ}
+        environment["PYTHONPATH"] = str(Path(__file__).resolve().parents[1] / "src")
+        probes = {r.stack_id: admit_interpreter(r, identities[r.stack_id], environment,
+                                              inventory=observed[r.stack_id])
+                  for r in admitted}
+        revision_environments = {"inventories": observed, "interpreters": identities, "probes": probes}
+    else:
+        require(interpreters is None and inventories is None,
+                "Environment selections require the revision-control profile")
+        _verify_profile(admitted, expected, profile)
     baseline = Bundle(base)
     output.mkdir(parents=True, exist_ok=False)
     source_root = Path(__file__).resolve().parents[1]
@@ -111,7 +125,28 @@ def prepare(
         "registrations": [r.to_dict() for r in admitted],
         "qualification": "local event record; not an independent timestamp or attestation",
     }
+    if revision_environments is not None:
+        freeze["revision_environments"] = revision_environments
     _write_new(output / "freeze.json", freeze)
+    return _draw_cohort(base, output, freeze)
+
+
+def _verify_profile(admitted: list[Registration], expected: frozenset, profile: str) -> None:
+    require(
+        len(admitted) == len(expected) and len({r.stack_id for r in admitted}) == len(expected),
+        f"Exactly {len(expected)} distinct matched-layout registrations are required",
+    )
+    require(
+        {r.configuration["options"]["workflow"] for r in admitted} == expected,
+        "The cohort requires the matched-restoration workflows for its profile",
+    )
+    if profile == "routing-policies":
+        verify_routing_policy_controls(admitted)
+    for registration in admitted:
+        verify_runtime(registration)
+
+
+def _draw_cohort(base: Path, output: Path, freeze: dict) -> Bundle:
     # The freeze exists before entropy is requested. Existing directories are
     # refused before this point, so a failed campaign cannot silently redraw.
     nonce = secrets.token_bytes(32).hex()
@@ -189,10 +224,25 @@ def main() -> None:
     parser.add_argument("--registration", type=Path, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--profile", choices=("ordinary", "target-artifact", "routing-policies"), default="ordinary"
+        "--profile", choices=("ordinary", "target-artifact", "routing-policies", "revision-control"), default="ordinary"
     )
+    parser.add_argument("--interpreter", action="append", metavar="STACK=/ABS/PYTHON")
+    parser.add_argument("--inventory", action="append", metavar="STACK=ENVIRONMENT_JSON")
     args = parser.parse_args()
-    bundle = prepare(args.base, args.registration, args.output, profile=args.profile)
+    def selections(values):
+        if values is None:
+            return None
+        result = {}
+        for value in values:
+            name, separator, path = value.partition("=")
+            if not separator or not name or not path or name in result:
+                parser.error("Selections require distinct STACK=PATH entries")
+            result[name] = path
+        return result
+    inventories = selections(args.inventory)
+    bundle = prepare(args.base, args.registration, args.output, profile=args.profile,
+                     interpreters=selections(args.interpreter),
+                     inventories=None if inventories is None else {k: Path(v) for k, v in inventories.items()})
     print(
         canonical_bytes(
             {

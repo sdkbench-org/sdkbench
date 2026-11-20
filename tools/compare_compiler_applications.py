@@ -13,8 +13,9 @@ from compiler_candidate_report import spread, summarize
 
 from sdkbench.candidates.adapters import ROUTING_POLICY_WORKFLOWS
 from sdkbench.candidates.provenance import verify_routing_policy_controls
+from sdkbench.candidates.revisions import verify_revision_preparation
 from sdkbench.p0 import Bundle, Registration
-from sdkbench.p0.models import canonical_bytes, digest, require
+from sdkbench.p0.models import canonical_bytes, digest, read_json, require
 
 WORKFLOWS = frozenset(
     {
@@ -37,21 +38,37 @@ def _positive_ratio(numerator: float, denominator: float) -> float | None:
     return value if math.isfinite(value) else None
 
 
-def compare(summary: dict, *, profile: str = "ordinary") -> dict:
+def compare(summary: dict, *, profile: str = "ordinary", revision_context: dict | None = None) -> dict:
     """Describe every pairing; failed cases receive no performance ratios."""
     require(summary["publication_eligible"] is False, "Unexpected publication claim")
     profiles = {
         "ordinary": WORKFLOWS,
         "target-artifact": TARGET_WORKFLOWS,
         "routing-policies": ROUTING_POLICY_WORKFLOWS,
+        "revision-control": None,
     }
     require(profile in profiles, "Unknown workflow profile")
     expected = profiles[profile]
+    if profile == "revision-control":
+        require(revision_context is not None
+                and revision_context["registrations_sha256"] == digest(summary["registrations"])
+                and revision_context["bundle_sha256"] == summary["bundle_sha256"],
+                "Revision reporting requires the jointly frozen campaign context")
+        expected = frozenset(revision_context["stack_ids"])
+        require(len(expected) == 2 and expected == set(summary["registrations"]),
+                "Revision report stack scope mismatch")
+    else:
+        require(revision_context is None, "Revision context requires the revision-control profile")
     if profile == "routing-policies":
         verify_routing_policy_controls([
             Registration(**raw) for raw in summary["registrations"].values()
         ])
     scopes = {
+        "revision-control": (
+            "Two complete revisions of one SDK workflow with matched non-frontend dependencies, "
+            "configuration and host facts on one jointly drawn cohort. Whole-revision effects "
+            "do not isolate a compiler pass or establish an SDK ranking."
+        ),
         "ordinary": "Complete ordinary compiler workflows with restored output layout.",
         "routing-policies": (
             "Matched native routing-policy controls on one compiler revision; ordinary "
@@ -67,6 +84,9 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
     coverage = {}
     for row in summary["cases"]:
         workflow = row["workflow"]
+        if profile == "revision-control":
+            require(workflow == revision_context["workflow"], "Mixed revision workflows")
+            workflow = row["sdk"]
         require(
             workflow in expected, "Expected matched-restoration workflows for profile"
         )
@@ -75,6 +95,9 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
         current[workflow] = row
         coverage.setdefault(workflow, Counter())[row["status"]] += 1
     require(by_case, "Empty comparison")
+    if profile == "revision-control":
+        require(set(by_case) == set(revision_context["instances"]),
+                "Revision report does not contain the complete joint cohort")
     pairs = []
     for instance, rows in sorted(by_case.items()):
         require(set(rows) == expected, "Missing workflow within a case")
@@ -94,6 +117,10 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
                 "both_complete": complete,
                 "ratios": None,
             }
+            if profile == "revision-control":
+                result.update(numerator_stack=first, denominator_stack=second,
+                              numerator_workflow=left["workflow"],
+                              denominator_workflow=right["workflow"])
             if complete:
                 require(
                     all(
@@ -143,7 +170,7 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
                     ),
                 }
             pairs.append(result)
-    return {
+    result = {
         "schema_version": 1,
         "bundle_sha256": summary["bundle_sha256"],
         "source_summary_sha256": digest(summary),
@@ -165,6 +192,9 @@ def compare(summary: dict, *, profile: str = "ordinary") -> dict:
             "No across-case aggregate, universal winner or global SDK ranking is inferred.",
         ],
     }
+    if revision_context is not None:
+        result["joint_revision_control"] = revision_context
+    return result
 
 
 def main() -> None:
@@ -173,11 +203,24 @@ def main() -> None:
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--profile", choices=("ordinary", "target-artifact", "routing-policies"), default="ordinary"
+        "--profile", choices=("ordinary", "target-artifact", "routing-policies", "revision-control"), default="ordinary"
     )
+    parser.add_argument("--preparation", type=Path,
+                        help="Joint freeze/draw/selection directory required for revision control")
     args = parser.parse_args()
+    if (args.profile == "revision-control") != (args.preparation is not None):
+        parser.error("Provide --preparation exactly when using --profile revision-control")
+    bundle = Bundle(args.bundle)
+    summary = summarize(args.directory, bundle)
+    context = None
+    if args.preparation is not None:
+        context = verify_revision_preparation(
+            args.preparation, bundle, summary["registrations"],
+            read_json(args.directory / "interpreters.json"),
+            read_json(args.directory / "admission.json"),
+        )
     result = compare(
-        summarize(args.directory, Bundle(args.bundle)), profile=args.profile
+        summary, profile=args.profile, revision_context=context,
     )
     with args.output.open("xb") as output:
         output.write(canonical_bytes(result))
