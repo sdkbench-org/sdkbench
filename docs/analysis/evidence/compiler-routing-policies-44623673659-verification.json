@@ -1,0 +1,29 @@
+{
+  "all_pair_metrics_and_coverage_match_hosted": true,
+  "blocks_verified": 1200,
+  "build_files_hash_verified": true,
+  "case_participant_pairs": 120,
+  "compiler_revision": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+  "elapsed_seconds": 521.6391731250042,
+  "freeze_draw_selection_verified": true,
+  "harness_revision": "9ce37f85bef327603bc64f63eec7e0fddc9436ef",
+  "independent_replay_matches_hosted": true,
+  "measured_records_accepted": 3600,
+  "measured_records_expected": 3600,
+  "measured_records_retained": 3600,
+  "participant_imports_denied": [
+    "flagquantum",
+    "qiskit",
+    "cirq"
+  ],
+  "profile": "routing-policies",
+  "publication_eligible": false,
+  "published_wheels_hash_verified": true,
+  "report_helper_paths_verified": true,
+  "retained_nonce_regeneration_matches": true,
+  "run_id": 44623673659,
+  "schema_version": 1,
+  "summary_digest_matches_hosted": false,
+  "warmup_records_expected": 2400,
+  "warmup_records_retained": 2400
+}

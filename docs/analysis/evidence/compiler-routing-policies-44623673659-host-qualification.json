@@ -1,0 +1,104 @@
+{
+  "host_minimum_physical_cores": 8,
+  "host_minimum_ram_gib": 64,
+  "interpretation": "Worker affinity/resource enforcement is distinct from publication host qualification. Fewer than eight exposed logical CPUs cannot establish eight available physical cores. RAM, SMT-sibling load and independent host/build attestation are not established by these registrations. No minimum is waived; a future publication-qualified study must meet the unchanged profile and review requirements.",
+  "profiles": {
+    "ordinary": {
+      "exposed_logical_cpu_count_meets_minimum_physical_count": false,
+      "host_ram_minimum_established": false,
+      "physical_core_ownership_attested": false,
+      "publication_host_qualified": false,
+      "recorded_host": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "clock": {
+          "adjustable": false,
+          "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+          "monotonic": true,
+          "resolution": 1e-09
+        },
+        "cpu_count": 4,
+        "cpu_models": [
+          "Intel(R) Xeon(R) 6975P-C"
+        ],
+        "cpuinfo_sha256": "a45b5e692c589106f6e394c8a03e2a837713b7bb8543d296a53841746a70df82",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "smt_sibling_and_exclusive_load_attested": false,
+      "source_summary": "compiler-ordinary-44587635615-summary.json.gz",
+      "source_summary_sha256": "3db3d478b916e1db37c3601bd39bf1c14b8cf4819ba29e2e97572990563639ca"
+    },
+    "routing-policies": {
+      "exposed_logical_cpu_count_meets_minimum_physical_count": false,
+      "host_ram_minimum_established": false,
+      "physical_core_ownership_attested": false,
+      "publication_host_qualified": false,
+      "recorded_host": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "clock": {
+          "adjustable": false,
+          "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+          "monotonic": true,
+          "resolution": 1e-09
+        },
+        "cpu_count": 4,
+        "cpu_models": [
+          "AMD EPYC 7763 64-Core Processor"
+        ],
+        "cpuinfo_sha256": "a21786652dce635a954e2d27af05964bdb2096808c67e6677a764b99095dd226",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "smt_sibling_and_exclusive_load_attested": false,
+      "source_summary": "local-summary.json",
+      "source_summary_sha256": "0cc4e79f259d55ae9bbebd2874985b4e8ac955c26d8e463d0c656841cf9de0c5"
+    },
+    "target-artifact": {
+      "exposed_logical_cpu_count_meets_minimum_physical_count": false,
+      "host_ram_minimum_established": false,
+      "physical_core_ownership_attested": false,
+      "publication_host_qualified": false,
+      "recorded_host": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "clock": {
+          "adjustable": false,
+          "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+          "monotonic": true,
+          "resolution": 1e-09
+        },
+        "cpu_count": 4,
+        "cpu_models": [
+          "AMD EPYC 9V74 80-Core Processor"
+        ],
+        "cpuinfo_sha256": "4d21f04673c7e63885427f3577b984219707827f2a48a560d6b571445d392e39",
+        "machine": "x86_64",
+        "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "python": "3.12.14"
+      },
+      "smt_sibling_and_exclusive_load_attested": false,
+      "source_summary": "compiler-target-artifact-44587642527-summary.json.gz",
+      "source_summary_sha256": "74088db1b5cb9ba42b823073ccc04b54fd9c062a1cf52f80d4dd0f9d9060eb4e"
+    }
+  },
+  "publication_eligible": false,
+  "requirements_file_sha256": "840e47bbb9bcae03d1923e75d890d57dc64465a8348fae5faeb378051784bf8b",
+  "requirements_source": "docs/implementation/roadmap.json:execution_profile",
+  "schema_version": 1
+}

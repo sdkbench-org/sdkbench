@@ -1,0 +1,1983 @@
+{
+  "all_campaign_files_preserved": true,
+  "archive_bytes": 2196288,
+  "archive_policy": "Every original campaign file, preparation bundle, freeze/draw/selection, registration, release metadata, build record/log, requirements and hosted replay/comparison is retained unchanged. Build wheels, source.zip and extracted compiler sources remain in the original GitHub artifact until its explicit expiry; they are not duplicated in Git. No raw measurement or failure is omitted.",
+  "archive_sha256": "87959b6cf33a849c82421d88d3100d68aa8e43c1556577adbf8a2201a3828ff4",
+  "campaign_files_verified": 3605,
+  "compiler_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+  "draw": {
+    "entropy_source": "secrets.token_bytes(32)",
+    "freeze_sha256": "24fb94b8c4c1c2b6777a351e465700a7a9996ee8ad0e1f23069d5cd2c0f6e013",
+    "nonce": "d1192faac6eb08cc62dc20e52b531f1520605d57deea86a8839edcf298a24aaa",
+    "recorded_at_utc": "2026-11-19T22:00:18.325170+00:00",
+    "redraw_allowed": false,
+    "schema_version": 1
+  },
+  "elapsed_seconds": 62.843681208003545,
+  "files_verified": 3808,
+  "freeze": {
+    "base_bundle_sha256": "fbe0067fa6fc3941aa116889a28d0c8723ed2755c5188ff5f21c4ee44f382f8a",
+    "campaign_wall_limit_seconds": 16200,
+    "execution": "unchanged protocol: ten blocks, two warmups, three measured compilations",
+    "harness_revision": "9ce37f85bef327603bc64f63eec7e0fddc9436ef",
+    "harness_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+    "preparation_source_sha256": "371f84c8001fb66220419f0439e0d9080eede7be157ed92edce6ab670463243d",
+    "qualification": "local event record; not an independent timestamp or attestation",
+    "recorded_at_utc": "2026-11-19T22:00:18.318533+00:00",
+    "registrations": [
+      {
+        "components": [
+          {
+            "artifact_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "ffd48ff6e407156e3edd5da3337f73235e57a77b99d2b9a1a407287925dfc918",
+            "name": "flagquantum",
+            "role": "frontend",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+            "name": "torch",
+            "role": "numerical-dependency",
+            "version": "2.14.0+cpu"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+              "options": {
+                "basis": [
+                  "h",
+                  "x",
+                  "y",
+                  "z",
+                  "s",
+                  "sdg",
+                  "rx",
+                  "ry",
+                  "rz",
+                  "cz"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "max_added_operations": 20000,
+                "optimization_level": "default",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "routing": "default"
+              },
+              "sdk": "flagquantum"
+            },
+            "implementation_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+              "package_tree_sha256": "409ad18995e3a27ea6c72f7ada5e3106cedaa05dd5ba4c31d6ce61634f12279b",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1326
+            },
+            "sdk": "flagquantum",
+            "source_build": {
+              "build_environment": {
+                "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "LC_ALL": "C",
+                "MAX_JOBS": "1",
+                "OMP_NUM_THREADS": "1",
+                "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+                "PIP_NO_INDEX": "1",
+                "PYTHONHASHSEED": "0",
+                "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+              },
+              "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+              "command": [
+                "/tmp/sdkbench-candidate-build/bin/python",
+                "-m",
+                "build",
+                "--wheel",
+                "--no-isolation",
+                "--outdir",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+              ],
+              "distribution": "flagquantum",
+              "environment": {
+                "dependencies": [
+                  {
+                    "name": "build",
+                    "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                    "version": "1.6.1"
+                  },
+                  {
+                    "name": "filelock",
+                    "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                    "version": "4.2.4"
+                  },
+                  {
+                    "name": "fsspec",
+                    "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                    "version": "2026.9.0"
+                  },
+                  {
+                    "name": "Jinja2",
+                    "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                    "version": "3.1.6"
+                  },
+                  {
+                    "name": "MarkupSafe",
+                    "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                    "version": "3.0.3"
+                  },
+                  {
+                    "name": "mpmath",
+                    "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                    "version": "1.3.0"
+                  },
+                  {
+                    "name": "networkx",
+                    "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                    "version": "3.7"
+                  },
+                  {
+                    "name": "numpy",
+                    "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                    "version": "2.5.5"
+                  },
+                  {
+                    "name": "packaging",
+                    "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                    "version": "26.3"
+                  },
+                  {
+                    "name": "pip",
+                    "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                    "version": "25.0.1"
+                  },
+                  {
+                    "name": "pyproject_hooks",
+                    "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                    "version": "1.3.3"
+                  },
+                  {
+                    "name": "setuptools",
+                    "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                    "version": "84.2.1"
+                  },
+                  {
+                    "name": "sympy",
+                    "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                    "version": "1.14.0"
+                  },
+                  {
+                    "name": "torch",
+                    "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                    "version": "2.10.0+cpu"
+                  },
+                  {
+                    "name": "typing_extensions",
+                    "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                    "version": "4.16.0"
+                  },
+                  {
+                    "name": "wheel",
+                    "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                    "version": "0.48.0"
+                  }
+                ],
+                "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+                "host": {
+                  "allowed_cpus": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "clock": {
+                    "adjustable": false,
+                    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                    "monotonic": true,
+                    "resolution": 1e-09
+                  },
+                  "cpu_count": 4,
+                  "cpu_models": [
+                    "AMD EPYC 7763 64-Core Processor"
+                  ],
+                  "cpuinfo_sha256": "b3bd22051fd5e26b6e539b6c5ad09bd296be095e44d5a9458ac82b1e10a5e32c",
+                  "machine": "x86_64",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                  "python": "3.12.14"
+                },
+                "image_descriptor": {
+                  "kernel": "7.0.0-1017-azure",
+                  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+                },
+                "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+                "implementation": {
+                  "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                  "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                  "sdkbench_version": "0.4.0"
+                },
+                "schema_version": 1,
+                "scope": "observed engineering environment; not a qualified publication host",
+                "sealed_image": false
+              },
+              "independent_attestation": false,
+              "log": {
+                "filename": "build.log",
+                "sha256": "6a28eac5cd20f29093188f23dacb1b97d41e5aa8dc9c9f98de4faa07ec18d080"
+              },
+              "returncode": 0,
+              "schema_version": 1,
+              "source_archive": {
+                "filename": "source.zip",
+                "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+              },
+              "source_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+              "wheel": {
+                "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+                "sha256": "277ce6677cdb52e974686c9367d7ddf4b3db0e550a6547c8e600dc34dbf089e0"
+              }
+            },
+            "suite": "compiler-candidate",
+            "workflow": "flagquantum-ordinary-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "8f8d13c633f0beab8527abc9199054567c1e8811d8107eca4104f830e066846c",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "AMD EPYC 7763 64-Core Processor"
+            ],
+            "cpuinfo_sha256": "c0bd4baab09436637a3bbd3b26fcf4ec9fe85e75853c2d57e57742ec2ae6dac7",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+          "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "fq-source-restored"
+      },
+      {
+        "components": [
+          {
+            "artifact_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "ffd48ff6e407156e3edd5da3337f73235e57a77b99d2b9a1a407287925dfc918",
+            "name": "flagquantum",
+            "role": "frontend",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+            "name": "torch",
+            "role": "numerical-dependency",
+            "version": "2.14.0+cpu"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+              "options": {
+                "basis": [
+                  "h",
+                  "x",
+                  "y",
+                  "z",
+                  "s",
+                  "sdg",
+                  "rx",
+                  "ry",
+                  "rz",
+                  "cz"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "max_added_operations": 20000,
+                "optimization_level": "default",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "routing": "persistent_layout"
+              },
+              "sdk": "flagquantum"
+            },
+            "implementation_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+              "package_tree_sha256": "409ad18995e3a27ea6c72f7ada5e3106cedaa05dd5ba4c31d6ce61634f12279b",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1326
+            },
+            "sdk": "flagquantum",
+            "source_build": {
+              "build_environment": {
+                "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "LC_ALL": "C",
+                "MAX_JOBS": "1",
+                "OMP_NUM_THREADS": "1",
+                "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+                "PIP_NO_INDEX": "1",
+                "PYTHONHASHSEED": "0",
+                "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+              },
+              "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+              "command": [
+                "/tmp/sdkbench-candidate-build/bin/python",
+                "-m",
+                "build",
+                "--wheel",
+                "--no-isolation",
+                "--outdir",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+              ],
+              "distribution": "flagquantum",
+              "environment": {
+                "dependencies": [
+                  {
+                    "name": "build",
+                    "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                    "version": "1.6.1"
+                  },
+                  {
+                    "name": "filelock",
+                    "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                    "version": "4.2.4"
+                  },
+                  {
+                    "name": "fsspec",
+                    "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                    "version": "2026.9.0"
+                  },
+                  {
+                    "name": "Jinja2",
+                    "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                    "version": "3.1.6"
+                  },
+                  {
+                    "name": "MarkupSafe",
+                    "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                    "version": "3.0.3"
+                  },
+                  {
+                    "name": "mpmath",
+                    "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                    "version": "1.3.0"
+                  },
+                  {
+                    "name": "networkx",
+                    "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                    "version": "3.7"
+                  },
+                  {
+                    "name": "numpy",
+                    "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                    "version": "2.5.5"
+                  },
+                  {
+                    "name": "packaging",
+                    "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                    "version": "26.3"
+                  },
+                  {
+                    "name": "pip",
+                    "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                    "version": "25.0.1"
+                  },
+                  {
+                    "name": "pyproject_hooks",
+                    "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                    "version": "1.3.3"
+                  },
+                  {
+                    "name": "setuptools",
+                    "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                    "version": "84.2.1"
+                  },
+                  {
+                    "name": "sympy",
+                    "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                    "version": "1.14.0"
+                  },
+                  {
+                    "name": "torch",
+                    "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                    "version": "2.10.0+cpu"
+                  },
+                  {
+                    "name": "typing_extensions",
+                    "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                    "version": "4.16.0"
+                  },
+                  {
+                    "name": "wheel",
+                    "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                    "version": "0.48.0"
+                  }
+                ],
+                "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+                "host": {
+                  "allowed_cpus": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "clock": {
+                    "adjustable": false,
+                    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                    "monotonic": true,
+                    "resolution": 1e-09
+                  },
+                  "cpu_count": 4,
+                  "cpu_models": [
+                    "AMD EPYC 7763 64-Core Processor"
+                  ],
+                  "cpuinfo_sha256": "b3bd22051fd5e26b6e539b6c5ad09bd296be095e44d5a9458ac82b1e10a5e32c",
+                  "machine": "x86_64",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                  "python": "3.12.14"
+                },
+                "image_descriptor": {
+                  "kernel": "7.0.0-1017-azure",
+                  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+                },
+                "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+                "implementation": {
+                  "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                  "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                  "sdkbench_version": "0.4.0"
+                },
+                "schema_version": 1,
+                "scope": "observed engineering environment; not a qualified publication host",
+                "sealed_image": false
+              },
+              "independent_attestation": false,
+              "log": {
+                "filename": "build.log",
+                "sha256": "6a28eac5cd20f29093188f23dacb1b97d41e5aa8dc9c9f98de4faa07ec18d080"
+              },
+              "returncode": 0,
+              "schema_version": 1,
+              "source_archive": {
+                "filename": "source.zip",
+                "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+              },
+              "source_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+              "wheel": {
+                "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+                "sha256": "277ce6677cdb52e974686c9367d7ddf4b3db0e550a6547c8e600dc34dbf089e0"
+              }
+            },
+            "suite": "compiler-candidate",
+            "workflow": "flagquantum-persistent-layout-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "8f8d13c633f0beab8527abc9199054567c1e8811d8107eca4104f830e066846c",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "AMD EPYC 7763 64-Core Processor"
+            ],
+            "cpuinfo_sha256": "a21786652dce635a954e2d27af05964bdb2096808c67e6677a764b99095dd226",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+          "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "fq-policy-persistent-layout"
+      },
+      {
+        "components": [
+          {
+            "artifact_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "ffd48ff6e407156e3edd5da3337f73235e57a77b99d2b9a1a407287925dfc918",
+            "name": "flagquantum",
+            "role": "frontend",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+            "name": "torch",
+            "role": "numerical-dependency",
+            "version": "2.14.0+cpu"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+              "options": {
+                "basis": [
+                  "h",
+                  "x",
+                  "y",
+                  "z",
+                  "s",
+                  "sdg",
+                  "rx",
+                  "ry",
+                  "rz",
+                  "cz"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "max_added_operations": 20000,
+                "optimization_level": "default",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "routing": "restore_after_each_gate"
+              },
+              "sdk": "flagquantum"
+            },
+            "implementation_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+              "package_tree_sha256": "409ad18995e3a27ea6c72f7ada5e3106cedaa05dd5ba4c31d6ce61634f12279b",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1326
+            },
+            "sdk": "flagquantum",
+            "source_build": {
+              "build_environment": {
+                "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "LC_ALL": "C",
+                "MAX_JOBS": "1",
+                "OMP_NUM_THREADS": "1",
+                "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+                "PIP_NO_INDEX": "1",
+                "PYTHONHASHSEED": "0",
+                "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+              },
+              "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+              "command": [
+                "/tmp/sdkbench-candidate-build/bin/python",
+                "-m",
+                "build",
+                "--wheel",
+                "--no-isolation",
+                "--outdir",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+              ],
+              "distribution": "flagquantum",
+              "environment": {
+                "dependencies": [
+                  {
+                    "name": "build",
+                    "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                    "version": "1.6.1"
+                  },
+                  {
+                    "name": "filelock",
+                    "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                    "version": "4.2.4"
+                  },
+                  {
+                    "name": "fsspec",
+                    "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                    "version": "2026.9.0"
+                  },
+                  {
+                    "name": "Jinja2",
+                    "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                    "version": "3.1.6"
+                  },
+                  {
+                    "name": "MarkupSafe",
+                    "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                    "version": "3.0.3"
+                  },
+                  {
+                    "name": "mpmath",
+                    "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                    "version": "1.3.0"
+                  },
+                  {
+                    "name": "networkx",
+                    "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                    "version": "3.7"
+                  },
+                  {
+                    "name": "numpy",
+                    "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                    "version": "2.5.5"
+                  },
+                  {
+                    "name": "packaging",
+                    "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                    "version": "26.3"
+                  },
+                  {
+                    "name": "pip",
+                    "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                    "version": "25.0.1"
+                  },
+                  {
+                    "name": "pyproject_hooks",
+                    "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                    "version": "1.3.3"
+                  },
+                  {
+                    "name": "setuptools",
+                    "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                    "version": "84.2.1"
+                  },
+                  {
+                    "name": "sympy",
+                    "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                    "version": "1.14.0"
+                  },
+                  {
+                    "name": "torch",
+                    "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                    "version": "2.10.0+cpu"
+                  },
+                  {
+                    "name": "typing_extensions",
+                    "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                    "version": "4.16.0"
+                  },
+                  {
+                    "name": "wheel",
+                    "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                    "version": "0.48.0"
+                  }
+                ],
+                "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+                "host": {
+                  "allowed_cpus": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "clock": {
+                    "adjustable": false,
+                    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                    "monotonic": true,
+                    "resolution": 1e-09
+                  },
+                  "cpu_count": 4,
+                  "cpu_models": [
+                    "AMD EPYC 7763 64-Core Processor"
+                  ],
+                  "cpuinfo_sha256": "b3bd22051fd5e26b6e539b6c5ad09bd296be095e44d5a9458ac82b1e10a5e32c",
+                  "machine": "x86_64",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                  "python": "3.12.14"
+                },
+                "image_descriptor": {
+                  "kernel": "7.0.0-1017-azure",
+                  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+                },
+                "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+                "implementation": {
+                  "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                  "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                  "sdkbench_version": "0.4.0"
+                },
+                "schema_version": 1,
+                "scope": "observed engineering environment; not a qualified publication host",
+                "sealed_image": false
+              },
+              "independent_attestation": false,
+              "log": {
+                "filename": "build.log",
+                "sha256": "6a28eac5cd20f29093188f23dacb1b97d41e5aa8dc9c9f98de4faa07ec18d080"
+              },
+              "returncode": 0,
+              "schema_version": 1,
+              "source_archive": {
+                "filename": "source.zip",
+                "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+              },
+              "source_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+              "wheel": {
+                "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+                "sha256": "277ce6677cdb52e974686c9367d7ddf4b3db0e550a6547c8e600dc34dbf089e0"
+              }
+            },
+            "suite": "compiler-candidate",
+            "workflow": "flagquantum-restore-after-each-gate-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "8f8d13c633f0beab8527abc9199054567c1e8811d8107eca4104f830e066846c",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "AMD EPYC 7763 64-Core Processor"
+            ],
+            "cpuinfo_sha256": "3c087e9dfca79b5cbe4f9ab44eb405fc150b580d9b33af4eb5071eff8a3bcba3",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+          "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "components": [
+          {
+            "artifact_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "name": "sdkbench",
+            "role": "harness",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "ffd48ff6e407156e3edd5da3337f73235e57a77b99d2b9a1a407287925dfc918",
+            "name": "flagquantum",
+            "role": "frontend",
+            "version": "0.4.0"
+          },
+          {
+            "artifact_sha256": "f726f1682ea215dbbed3e9a0e7afa9ae5a082f6c17dac17569bcde026e92d701",
+            "name": "numpy",
+            "role": "numerical-dependency",
+            "version": "2.5.5"
+          },
+          {
+            "artifact_sha256": "eb9b834853dae014b7a232ca7a38f0fe35b13941c7ef01a971e4b0336307ef2d",
+            "name": "torch",
+            "role": "numerical-dependency",
+            "version": "2.14.0+cpu"
+          }
+        ],
+        "configuration": {
+          "options": {
+            "compiler_options": {
+              "entrypoint": "compiler.compile; compiler.lowering.native_gate_legalization.legalize_native_gates",
+              "options": {
+                "basis": [
+                  "h",
+                  "x",
+                  "y",
+                  "z",
+                  "s",
+                  "sdg",
+                  "rx",
+                  "ry",
+                  "rz",
+                  "cz"
+                ],
+                "compiler_seed_supported": false,
+                "final_layout": "sdk-reported",
+                "initial_layout": "identity",
+                "max_added_operations": 20000,
+                "optimization_level": "default",
+                "postprocessing": {
+                  "algorithm": "spanning-tree-leaf-token-restoration-v1",
+                  "final_layout": "identity",
+                  "leaf_order": "ascending",
+                  "neighbor_order": "ascending",
+                  "optimization_after_restoration": false,
+                  "swap_decomposition": "H-CZ-H CNOT triple",
+                  "timed": true,
+                  "tree_root": 0
+                },
+                "routing": "sabre"
+              },
+              "sdk": "flagquantum"
+            },
+            "implementation_sha256": "dcf1bbe0ead2200d3a26725483a451cf6d31da555b38080b3e3332dd21c815ca",
+            "installed_wheel_check": {
+              "module_origin": "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/flagquantum/__init__.py",
+              "package_tree_sha256": "409ad18995e3a27ea6c72f7ada5e3106cedaa05dd5ba4c31d6ce61634f12279b",
+              "record_policy": "installer RECORD excluded from wheel comparison; installed fingerprint includes it",
+              "wheel_members_checked": 1326
+            },
+            "sdk": "flagquantum",
+            "source_build": {
+              "build_environment": {
+                "HOME": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "LC_ALL": "C",
+                "MAX_JOBS": "1",
+                "OMP_NUM_THREADS": "1",
+                "PATH": "/opt/hostedtoolcache/Python/3.12.14/x64/bin:/opt/hostedtoolcache/Python/3.12.14/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+                "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+                "PIP_NO_INDEX": "1",
+                "PYTHONHASHSEED": "0",
+                "TMPDIR": "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build"
+              },
+              "build_tool_sha256": "f8a11c4de5f7bc21636bb6d9295d042e6021a717730feef4b408d4334be5c98f",
+              "command": [
+                "/tmp/sdkbench-candidate-build/bin/python",
+                "-m",
+                "build",
+                "--wheel",
+                "--no-isolation",
+                "--outdir",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build",
+                "/home/runner/work/sdkbench/sdkbench/candidate-evidence/flagquantum-build/source"
+              ],
+              "distribution": "flagquantum",
+              "environment": {
+                "dependencies": [
+                  {
+                    "name": "build",
+                    "record_sha256": "09349ff4bb82bf8c06a47e6f3682cb5c2a25070cb80e2aaee514a4e2098d5b15",
+                    "version": "1.6.1"
+                  },
+                  {
+                    "name": "filelock",
+                    "record_sha256": "17c9a631f3ac638fdf2454c3c8406585eb936446d227890148ddf717de20e192",
+                    "version": "4.2.4"
+                  },
+                  {
+                    "name": "fsspec",
+                    "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3",
+                    "version": "2026.9.0"
+                  },
+                  {
+                    "name": "Jinja2",
+                    "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525",
+                    "version": "3.1.6"
+                  },
+                  {
+                    "name": "MarkupSafe",
+                    "record_sha256": "14c899d9ff900fc13a62fa9b6582712153b68648cba88d6a5977b744e342fcb6",
+                    "version": "3.0.3"
+                  },
+                  {
+                    "name": "mpmath",
+                    "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100",
+                    "version": "1.3.0"
+                  },
+                  {
+                    "name": "networkx",
+                    "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527",
+                    "version": "3.7"
+                  },
+                  {
+                    "name": "numpy",
+                    "record_sha256": "de7d3860224de54f311c39c22004ef0f7fda55c6ba6ee32a8e247700ea9a959e",
+                    "version": "2.5.5"
+                  },
+                  {
+                    "name": "packaging",
+                    "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce",
+                    "version": "26.3"
+                  },
+                  {
+                    "name": "pip",
+                    "record_sha256": "0aeeeb940c3c8ae9d18714cc8ece47eb6bc613475ba423be9d85286cd539ae9e",
+                    "version": "25.0.1"
+                  },
+                  {
+                    "name": "pyproject_hooks",
+                    "record_sha256": "c1a456dfb8865b5dbb7549bc132527bf6b7f0d23f150c3c51c7c1736eb8ea3c2",
+                    "version": "1.3.3"
+                  },
+                  {
+                    "name": "setuptools",
+                    "record_sha256": "009d282bebe7a71998963944709e1cd9994f5497fba14eea290eb4cf7ec24d05",
+                    "version": "84.2.1"
+                  },
+                  {
+                    "name": "sympy",
+                    "record_sha256": "d180ef37cd5569b9c3e62867c54c4ecfcde3f5e0ccce624690bad9084f622185",
+                    "version": "1.14.0"
+                  },
+                  {
+                    "name": "torch",
+                    "record_sha256": "a790cb10c2f1af6265e1545f6f8b62bac10421f7019d0c698de173c83c397b3f",
+                    "version": "2.10.0+cpu"
+                  },
+                  {
+                    "name": "typing_extensions",
+                    "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec",
+                    "version": "4.16.0"
+                  },
+                  {
+                    "name": "wheel",
+                    "record_sha256": "a182abb451d576c4ab8bc0a28ac30abc3e700a9671120f623da0ff0a267816a5",
+                    "version": "0.48.0"
+                  }
+                ],
+                "dependency_lock_sha256": "c259676caf0f33bdfc8be32a64bc9c201e8157924ca83e219bdcc880c2f789e6",
+                "host": {
+                  "allowed_cpus": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "clock": {
+                    "adjustable": false,
+                    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+                    "monotonic": true,
+                    "resolution": 1e-09
+                  },
+                  "cpu_count": 4,
+                  "cpu_models": [
+                    "AMD EPYC 7763 64-Core Processor"
+                  ],
+                  "cpuinfo_sha256": "b3bd22051fd5e26b6e539b6c5ad09bd296be095e44d5a9458ac82b1e10a5e32c",
+                  "machine": "x86_64",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+                  "python": "3.12.14"
+                },
+                "image_descriptor": {
+                  "kernel": "7.0.0-1017-azure",
+                  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+                  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39"
+                },
+                "image_descriptor_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+                "implementation": {
+                  "p0_p1a_source_sha256": "feff53c01d5283fcddeffaedb24e70e5a1304cb0c0c87117b3b5e2682ca948fe",
+                  "runtime_source_sha256": "c4fb0589c4371033c7dce9e86f18c15c952697d62d53a3bfa910fd0a2933c14a",
+                  "sdkbench_version": "0.4.0"
+                },
+                "schema_version": 1,
+                "scope": "observed engineering environment; not a qualified publication host",
+                "sealed_image": false
+              },
+              "independent_attestation": false,
+              "log": {
+                "filename": "build.log",
+                "sha256": "6a28eac5cd20f29093188f23dacb1b97d41e5aa8dc9c9f98de4faa07ec18d080"
+              },
+              "returncode": 0,
+              "schema_version": 1,
+              "source_archive": {
+                "filename": "source.zip",
+                "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+              },
+              "source_commit": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+              "wheel": {
+                "filename": "flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+                "sha256": "277ce6677cdb52e974686c9367d7ddf4b3db0e550a6547c8e600dc34dbf089e0"
+              }
+            },
+            "suite": "compiler-candidate",
+            "workflow": "flagquantum-sabre-restored"
+          },
+          "precision": "float64/complex128",
+          "profile": "CPU1-FP64",
+          "threads": 1
+        },
+        "environment": {
+          "dependency_lock_sha256": "8f8d13c633f0beab8527abc9199054567c1e8811d8107eca4104f830e066846c",
+          "host": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "clock": {
+              "adjustable": false,
+              "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+              "monotonic": true,
+              "resolution": 1e-09
+            },
+            "cpu_count": 4,
+            "cpu_models": [
+              "AMD EPYC 7763 64-Core Processor"
+            ],
+            "cpuinfo_sha256": "18450e256414029ebef83ba4f5bfecb6433f1ea5019db354e3ba97802d6fb6d2",
+            "machine": "x86_64",
+            "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+            "python": "3.12.14"
+          },
+          "image_sha256": "cd50392db13a02aa9ad3506a966764732b3e79270e01bddafc486b10b2673524",
+          "os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "python": "3.12.14"
+        },
+        "schema_version": 1,
+        "stack_id": "fq-policy-sabre"
+      }
+    ],
+    "schema_version": 1,
+    "selection": {
+      "case_count": 30,
+      "families": [
+        "qaoa",
+        "ising",
+        "hopping",
+        "qft",
+        "repetition"
+      ],
+      "topologies": [
+        "line",
+        "grid"
+      ],
+      "widths": [
+        6,
+        8,
+        12
+      ]
+    },
+    "workflow_profile": "routing-policies",
+    "workflow_run": {
+      "GITHUB_REPOSITORY": "sdkbench-org/sdkbench",
+      "GITHUB_RUN_ATTEMPT": "1",
+      "GITHUB_RUN_ID": "44623673659",
+      "GITHUB_SHA": "9ce37f85bef327603bc64f63eec7e0fddc9436ef"
+    }
+  },
+  "github_artifact_expires_at": "2027-02-17T21:56:01Z",
+  "github_artifact_id": 14590376976,
+  "github_artifact_sha256": "sha256:62abfe6d15fe1d027b2985d02eb27dcf00632589354b462df782000f5d97fde5",
+  "github_run_id": 44623673659,
+  "harness_commit": "9ce37f85bef327603bc64f63eec7e0fddc9436ef",
+  "layout_resource_check": {
+    "block_statuses": {
+      "accepted": 1200
+    },
+    "common_timed_restoration_policy": {
+      "algorithm": "spanning-tree-leaf-token-restoration-v1",
+      "final_layout": "identity",
+      "leaf_order": "ascending",
+      "neighbor_order": "ascending",
+      "optimization_after_restoration": false,
+      "swap_decomposition": "H-CZ-H CNOT triple",
+      "timed": true,
+      "tree_root": 0
+    },
+    "controls_recorded_for_all_retained_executions": true,
+    "enforced_cpu_sets": {
+      "0": 1200
+    },
+    "execution_statuses": {
+      "completed": 1200
+    },
+    "external_restoration_workflows": [
+      "flagquantum-ordinary-restored",
+      "flagquantum-persistent-layout-restored",
+      "flagquantum-restore-after-each-gate-restored",
+      "flagquantum-sabre-restored"
+    ],
+    "initial_identity_registered_for_all": true,
+    "memory_cap_bytes": 17179869184,
+    "native_restoration_workflows": [],
+    "profile": "routing-policies",
+    "publication_eligible": false,
+    "record_and_layout_counts": {
+      "records:accepted": 3600,
+      "records:accepted-identity-layout": 3600,
+      "records:retained": 3600,
+      "warmups:accepted": 2400,
+      "warmups:accepted-identity-layout": 2400,
+      "warmups:retained": 2400
+    },
+    "scope": "Accepted payloads have identity layout. Failed and unavailable execution evidence remains counted; recorded control policy is not independent kernel attestation."
+  },
+  "local_verification": {
+    "all_pair_metrics_and_coverage_match_hosted": true,
+    "blocks_verified": 1200,
+    "build_files_hash_verified": true,
+    "case_participant_pairs": 120,
+    "compiler_revision": "858df9dbd5ba964e8e59b3383304547710a1dee5",
+    "elapsed_seconds": 521.6391731250042,
+    "freeze_draw_selection_verified": true,
+    "harness_revision": "9ce37f85bef327603bc64f63eec7e0fddc9436ef",
+    "independent_replay_matches_hosted": true,
+    "measured_records_accepted": 3600,
+    "measured_records_expected": 3600,
+    "measured_records_retained": 3600,
+    "participant_imports_denied": [
+      "flagquantum",
+      "qiskit",
+      "cirq"
+    ],
+    "profile": "routing-policies",
+    "publication_eligible": false,
+    "published_wheels_hash_verified": true,
+    "report_helper_paths_verified": true,
+    "retained_nonce_regeneration_matches": true,
+    "run_id": 44623673659,
+    "schema_version": 1,
+    "summary_digest_matches_hosted": false,
+    "warmup_records_expected": 2400,
+    "warmup_records_retained": 2400
+  },
+  "omitted_binary_artifacts": [
+    {
+      "bytes": 4361328,
+      "path": "flagquantum-build/flagquantum-0.4.0-cp310-abi3-linux_x86_64.whl",
+      "sha256": "277ce6677cdb52e974686c9367d7ddf4b3db0e550a6547c8e600dc34dbf089e0"
+    },
+    {
+      "bytes": 76022188,
+      "path": "flagquantum-build/source.zip",
+      "sha256": "426986eadc174a5cb3b2a6ccb2b301396f43273d0d095240bc83c0a8c57bed3e"
+    },
+    {
+      "bytes": 2116400,
+      "path": "releases/cirq_core-1.7.0-py3-none-any.whl",
+      "sha256": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce"
+    },
+    {
+      "bytes": 9513711,
+      "path": "releases/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "sha256": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669"
+    }
+  ],
+  "profile": "routing-policies",
+  "publication_eligible": false,
+  "retained_archive": "compiler-routing-policies-44623673659.tar.xz",
+  "retained_result_files": {
+    "compiler-routing-policies-44623673659-analysis-notes.json": {
+      "bytes": 471,
+      "sha256": "43b51ca9ca61dc0de46c7d231eb749e7780db07d5afedea20e7592dee1ac6dcc"
+    },
+    "compiler-routing-policies-44623673659-audit.py": {
+      "bytes": 7490,
+      "sha256": "bdaec7ccc425addf54f97ea3b38dfd341142a4bf2b3e88e38ef8653c4a8acd28"
+    },
+    "compiler-routing-policies-44623673659-comparisons.json": {
+      "bytes": 218140,
+      "sha256": "432c256dc595c6323f4d9517fd557160f71b41a6f0d0b7f94d502e0279fb318b"
+    },
+    "compiler-routing-policies-44623673659-github-jobs.json": {
+      "bytes": 7253,
+      "sha256": "e3ad30f153d7bcaffa646229851c97b6d9982db1eddc1c234ab864108fb83b13"
+    },
+    "compiler-routing-policies-44623673659-github-run.json": {
+      "bytes": 13952,
+      "sha256": "90d529628fc4e852af514e5261bdc38107bc02c82c0e02e4bbc06051e8d9b727"
+    },
+    "compiler-routing-policies-44623673659-host-qualification.json": {
+      "bytes": 3983,
+      "sha256": "4bc08a3925d41d847c3b577e25bd4b0851e6ab01010c3b3f3e3b5302fff161e3"
+    },
+    "compiler-routing-policies-44623673659-layout-audit.py": {
+      "bytes": 5251,
+      "sha256": "6eafcbc3fdce6918ded0bada16b32ccb32ed41222f6b884c78f78a09c68f19ab"
+    },
+    "compiler-routing-policies-44623673659-layout-resources.json": {
+      "bytes": 1359,
+      "sha256": "487635c9538575d3952d904715ed39a9c4c7b6f630f98e9fd9e71189c4141439"
+    },
+    "compiler-routing-policies-44623673659-pre-dispatch.json": {
+      "bytes": 77012,
+      "sha256": "16d6a7cab8832740a7e47a2c0f11b6c8e9fd0d2adf6905a1bdc861e9a7ba86dd"
+    },
+    "compiler-routing-policies-44623673659-summary-reconciliation.json": {
+      "bytes": 23477,
+      "sha256": "9f1a40cac0490b153181b66a2c842d45c9d2320aff6a1bafdc9330e54a3573ae"
+    },
+    "compiler-routing-policies-44623673659-summary.json.gz": {
+      "bytes": 68088,
+      "sha256": "16334c219467ee04676658ff01c555658bffa9bc4c4548f4d9ede7361ae7ca99"
+    },
+    "compiler-routing-policies-44623673659-verification.json": {
+      "bytes": 963,
+      "sha256": "a2d4d92d506068fc20da9bac2b77a7583df5cb2a88d7a1019b611ea0e0d88ba9"
+    },
+    "compiler-routing-policies-44623673659.tar.xz": {
+      "bytes": 2196288,
+      "sha256": "87959b6cf33a849c82421d88d3100d68aa8e43c1556577adbf8a2201a3828ff4"
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "cohort_bundle_sha256": "2a29dec72d92bcc72b8bc185f91e0acea70004272adcfbfb1105560bb2b55899",
+    "draw_sha256": "0ea0dc6a523559337f17551d2b26496ca82d74cd06d287ffe7a1e0816a3a8338",
+    "freeze_sha256": "24fb94b8c4c1c2b6777a351e465700a7a9996ee8ad0e1f23069d5cd2c0f6e013",
+    "full_bundle_sha256": "4fa9fcca7a41174ecd38820f5e08fdd22ae4226b16c236b3abdf98f8b4116892",
+    "instances": [
+      "APP-QAOA-LINE-06",
+      "APP-QAOA-GRID-06",
+      "APP-ISING-LINE-06",
+      "APP-ISING-GRID-06",
+      "APP-HOPPING-LINE-06",
+      "APP-HOPPING-GRID-06",
+      "APP-QFT-LINE-06",
+      "APP-QFT-GRID-06",
+      "APP-REPETITION-LINE-06",
+      "APP-REPETITION-GRID-06",
+      "APP-QAOA-LINE-08",
+      "APP-QAOA-GRID-08",
+      "APP-ISING-LINE-08",
+      "APP-ISING-GRID-08",
+      "APP-HOPPING-LINE-08",
+      "APP-HOPPING-GRID-08",
+      "APP-QFT-LINE-08",
+      "APP-QFT-GRID-08",
+      "APP-REPETITION-LINE-08",
+      "APP-REPETITION-GRID-08",
+      "APP-QAOA-LINE-12",
+      "APP-QAOA-GRID-12",
+      "APP-ISING-LINE-12",
+      "APP-ISING-GRID-12",
+      "APP-HOPPING-LINE-12",
+      "APP-HOPPING-GRID-12",
+      "APP-QFT-LINE-12",
+      "APP-QFT-GRID-12",
+      "APP-REPETITION-LINE-12",
+      "APP-REPETITION-GRID-12"
+    ]
+  },
+  "summary_digest_reconciliation": {
+    "all_other_local_summary_fields_unchanged": true,
+    "differences": [
+      {
+        "hosted_maximum_semantic_error": 2.6924339008921937e-15,
+        "instance": "APP-QAOA-LINE-06",
+        "local_maximum_semantic_error": 2.6945789820192467e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.705695711431699e-15,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 4.6818152337592315e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.828193870057737e-15,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 4.293510341864436e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+        "instance": "APP-HOPPING-LINE-06",
+        "local_maximum_semantic_error": 9.446966773865963e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.3109126141498433e-14,
+        "instance": "APP-HOPPING-GRID-06",
+        "local_maximum_semantic_error": 1.3117556363566088e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 2.9303171598054862e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 1.895778961066142e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.034117999026818e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 4.127003035640143e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.381486615589416e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 2.2593106746536497e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.071877118273721e-15,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 6.020145321624637e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.07168117740638e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 5.474044100912244e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.784357850085917e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 6.107235845698196e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.093213640861839e-15,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 7.782902944203376e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2201353881851484e-14,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 1.2716325333626893e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.851948985570778e-15,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 1.0542004624876669e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.780094579515994e-15,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 8.335897026989042e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.338253484994866e-15,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 7.0654296933386575e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.305128536768941e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 3.2486179086280272e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.654632453927555e-15,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 1.0226752665043885e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.816681691848143e-15,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 7.759470657616146e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 2.047105065988175e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.7647289590820527e-14,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 2.7090647060268293e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0723157491414757e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 1.0433383266549301e-14,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.248733984042286e-15,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 8.10384682246086e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.308551387940943e-15,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 9.958799546941644e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.979399773470822e-15,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 5.256366709256431e-15,
+        "sdk": "fq-source-restored"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.0299377648567433e-15,
+        "instance": "APP-QAOA-GRID-06",
+        "local_maximum_semantic_error": 3.035304115729628e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2024924957129407e-14,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 1.1457506993117877e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.206335383118183e-15,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 5.999314860941095e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+        "instance": "APP-HOPPING-LINE-06",
+        "local_maximum_semantic_error": 9.446966773865963e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.3109126141498433e-14,
+        "instance": "APP-HOPPING-GRID-06",
+        "local_maximum_semantic_error": 1.3117556363566088e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.234164004211517e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 4.2220989363198226e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.558523653980509e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 2.5086788580512933e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.560389026133136e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 7.377450794711089e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.9804098642604125e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 4.388476007099622e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.462985437974817e-14,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 1.5184709889555048e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.401461901943877e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 8.277864862230015e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.784357850085917e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 6.107235845698196e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.093213640861839e-15,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 7.782902944203376e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.5032117221745862e-14,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 2.4284847908343737e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.466519754762067e-14,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 1.615632006264565e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.2231983039116786e-14,
+        "instance": "APP-REPETITION-LINE-08",
+        "local_maximum_semantic_error": 3.089825254781357e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.219048136854448e-14,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 1.2427092118457758e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.581127736740937e-14,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 1.5332361857451686e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.85175015425272e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 7.529004455451707e-15,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.471168238361641e-14,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 4.488331682501143e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.017102920793314e-14,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 2.011381761234907e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 2.047105065988175e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.7647289590820527e-14,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 2.7090647060268293e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.10409260800969e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 3.070729236648713e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9593332980956015e-14,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 1.9551440256493165e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.6413381145299908e-14,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 1.6630130152770118e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.194576887619141e-14,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 1.1355694385831896e-14,
+        "sdk": "fq-policy-persistent-layout"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.1549930104065168e-15,
+        "instance": "APP-QAOA-GRID-06",
+        "local_maximum_semantic_error": 2.1556631856153973e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2256404618577723e-14,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 1.2425852229989085e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.176523879792922e-15,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 9.0347276465301e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0112729296916657e-14,
+        "instance": "APP-HOPPING-LINE-06",
+        "local_maximum_semantic_error": 9.446966773865963e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.7987752545143425e-14,
+        "instance": "APP-HOPPING-GRID-06",
+        "local_maximum_semantic_error": 1.7990858562913845e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.135743801963486e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 6.152074598578623e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.137024177327419e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 4.144239498426246e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.105969438009307e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 6.875109865312971e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.757268488191713e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 3.911074787101517e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.6916448407296428e-14,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 1.6978246909626372e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0360268205438103e-14,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 1.0298478087633716e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.784357850085917e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 6.107235845698196e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.5193433528676085e-14,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 1.4386628127932887e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.4655189797903014e-14,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 3.408299926069308e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.0966140926069434e-14,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 2.199608353753207e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.123160380038814e-14,
+        "instance": "APP-REPETITION-LINE-08",
+        "local_maximum_semantic_error": 3.000893623527598e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2892728160340791e-14,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 1.378188182657119e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.291121773579794e-14,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 1.2269792344002917e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.0497522935846126e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 7.055009263194515e-15,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.1321837376570526e-14,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 4.1722317531920525e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.18373462510216e-14,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 2.1722923021336995e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 2.047105065988175e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.5906391406748344e-14,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 5.701855265112794e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.956612612763364e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 4.0042679975359755e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.2647304961536615e-14,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 2.214020008530675e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.353718961872246e-14,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 3.3043511108041736e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.4426412665466387e-14,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 1.464316409798054e-14,
+        "sdk": "fq-policy-restore-after-each-gate"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.6924339008921937e-15,
+        "instance": "APP-QAOA-LINE-06",
+        "local_maximum_semantic_error": 2.6945789820192467e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.705695711431699e-15,
+        "instance": "APP-ISING-LINE-06",
+        "local_maximum_semantic_error": 4.6818152337592315e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.828193870057737e-15,
+        "instance": "APP-ISING-GRID-06",
+        "local_maximum_semantic_error": 4.293510341864436e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.780975451285777e-15,
+        "instance": "APP-HOPPING-LINE-06",
+        "local_maximum_semantic_error": 1.0009038592031513e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.399874682196077e-14,
+        "instance": "APP-HOPPING-GRID-06",
+        "local_maximum_semantic_error": 1.3888689896168541e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.9445120858373903e-15,
+        "instance": "APP-QFT-LINE-06",
+        "local_maximum_semantic_error": 2.9303171598054862e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9137766262657738e-15,
+        "instance": "APP-QFT-GRID-06",
+        "local_maximum_semantic_error": 1.895778961066142e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.034117999026818e-15,
+        "instance": "APP-QAOA-LINE-08",
+        "local_maximum_semantic_error": 4.127003035640143e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.381486615589416e-15,
+        "instance": "APP-QAOA-GRID-08",
+        "local_maximum_semantic_error": 2.2593106746536497e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 6.071877118273721e-15,
+        "instance": "APP-ISING-LINE-08",
+        "local_maximum_semantic_error": 6.020145321624637e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.07168117740638e-15,
+        "instance": "APP-ISING-GRID-08",
+        "local_maximum_semantic_error": 5.474044100912244e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 5.784357850085917e-15,
+        "instance": "APP-HOPPING-LINE-08",
+        "local_maximum_semantic_error": 6.032609073124265e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.589711668120925e-15,
+        "instance": "APP-HOPPING-GRID-08",
+        "local_maximum_semantic_error": 8.403524785993876e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.2201353881851484e-14,
+        "instance": "APP-QFT-LINE-08",
+        "local_maximum_semantic_error": 1.2716325333626893e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.851948985570778e-15,
+        "instance": "APP-QFT-GRID-08",
+        "local_maximum_semantic_error": 1.0542004624876669e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.780094579515994e-15,
+        "instance": "APP-REPETITION-GRID-08",
+        "local_maximum_semantic_error": 8.335897026989042e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.338253484994866e-15,
+        "instance": "APP-QAOA-LINE-12",
+        "local_maximum_semantic_error": 7.0654296933386575e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 3.305128536768941e-15,
+        "instance": "APP-QAOA-GRID-12",
+        "local_maximum_semantic_error": 3.2486179086280272e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.654632453927555e-15,
+        "instance": "APP-ISING-LINE-12",
+        "local_maximum_semantic_error": 1.0226752665043885e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 7.816681691848143e-15,
+        "instance": "APP-ISING-GRID-12",
+        "local_maximum_semantic_error": 7.759470657616146e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.9915082752730833e-14,
+        "instance": "APP-HOPPING-LINE-12",
+        "local_maximum_semantic_error": 2.080476653381259e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 2.6979858147236448e-14,
+        "instance": "APP-HOPPING-GRID-12",
+        "local_maximum_semantic_error": 2.7368743660586386e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 1.0723157491414757e-14,
+        "instance": "APP-QFT-LINE-12",
+        "local_maximum_semantic_error": 1.0433383266549301e-14,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 8.248733984042286e-15,
+        "instance": "APP-QFT-GRID-12",
+        "local_maximum_semantic_error": 8.10384682246086e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 9.308551387940943e-15,
+        "instance": "APP-REPETITION-LINE-12",
+        "local_maximum_semantic_error": 9.958799546941644e-15,
+        "sdk": "fq-policy-sabre"
+      },
+      {
+        "hosted_maximum_semantic_error": 4.979399773470822e-15,
+        "instance": "APP-REPETITION-GRID-12",
+        "local_maximum_semantic_error": 5.256366709256431e-15,
+        "sdk": "fq-policy-sabre"
+      }
+    ],
+    "hosted_summary_sha256": "8fb93611d5e51794cdbcf712dd203654dcd3137d90b0d67b1f521d397b89f94a",
+    "interpretation": "Both local and hosted semantic errors remain retained. Only their maxima are substituted to verify the original hosted digest; acceptance is unchanged.",
+    "only_fields_replaced": "cases[*].maximum_semantic_error",
+    "profile": "routing-policies",
+    "reconstructed_digest_matches_hosted": true,
+    "reconstructed_hosted_summary_sha256": "8fb93611d5e51794cdbcf712dd203654dcd3137d90b0d67b1f521d397b89f94a",
+    "schema_version": 1
+  }
+}
