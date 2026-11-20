@@ -223,3 +223,16 @@ SDKBENCH_NATIVE_CANDIDATE_TESTS=1 PYTHONPATH=src \
 
 These tests call the adapter directly. They intentionally do not claim the
 wheel admission chain, ten-block campaign, Linux controls or timing ranking.
+
+## Optional compiler observations
+
+Target-artifact compilation and serialized evidence remain mandatory. An older
+SDK may omit the optional native block-optimization result field. The adapter
+then records `native_block_optimization_evidence_available=0` and omits the
+unknown rewrite count, while applying the same independent acceptance. A present
+but malformed result still fails. The independently replayed report distinguishes
+missing observations from measured zero; neither contributes to acceptance or
+paired performance ratios. See the
+[diagnostic compatibility amendment](../../../docs/analysis/COMPILER_OPTIONAL_DIAGNOSTICS.md)
+for retained before/after source checks and their limits. Historical campaign
+records and the original frozen harness remain unchanged.

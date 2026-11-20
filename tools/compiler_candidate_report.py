@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Summarize independently replayed candidate evidence without ranking SDKs."""
 import argparse
 from collections import Counter
@@ -30,7 +29,7 @@ def summarize(directory, bundle):
         identity = registration.identity(bundle, instance)
         statuses = Counter()
         metrics = []
-        baseline_counts, rewrite_counts = [], []
+        baseline_counts, rewrite_counts, optimization_evidence = [], [], []
         block_times, memory, blocks = [], [], []
         for path in sorted((root / name / instance).glob('*/evidence.json')):
             evidence = read_json(path)
@@ -46,6 +45,8 @@ def summarize(directory, bundle):
                         baseline_counts.append(record.measurements['native_baseline_cz_count'])
                     if 'accepted_block_rewrites' in record.measurements:
                         rewrite_counts.append(record.measurements['accepted_block_rewrites'])
+                    if 'native_block_optimization_evidence_available' in record.measurements:
+                        optimization_evidence.append(record.measurements['native_block_optimization_evidence_available'])
             # A failed warmup or case-budget overrun must not contribute a
             # timing block even when all three measured payloads are correct.
             eligible = len(times) == 3 and evidence['block_verdict']['status'] == 'accepted'
@@ -69,6 +70,7 @@ def summarize(directory, bundle):
                      'kernel_block_memory_peak_bytes': spread(memory), 'blocks': blocks})
         rows[-1]['sdk_reported_native_baseline_cz_count'] = spread(baseline_counts)
         rows[-1]['sdk_reported_accepted_block_rewrites'] = spread(rewrite_counts)
+        rows[-1]['sdk_reported_native_block_optimization_evidence_available'] = spread(optimization_evidence)
     return {'schema_version': 1, 'bundle_sha256': bundle.sha256,
             'scope': 'Observed engineering campaign; conditional metrics do not erase failures',
             'publication_eligible': False, 'independent_replay': verified, 'cases': rows,
