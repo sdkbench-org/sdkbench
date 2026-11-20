@@ -131,6 +131,8 @@ def synthetic_supervisor(monkeypatch, bundle, fault=None):
                   'sdk_import_wall_seconds': .1, 'warmups': [record(i) for i in range(2)],
                   'records': [record(i) for i in range(3)], 'native_audit': [], 'warnings': [],
                   'candidate_admission': admission(reg), 'compiler_evidence_files': []}
+        if 'candidate_interpreter' in req:
+            result['candidate_interpreter'] = req['candidate_interpreter']
         if fault == 'admission':
             result['candidate_admission'] = None
         elif fault == 'version':
@@ -146,6 +148,7 @@ def synthetic_supervisor(monkeypatch, bundle, fault=None):
                     'network_policy': 'seccomp-deny-sockets-and-io-uring'}
         from dataclasses import asdict
         return {'execution_status': 'completed', 'pid': 123, 'stdout': json.dumps(result), 'stderr': '',
+                'argv': argv,
                 'returncode': 0, 'wall_seconds': 0.01, 'kernel_memory_peak_bytes': 1024,
                 'limits': asdict(kwargs['limits']), 'enforced_cpu_set': str(kwargs['limits'].cpu),
                 'network_policy': 'seccomp-deny-sockets-and-io-uring'}
