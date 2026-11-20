@@ -221,6 +221,15 @@ def verify_revision_preparation(
         and all(Path(p["python"]).is_absolute() for p in interpreters.values()),
         "Revision controls require distinct absolute interpreter paths",
     )
+    require(
+        len({p["executable_sha256"] for p in interpreters.values()}) == 1
+        and all(
+            isinstance(p["executable_sha256"], str)
+            and re.fullmatch(r"[0-9a-f]{64}", p["executable_sha256"])
+            for p in interpreters.values()
+        ),
+        "Revision controls require identical interpreter executable bytes",
+    )
     for registration in admitted:
         name = registration.stack_id
         probe = environments["probes"][name]

@@ -451,7 +451,14 @@ def test_revision_comparison_refuses_unbound_or_mixed_campaigns(
 
 @pytest.mark.parametrize(
     "fault",
-    ["dependency", "workflow", "partial-map", "same-interpreter", "probe-failure"],
+    [
+        "dependency",
+        "workflow",
+        "partial-map",
+        "same-interpreter",
+        "different-python-build",
+        "probe-failure",
+    ],
 )
 def test_preparation_rejects_before_entropy(tmp_path, monkeypatch, fault):
     spec = importlib.util.spec_from_file_location(
@@ -476,6 +483,10 @@ def test_preparation_rejects_before_entropy(tmp_path, monkeypatch, fault):
         interpreters.pop("revision-1")
     elif fault == "same-interpreter":
         interpreters["revision-1"] = interpreters["revision-0"]
+    elif fault == "different-python-build":
+        Path(interpreters["revision-1"]).write_text(
+            "another synthetic interpreter build\n"
+        )
     calls = []
 
     def admit(reg, expected, environment, *, inventory):
@@ -560,3 +571,20 @@ def test_cli_replays_joint_campaign_and_retains_every_denied_case(
     assert all(pair["ratios"] is None for pair in result["pairs"])
     with pytest.raises(FileExistsError):
         tool.main()
+
+
+def test_retained_revision_freeze_rejects_different_python_builds(joint_preparation):
+    output, bundle, registrations = joint_preparation
+    _, admissions = context_for(joint_preparation)
+    freeze = read_json(output / "freeze.json")
+    interpreters = freeze["revision_environments"]["interpreters"]
+    interpreters["revision-1"]["executable_sha256"] = "f" * 64
+    (output / "freeze.json").write_bytes(canonical_bytes(freeze))
+    with pytest.raises(ContractError, match="identical interpreter executable bytes"):
+        verify_revision_preparation(
+            output,
+            bundle,
+            {reg.stack_id: reg.to_dict() for reg in registrations},
+            interpreters,
+            admissions,
+        )

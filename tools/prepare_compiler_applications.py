@@ -76,6 +76,8 @@ def prepare(
         observed = {name: read_json(path) for name, path in inventories.items()}
         verify_revision_control(admitted, observed)
         identities = {name: interpreter_identity(python) for name, python in interpreters.items()}
+        require(len({identity["executable_sha256"] for identity in identities.values()}) == 1,
+                "Revision controls require identical interpreter executable bytes")
         environment = {key: os.environ[key] for key in ("LD_LIBRARY_PATH",) if key in os.environ}
         environment["PYTHONPATH"] = str(Path(__file__).resolve().parents[1] / "src")
         probes = {r.stack_id: admit_interpreter(r, identities[r.stack_id], environment,

@@ -35,7 +35,8 @@ its registration. Normalize distribution names for matching and reject ambiguous
 duplicates. All non-frontend dependency entries must match, including versions
 and exact installed RECORD hashes. Match all registered non-frontend component
 payload fingerprints, including the harness and numerical dependencies. Also
-match Python, platform, image descriptor, implementation and stable host facts.
+match interpreter executable bytes, Python version, platform, image descriptor,
+implementation and stable host facts.
 Retain the raw `/proc/cpuinfo` hash while excluding it from host equality because
 CPU frequencies change between observations.
 
