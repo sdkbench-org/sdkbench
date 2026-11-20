@@ -54,7 +54,7 @@ def _failure_records(identity, block, count, status, reason):
     return [ResultRecord(identity, block, r, status, reason=reason) for r in range(count)]
 
 
-def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None, suite='p1a', candidate=None):
+def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, cpu, budget, runtime_environment=None, suite='p1a', candidate=None, interpreter=None):
     directory = Path(directory); directory.mkdir(parents=True, exist_ok=False)
     case = bundle.cases[identity.instance_id]; kind = case['kind']; protocol = mode == 'protocol'
     count = 3 if protocol and kind != 'sampling' else 1; warmup_count = 2 if protocol and kind != 'sampling' else 0
@@ -63,18 +63,26 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
         require(suite == 'compiler-candidate' and kind == 'route', 'Candidate execution is routing-only')
         require(candidate.identity(bundle, identity.instance_id) == identity, 'Candidate registration identity mismatch')
         request['candidate_registration'] = candidate.to_dict()
+    if interpreter is not None:
+        require(candidate is not None, 'Interpreter selection requires a candidate registration')
+        request['candidate_interpreter'] = interpreter
     write(directory / 'request.json', request)
     execution = None; response = None; warmup_verdicts = []; verdicts = []
     if budget.remaining <= 0:
         records = _failure_records(identity, block, count, 'timeout', 'Complete case wall budget exhausted before this block')
     else:
         try:
-            if candidate is not None:
+            if interpreter is not None:
+                from ..candidates.environment import interpreter_identity
+                require(interpreter_identity(interpreter['python']) == interpreter,
+                        'Candidate interpreter changed before launch')
+            elif candidate is not None:
                 from ..candidates.provenance import verify_runtime
                 verify_runtime(candidate)
             limits = replace(Limits.for_case(case, cpu), wall_seconds=min(case['case_wall_limit_seconds'], budget.remaining))
             module = 'sdkbench.p1a.worker' if candidate is None else 'sdkbench.candidates.worker'
-            execution = run_command([sys.executable, '-m', module, '--sdk', sdk, str((directory / 'request.json').resolve())],
+            python = sys.executable if interpreter is None else interpreter['python']
+            execution = run_command([python, '-m', module, '--sdk', sdk, str((directory / 'request.json').resolve())],
                                     cwd=directory, cgroup_parent=cgroup_parent, limits=limits, environment=runtime_environment)
             if execution['execution_status'] != 'completed':
                 status = execution['execution_status']
@@ -85,9 +93,14 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
                 (directory / 'response.json').write_text(execution['stdout'], encoding='utf-8')
                 response = read_json(directory / 'response.json')
                 extra = ('candidate_admission', 'compiler_evidence_files') if candidate is not None else ()
+                if interpreter is not None:
+                    extra += ('candidate_interpreter',)
                 keys(response, ('schema_version', 'request_sha256', 'sdk', 'sdk_version', 'worker_pid', 'sdk_import_wall_seconds', 'warmups', 'records', 'native_audit', 'warnings') + extra)
                 require(response['schema_version'] == 1 and response['sdk'] == sdk and response['request_sha256'] == digest(request), 'Worker response binding mismatch')
                 require(response['worker_pid'] == execution['pid'], 'Worker PID does not match supervised process')
+                if interpreter is not None:
+                    require(response['candidate_interpreter'] == interpreter,
+                            'Worker interpreter response binding mismatch')
                 if candidate is None:
                     require(response['sdk_version'] == VERSIONS[sdk], 'Worker SDK version differs from registration')
                 else:
@@ -119,8 +132,16 @@ def run_block(bundle, identity, sdk, block, *, mode, directory, cgroup_parent, c
     return evidence
 
 
-def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None, suite='p1a', candidates=None):
+def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=None, mode='protocol', runtime_environment=None, suite='p1a', candidates=None, candidate_interpreters=None):
     require(mode in ('protocol', 'qualification'), 'Unknown execution mode')
+    if candidate_interpreters is not None:
+        require(candidates is not None and isinstance(candidate_interpreters, dict)
+                and set(candidate_interpreters) == set(candidates)
+                and all(isinstance(value, str) and Path(value).is_absolute()
+                        for value in candidate_interpreters.values()),
+                'Provide one absolute interpreter path for every candidate')
+        runtime_environment = {**(runtime_environment or {}),
+                               'PYTHONPATH': str(Path(__file__).resolve().parents[2])}
     if candidates is not None:
         import re
         require(suite == 'compiler-candidate' and isinstance(candidates, dict) and candidates,
@@ -145,14 +166,23 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
     components = {}; registrations = {}; admissions = {}
     framework = {'name': 'sdkbench', 'version': environment['implementation']['sdkbench_version'], 'role': 'harness',
                  'artifact_sha256': environment['implementation'].get('runtime_source_sha256', environment['implementation']['p0_p1a_source_sha256'])}
-    cache = {}
+    cache = {}; interpreters = {}
     for sdk in sdks:
         if candidates is not None:
             registrations[sdk] = candidates[sdk]
             try:
-                from ..candidates.provenance import verify_runtime
-                verify_runtime(candidates[sdk])
+                probe = None
+                if candidate_interpreters is not None:
+                    from ..candidates.environment import admit_interpreter, interpreter_identity
+                    interpreters[sdk] = {'python': candidate_interpreters[sdk], 'executable_sha256': None}
+                    interpreters[sdk] = interpreter_identity(candidate_interpreters[sdk])
+                    probe = admit_interpreter(candidates[sdk], interpreters[sdk], runtime_environment or {})
+                else:
+                    from ..candidates.provenance import verify_runtime
+                    verify_runtime(candidates[sdk])
                 admissions[sdk] = {'status': 'admitted', 'reason': None}
+                if probe is not None:
+                    admissions[sdk]['interpreter_probe'] = probe
             except (OSError, ValueError, KeyError, TypeError, ImportError) as exc:
                 admissions[sdk] = {'status': 'install-failed' if isinstance(exc, ImportError) else 'access-blocked',
                                    'reason': f'Candidate admission failed: {type(exc).__name__}: {exc}'}
@@ -171,6 +201,8 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
         admissions[sdk] = {'status': 'install-failed' if reason and 'missing' in reason else 'access-blocked' if reason else 'admitted', 'reason': reason}
     write(directory / 'registrations.json', {s: registrations[s].to_dict() for s in sdks})
     write(directory / 'admission.json', admissions)
+    if candidate_interpreters is not None:
+        write(directory / 'interpreters.json', interpreters)
     cases = {}; budgets = {}; identities = {}
     for sdk in sdks:
         for instance in selected:
@@ -192,6 +224,8 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
                 else:
                     with budgets[key].active():
                         extra = {'candidate': registrations[sdk]} if candidates is not None else {}
+                        if candidate_interpreters is not None:
+                            extra['interpreter'] = interpreters[sdk]
                         evidence = run_block(bundle, identities[key], sdk, block, mode=mode,
                                              directory=directory / sdk / instance / f'block-{block:02}', cgroup_parent=cgroup_parent,
                                              cpu=cpu, budget=budgets[key], runtime_environment=runtime_environment, suite=suite, **extra)
@@ -225,6 +259,8 @@ def run_campaign(bundle, *, directory, cgroup_parent, cpu, sdks=SDKS, instances=
     if candidates is not None:
         from ..candidates.provenance import implementation_fingerprint
         report['candidate_implementation_sha256'] = implementation_fingerprint()
+    if candidate_interpreters is not None:
+        report['candidate_interpreters_sha256'] = digest(interpreters)
     write(directory / 'report.json', report)
     lines = ['# ' + suite.upper() + ' execution evidence', '', 'Scope: ' + report['scope'] + '. Publication eligible: false.', '',
              'No ranking is inferred. A qualification pass is one process block, not complete-case acceptance.', '',

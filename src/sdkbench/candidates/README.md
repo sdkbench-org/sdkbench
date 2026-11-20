@@ -76,6 +76,73 @@ PYTHONPATH=src python -m sdkbench.candidates.cli replay \
   --directory /tmp/compiler-campaign
 ```
 
+## Separate installed environments
+
+Two revisions of one distribution cannot coexist in one Python installation.
+Register each retained wheel using its own interpreter, with this same harness
+source selected through `PYTHONPATH`. The runner can then select one interpreter
+per stack, including for Qiskit, Cirq or any other admitted candidate; no SDK gets
+a private execution path:
+
+```sh
+PYTHONPATH=src python -m sdkbench.candidates.cli run \
+  --registration /evidence/before-registration.json \
+  --registration /evidence/after-registration.json \
+  --interpreter before-stack=/environments/before/bin/python \
+  --interpreter after-stack=/environments/after/bin/python \
+  --directory /evidence/revision-campaign --cpu 0 \
+  --cgroup-parent /sys/fs/cgroup/DELEGATED_SUBTREE
+PYTHONPATH=src python -m sdkbench.candidates.cli replay \
+  --directory /evidence/revision-campaign
+```
+
+The names before `=` must exactly match the registrations' `stack_id` values.
+Once interpreter selection is used, every stack needs an absolute path;
+partial or duplicate selections fail before creating campaign evidence. The
+invocation path preserves a virtual environment's prefix, rather than resolving
+its Python symlink into the base interpreter. The executable bytes are hashed.
+
+A bounded 120-second setup probe in each selected environment repeats the
+existing installed-wheel/runtime admission without importing the SDK. Successful
+probe output is retained in `admission.json`; failed probes retain a bounded
+diagnostic reason. `interpreters.json` binds the
+paths/hashes to the report. A missing environment or failed probe stays in the
+denominator with all expected failure records. Probe costs are setup evidence,
+not SDK compilation latency; setup elapsed time must be recorded separately by
+the campaign operator. Each measured fresh worker checks its interpreter
+and repeats runtime admission under the unchanged resource supervisor. Its
+imports, validation and output work still consume the cumulative case budget.
+The block-major participant rotation, fixtures, seeds, correctness tolerances,
+memory and timeout limits are unchanged. No installations are switched between
+blocks. Omit all `--interpreter` arguments to retain the single-environment path.
+
+Replay verifies the setup admission's registration binding, selected executable,
+actual supervised command and worker request/response bindings. It can replay
+transferred evidence without the original environments. A content seal is not
+independent attestation, and a Python executable hash alone does not identify a
+complete environment; existing dependency, package and module-resolution checks
+remain necessary.
+
+This execution support alone does not preregister a prospective revision
+comparison. The application preparation and comparison tools still admit their
+existing workflow sets; they must not be used to disguise duplicate workflows
+as a three-SDK cohort. A prospective old/new study still needs a reviewed joint
+registration freeze before one shared draw, matched common dependencies and
+host/profile evidence, native conformance, and revision-aware reporting.
+Differences in dependencies or workflow options are confounders, not compiler
+effects. Existing separately drawn campaigns are not matched old/new evidence.
+
+```sh
+PYTHONPATH=src python -m pytest -q tests/test_candidate_environments.py \
+  tests/test_candidate_runner.py tests/test_candidate_resource_replay.py
+```
+
+The environment tests use real virtual environments with synthetic distributions
+that raise on import. They prove environment admission and failure isolation,
+not native SDK correctness or performance. Synthetic accepted lifecycle tests
+exercise counterbalancing, unchanged limits, and resealed substitution rejection.
+Real Linux-supervisor coverage remains an independently required CI check.
+
 Produce a reproducible numerical summary outside the sealed campaign directory:
 
 ```sh

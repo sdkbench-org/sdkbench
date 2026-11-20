@@ -35,6 +35,24 @@ def replay(directory, bundle):
     require(len(outcomes) == len(report['outcomes']) and set(outcomes) == expected_pairs,
             'Missing or duplicate campaign cases')
     admissions = read_json(root / 'admission.json')
+    interpreters = None
+    if 'candidate_interpreters_sha256' in report or (root / 'interpreters.json').exists():
+        from .environment import verify_interpreter_admission
+        interpreters = read_json(root / 'interpreters.json')
+        require(digest(interpreters) == report.get('candidate_interpreters_sha256')
+                and set(interpreters) == set(registrations),
+                'Candidate interpreter map differs from campaign scope')
+        for name, selection in interpreters.items():
+            require(isinstance(selection, dict) and set(selection) == {'python', 'executable_sha256'}
+                    and isinstance(selection['python'], str) and Path(selection['python']).is_absolute(),
+                    'Invalid candidate interpreter selection')
+            if admissions[name]['status'] == 'admitted':
+                value = selection['executable_sha256']
+                require(isinstance(value, str) and len(value) == 64
+                        and all(c in '0123456789abcdef' for c in value),
+                        'Admitted interpreter lacks an executable hash')
+                verify_interpreter_admission(registrations[name], selection,
+                                             admissions[name]['interpreter_probe'])
     all_records = {name: [] for name in registrations}
     replayed = []
     for (name, instance), outcome in outcomes.items():
@@ -70,6 +88,18 @@ def replay(directory, bundle):
                 elapsed = finite(execution.get('wall_seconds'))
                 require(elapsed >= 0, 'Invalid candidate execution elapsed time')
                 execution_wall_seconds += elapsed
+                if interpreters is not None:
+                    expected_argv = [interpreters[name]['python'], '-m',
+                                     'sdkbench.candidates.worker', '--sdk', name,
+                                     str((path.parent / 'request.json').resolve())]
+                    # Evidence may be replayed after transfer. Bind the original
+                    # absolute request path to the retained request's suffix.
+                    argv = execution.get('argv')
+                    require(isinstance(argv, list) and len(argv) == len(expected_argv)
+                            and argv[:-1] == expected_argv[:-1]
+                            and isinstance(argv[-1], str) and Path(argv[-1]).is_absolute()
+                            and Path(argv[-1]).parts[-4:] == (name, instance, f'block-{block:02}', 'request.json'),
+                            'Candidate execution used a different interpreter or worker')
                 require(execution['network_policy'] == 'seccomp-deny-sockets-and-io-uring',
                         'Candidate network isolation missing')
                 require(execution['enforced_cpu_set'] == str(limits['cpu']),
@@ -79,6 +109,13 @@ def replay(directory, bundle):
                 expected_request = bundle.request(identity, block) | {
                     'kind': 'route', 'execution_mode': 'protocol', 'suite': 'compiler-candidate',
                     'candidate_registration': registration.to_dict()}
+                if interpreters is not None:
+                    expected_request['candidate_interpreter'] = interpreters[name]
+                    require(response.get('candidate_interpreter') == interpreters[name],
+                            'Candidate response interpreter mismatch')
+                else:
+                    require('candidate_interpreter' not in response,
+                            'Candidate response lacks a retained interpreter map')
                 require(request == expected_request and response['request_sha256'] == digest(request),
                         'Candidate request/seed binding mismatch')
                 require(execution is not None and response['worker_pid'] == execution['pid'],

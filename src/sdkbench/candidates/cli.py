@@ -30,6 +30,8 @@ def main(argv=None):
     run.add_argument('--directory', required=True, type=Path)
     run.add_argument('--cgroup-parent', required=True, type=Path)
     run.add_argument('--cpu', required=True, type=int)
+    run.add_argument('--interpreter', action='append', default=[], metavar='STACK=/ABS/PYTHON',
+                     help='Select every candidate environment explicitly; never select only a subset')
     replay_parser = subparsers.add_parser('replay', help='Independently replay retained candidate evidence')
     replay_parser.add_argument('--bundle', type=Path, default=Path('docs/implementation'))
     replay_parser.add_argument('--directory', required=True, type=Path)
@@ -52,6 +54,14 @@ def main(argv=None):
     registrations = [Registration(**read_json(path)) for path in args.registration]
     if len({r.stack_id for r in registrations}) != len(registrations):
         parser.error('Each registration needs a distinct stack ID')
+    interpreters = {}
+    for argument in args.interpreter:
+        name, separator, python = argument.partition('=')
+        if not separator or name in interpreters or not Path(python).is_absolute():
+            parser.error('Interpreter selections require distinct STACK=/ABS/PYTHON entries')
+        interpreters[name] = python
+    if interpreters and set(interpreters) != {r.stack_id for r in registrations}:
+        parser.error('Provide an interpreter for every registered stack and no other stack')
     runtime_environment = {key: os.environ[key] for key in ('LD_LIBRARY_PATH',) if key in os.environ}
     # Select this verified harness revision in fresh workers. Participant code
     # still has to resolve to its admitted wheel installation.
@@ -60,7 +70,8 @@ def main(argv=None):
                           cgroup_parent=args.cgroup_parent, cpu=args.cpu,
                           suite='compiler-candidate', mode='protocol',
                           runtime_environment=runtime_environment,
-                          candidates={r.stack_id: r for r in registrations})
+                          candidates={r.stack_id: r for r in registrations},
+                          candidate_interpreters=interpreters or None)
     manifest = {'schema_version': 1, 'files': {
         path.relative_to(args.directory).as_posix(): file_sha256(path)
         for path in sorted(args.directory.rglob('*')) if path.is_file()}}

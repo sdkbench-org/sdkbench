@@ -34,10 +34,14 @@ def execute_block(sdk, request):
     admission_error = None
     admission = None
     actual = None
+    interpreter = request.get('candidate_interpreter')
     started = time.perf_counter()
     with warnings.catch_warnings(record=True) as caught, contextlib.redirect_stdout(sys.stderr):
         warnings.simplefilter('always')
         try:
+            if interpreter is not None:
+                from .environment import verify_interpreter
+                verify_interpreter(interpreter)
             admission = verify_runtime(registration)
             native_sdk = registration.configuration['options']['sdk']
             actual = metadata.version(DISTRIBUTIONS[native_sdk])
@@ -72,11 +76,14 @@ def execute_block(sdk, request):
                 except Exception as exc:
                     traceback.print_exc(file=sys.stderr)
                     records.append(failure(identity, block, repetition, exception_status(exc), exc))
-    return {'schema_version': 1, 'request_sha256': digest(request), 'sdk': sdk,
+    result = {'schema_version': 1, 'request_sha256': digest(request), 'sdk': sdk,
             'sdk_version': actual, 'worker_pid': os.getpid(), 'sdk_import_wall_seconds': import_seconds,
             'warmups': warmups, 'records': measured, 'native_audit': audits,
             'candidate_admission': admission, 'compiler_evidence_files': evidence_files,
             'warnings': [{'category': item.category.__name__, 'message': str(item.message)} for item in caught]}
+    if interpreter is not None:
+        result['candidate_interpreter'] = interpreter
+    return result
 
 
 def main(argv=None):

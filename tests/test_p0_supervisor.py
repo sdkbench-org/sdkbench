@@ -33,6 +33,41 @@ def test_no_fallback_when_controls_unavailable(tmp_path):
     assert not marker.exists()
 
 
+@linux
+def test_candidate_environment_selection_under_real_kernel_controls(tmp_path):
+    from sdkbench.candidates.environment import interpreter_identity
+    from sdkbench.p1a.campaign import ActiveCaseBudget, run_block
+    from test_candidate_environments import synthetic_environments
+    from test_candidate_runner import admission
+
+    bundle = Bundle(ROOT / 'docs/implementation')
+    environments = synthetic_environments(tmp_path)
+    for python, registration in environments:
+        selection = interpreter_identity(python)
+        identity = registration.identity(bundle, 'ROUTE-LINE-06')
+        directory = tmp_path / registration.stack_id
+        result = run_block(
+            bundle, identity, registration.stack_id, 0, mode='protocol',
+            directory=directory, cgroup_parent=PARENT,
+            cpu=min(os.sched_getaffinity(0)), budget=ActiveCaseBudget(600),
+            runtime_environment={**RUNTIME_ENV, 'PYTHONPATH': str(ROOT / 'src')},
+            suite='compiler-candidate', candidate=registration, interpreter=selection,
+        )
+        execution, response = result['execution'], result['response']
+        assert execution['execution_status'] == 'completed'
+        assert execution['argv'][0] == python
+        assert execution['limits']['memory_bytes'] == 16 * 1024**3
+        assert execution['network_policy'] == 'seccomp-deny-sockets-and-io-uring'
+        assert response['candidate_interpreter'] == selection
+        assert response['candidate_admission'] == admission(registration)
+        assert len(response['warmups']) == 2 and len(response['records']) == 3
+        version = response['sdk_version']
+        assert all(r['status'] == 'error' and f'synthetic-sdk-{version}-imported' in r['reason']
+                   for r in response['warmups'] + response['records'])
+        assert result['block_verdict']['status'] != 'accepted'
+    assert not list(Path(PARENT).glob('sdkbench-*'))
+
+
 def invoke(code, tmp_path, *, wall=3, memory=128 * 1024**2, output=100000):
     return run_command([sys.executable, '-c', code], cwd=tmp_path, cgroup_parent=PARENT,
                        limits=Limits(wall, memory, min(os.sched_getaffinity(0)), output_bytes=output),
