@@ -306,3 +306,12 @@ Expected for a complete study: replay verifies 1,200 blocks; all 120 case/policy
 outcomes remain in coverage, with 180 pair rows and `publication_eligible=false`.
 Those counts imply no policy passes or outperforms another. Actual execution
 and independent audit remain required.
+
+## Same-SDK revision comparisons
+
+Use the explicit [joint revision-control profile](COMPILER_REVISION_CONTROL.md)
+when comparing two revisions of one SDK workflow. It freezes both actual
+registrations, matched dependency inventories and selected interpreters before
+one shared draw, then reports paired outcomes by stack identity. This does not
+change any of the three-SDK profiles or turn separately drawn historical
+campaigns into matched revision evidence.

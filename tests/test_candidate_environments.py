@@ -107,6 +107,23 @@ def test_real_interpreters_admit_only_their_own_installations(installed_environm
             environment.admit_interpreter(other, expected, env)
 
 
+def test_revision_inventory_is_rechecked_in_selected_interpreter(installed_environments):
+    python, reg = installed_environments[0]
+    env = {'PYTHONPATH': str(ROOT / 'src')}
+    output = subprocess.check_output(
+        [python, '-c', ('from sdkbench.p1a.provenance import capture_environment; '
+         'from sdkbench.p0.models import canonical_bytes; '
+         'print(canonical_bytes(capture_environment()).decode(), end="")')],
+        env={**os.environ, **env}, text=True, timeout=120,
+    )
+    inventory = json.loads(output)
+    expected = environment.interpreter_identity(python)
+    assert environment.admit_interpreter(reg, expected, env, inventory=inventory)['admission'] == admission(reg)
+    inventory['host']['machine'] = 'synthetic-other-machine'
+    with pytest.raises(ContractError, match='inventory changed before the joint freeze'):
+        environment.admit_interpreter(reg, expected, env, inventory=inventory)
+
+
 def test_real_worker_rechecks_environment_before_import(installed_environments, tmp_path):
     bundle = Bundle(ROOT / 'docs/implementation')
     for python, reg in installed_environments:

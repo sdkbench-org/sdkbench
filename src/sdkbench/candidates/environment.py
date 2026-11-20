@@ -31,7 +31,8 @@ def verify_interpreter(expected: dict) -> None:
             'Worker interpreter differs from the declared environment')
 
 
-def admit_interpreter(registration: Registration, expected: dict, environment: dict) -> dict:
+def admit_interpreter(registration: Registration, expected: dict, environment: dict,
+                      *, inventory: dict | None = None) -> dict:
     """Check a target environment with a bounded, SDK-free setup process.
 
     This setup observation is separate from measured worker execution. It does
@@ -50,6 +51,10 @@ def admit_interpreter(registration: Registration, expected: dict, environment: d
         path.write_bytes(canonical_bytes(registration.to_dict()))
         env['HOME'] = env['TMPDIR'] = str(root)
         command = [expected['python'], '-m', 'sdkbench.candidates.environment', str(path)]
+        if inventory is not None:
+            inventory_path = root / 'inventory.json'
+            inventory_path.write_bytes(canonical_bytes(inventory))
+            command += ['--inventory', str(inventory_path)]
         with subprocess.Popen(command, cwd=root, env=env, stdin=subprocess.DEVNULL,
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                               start_new_session=True) as process:
@@ -85,8 +90,13 @@ def verify_interpreter_admission(registration: Registration, expected: dict, res
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('registration', type=Path)
+    parser.add_argument('--inventory', type=Path)
     args = parser.parse_args()
     registration = Registration(**read_json(args.registration))
+    if args.inventory is not None:
+        from ..p1a.provenance import capture_environment
+        from .revisions import verify_inventory_observation
+        verify_inventory_observation(read_json(args.inventory), capture_environment())
     result = {'registration_sha256': digest(registration.to_dict()),
               'interpreter': interpreter_identity(sys.executable),
               'admission': verify_runtime(registration)}

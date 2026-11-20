@@ -124,11 +124,13 @@ complete environment; existing dependency, package and module-resolution checks
 remain necessary.
 
 This execution support alone does not preregister a prospective revision
-comparison. The application preparation and comparison tools still admit their
-existing workflow sets; they must not be used to disguise duplicate workflows
-as a three-SDK cohort. A prospective old/new study still needs a reviewed joint
-registration freeze before one shared draw, matched common dependencies and
-host/profile evidence, native conformance, and revision-aware reporting.
+comparison. Use the explicit [joint revision-control profile](../../../docs/analysis/COMPILER_REVISION_CONTROL.md)
+for prospective preparation and paired reporting. It checks matched dependencies,
+workflow options and host facts, rechecks full inventories in the selected
+interpreters, and freezes both registrations before one shared draw. Existing
+three-SDK profiles retain their own workflow sets. An actual old/new study still
+needs reviewed artifacts, native conformance, a qualified dedicated host and
+independent review.
 Differences in dependencies or workflow options are confounders, not compiler
 effects. Existing separately drawn campaigns are not matched old/new evidence.
 
