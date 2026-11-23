@@ -64,3 +64,27 @@ reports no external compiler result, comparative ranking or publication-host
 certification. Detailed raw host/process inventories remain private; this record
 publishes identities and compact controls only. Preserve original external
 LICENSE/NOTICE with every redistributed source/derived fixture archive.
+
+## Observer placement correction before participant execution
+
+The first admission was refused before campaign/cgroup creation or any SDK
+execution. The [retained refusal](evidence/external-execution-20261123/admission-attempt-1.json)
+binds the original published driver and manifest. The observer had been pinned
+to measured CPU 96 before checking that CPU's idleness. Observer activity can
+contaminate that check; the original after-sample was not retained, so exact
+attribution is unavailable.
+
+The [amended manifest](COMPILER_EXTERNAL_OBSERVER_FREEZE_20261123.json) binds
+the [corrected operator driver](evidence/external-execution-20261123/run-frozen-external-observer.py).
+It keeps the observer on housekeeping CPU 0, outside measured CPU 96 and its
+SMT sibling 288, for admission and phase monitoring. It captures a fresh
+selected-core interval and writes both samples and all deltas before asserting
+the unchanged zero-busy-tick requirement. Participant workers still explicitly
+use CPU 96. No evaluator, participant, input, repetition, budget or original
+reservation deadline changes. The original freeze remains retained unchanged.
+
+Publish and independently verify this amended manifest before staging it as
+`public-external-observer-freeze.json` and executing the corrected driver as
+`run-frozen-external-observer.py`. This authorizes one first participant campaign,
+not a repeat of participant outcomes. If admission fails again, retain the full
+samples and diagnose them before any further action.

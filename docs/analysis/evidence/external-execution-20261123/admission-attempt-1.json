@@ -1,0 +1,14 @@
+{
+  "scope": "Pre-measurement host-admission failure; no participant executed",
+  "driver_sha256": "7b121e70825927116dcb37748212312b4531d8a9889f574c85789d7196b6e31c",
+  "public_manifest_sha256": "52261dde41292f9158d3c7007b366274e155c007c21224ff3b340cc90ba29a61",
+  "host_before_sha256": "95346a39c026c1f76b5da3aad0765eb593ca089afbe48ddf968ee2e30fab2080",
+  "failure": "AssertionError: Selected core or sibling was active during admission",
+  "failure_line": 134,
+  "campaign_directory_created": false,
+  "campaign_cgroup_created": false,
+  "participant_execution_started": false,
+  "diagnosis": "Observer was pinned to measured CPU 96 before its own idleness interval. Its activity can contaminate the interval. The original after-sample was not retained before refusal, so exact attribution of its busy ticks is unavailable.",
+  "observed_at_utc": "2026-11-23T09:02:51.574004+00:00"
+}
+
