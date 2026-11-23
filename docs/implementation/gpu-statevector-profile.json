@@ -1,0 +1,38 @@
+{
+  "absolute_tolerance": 1e-10,
+  "block_timeout_seconds": 300,
+  "blocks": 10,
+  "correctness": "Every warmup and measurement is compared against an independent complex128 NumPy oracle; full state outputs retained externally. No threshold changes after measurements.",
+  "cuda_fallback_allowed": false,
+  "device_count": 1,
+  "dtype": "complex128",
+  "endian": "logical qubit zero is most significant",
+  "layers": 4,
+  "measured": 3,
+  "memory_policy": "Report allocator-specific observations separately. They are not comparable device-process peaks; no GPU memory ranking is allowed.",
+  "norm_tolerance": 1e-10,
+  "order": "participant order alternates by fresh process block",
+  "participants": [
+    "custatevec",
+    "flagquantum"
+  ],
+  "publication_eligible": false,
+  "qubits": [
+    4,
+    12,
+    20
+  ],
+  "schema_version": 1,
+  "scope": "Complete backend state request from prebuilt logical gate list: native setup, zero-state initialization, evolution and full host state delivery. Imports and independent NumPy verification excluded.",
+  "seed": 41,
+  "study_id": "gpu-statevector-pilot-20261123",
+  "transfer_policy": "Zero state is initialized on device. No large host-to-device initial-state transfer; matrix preparation/upload belongs to setup. Full state device-to-host copy timed separately.",
+  "versions": {
+    "cupy-cuda13x": "13.6.0",
+    "cuquantum-python-cu13": "26.11.0",
+    "custatevec-cu13": "1.15.1",
+    "flagquantum": "0.3.1",
+    "torch": "2.14.0+cu130"
+  },
+  "warmups": 2
+}
