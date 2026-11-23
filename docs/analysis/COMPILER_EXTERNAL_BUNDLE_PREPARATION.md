@@ -115,3 +115,30 @@ The process boundary additionally rejects non-object JSON responses and missing
 converted programs explicitly. All seventeen preparation scenarios pass after
 those controls; the earlier 172-test combined result precedes these three added
 negative cases.
+
+## Native Linux synthetic preparation smoke
+
+The source revision `077021bd30b79863053576df35d6d7b23f8586c4` subsequently
+passed a real Linux run of the existing supervisor, with a fresh preparation
+environment and a dedicated temporary cgroup. The synthetic six-qubit Bell
+program was admitted and the eight-qubit reset program was refused; both source
+decisions and all sixteen intended workflow rows were retained. The two admitted
+line/grid cases loaded through the existing Bundle. Both workers completed with
+300-second and 16 GiB limits, CPU 96 affinity, and the existing socket/io_uring
+denial policy. Kernel peak memory was available, no OOM occurred, and no worker
+cgroups remained; the dedicated parent cgroup was removed.
+
+The compact [smoke record](COMPILER_EXTERNAL_BUNDLE_NATIVE_SMOKE_20261123.json)
+retains the source/archive identity, original observation hashes, limits and
+verdicts. Detailed host inventories are not copied into this record. This was a
+functional check on a shared host, not a performance comparison or an exclusive
+host qualification. The previously measured environment was only read for
+optional dependencies, bytecode writes were disabled, and PLY was installed
+only in the new preparation environment. No services, kernels or drivers changed.
+
+The initial SCP staging command returned success but the subsequent SSH check
+found no uploaded files; the driver did not run in that attempt. Staging through
+SSH stdin then verified every file hash before the single successful smoke run.
+No selected external program body was read. Final external input admission,
+novelty auditing, public execution freeze and participant measurement remain
+pending.

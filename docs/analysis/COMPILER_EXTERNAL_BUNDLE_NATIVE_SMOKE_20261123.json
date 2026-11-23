@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic functional preparation only; no participant measurement, external population admission, or exclusive-host claim",
+  "source_revision": "077021bd30b79863053576df35d6d7b23f8586c4",
+  "source_archive_sha256": "68955bd3a73da57896da7a790e39304ef4652a89ed90694f2eaa2c6e7689c547",
+  "synthetic_input_statuses": [
+    "input-admitted",
+    "input-not-admitted"
+  ],
+  "intended_outcome_count": 16,
+  "admitted_instance_count": 2,
+  "remaining_worker_cgroups": 0,
+  "dedicated_cgroup_removed": true,
+  "supervisor_records": [
+    {
+      "source_index": 0,
+      "retained_record_sha256": "78401e10b338dda296a6eb0a3f1c92187a476a240b12ca102118c3cb70d939c5",
+      "execution_status": "completed",
+      "returncode": 0,
+      "enforced_cpu_set": "96",
+      "limits": {
+        "cpu": 96,
+        "file_bytes": 33554432,
+        "memory_bytes": 17179869184,
+        "output_bytes": 8388608,
+        "tasks": 128,
+        "wall_seconds": 300
+      },
+      "network_policy": "seccomp-deny-sockets-and-io-uring",
+      "kernel_memory_peak_bytes": 183406592,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_group_kill": 0,
+        "oom_kill": 0
+      },
+      "output_truncated": false,
+      "worker_status": "converted"
+    },
+    {
+      "source_index": 1,
+      "retained_record_sha256": "408570b1645c585a39523b561f7719d6d7bcf1cf9ee849f4436db5ba2bf4400a",
+      "execution_status": "completed",
+      "returncode": 0,
+      "enforced_cpu_set": "96",
+      "limits": {
+        "cpu": 96,
+        "file_bytes": 33554432,
+        "memory_bytes": 17179869184,
+        "output_bytes": 8388608,
+        "tasks": 128,
+        "wall_seconds": 300
+      },
+      "network_policy": "seccomp-deny-sockets-and-io-uring",
+      "kernel_memory_peak_bytes": 58138624,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_group_kill": 0,
+        "oom_kill": 0
+      },
+      "output_truncated": false,
+      "worker_status": "refused"
+    }
+  ],
+  "staging_failure": "An initial SCP command returned success but the subsequent SSH directory inspection found no uploaded files. The smoke had not started. Files were then staged through SSH stdin and hashes checked before execution."
+}
