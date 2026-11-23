@@ -1,0 +1,157 @@
+{
+  "protocol": "gpu-phases-v2",
+  "schema_version": 2,
+  "status": "collector_implemented",
+  "publication_eligible": false,
+  "tracks": [
+    {
+      "id": "primary",
+      "label": "End-to-end measurement",
+      "clock": "host_wall_completed",
+      "phase_barriers": false
+    },
+    {
+      "id": "diagnostic",
+      "label": "Phase diagnostics",
+      "clock": "host_wall_completed",
+      "phase_barriers": true
+    }
+  ],
+  "stage_statuses": [
+    "measured",
+    "not_measured",
+    "not_observable",
+    "not_applicable",
+    "error"
+  ],
+  "stages": [
+    {
+      "id": "startup",
+      "label": "Startup and device context",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "construction_binding",
+      "label": "Circuit construction and parameter binding",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "execution_preparation",
+      "label": "Compilation and execution preparation",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "state_initialization",
+      "label": "Device state allocation and initialization",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "h2d",
+      "label": "Input transfer H2D",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "forward",
+      "label": "Forward execution",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "output",
+      "label": "Output production",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "d2h",
+      "label": "Output transfer D2H",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "backward",
+      "label": "Backward pass",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "optimizer",
+      "label": "Parameter update",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "cleanup",
+      "label": "Resource release",
+      "seconds": null,
+      "status": "not_measured"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "first_request",
+      "label": "First complete request",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "repeated_fixed",
+      "label": "Repeated fixed circuit",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "parameter_update",
+      "label": "Rebuild with changed parameters",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "differentiable_forward",
+      "label": "Differentiable forward",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "gradient",
+      "label": "Gradient computation",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "training_step",
+      "label": "Complete training step",
+      "status": "not_run",
+      "results": null
+    }
+  ],
+  "participants": [
+    {
+      "id": "custatevec",
+      "label": "cuStateVec",
+      "scope": "component_request",
+      "gradient_scenarios": "not_applicable"
+    },
+    {
+      "id": "flagquantum",
+      "label": "FlagQuantum",
+      "scope": "sdk_request",
+      "gradient_scenarios": "implemented"
+    }
+  ],
+  "gradient_modes": [
+    "default",
+    "no_grad",
+    "inference",
+    "enabled"
+  ],
+  "loss": "real <Z_0>, qubit 0 is MSB",
+  "dtype": "complex128 / float64",
+  "absolute_tolerance": 1e-10,
+  "note": "Protocol definitions only. No campaign measurements; no weighted metric additions."
+}
