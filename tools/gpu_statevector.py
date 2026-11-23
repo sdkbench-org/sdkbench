@@ -88,6 +88,7 @@ def worker(args):
     import cupy as cp
     profile=json.loads(args.profile.read_text());n=args.qubits
     assert torch.cuda.is_available() and torch.cuda.device_count()==1, 'One real CUDA device required'
+    assert torch.__version__==profile['torch_runtime_version'] and torch.version.cuda==profile['cuda_runtime_version'], 'Unregistered CUDA/Torch build'
     torch.set_num_threads(1);torch.set_num_interop_threads(1)
     if args.participant=='flagquantum':
         import flagquantum as fq
