@@ -11,6 +11,11 @@ participant performance or acceptance decisions. See the
 [application protocol](../../../docs/analysis/COMPILER_APPLICATION_PROTOCOL.md).
 Physics anchors independently check the meaning of the recipes.
 
+External coherent OpenQASM preparation is a separate optional input path. It reuses
+Qiskit/Cirq parsers for source conversion/conformance, never participant compilation
+or W03 acceptance. See [conversion rules, bounds and synthetic tests](../../../docs/analysis/COMPILER_EXTERNAL_QASM_PREPARATION.md).
+The frozen external population has not yet been read or executed.
+
 Admission dependencies are the standard library and existing P0/P1a provenance code.
 The explicit build command uses the repository's existing development dependency
 `build`; its environment must already satisfy the candidate's build requirements.
