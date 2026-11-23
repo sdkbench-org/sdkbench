@@ -1,0 +1,157 @@
+{
+  "protocol": "gpu-phases-v2",
+  "schema_version": 2,
+  "status": "collector_implemented",
+  "publication_eligible": false,
+  "tracks": [
+    {
+      "id": "primary",
+      "label": "端到端测量",
+      "clock": "host_wall_completed",
+      "phase_barriers": false
+    },
+    {
+      "id": "diagnostic",
+      "label": "阶段诊断",
+      "clock": "host_wall_completed",
+      "phase_barriers": true
+    }
+  ],
+  "stage_statuses": [
+    "measured",
+    "not_measured",
+    "not_observable",
+    "not_applicable",
+    "error"
+  ],
+  "stages": [
+    {
+      "id": "startup",
+      "label": "启动与设备上下文",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "construction_binding",
+      "label": "线路构建与参数绑定",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "execution_preparation",
+      "label": "编译与执行准备",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "state_initialization",
+      "label": "设备初态分配与初始化",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "h2d",
+      "label": "输入传输 H2D",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "forward",
+      "label": "前向执行",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "output",
+      "label": "输出计算",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "d2h",
+      "label": "结果传输 D2H",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "backward",
+      "label": "反向传播",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "optimizer",
+      "label": "参数更新",
+      "seconds": null,
+      "status": "not_measured"
+    },
+    {
+      "id": "cleanup",
+      "label": "资源释放",
+      "seconds": null,
+      "status": "not_measured"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "first_request",
+      "label": "首次完整请求",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "repeated_fixed",
+      "label": "固定线路重复执行",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "parameter_update",
+      "label": "参数变化后重新构建",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "differentiable_forward",
+      "label": "可微前向",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "gradient",
+      "label": "梯度计算",
+      "status": "not_run",
+      "results": null
+    },
+    {
+      "id": "training_step",
+      "label": "完整训练步",
+      "status": "not_run",
+      "results": null
+    }
+  ],
+  "participants": [
+    {
+      "id": "custatevec",
+      "label": "cuStateVec",
+      "scope": "component_request",
+      "gradient_scenarios": "not_applicable"
+    },
+    {
+      "id": "flagquantum",
+      "label": "FlagQuantum",
+      "scope": "sdk_request",
+      "gradient_scenarios": "implemented"
+    }
+  ],
+  "gradient_modes": [
+    "default",
+    "no_grad",
+    "inference",
+    "enabled"
+  ],
+  "loss": "real <Z_0>, qubit 0 is MSB",
+  "dtype": "complex128 / float64",
+  "absolute_tolerance": 1e-10,
+  "note": "Protocol definitions only. No campaign measurements; no weighted metric additions."
+}
