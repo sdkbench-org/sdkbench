@@ -30,6 +30,19 @@ gradient scenarios are not applicable to this primitive adapter. A future
 cuStateVec-plus-differentiation stack requires a separate participant identity,
 algorithm and execution-count disclosure.
 
+For a matched graph-recording ablation, `differentiable_forward` accepts
+`--forward-context enabled|no_grad|inference`. All three keep leaf parameters
+with requires_grad=True and return the same full state, scalar loss and parameter
+vector. Only graph-recording context changes; backward is absent in all three.
+This is separate from ordinary forward requests with requires_grad=False.
+
+`--oracle-cache` can supply precomputed independent NumPy fixtures keyed by the
+SHA-256 of qubit count and the complete operation/angle list. Each fixture's
+bytes and SHA-256 are checked before use outside request timing. Generation and
+the complete index must be retained with the study. Identical reference inputs
+are reused within a worker; changed parameters use distinct keys. Every actual
+GPU output is still checked and retained independently.
+
 ## Two timing tracks
 
 * **primary:** host wall time around the complete request, synchronized at entry

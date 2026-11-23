@@ -53,6 +53,29 @@ def gradient_reference(n, ops):
     return np.array(result, dtype=np.float64)
 
 
+def oracle_key(n, ops):
+    import hashlib
+    raw = json.dumps([n, ops], separators=(',', ':'), allow_nan=False).encode()
+    return hashlib.sha256(raw).hexdigest()
+
+
+def cached_oracle(directory, n, ops, need_gradient):
+    """Read content-pinned independent CPU fixtures; always outside request timing."""
+    import numpy as np
+    key = oracle_key(n, ops)
+    index = json.loads((directory / 'index.json').read_text())
+    pin = index[key]
+    path = directory / (key + '.npz')
+    if sha(path) != pin['sha256'] or path.stat().st_size != pin['bytes']:
+        raise ValueError('Oracle fixture integrity mismatch')
+    with np.load(path, allow_pickle=False) as data:
+        state = data['state'].copy()
+        gradient = data['gradient'].copy() if need_gradient else None
+    if state.shape != (1 << n,) or state.dtype != np.complex128:
+        raise ValueError('Invalid oracle state')
+    return state, gradient
+
+
 class Recorder:
     """Diagnostic barriers are never inserted into the primary request track."""
     def __init__(self, track, sync, clock=time.perf_counter):
@@ -197,10 +220,13 @@ def worker(args):
     base_ops = operations(args.qubits, args.layers, args.seed)
     grad = args.scenario in GRAD_SCENARIOS
     reusable = args.scenario == 'repeated_fixed'
-    context = (torch.enable_grad if grad else {'default': nullcontext,
-               'no_grad': torch.no_grad, 'inference': torch.inference_mode}[args.grad_mode])
+    effective_mode = (args.forward_context if args.scenario == 'differentiable_forward'
+                      else 'enabled' if grad else args.grad_mode)
+    context = {'enabled': torch.enable_grad, 'default': nullcontext,
+               'no_grad': torch.no_grad, 'inference': torch.inference_mode}[effective_mode]
     count = 1 if args.scenario == 'first_request' else args.warmups + args.measured
     records = []
+    oracle_memory = {}
     args.output.mkdir(parents=True, exist_ok=False)
     write(args.output / 'environment.json', dict(
         protocol=PROTOCOL, startup_import_context_seconds=startup_seconds,
@@ -235,6 +261,8 @@ def worker(args):
                 recorder.call('state_initialization', adapter.initialize)
             recorder.call('forward', adapter.forward)
             recorder.call('output', lambda: adapter.output(grad)) if grad else None
+            state_requires_grad = bool(adapter.state.requires_grad) if args.participant == 'flagquantum' else False
+            loss_requires_grad = bool(adapter.objective.requires_grad) if grad else False
             if args.scenario in ('gradient', 'training_step'):
                 recorder.call('backward', adapter.backward)
             if args.scenario == 'training_step':
@@ -258,14 +286,19 @@ def worker(args):
                                 ('optimizer', args.scenario == 'training_step'), ('cleanup', not reusable)]:
             if not applicable:
                 recorder.stages[key] = unavailable('not_applicable', 'Not part of this request contract')
-        expected = reference(args.qubits, ops)
+        key = oracle_key(args.qubits, ops)
+        need_gradient = args.scenario in ('gradient', 'training_step')
+        if key not in oracle_memory:
+            oracle_memory[key] = (cached_oracle(args.oracle_cache, args.qubits, ops, need_gradient)
+                if args.oracle_cache else (reference(args.qubits, ops),
+                    gradient_reference(args.qubits, ops) if need_gradient else None))
+        expected, expected_gradient = oracle_memory[key]
         host = adapter.host
         errors = dict(state=float(np.max(np.abs(host['state'] - expected))),
                       norm=float(abs(np.vdot(host['state'], host['state']).real - 1)))
         if grad:
             errors['loss'] = abs(float(host['loss']) - loss(expected))
         if args.scenario in ('gradient', 'training_step'):
-            expected_gradient = gradient_reference(args.qubits, ops)
             errors['gradient'] = float(np.max(np.abs(host['gradient'] - expected_gradient)))
             initial = np.array([a for _, _, a in ops if a is not None])
             expected_parameters = initial - (args.learning_rate * expected_gradient if args.scenario == 'training_step' else 0)
@@ -275,13 +308,15 @@ def worker(args):
         record = dict(protocol=PROTOCOL, participant=args.participant,
             scope='component_request' if args.participant == 'custatevec' else 'sdk_request',
             scenario=args.scenario, track=args.track,
-            grad_mode=('not_applicable' if args.participant == 'custatevec' else 'enabled' if grad else args.grad_mode),
+            grad_mode=('not_applicable' if args.participant == 'custatevec' else effective_mode),
             requires_grad=grad, parameter_policy='rebuild' if not reusable else 'retained_fixed',
+            state_requires_grad=state_requires_grad, loss_requires_grad=loss_requires_grad,
             qubits=args.qubits, repetition=repetition, phase=phase, parameter_offset=offset,
             request_wall_seconds=total, stages=recorder.stages, status='completed',
             semantic_status='accepted' if all(math.isfinite(v) and v <= args.tolerance for v in errors.values()) else 'rejected',
             errors=errors, tolerance=args.tolerance, output=dict(path=artifact.name, sha256=sha(artifact), bytes=artifact.stat().st_size),
-            forward_circuit_executions=1, gradient_method='torch_autograd' if grad else None,
+            forward_circuit_executions=1,
+            gradient_method='torch_autograd' if need_gradient else None,
             backward_circuit_executions=None if args.scenario in ('gradient', 'training_step') else 0,
             backward_execution_count_status='not_observable' if args.scenario in ('gradient', 'training_step') else 'not_applicable')
         check_record(record)
@@ -299,6 +334,9 @@ def main():
     parser.add_argument('--scenario', choices=SCENARIOS, required=True)
     parser.add_argument('--track', choices=('primary', 'diagnostic'), default='primary')
     parser.add_argument('--grad-mode', choices=('default', 'no_grad', 'inference'), default='no_grad')
+    parser.add_argument('--forward-context', choices=('enabled', 'no_grad', 'inference'), default='enabled',
+                        help='Matched state/loss/parameter output ablation for differentiable_forward only')
+    parser.add_argument('--oracle-cache', type=Path, help='Content-pinned independent NumPy fixtures; excluded from timing')
     parser.add_argument('--qubits', type=int, default=4)
     parser.add_argument('--layers', type=int, default=4)
     parser.add_argument('--seed', type=int, default=41)

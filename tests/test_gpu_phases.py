@@ -97,3 +97,20 @@ def test_published_catalog_matches_collector_without_measurements():
     assert tuple(s['id'] for s in catalog['scenarios']) == phases.SCENARIOS
     assert all(s['results'] is None and s['status'] == 'not_run' for s in catalog['scenarios'])
     assert all(s['seconds'] is None for s in catalog['stages'])
+
+
+def test_oracle_cache_pins_input_bytes_and_detects_corruption(tmp_path):
+    ops = phases.operations(2, 1, 41)
+    key = phases.oracle_key(2, ops)
+    assert key != phases.oracle_key(2, phases.shifted_ops(ops, .007))
+    assert key != phases.oracle_key(3, ops)
+    path = tmp_path / (key + '.npz')
+    state, gradient = phases.reference(2, ops), phases.gradient_reference(2, ops)
+    np.savez(path, state=state, gradient=gradient)
+    (tmp_path / 'index.json').write_text(json.dumps({key:dict(sha256=phases.sha(path),bytes=path.stat().st_size)}))
+    actual, deriv = phases.cached_oracle(tmp_path, 2, ops, True)
+    np.testing.assert_array_equal(actual, state)
+    np.testing.assert_array_equal(deriv, gradient)
+    path.write_bytes(path.read_bytes() + b'changed')
+    with pytest.raises(ValueError, match='integrity'):
+        phases.cached_oracle(tmp_path, 2, ops, True)
