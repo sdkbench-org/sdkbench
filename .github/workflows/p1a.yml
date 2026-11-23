@@ -23,7 +23,9 @@ permissions:
 jobs:
   native-linux:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    # The full cohort includes complete-case caps up to one hour per stack.
+    # Reserve the hosted runner's six-hour ceiling; participant caps are unchanged.
+    timeout-minutes: ${{ github.event_name == 'workflow_dispatch' && inputs.scope == 'all-protocol' && 360 || 90 }}
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
