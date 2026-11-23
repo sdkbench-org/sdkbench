@@ -1,0 +1,149 @@
+{
+  "all_required_checks_passed": true,
+  "check_count": 14,
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T07:58:53Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234667/job/137553340989",
+      "name": "native-linux",
+      "startedAt": "2026-11-23T07:55:31Z",
+      "status": "COMPLETED",
+      "workflowName": "P1a native SDK integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T07:48:05Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168721/job/137553124852",
+      "name": "native-linux",
+      "startedAt": "2026-11-23T07:44:44Z",
+      "status": "COMPLETED",
+      "workflowName": "P1a native SDK integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T07:49:57Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234602/job/137553340837",
+      "name": "native-linux",
+      "startedAt": "2026-11-23T07:44:10Z",
+      "status": "COMPLETED",
+      "workflowName": "P1b native SDK integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T07:55:29Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168673/job/137553124860",
+      "name": "native-linux",
+      "startedAt": "2026-11-23T07:49:32Z",
+      "status": "COMPLETED",
+      "workflowName": "P1b native SDK integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:34:12Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234546/job/137553341083",
+      "name": "core",
+      "startedAt": "2026-11-23T08:08:14Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:25:18Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168749/job/137553125438",
+      "name": "core",
+      "startedAt": "2026-11-23T07:59:11Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:56:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234546/job/137553341103",
+      "name": "sdks (3.11)",
+      "startedAt": "2026-11-23T08:14:43Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:21:45Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168749/job/137553125453",
+      "name": "sdks (3.11)",
+      "startedAt": "2026-11-23T07:52:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:26:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234546/job/137553340812",
+      "name": "sdks (3.12)",
+      "startedAt": "2026-11-23T08:00:24Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:42:57Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168749/job/137553125581",
+      "name": "sdks (3.12)",
+      "startedAt": "2026-11-23T08:16:24Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:44:19Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234546/job/137553341228",
+      "name": "sdks (3.13)",
+      "startedAt": "2026-11-23T08:20:33Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:15:57Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168749/job/137553125053",
+      "name": "sdks (3.13)",
+      "startedAt": "2026-11-23T07:51:42Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:08:13Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133234546/job/137553341086",
+      "name": "p0-linux",
+      "startedAt": "2026-11-23T08:07:53Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-23T08:04:26Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/sdkbench-org/sdkbench/actions/runs/45133168749/job/137553125495",
+      "name": "p0-linux",
+      "startedAt": "2026-11-23T08:04:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests and package"
+    }
+  ],
+  "harness_revision": "3e4d6ed0ad024e81da4fc55a6051bfff64e8e647",
+  "observed_at_utc": "2026-11-23T08:56:54.309643+00:00",
+  "source": "GitHub PR #22 exact-head statusCheckRollup"
+}

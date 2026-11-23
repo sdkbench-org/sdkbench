@@ -1,0 +1,18 @@
+{
+  "scope": "Read-only cache metadata observation; no mtime baseline attestation or cache-content reconstruction",
+  "threshold_utc": "2026-11-23T06:02:12Z",
+  "roots": [
+    {
+      "root": "qualification-env",
+      "bytecode_files_observed": 12410,
+      "newer_bytecode_files": []
+    },
+    {
+      "root": "python-complete",
+      "bytecode_files_observed": 5733,
+      "newer_bytecode_files": []
+    }
+  ],
+  "outer_bytecode_flag_inherited_by_source_supervisor": false,
+  "source_workers_have_explicit_environment": true
+}

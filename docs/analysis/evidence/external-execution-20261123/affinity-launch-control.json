@@ -1,0 +1,10 @@
+{
+  "observer_affinity": [
+    0
+  ],
+  "launched_supervisor_affinity": [
+    96
+  ],
+  "participant_execution_started": false,
+  "scope": "Launch-only control; no SDK imported and no benchmark input executed"
+}
