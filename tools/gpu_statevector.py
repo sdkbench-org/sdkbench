@@ -118,7 +118,7 @@ def worker(args):
                 circuit=fq.Circuit(n,device='cuda',dtype=torch.complex128)
                 for name,wires,angle in ops:
                     if name=='cx':circuit.cx(*wires)
-                    else:getattr(circuit,name)(wires[0],angle)
+                    else:getattr(circuit,name)(wires[0],torch.tensor(angle,dtype=torch.float64,device='cuda'))
                 run=lambda:circuit.state(refresh=True)
                 executor=None
             torch.cuda.synchronize();cp.cuda.Stream.null.synchronize();t1=time.perf_counter()
