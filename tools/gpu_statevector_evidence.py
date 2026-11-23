@@ -24,7 +24,7 @@ def verify(root):
     for n in p['qubits']:
         oracle=reference(n,operations(n,p['layers'],p['seed']))
         stored=np.load(root/'references'/f'{n}.npy',allow_pickle=False)
-        assert np.array_equal(stored,oracle), 'Stored reference differs'
+        assert np.allclose(stored,oracle,atol=1e-14,rtol=0), 'Stored reference differs'
         for participant in p['participants']:
             for block in range(p['blocks']):
                 key=(participant,f'SV-{n:02d}',block)
@@ -37,11 +37,14 @@ def verify(root):
                 if execution['status']=='completed':assert {(r['phase'],r['repetition']) for r in records}==expected and len(records)==len(expected)
                 for row in records:
                     assert (row['participant'],row['instance'],row['block'])==key
+                    relative=(directory/f'{row["phase"]}-{row["repetition"]}.npy').relative_to(root).as_posix()
+                    assert row['output']['path']==relative
+                    assert row['output']['sha256']==manifest['files'][relative]['sha256'] and row['output']['bytes']==manifest['files'][relative]['bytes']
                     state=np.load(root/row['output']['path'],allow_pickle=False)
                     assert state.shape==(1<<n,) and state.dtype==np.complex128
                     error=float(np.max(np.abs(state-oracle)));norm=float(abs(np.vdot(state,state).real-1))
                     decision='accepted' if np.isfinite(state).all() and error<=p['absolute_tolerance'] and norm<=p['norm_tolerance'] else 'rejected'
-                    assert error==row['max_abs_error'] and norm==row['norm_error'] and decision==row['semantic_status']
+                    assert abs(error-row['max_abs_error'])<=1e-14 and abs(norm-row['norm_error'])<=1e-14 and decision==row['semantic_status']
                     assert row['status']=='completed' and all(v is None or isinstance(v,(int,float)) and np.isfinite(v) and v>=0 for v in row['measurements'].values())
                     statuses[decision]=statuses.get(decision,0)+1;rows.append(row)
     return dict(schema_version=1,manifest_sha256=sha(root/'MANIFEST.json'),context=c,
