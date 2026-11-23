@@ -6,13 +6,13 @@
   "tracks": [
     {
       "id": "primary",
-      "label": "端到端测量",
+      "label": "End-to-end measurement",
       "clock": "host_wall_completed",
       "phase_barriers": false
     },
     {
       "id": "diagnostic",
-      "label": "阶段诊断",
+      "label": "Phase diagnostics",
       "clock": "host_wall_completed",
       "phase_barriers": true
     }
@@ -27,67 +27,67 @@
   "stages": [
     {
       "id": "startup",
-      "label": "启动与设备上下文",
+      "label": "Startup and device context",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "construction_binding",
-      "label": "线路构建与参数绑定",
+      "label": "Circuit construction and parameter binding",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "execution_preparation",
-      "label": "编译与执行准备",
+      "label": "Compilation and execution preparation",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "state_initialization",
-      "label": "设备初态分配与初始化",
+      "label": "Device state allocation and initialization",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "h2d",
-      "label": "输入传输 H2D",
+      "label": "Input transfer H2D",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "forward",
-      "label": "前向执行",
+      "label": "Forward execution",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "output",
-      "label": "输出计算",
+      "label": "Output production",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "d2h",
-      "label": "结果传输 D2H",
+      "label": "Output transfer D2H",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "backward",
-      "label": "反向传播",
+      "label": "Backward pass",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "optimizer",
-      "label": "参数更新",
+      "label": "Parameter update",
       "seconds": null,
       "status": "not_measured"
     },
     {
       "id": "cleanup",
-      "label": "资源释放",
+      "label": "Resource release",
       "seconds": null,
       "status": "not_measured"
     }
@@ -95,37 +95,37 @@
   "scenarios": [
     {
       "id": "first_request",
-      "label": "首次完整请求",
+      "label": "First complete request",
       "status": "not_run",
       "results": null
     },
     {
       "id": "repeated_fixed",
-      "label": "固定线路重复执行",
+      "label": "Repeated fixed circuit",
       "status": "not_run",
       "results": null
     },
     {
       "id": "parameter_update",
-      "label": "参数变化后重新构建",
+      "label": "Rebuild with changed parameters",
       "status": "not_run",
       "results": null
     },
     {
       "id": "differentiable_forward",
-      "label": "可微前向",
+      "label": "Differentiable forward",
       "status": "not_run",
       "results": null
     },
     {
       "id": "gradient",
-      "label": "梯度计算",
+      "label": "Gradient computation",
       "status": "not_run",
       "results": null
     },
     {
       "id": "training_step",
-      "label": "完整训练步",
+      "label": "Complete training step",
       "status": "not_run",
       "results": null
     }

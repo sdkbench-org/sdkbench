@@ -1,6 +1,7 @@
 """CPU-only protocol tests. GPU adapter coverage is a separate smoke experiment."""
 import copy
 import importlib.util
+import json
 from pathlib import Path
 import sys
 
@@ -87,3 +88,12 @@ def test_parameter_shift_against_finite_difference():
 def test_z0_loss_uses_most_significant_qubit():
     assert phases.loss(np.array([0, 1, 0, 0], dtype=complex)) == 1
     assert phases.loss(np.array([0, 0, 1, 0], dtype=complex)) == -1
+
+
+def test_published_catalog_matches_collector_without_measurements():
+    catalog = json.loads((TOOLS.parent / 'docs/implementation/gpu-phases-protocol.json').read_text())
+    assert catalog['protocol'] == phases.PROTOCOL
+    assert {s['id'] for s in catalog['stages']} == set(phases.STAGES) | {'startup'}
+    assert tuple(s['id'] for s in catalog['scenarios']) == phases.SCENARIOS
+    assert all(s['results'] is None and s['status'] == 'not_run' for s in catalog['scenarios'])
+    assert all(s['seconds'] is None for s in catalog['stages'])
