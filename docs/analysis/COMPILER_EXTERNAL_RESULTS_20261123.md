@@ -190,8 +190,16 @@ claimed.
 
 The [complete intended-row ledger](COMPILER_EXTERNAL_RESULTS_20261123.json) embeds
 the unchanged independent numerical summary, including every block sample.
-Raw numerical evidence is retained privately pending separate disclosure approval;
-its archive identities will be linked after publication, without changing outcomes.
+The [public numerical evidence release](https://github.com/FlagQuantum/FlagQuantum-evidence/releases/tag/evidence-compiler-external-2026-11-23.1)
+retains both operational attempts and the complete measured campaign. The archive
+is 21,904,135 bytes with SHA-256
+`2062cab0857de6088abe402d05ea7722dad8d37cc5cb13206a478f79e07428d8`.
+Its per-file manifest has SHA-256
+`596c3e69fe89f46b12730a07a1cadc4c4982f3f037597c078b445d30f519e201`.
+Both identities were verified against downloaded draft assets before publication
+on November 23, 2026. The release also includes checksums and the credential-scan
+receipt; detailed private host/process snapshots are excluded. Disclosure changes
+accessibility only, not the retained outcomes or claim eligibility.
 
 ## Repository verification
 
