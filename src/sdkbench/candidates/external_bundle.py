@@ -131,10 +131,14 @@ def prepare(
             result = json.loads(observed["stdout"])
             _write(directory / "conversion.json", result)
             require(
+                isinstance(result, dict), "Source worker response must be an object"
+            )
+            require(
                 result["status"] == "converted",
                 result.get("reason", "Conversion refused"),
             )
             converted = result["prepared"]
+            require(isinstance(converted, dict), "Converted source must be an object")
             require(
                 converted["n_qubits"] == n
                 and converted["source_sha256"] == hashlib.sha256(raw).hexdigest(),

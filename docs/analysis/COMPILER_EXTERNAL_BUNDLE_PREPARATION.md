@@ -110,3 +110,8 @@ used. Full exact-head CI and real Linux supervised preparation remain pending.
 Final combined verification after the incomplete-payload control: 172 tests
 passed in 47.88 seconds (preparation, converter, existing resource replay and P0
 evaluators). No full repository-suite pass is claimed.
+
+The process boundary additionally rejects non-object JSON responses and missing
+converted programs explicitly. All seventeen preparation scenarios pass after
+those controls; the earlier 172-test combined result precedes these three added
+negative cases.

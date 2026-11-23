@@ -321,3 +321,26 @@ def test_incomplete_converted_payload_cannot_admit_a_source(tmp_path, monkeypatc
     assert result["admitted_instances"] == 0
     assert all(row["status"] == "input-not-admitted" for row in result["inputs"])
     assert all("operation list" in row["reason"] for row in result["inputs"])
+
+
+@pytest.mark.parametrize(
+    "payload", [None, [], {"status": "converted", "prepared": None}]
+)
+def test_nonobject_worker_payload_is_refused_and_retained(
+    tmp_path, monkeypatch, payload
+):
+    root, manifest = population(tmp_path)
+    monkeypatch.setattr(
+        preparation,
+        "run_command",
+        lambda *a, **k: {
+            "execution_status": "completed",
+            "stdout": json.dumps(payload),
+        },
+    )
+    result = preparation.prepare(
+        BASE, manifest, root, tmp_path / "prepared", cpu=0, cgroup_parent=tmp_path
+    )
+    assert result["admitted_instances"] == 0
+    assert all("must be an object" in row["reason"] for row in result["inputs"])
+    assert len(result["intended_outcomes"]) == 16
