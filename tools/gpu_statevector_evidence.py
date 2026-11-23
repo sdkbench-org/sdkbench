@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import platform
+from datetime import datetime,timezone
 import numpy as np
 from gpu_statevector import operations,reference,sha,write
 
@@ -48,6 +50,8 @@ def verify(root):
                     assert row['status']=='completed' and all(v is None or isinstance(v,(int,float)) and np.isfinite(v) and v>=0 for v in row['measurements'].values())
                     statuses[decision]=statuses.get(decision,0)+1;rows.append(row)
     return dict(schema_version=1,manifest_sha256=sha(root/'MANIFEST.json'),context=c,
+        replay_runtime=dict(python=platform.python_version(),numpy=np.__version__,host=platform.node(),
+            verifier_sha256=sha(Path(__file__)),verified_at_utc=datetime.now(timezone.utc).isoformat()),
         files_verified=len(actual),blocks_verified=len(seen),records_verified=len(rows),record_statuses=statuses,
         publication_eligible=False,replay_scope='All stored complete complex128 states re-evaluated against deterministic independent NumPy oracle; no participant SDK rerun or resource qualification')
 
