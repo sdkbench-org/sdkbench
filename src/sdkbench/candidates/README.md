@@ -18,6 +18,9 @@ The frozen external population has not yet been read or executed.
 [Supervised preparation](../../../docs/analysis/COMPILER_EXTERNAL_BUNDLE_PREPARATION.md)
 retains input refusals and the full intended denominator before constructing an
 explicit bundle under unchanged W03 acceptance.
+The [exact exposure audit](../../../docs/analysis/COMPILER_EXTERNAL_EXPOSURE_AUDIT.md)
+compares retained inputs against explicit historical evidence and records coverage
+gaps; absence of an exact match does not certify novelty.
 
 Admission dependencies are the standard library and existing P0/P1a provenance code.
 The explicit build command uses the repository's existing development dependency
