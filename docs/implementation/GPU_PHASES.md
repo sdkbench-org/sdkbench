@@ -45,6 +45,9 @@ distinct. Supervisor time also includes verification and serialization; it is
 not a cold-request latency estimate. The collector imports Torch and CuPy for
 both participants as shared synchronization infrastructure; these startup costs
 are not a minimal participant installation comparison. No clock-domain mixing.
+Runtime build identifiers and native library versions are retained separately
+from Python distribution metadata. The complete distribution inventory preserves
+duplicate dist-info entries; a dictionary alone can hide conflicting metadata.
 
 ## Phase semantics and observability
 

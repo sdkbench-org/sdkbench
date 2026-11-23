@@ -177,8 +177,11 @@ def worker(args):
     import torch
     import cupy as cp
     fq = None
+    cv = None
     if args.participant == 'flagquantum':
         import flagquantum as fq
+    else:
+        from cuquantum.bindings import custatevec as cv
     if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
         raise RuntimeError('Exactly one visible CUDA GPU required; no fallback')
     torch.set_num_threads(1)
@@ -203,7 +206,15 @@ def worker(args):
         protocol=PROTOCOL, startup_import_context_seconds=startup_seconds,
         startup_scope='worker imports (NumPy, Torch, CuPy, participant) and CUDA context; excludes interpreter launch',
         python=sys.version, device=torch.cuda.get_device_name(0), cuda=torch.version.cuda,
-        versions={d.metadata['Name']: d.version for d in importlib.metadata.distributions()},
+        torch_runtime=torch.__version__,
+        custatevec_native_version=cv.get_version() if cv is not None else None,
+        # Multiple dist-info directories can coexist. Preserve that fact rather
+        # than silently letting enumeration order choose a reported version.
+        versions={name: importlib.metadata.version(name) for name in
+                  {d.metadata['Name'] for d in importlib.metadata.distributions()}},
+        distribution_inventory=sorted(
+            [dict(name=d.metadata['Name'], version=d.version)
+             for d in importlib.metadata.distributions()], key=lambda d: (d['name'], d['version'])),
         source_files={Path(__file__).name: sha(Path(__file__)),
                       'gpu_statevector.py': sha(Path(__file__).with_name('gpu_statevector.py'))}))
     for repetition in range(count):
