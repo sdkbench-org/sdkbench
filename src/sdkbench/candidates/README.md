@@ -15,6 +15,9 @@ External coherent OpenQASM preparation is a separate optional input path. It reu
 Qiskit/Cirq parsers for source conversion/conformance, never participant compilation
 or W03 acceptance. See [conversion rules, bounds and synthetic tests](../../../docs/analysis/COMPILER_EXTERNAL_QASM_PREPARATION.md).
 The frozen external population has not yet been read or executed.
+[Supervised preparation](../../../docs/analysis/COMPILER_EXTERNAL_BUNDLE_PREPARATION.md)
+retains input refusals and the full intended denominator before constructing an
+explicit bundle under unchanged W03 acceptance.
 
 Admission dependencies are the standard library and existing P0/P1a provenance code.
 The explicit build command uses the repository's existing development dependency
