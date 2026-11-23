@@ -23,6 +23,15 @@ The separate [target-artifact application report](docs/analysis/COMPILER_TARGET_
 
 The [routing-policy control report](docs/analysis/COMPILER_ROUTING_POLICY_RESULTS_20261120.md) retains 1,200 independently replayed blocks, all 120 accepted case/policy outcomes and 180 pair rows from one compiler revision, host and cohort. It records default-versus-explicit quality, latency and memory tradeoffs under unchanged acceptance and resources. Host qualification remains incomplete, and the later study cannot retroactively satisfy the original before-merge timing requirement.
 
+## Results storage
+
+The engine owns protocols, adapters, execution and semantic evaluation. New study
+data is archived separately in the private `sdkbench-org/sdkbench-results`
+repository; the private `sdkbench-org/sdkbench-web` repository maintains local
+presentation snapshots. Historical evidence and its original provenance remain
+in this repository. See [results storage](docs/implementation/RESULTS_STORAGE.md)
+for the archive contract and current migration scope.
+
 ## Requirements and task design
 
 SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).
