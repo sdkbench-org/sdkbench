@@ -1,0 +1,258 @@
+{
+  "admitted_instances": 6,
+  "admitted_sources": 3,
+  "bundle_sha256": "af2d0acb4ab63d6eb2623101bff5185f6288e4d21311065f6eeb33b4b270cd7d",
+  "driver_sha256": "b3602c1d21afc10c686a7a8bb96da282abef16a24ef6d7112c84982b22b153bc",
+  "executable_workflow_rows": 24,
+  "exposure": {
+    "audit_file_sha256": "9d58152bd9f810d13b75a0ccfb095c27f986271d5f0ab68927ea9907e08f6387",
+    "audit_wall_seconds": 5.25102912499915,
+    "gap_reasons": {
+      "Raw bytes compared; canonical content not audited": 41,
+      "Unknown fixture operation fields": 9,
+      "Unsupported IR parameters": 192
+    },
+    "gaps": 242,
+    "inventory_files": 8662,
+    "limitations": "Explicit materialized roots only; no complete Git history, other unpublished campaigns or developer-knowledge inference. Embedded code/strings/logs/JSONL and noncanonical JSON are coverage gaps.",
+    "novelty_certified": false,
+    "roots": [
+      {
+        "archive_sha256": "bc85340410d480965a08b264f2f356e7287ccd788af1e83c8d55c5cf2e258e5f",
+        "identity": "SDKBench docs/tests/examples at 3e4d6ed0ad024e81da4fc55a6051bfff64e8e647"
+      },
+      {
+        "archive_sha256": "653984e00af7f44117d836af7b27985b91de32e4bf5a8afa393cfc10281ed6d3",
+        "identity": "FlagQuantum docs/benchmarks/tests/examples at fb40c32cfb08cc97d8d88d927b6d1bbc5d961ea8"
+      },
+      {
+        "archive_sha256": "e7d53bf9596142f141d1ce2913c6fa630fc4f50edec856d001b521dc17a6f442",
+        "identity": "Extracted approved public routing evidence, 574 files"
+      }
+    ],
+    "targets": [
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-not-admitted",
+        "matches": [],
+        "operation_sha256": null,
+        "raw_sha256": "67cd81d8392049d251e32e4ad1d7399706c054f829f1ab347c3995fe72d914af",
+        "source": "medium/cc_n12/cc_n12.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-not-admitted",
+        "matches": [],
+        "operation_sha256": null,
+        "raw_sha256": "32cb8b0b9a82ab794e99a69e24cce92fd313f37a4725cc61be2f1d761df4fd82",
+        "source": "small/bb84_n8/bb84_n8.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-admitted",
+        "matches": [],
+        "operation_sha256": "03f787765d48ed9192897afe16a1f8ab01199e472fecbcd8d9ce415efaf09dd8",
+        "raw_sha256": "7f1f342a59a7a9159a2f0fa619b8a64170a159158ae838eaa75b13212cf2a161",
+        "source": "small/dnn_n8/dnn_n8.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-admitted",
+        "matches": [],
+        "operation_sha256": "61ba609aef028be12c72181cfdc83cc90976e0ac1c23c74671dec53225eda22f",
+        "raw_sha256": "fde5eff21c334ef02430bbfa8ea38f9287625cab3ffbd45d92d79590ee27dcc9",
+        "source": "small/qaoa_n6/qaoa_n6.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-admitted",
+        "matches": [],
+        "operation_sha256": "3b90a4fb2533110d438a787f658377092dc60d02ccc63ba957dd423eb98a4718",
+        "raw_sha256": "756eee6bf939d1b5879da3ff1bae66cfd2599b9b96515f336ecde6f9ca512fc9",
+        "source": "small/simon_n6/simon_n6.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-not-admitted",
+        "matches": [],
+        "operation_sha256": null,
+        "raw_sha256": "f80361ccbdb3c333ba29a5efce4d1f0b1c018b4a63d40e9c2976df2144747fea",
+        "source": "small/vqe_uccsd_n6/vqe_uccsd_n6.qasm"
+      },
+      {
+        "exposure_status": "no-exact-match-in-audited-material",
+        "input_status": "input-not-admitted",
+        "matches": [],
+        "operation_sha256": null,
+        "raw_sha256": "5bf2dd10d4767825289ebe9e30933986fa2782063cf60066a44487d7f257b115",
+        "source": "small/vqe_uccsd_n8/vqe_uccsd_n8.qasm"
+      }
+    ]
+  },
+  "harness_archive_sha256": "77a8ab1659eb2513c2d674f3a0be6d1d1484cb56efee2d25eb402303ba157c06",
+  "harness_revision": "3e4d6ed0ad024e81da4fc55a6051bfff64e8e647",
+  "input_not_admitted_workflow_rows": 32,
+  "inputs": [
+    {
+      "reason": "ContractError: Quantum operation after measurement is not a coherent prefix",
+      "source": {
+        "bytes": 1440,
+        "git_blob": "d00b7347456b43f36cd384a31d251b4433998a02",
+        "path": "medium/cc_n12/cc_n12.qasm"
+      },
+      "status": "input-not-admitted"
+    },
+    {
+      "reason": "ContractError: Quantum operation after measurement is not a coherent prefix",
+      "source": {
+        "bytes": 799,
+        "git_blob": "379af7d98bd9189f0f4214c6310d0c77aff5fb9e",
+        "path": "small/bb84_n8/bb84_n8.qasm"
+      },
+      "status": "input-not-admitted"
+    },
+    {
+      "conversion_sha256": "a4d7979cdc266dd21868b654c166a57f1db4cef25381d503bba470a484351cc8",
+      "source": {
+        "bytes": 22924,
+        "git_blob": "f25d5d1a0379f55c5cc7978b75a888ce9825a666",
+        "path": "small/dnn_n8/dnn_n8.qasm"
+      },
+      "source_sha256": "7f1f342a59a7a9159a2f0fa619b8a64170a159158ae838eaa75b13212cf2a161",
+      "status": "input-admitted"
+    },
+    {
+      "conversion_sha256": "25ddae9db01f2a48a7da3864314dc25e2c68ee349493480055a432ad00a0dbdc",
+      "source": {
+        "bytes": 7120,
+        "git_blob": "326787ca86e0a5aa716687345bcad583e1420c7f",
+        "path": "small/qaoa_n6/qaoa_n6.qasm"
+      },
+      "source_sha256": "fde5eff21c334ef02430bbfa8ea38f9287625cab3ffbd45d92d79590ee27dcc9",
+      "status": "input-admitted"
+    },
+    {
+      "conversion_sha256": "324e90585be459db9c72dd392da398cffa6ce92f370e2fdfd31c37e6fb4c4c87",
+      "source": {
+        "bytes": 631,
+        "git_blob": "4f3fbc26538ffa072aad76a0d37d5ca58476b25b",
+        "path": "small/simon_n6/simon_n6.qasm"
+      },
+      "source_sha256": "756eee6bf939d1b5879da3ff1bae66cfd2599b9b96515f336ecde6f9ca512fc9",
+      "status": "input-admitted"
+    },
+    {
+      "reason": "ContractError: QASM syntax admission failed: \"<input>:2286,8: 'q' is not defined in this scope\"",
+      "source": {
+        "bytes": 33667,
+        "git_blob": "516adea7180da8f944235de92077338ef42a32ce",
+        "path": "small/vqe_uccsd_n6/vqe_uccsd_n6.qasm"
+      },
+      "status": "input-not-admitted"
+    },
+    {
+      "reason": "ContractError: QASM syntax admission failed: \"<input>:10813,8: 'q' is not defined in this scope\"",
+      "source": {
+        "bytes": 161450,
+        "git_blob": "410ce5db21a65ba6af3f04cfe29c2567fb70e5f1",
+        "path": "small/vqe_uccsd_n8/vqe_uccsd_n8.qasm"
+      },
+      "status": "input-not-admitted"
+    }
+  ],
+  "intended_workflow_rows": 56,
+  "participant_execution_started": false,
+  "preparation_file_sha256": "3c3778d997a65351a00eccd842100dfbc87beb79be2f004dad2818c2ce99b6ed",
+  "publication_eligible": false,
+  "retained_preparation_archive_sha256": "8424ceb1a1cff316058a0424cf1879be3c4629f40466c2b7a62dfba68ff27788",
+  "scope": "External source preparation and exact exposure audit; no participant execution or SDK performance result",
+  "source_staging_archive_sha256": "15a54cf74d55fbcfe0b0f3d018ea68c7de21ba9083e554adfb12259f07b74799",
+  "source_worker_limits": {
+    "memory_bytes": 17179869184,
+    "wall_seconds": 300
+  },
+  "source_workers": [
+    {
+      "execution_status": "completed",
+      "index": 0,
+      "kernel_memory_peak_bytes": 58568704,
+      "supervisor_file_sha256": "42f849b96b3e7aa1206c412ab9db1d9b48239c7aac4752a7d07a82855e636bd7",
+      "wall_seconds": 0.4036893853917718
+    },
+    {
+      "execution_status": "completed",
+      "index": 1,
+      "kernel_memory_peak_bytes": 58118144,
+      "supervisor_file_sha256": "5f951fa95e1fd53b61f738e259638b0d2cc39b2dd624134914bd1c537402d0c0",
+      "wall_seconds": 0.3821587231941521
+    },
+    {
+      "converted_operation_count": 2640,
+      "execution_status": "completed",
+      "index": 2,
+      "kernel_memory_peak_bytes": 190803968,
+      "source_conformance": {
+        "maximum_error": 6.118389127461867e-15,
+        "parsers": {
+          "cirq-core": "1.7.0",
+          "ply": "3.11",
+          "qiskit": "2.6.2"
+        },
+        "scope": "Preparation only; unchanged W03 acceptance still required",
+        "verification": "three-probes-only"
+      },
+      "supervisor_file_sha256": "65ad28a746504e89e8a4d0a62ad3438152d7692423f4e80025efc4d053bf1c95",
+      "wall_seconds": 2.2773286793380976
+    },
+    {
+      "converted_operation_count": 702,
+      "execution_status": "completed",
+      "index": 3,
+      "kernel_memory_peak_bytes": 184967168,
+      "source_conformance": {
+        "maximum_error": 2.141005805838943e-15,
+        "parsers": {
+          "cirq-core": "1.7.0",
+          "ply": "3.11",
+          "qiskit": "2.6.2"
+        },
+        "scope": "Preparation only; unchanged W03 acceptance still required",
+        "verification": "full-operator"
+      },
+      "supervisor_file_sha256": "24dc862fe60200ab2c25c7b05f40ae0010c6651f33737f5ec5ea9580603eb4a6",
+      "wall_seconds": 1.8034651759080589
+    },
+    {
+      "converted_operation_count": 104,
+      "execution_status": "completed",
+      "index": 4,
+      "kernel_memory_peak_bytes": 183062528,
+      "source_conformance": {
+        "maximum_error": 2.5664528847817076e-16,
+        "parsers": {
+          "cirq-core": "1.7.0",
+          "ply": "3.11",
+          "qiskit": "2.6.2"
+        },
+        "scope": "Preparation only; unchanged W03 acceptance still required",
+        "verification": "full-operator"
+      },
+      "supervisor_file_sha256": "18cedb6e22126d9026efd9e714c8d52be599c8295ae2e69d2bfd564c6294044c",
+      "wall_seconds": 1.7434148718602955
+    },
+    {
+      "execution_status": "completed",
+      "index": 5,
+      "kernel_memory_peak_bytes": 60289024,
+      "supervisor_file_sha256": "2d70ffe2df740875fbef42b2f57eaf4af88a34c6e4481cb8e737558e9de01ff0",
+      "wall_seconds": 0.39030960388481617
+    },
+    {
+      "execution_status": "completed",
+      "index": 6,
+      "kernel_memory_peak_bytes": 68915200,
+      "supervisor_file_sha256": "5cf383f9a53678ed26ac5c01f5b1cdea5d3d5fafc47e925873e522d737d9e265",
+      "wall_seconds": 0.4233516431413591
+    }
+  ]
+}
