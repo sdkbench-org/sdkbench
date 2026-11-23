@@ -1,0 +1,67 @@
+{
+  "status": "Population fixed before reading circuit contents or compiler outcomes; importer and execution not yet admitted",
+  "repository": "pnnl/QASMBench",
+  "source_commit": "357b942396d5c2b7cbc1c229c585a6ef5ccaebac",
+  "selection": "Complete census of original, non-transpiled OpenQASM files at logical widths 6, 8, 12 in small/ and medium/. No file-size, gate-count, known-family, parser-success or result filter.",
+  "files": [
+    {
+      "path": "medium/cc_n12/cc_n12.qasm",
+      "git_blob": "d00b7347456b43f36cd384a31d251b4433998a02",
+      "bytes": 1440
+    },
+    {
+      "path": "small/bb84_n8/bb84_n8.qasm",
+      "git_blob": "379af7d98bd9189f0f4214c6310d0c77aff5fb9e",
+      "bytes": 799
+    },
+    {
+      "path": "small/dnn_n8/dnn_n8.qasm",
+      "git_blob": "f25d5d1a0379f55c5cc7978b75a888ce9825a666",
+      "bytes": 22924
+    },
+    {
+      "path": "small/qaoa_n6/qaoa_n6.qasm",
+      "git_blob": "326787ca86e0a5aa716687345bcad583e1420c7f",
+      "bytes": 7120
+    },
+    {
+      "path": "small/simon_n6/simon_n6.qasm",
+      "git_blob": "4f3fbc26538ffa072aad76a0d37d5ca58476b25b",
+      "bytes": 631
+    },
+    {
+      "path": "small/vqe_uccsd_n6/vqe_uccsd_n6.qasm",
+      "git_blob": "516adea7180da8f944235de92077338ef42a32ce",
+      "bytes": 33667
+    },
+    {
+      "path": "small/vqe_uccsd_n8/vqe_uccsd_n8.qasm",
+      "git_blob": "410ce5db21a65ba6af3f04cfe29c2567fb70e5f1",
+      "bytes": 161450
+    }
+  ],
+  "inspection_scope": "Repository tree metadata and top-level license/notice only. No selected QASM contents read at declaration.",
+  "topologies": [
+    "line",
+    "2-by-n/2-grid"
+  ],
+  "participants": [
+    "flagquantum-ordinary-restored",
+    "flagquantum-target-artifact",
+    "qiskit-transpile-restored",
+    "cirq-route-cz-restored"
+  ],
+  "licenses": {
+    "LICENSE": {
+      "sha256": "3ba843379e9d16d4cc80e971f530c20053afbbb8da94de3c5e945d3212d91cd3",
+      "preserve_verbatim": true
+    },
+    "NOTICE": {
+      "sha256": "ea24d219a4d59c01a8b3a27a4d92ed3ffcdcccbc8aae7096e54bd4721cd1be7b",
+      "preserve_verbatim": true
+    }
+  },
+  "maximum_case_outcomes": 56,
+  "measurement_ceiling_seconds": 50400,
+  "publication_eligible": false
+}
