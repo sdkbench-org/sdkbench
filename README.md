@@ -23,6 +23,8 @@ The separate [target-artifact application report](docs/analysis/COMPILER_TARGET_
 
 The [routing-policy control report](docs/analysis/COMPILER_ROUTING_POLICY_RESULTS_20261120.md) retains 1,200 independently replayed blocks, all 120 accepted case/policy outcomes and 180 pair rows from one compiler revision, host and cohort. It records default-versus-explicit quality, latency and memory tradeoffs under unchanged acceptance and resources. Host qualification remains incomplete, and the later study cannot retroactively satisfy the original before-merge timing requirement.
 
+The [external scientific-program report](docs/analysis/COMPILER_EXTERNAL_RESULTS_20261123.md) retains all 56 intended rows: 32 input-admission refusals, 20 accepted cases and four FlagQuantum artifact failures. It reports the ordinary workflow's latency and CZ-count losses on DNN/QAOA, the artifact input-envelope limit and Simon tradeoffs under unchanged independent acceptance. It does not certify novelty, publication or global ranking.
+
 ## Requirements and task design
 
 SDKBench is developing a task-first, participant-neutral requirements baseline. Start with the [requirements map and documentation guide](docs/requirements/README.md), then review the [user task catalog](docs/requirements/TASK_CATALOG.md), [task-capability-function matrix](docs/requirements/TRACEABILITY.md), and [acceptance contracts](docs/requirements/ACCEPTANCE.md).
