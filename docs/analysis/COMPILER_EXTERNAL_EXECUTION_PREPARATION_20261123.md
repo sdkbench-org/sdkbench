@@ -42,7 +42,10 @@ The staged execution driver reuses the previously reviewed phase heartbeat,
 resource observation and owned-descendant cleanup helper, bound by its SHA-256.
 It enforces one fresh campaign directory, exact source/input/registration hashes,
 the CI receipt, latest admission time, whole-case ceilings, a 50400-second outer
-campaign ceiling and 10800-second producer-free replay ceiling. Failed participant
+campaign ceiling and 10800-second producer-free replay ceiling. The existing
+numerical reporting tool is separately bound and receives the declared
+900-second summary ceiling, including its own independent replay. A summary
+timeout remains incomplete reporting; unused phase time never extends it. Failed participant
 outcomes are retained and still replayed; an interrupted process is never rerun
 as a complete successful study. Its final host comparison preserves OS-package,
 clock/topology baseline changes and any remaining worker cgroups. The final

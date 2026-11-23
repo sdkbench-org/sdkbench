@@ -174,6 +174,7 @@
   "input_sha256": {
     "exposure-audit.json": "9d58152bd9f810d13b75a0ccfb095c27f986271d5f0ab68927ea9907e08f6387",
     "harness-runtime-comparison.json": "04ccc22a84b30f2eb9f02bcc5f1adea8c7f06d68dd53d755274a59696c3624e4",
+    "harness/tools/compiler_candidate_report.py": "e18c2a61664bf4e4063bf4ae5d19d1cc2bf0a0b90bfc34c5ca708a14e57dd6a7",
     "native-controls.json": "ef33e3b2c23a1597fc310b47a3ce4002d0b5d9c593ad9dfd0090845221121147",
     "original-runner-labels.json": "c8dcb56da28ce3b9007a04c7031d94679a326124ccaffb09c62e33f5ac23f512",
     "prepared/bundle/artifacts.json": "af2d0acb4ab63d6eb2623101bff5185f6288e4d21311065f6eeb33b4b270cd7d",
@@ -346,7 +347,7 @@
   "schema_version": 1,
   "scope": "External scientific-program compiler qualification; exact prior exposure audit is incomplete, no novelty certificate",
   "source_commit": "357b942396d5c2b7cbc1c229c585a6ef5ccaebac",
-  "study_driver_sha256": "465a00fb0f9fed7c0544464bef85155067d1230bc3af7c1792d17cc264f9cd5e",
+  "study_driver_sha256": "b690014270785dbc9b43cc487364936a361edbae79fbbc2abb9a51423bc2b727",
   "wheel_sha256": {
     "installed-wheels/common/wheels/cirq_core-1.7.0-py3-none-any.whl": "9d2e9610b06e2b2b2195184f44c0df4e94f31485831f8e1c6a96c858b7897bce",
     "installed-wheels/common/wheels/qiskit-2.6.2-cp310-abi3-manylinux_2_28_x86_64.whl": "e8578003e39facf72289fafae1542e38646e5cae7c93665f004046efa5797669",
