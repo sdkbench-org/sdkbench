@@ -88,3 +88,34 @@ Publish and independently verify this amended manifest before staging it as
 `run-frozen-external-observer.py`. This authorizes one first participant campaign,
 not a repeat of participant outcomes. If admission fails again, retain the full
 samples and diagnose them before any further action.
+
+## Explicit supervisor affinity and separately retained attempt
+
+The observer-corrected first campaign completed all 240 blocks as `access-blocked`,
+with 720 placeholder records and zero supervised executions or participant
+responses. The parent observer's CPU-0 affinity propagated to the supervisor,
+which correctly refused CPU 96 before starting workers. The
+[complete failure identity](evidence/external-execution-20261123/campaign-attempt-1-failure.json)
+retains campaign/replay/summary exits, baseline checks and the original manifest.
+This is operator infrastructure failure, not evidence of SDK correctness or speed.
+The producer-free replay and summary retained every refusal.
+
+The [new prospective launch manifest](COMPILER_EXTERNAL_LAUNCH_FREEZE_20261123.json)
+binds a [separate attempt-2 driver](evidence/external-execution-20261123/run-frozen-external-launch.py).
+Its only execution change wraps the existing candidate CLI with
+`/usr/bin/taskset --cpu-list 96`; the observer stays on CPU 0. A
+[launch-only control](evidence/external-execution-20261123/affinity-launch-control.json)
+verified these separate affinities, and the
+[unchanged fifteen resource controls](evidence/external-execution-20261123/launch-resource-controls.json)
+passed with the same launch. Those controls overlapped the end of the blocked
+campaign, during which no participant worker executed; fresh idleness is still
+required before attempt 2. Original scheduling labels were restored after
+attempt 1; any renewed reservation must retain and restore the same original sets.
+
+Publish and independently verify the new manifest before staging it as
+`public-external-launch-freeze.json` and running `run-frozen-external-launch.py`.
+The new `campaign-attempt-2` directory and attempt-2 operational records preserve
+the prior attempt untouched. Keep all participant options, input decisions,
+acceptance, original phase ceilings and the original reservation deadline.
+There were no compiler results to select or repeat; do not merge or substitute
+failed-attempt records into successful timing statistics.

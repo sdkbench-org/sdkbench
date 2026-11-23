@@ -1,0 +1,10 @@
+{
+  "returncode": 0,
+  "log": "...............                                                          [100%]\n15 passed in 4.73s\n",
+  "log_sha256": "83084ad5a3a435568d7d2073edd791927447ab171de1705a4ee811450aec6767",
+  "observer_affinity": [
+    0
+  ],
+  "supervisor_launch_cpu": 96,
+  "participant_execution_started": false
+}

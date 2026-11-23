@@ -1,0 +1,43 @@
+{
+  "scope": "Infrastructure failure before participant worker execution; no compiler outcome",
+  "campaign_blocks": 240,
+  "measured_placeholders": 720,
+  "supervised_executions": 0,
+  "participant_responses": 0,
+  "all_block_statuses": {
+    "access-blocked": 240
+  },
+  "reason": "Requested CPU is outside supervisor affinity",
+  "campaign_manifest_sha256": "e0e6ab89f706d037e7d96f9144827e6468d8f8f76c2d24538cda93feb43d5165",
+  "frozen_driver_sha256": "35dc430edcf47827e0aa474e661d059f73a46fb8cb54366eb4b75adddd7872f9",
+  "public_manifest_sha256": "b4c87fe91eff04af704267586f3c62f4930e3c5287ac7bed9627c9d50eac8372",
+  "records": {
+    "external-campaign-attempt-1.json": {
+      "phase": "external-campaign-attempt-1",
+      "returncode": 1,
+      "wall_seconds": 226.92137369094416,
+      "log_sha256": "c6a88c9fd4e5ef1e207ac87aa941925cfeaf8df79d5827093e3cf6cd4d288ad6"
+    },
+    "external-replay-attempt-1.json": {
+      "phase": "external-replay-attempt-1",
+      "returncode": 0,
+      "wall_seconds": 1.3421184387989342,
+      "log_sha256": "e6ee8deec349f57ac047b19dcda910c8ea71c4caca8c26ae2e406c07ba1a1f32"
+    },
+    "external-summary-attempt-1.json": {
+      "phase": "external-summary-attempt-1",
+      "returncode": 0,
+      "wall_seconds": 1.4156756605952978,
+      "log_sha256": "759ca98182ab7de564375f6d3b879c503203bd97915298f6732019893150c3d6"
+    },
+    "host-baseline-comparison.json": {
+      "same_os_packages": true,
+      "same_stable_host_files": true,
+      "remaining_worker_cgroups": [],
+      "foreign_ci_workers": [],
+      "publication_eligible": false
+    }
+  },
+  "operator_fault": "Observer CPU affinity propagated to campaign supervisor. The unchanged resource supervisor refused CPU 96 before starting any participant worker.",
+  "launch_resource_controls_overlap": "The 15 unchanged launch resource controls ran while the already access-blocked campaign was finishing; no participant worker ran. A fresh idle admission remains mandatory."
+}
