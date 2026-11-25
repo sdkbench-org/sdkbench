@@ -9,12 +9,23 @@ on:
         required: true
         type: boolean
         default: true
+      scope:
+        description: Explicit study scope; legacy preserves the extended input
+        required: true
+        type: choice
+        options:
+          - legacy
+          - small-protocol
+          - all-protocol
+        default: legacy
 permissions:
   contents: read
 jobs:
   native-linux:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    # The full cohort includes complete-case caps up to one hour per stack.
+    # Reserve the hosted runner's six-hour ceiling; participant caps are unchanged.
+    timeout-minutes: ${{ github.event_name == 'workflow_dispatch' && inputs.scope == 'all-protocol' && 360 || 90 }}
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
@@ -30,7 +41,7 @@ jobs:
       - name: Install all three pinned SDKs and SDKBench
         run: python -m pip install '.[p1a,dev]'
       - name: Test real adapters and failure accounting
-        run: python -m pytest tests/test_p1a_adapters.py tests/test_p1a_runner.py -q
+        run: python -m pytest tests/test_p1a_adapters.py tests/test_p1a_runner.py tests/test_p1a_integration_scope.py -q
       - name: Delegate a disposable cgroup subtree
         run: |
           sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/cgroup.subtree_control'
@@ -38,11 +49,12 @@ jobs:
           sudo sh -c 'echo "+memory +cpu +cpuset +pids" > /sys/fs/cgroup/sdkbench-p1a-ci/cgroup.subtree_control'
           sudo mkdir /sys/fs/cgroup/sdkbench-p1a-ci/operator
           sudo chown -R "$(id -u):$(id -g)" /sys/fs/cgroup/sdkbench-p1a-ci
-      - name: Execute complete small protocol and optional all-instance qualification
+      - name: Execute the declared engineering protocol scope
         run: |
           sudo sh -c "echo $$ > /sys/fs/cgroup/sdkbench-p1a-ci/operator/cgroup.procs"
           scope=small-protocol
           if test "${{ github.event_name }}" = workflow_dispatch && test "${{ inputs.extended }}" = true; then scope=all; fi
+          if test "${{ github.event_name }}" = workflow_dispatch && test "${{ inputs.scope }}" != legacy && test -n "${{ inputs.scope }}"; then scope="${{ inputs.scope }}"; fi
           python tools/p1a_integration.py --directory p1a-evidence --cgroup-parent /sys/fs/cgroup/sdkbench-p1a-ci --scope "$scope"
       - name: Retain all successes, unsupported outcomes and failures
         if: always()

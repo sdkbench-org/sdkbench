@@ -91,4 +91,13 @@ python tools/roadmap_docs.py --check --verify-small
 
 No global SDK rank follows from these integrations. Full large-instance ten-block campaigns, independent adapter review, model breadth and a sealed publication environment remain explicit next steps.
 
+Manual workflow dispatch with `scope=all-protocol` runs all eight frozen instances
+for every registered SDK using the existing full ten-block protocol. It does not
+run the separate one-outcome qualification or repeat the small subset. Expected
+scope is 240 process blocks, 600 measured records and 360 numerical warmups;
+failures and budget exhaustion remain explicit. `scope=legacy` preserves the
+previous `extended` behavior. Protocol thresholds, per-case budgets, participant
+configuration and publication eligibility are unchanged. This execution entry
+does not establish that a full campaign has completed.
+
 Public API sources checked on 2026-11-18: [FlagQuantum published package](https://pypi.org/project/flagquantum/0.3.1/), [Qiskit Statevector](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.quantum_info.Statevector), [Qiskit StatevectorSampler](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler), [Cirq simulation and precision](https://quantumai.google/cirq/simulate/simulation), and the [official Torch CPU index](https://download.pytorch.org/whl/cpu/torch/).
